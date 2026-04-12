@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { LandingAILogo } from "@/components/LandingAILogo";
 import { Button } from "@/components/ui/button";
-import api from "@/lib/api";
+import api, { zereoApi } from "@/lib/api";
 
 /* ═══════════════════════════════════════════════════════════════════
  * ACTION CARD
@@ -78,32 +78,59 @@ export default function GetStartedPage() {
   const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/marketingx.plugin`;
 
   useEffect(() => {
-    // Accept token from Landing AI SSO redirect (hash: #token=xxx or query: ?__rt=xxx)
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash;
-      if (hash.includes("token=")) {
-        const tokenMatch = hash.match(/token=([^&]+)/);
-        if (tokenMatch?.[1]) {
-          localStorage.setItem("token", tokenMatch[1]);
-          // Also grab refresh token from query params if present
-          const params = new URLSearchParams(window.location.search);
-          const rt = params.get("__rt");
-          if (rt) localStorage.setItem("refresh_token", rt);
-          // Clean URL
-          window.history.replaceState(null, "", `/${locale}/get-started`);
-        }
+    if (typeof window === "undefined") return;
+
+    const params = new URLSearchParams(window.location.search);
+    const hash = window.location.hash;
+
+    // ── 1. Accept token from Landing AI SSO redirect (#token=xxx) ──
+    if (hash.includes("token=")) {
+      const tokenMatch = hash.match(/token=([^&]+)/);
+      if (tokenMatch?.[1]) {
+        localStorage.setItem("token", tokenMatch[1]);
+        const rt = params.get("__rt");
+        if (rt) localStorage.setItem("refresh_token", rt);
+        window.history.replaceState(null, "", `/${locale}/get-started`);
       }
     }
 
+    // ── 2. Handle Meta OAuth callback (?code=xxx&state=xxx) ──
+    const metaCode = params.get("code");
+    const metaState = params.get("state");
+    if (metaCode && !params.get("topup")) {
+      const exchangeMetaCode = async () => {
+        try {
+          const redirectUri = `${window.location.origin}/${locale}/get-started`;
+          await zereoApi.post("/social/accounts/meta/callback", {
+            code: metaCode,
+            redirect_uri: redirectUri,
+            state: metaState || "",
+          });
+          setMetaConnected(true);
+        } catch (err) {
+          console.error("[GetStarted] Meta callback exchange failed:", err);
+        }
+        // Clean URL
+        window.history.replaceState(null, "", `/${locale}/get-started`);
+      };
+      if (localStorage.getItem("token")) exchangeMetaCode();
+    }
+
+    // ── 3. Handle Stripe success (?topup=success) ──
+    if (params.get("topup") === "success") {
+      window.history.replaceState(null, "", `/${locale}/get-started`);
+    }
+
+    // ── 4. No token → redirect to register ──
     const token = localStorage.getItem("token");
     if (!token) {
-      // No token — redirect to Landing AI register with returnUrl
       const siteUrl = window.location.origin;
       window.location.href = `https://landingai.info/${locale}/register?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
       return;
     }
     setIsLoggedIn(true);
 
+    // ── 5. Fetch profile + check connections ──
     const fetchProfile = async () => {
       try {
         const res = await api.get("/settings/profile");
@@ -118,7 +145,13 @@ export default function GetStartedPage() {
     };
 
     const checkMeta = async () => {
-      // Meta connection status — skip for now, user can check on Landing AI
+      try {
+        const res = await zereoApi.get("/social/accounts");
+        const accounts = res.data?.accounts || res.data || [];
+        if (Array.isArray(accounts) && accounts.some((a: any) =>
+          a.platform === "meta" || a.platform === "facebook" || a.platform === "instagram"
+        )) setMetaConnected(true);
+      } catch { /* endpoint may not exist yet */ }
     };
 
     fetchProfile();
@@ -127,26 +160,47 @@ export default function GetStartedPage() {
 
   const handleCopy = async () => {
     try { await navigator.clipboard.writeText(PLUGIN_CMD); } catch {
-      const t = document.createElement("textarea"); t.value = PLUGIN_CMD;
-      document.body.appendChild(t); t.select(); document.execCommand("copy"); document.body.removeChild(t);
+      const el = document.createElement("textarea"); el.value = PLUGIN_CMD;
+      document.body.appendChild(el); el.select(); document.execCommand("copy"); document.body.removeChild(el);
     }
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleMetaConnect = () => {
-    // Redirect to Landing AI's Meta binding page (already configured in Meta Developer Console)
-    window.open(`${LANDING_AI_URL}/${locale}/account/settings?bind=meta`, "_blank");
+  const handleMetaConnect = async () => {
+    try {
+      const redirectUri = `${window.location.origin}/${locale}/get-started`;
+      const res = await zereoApi.get("/social/accounts/meta/auth-url", {
+        params: { redirect_uri: redirectUri },
+      });
+      if (res.data?.auth_url) {
+        window.location.href = res.data.auth_url;
+        return;
+      }
+    } catch (err) {
+      console.error("[GetStarted] Meta auth error:", err);
+    }
+    alert("Meta 連結暫時無法使用，請稍後再試");
   };
 
-  const handleGoogleConnect = () => {
-    // Redirect to Landing AI's Google binding page (already configured in Google Cloud Console)
-    window.open(`${LANDING_AI_URL}/${locale}/account/settings?bind=google`, "_blank");
+  const handleGoogleConnect = async () => {
+    try {
+      const redirectUri = `${window.location.origin}/${locale}/get-started`;
+      const res = await api.post("/ai-agent/gdrive/connect", {
+        callback_url: redirectUri,
+      });
+      if (res.data?.auth_url) {
+        window.location.href = res.data.auth_url;
+        return;
+      }
+    } catch (err) {
+      console.error("[GetStarted] Google connect error:", err);
+    }
+    alert("Google 連結暫時無法使用，請稍後再試");
   };
 
   const handleStripeTopup = async () => {
     try {
-      // POST /pricing/checkout — minimum $20 USD = 600 pts
       const res = await api.post("/pricing/checkout", {
         amount_usd: 20,
         success_url: `${window.location.origin}/${locale}/get-started?topup=success`,
@@ -154,7 +208,6 @@ export default function GetStartedPage() {
       });
       if (res.data?.checkout_url) { window.location.href = res.data.checkout_url; return; }
     } catch (err) { console.error("[GetStarted] Stripe error:", err); }
-    // Fallback: open Landing AI billing page
     window.location.href = `https://landingai.info/${locale}/account/billing`;
   };
 
