@@ -1,0 +1,272 @@
+{
+  "MarketingX": {
+    "nav": {
+      "features": "Features",
+      "industries": "Industries",
+      "capabilities": "Capabilities",
+      "pricing": "Pricing",
+      "login": "Login",
+      "getStarted": "Get Started",
+      "console": "Console"
+    },
+    "badge": "Claude Code Plugin — 200+ MCP Tools",
+    "badgeNew": "NEW",
+    "hero": {
+      "title1": "Your AI Marketer ",
+      "title2": "handles all your ",
+      "subtitle": "Deploy any brand's marketing assets automatically in 30 minutes through AI conversation",
+      "ctaPrimary": "Get Started Free",
+      "ctaPrimaryLoggedIn": "Go to Console",
+      "ctaSecondary": "See How It Works"
+    },
+    "typewriter": {
+      "landingPage": "Landing Pages",
+      "reels": "Reels Videos",
+      "social": "Social Posts",
+      "kol": "KOL Campaigns",
+      "brand": "Brand Analysis",
+      "research": "Market Research"
+    },
+    "pluginInstall": {
+      "title1": "One command, ",
+      "title2": "instantly live",
+      "subtitle": "Paste this command in Claude Code to get started"
+    },
+    "stats": {
+      "tools": "MCP Tools",
+      "industries": "Industry Apps",
+      "speed": "Generate Landing Page",
+      "skills": "Core Skills"
+    },
+    "features": {
+      "ai": {
+        "title": "Just type one sentence",
+        "desc": "Upload brand assets, AI analyzes what marketing materials you need and generates them automatically.",
+        "pipelineSteps": {
+          "brandAnalysis": "Brand Analysis",
+          "strategist": "Strategist",
+          "architect": "Architect",
+          "factory": "Factory",
+          "supervisor": "Supervisor",
+          "goLive": "Go Live"
+        }
+      },
+      "allInOne": {
+        "title": "All marketing in one place",
+        "desc": "Landing Pages, Reels, social posting, KOL matching, analytics — manage all marketing needs in one platform."
+      },
+      "payg": {
+        "title": "Pay as you go",
+        "desc": "$1 USD = 30 pts, no monthly subscription. Landing Pages ~75-250 pts, Reels ~50-150 pts, social posts 5-10 pts."
+      }
+    },
+    "industries": {
+      "sectionTitle1": "Deploy your ",
+      "sectionTitle2": "marketing power",
+      "sectionTitle3": " in any industry",
+      "sectionSubtitle": "8 industries, 40+ proven scenarios, every pain point has a solution",
+      "ecommerce": {
+        "title": "E-Commerce",
+        "pain": "Product launch takes 3 weeks, promo materials can't keep up",
+        "solution": "AI generates Landing Page + Reels in 30 min",
+        "benefit": "Launch: 3 weeks → 72 hours, cost down 70%"
+      },
+      "medical": {
+        "title": "Medical & Beauty",
+        "pain": "High ad compliance risk, claims violations",
+        "solution": "Compliance Registry auto-checks regulations",
+        "benefit": "Takedown rate 30% → 5%, compliance 95%"
+      },
+      "food": {
+        "title": "F&B Chains",
+        "pain": "Inconsistent multi-store branding, slow promotions",
+        "solution": "Brand templates + batch generation + QR tracking",
+        "benefit": "30 stores in 1 hour, 100% brand consistency"
+      },
+      "saas": {
+        "title": "B2B SaaS",
+        "pain": "Content shortage, low landing page conversion",
+        "solution": "Deep Research + A/B variant testing",
+        "benefit": "3 articles/week, conversion up 35% in 3 months"
+      },
+      "education": {
+        "title": "Education",
+        "pain": "Enrollment surge, funnel hard to track",
+        "solution": "TA segmentation + Analytics + personal brand",
+        "benefit": "10x material output, conversion up 25%"
+      },
+      "finance": {
+        "title": "Finance & Insurance",
+        "pain": "Strict regulations, high trust barrier",
+        "solution": "Trust Readiness + Fact Checker",
+        "benefit": "98% compliance, precision up 50%"
+      },
+      "travel": {
+        "title": "Travel & Tourism",
+        "pain": "Seasonal surges, multilingual needs",
+        "solution": "i18n + Reels Pipeline + KOL Task mgmt",
+        "benefit": "4x international coverage, 50 videos/month"
+      },
+      "manufacturing": {
+        "title": "Manufacturing",
+        "pain": "Want own brand but no marketing know-how",
+        "solution": "Brand Analyzer + 3-Plan AI Strategy",
+        "benefit": "Brand launch cost down 90%, expo prep 1 month → 3 days"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "Premium marketing experience, ",
+      "sectionTitle2": "ready out of the box",
+      "items": {
+        "pipeline": {
+          "title": "AI 4-Stage Pipeline",
+          "desc": "Strategist → Architect → Factory → Supervisor, fully automated"
+        },
+        "reels": {
+          "title": "Reels Automation",
+          "desc": "6-stage pipeline: scenes, subtitles, voiceover"
+        },
+        "publish": {
+          "title": "Multi-platform Publishing",
+          "desc": "IG/FB/TikTok, one command to all channels"
+        },
+        "kol": {
+          "title": "Smart KOL Matching",
+          "desc": "AI dual-layer quantitative + qualitative analysis"
+        },
+        "monitor": {
+          "title": "Butterfly Effect Monitor",
+          "desc": "Real-time competitor, regulation, trend detection"
+        },
+        "i18n": {
+          "title": "10 Language Support",
+          "desc": "Including RTL Arabic, 4-layer cultural adaptation"
+        },
+        "compliance": {
+          "title": "Compliance Engine",
+          "desc": "Medical/health/finance auto-regulation checking"
+        },
+        "research": {
+          "title": "Deep Research + Content",
+          "desc": "Multi-source industry scanning, 4-stage editorial"
+        },
+        "brand": {
+          "title": "Brand Intelligence",
+          "desc": "Auto-extract brand info, AI strategy suggestions"
+        },
+        "analytics": {
+          "title": "Real-time Analytics",
+          "desc": "Visitor tracking, scroll behavior, engagement scoring"
+        },
+        "docs": {
+          "title": "Enterprise Docs",
+          "desc": "Presentations, contracts, training manuals, one-click"
+        },
+        "stripe": {
+          "title": "Stripe Payment",
+          "desc": "Points top-up, credit card / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Four steps to start",
+      "subtitle": "From signup to publish, under one hour",
+      "steps": {
+        "s1": {
+          "title": "Create Account",
+          "desc": "30-second signup, Google quick login supported"
+        },
+        "s2": {
+          "title": "Install Plugin",
+          "desc": "Paste one command in Claude Code, auto-connect 200+ tools"
+        },
+        "s3": {
+          "title": "AI Generates Assets",
+          "desc": "Describe your needs in one sentence, 30 min for full marketing assets"
+        },
+        "s4": {
+          "title": "Publish & Track",
+          "desc": "Multi-platform publish, real-time analytics, AI continuous optimization"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "Pay for what ",
+      "title2": "you use",
+      "subtitle": "No monthly fees, no hidden costs. Top up as needed, pay for what you use.",
+      "badge": "Pay-as-you-go",
+      "perUsd": "USD",
+      "pts": "pts",
+      "items": {
+        "lp": "Landing Page ≈ 75–250 pts",
+        "reels": "Reels Video ≈ 50–150 pts",
+        "social": "Social Post ≈ 5–10 pts / post",
+        "kol": "KOL Analysis ≈ 20–50 pts / person",
+        "research": "Deep Research ≈ 30–100 pts / session"
+      },
+      "ctaLoggedIn": "Go to Top Up",
+      "cta": "Sign Up & Top Up",
+      "freeCredits": "50 free pts on signup"
+    },
+    "finalCta": {
+      "title1": "Ready to let AI",
+      "title2": "take over your marketing?",
+      "subtitle": "Start today — do with one sentence what used to require an entire marketing team.",
+      "ctaLoggedIn": "Go to Console",
+      "cta": "Get Started Free"
+    },
+    "footer": {
+      "brand": "MarketingX by Landing AI",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "contact": "Contact Us"
+    },
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "Account Created",
+      "title1": "Welcome to ",
+      "title2": "MarketingX",
+      "subtitle": "Complete these 4 steps to unlock all AI marketing capabilities"
+    },
+    "step1": {
+      "title": "Activate MarketingX Plugin",
+      "desc": "Enter the following command in Claude Code to install the Plugin and access 200+ MCP marketing tools.",
+      "copyBtn": "Copy Command to Claude",
+      "copiedBtn": "Copied to Clipboard!"
+    },
+    "step2": {
+      "title": "Connect Meta Account",
+      "desc": "Link your Facebook / Instagram account to let AI auto-publish posts, stories, and Reels. Both personal and professional accounts are supported.",
+      "btn": "Connect Facebook / Instagram",
+      "connected": "Meta account connected"
+    },
+    "step3": {
+      "title": "Connect Google Account",
+      "desc": "Link your Google account to access Google Drive content. AI can directly read your brand materials and documents. If you signed up with Google, this step is already done.",
+      "btn": "Connect Google Account",
+      "connected": "Google account connected"
+    },
+    "step4": {
+      "title": "Top Up Points",
+      "desc": "$1 USD = 30 pts. After topping up, you can use Landing Page generation, Reels, social publishing, and all other features.",
+      "balance": "Current Balance",
+      "usd": "USD",
+      "pts": "pts",
+      "costRef": "Landing Page ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",
+      "btn": "Go to Top Up"
+    },
+    "status": {
+      "ready": "To Do",
+      "connected": "Done",
+      "pending": "Optional"
+    },
+    "bottom": {
+      "note": "After setup, return to Claude Code to start your first marketing project",
+      "dashboard": "Go to Dashboard",
+      "home": "Back to Home"
+    }
+  }
+}

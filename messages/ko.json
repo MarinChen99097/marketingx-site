@@ -1,0 +1,272 @@
+{
+  "MarketingX": {
+    "nav": {
+      "features": "기능",
+      "industries": "산업",
+      "capabilities": "핵심 역량",
+      "pricing": "요금제",
+      "login": "로그인",
+      "getStarted": "시작하기",
+      "console": "콘솔"
+    },
+    "badge": "Claude Code 플러그인 — 200+ MCP 도구",
+    "badgeNew": "NEW",
+    "hero": {
+      "title1": "당신의 AI 마케터가 ",
+      "title2": "모든 것을 처리합니다 ",
+      "subtitle": "AI 대화를 통해 30분 만에 모든 브랜드의 마케팅 자산을 자동 배포하세요",
+      "ctaPrimary": "무료로 시작하기",
+      "ctaPrimaryLoggedIn": "콘솔로 이동",
+      "ctaSecondary": "작동 방식 보기"
+    },
+    "typewriter": {
+      "landingPage": "랜딩 페이지",
+      "reels": "릴스 영상",
+      "social": "소셜 포스트",
+      "kol": "KOL 캠페인",
+      "brand": "브랜드 분석",
+      "research": "시장 조사"
+    },
+    "pluginInstall": {
+      "title1": "명령어 하나로, ",
+      "title2": "즉시 실행",
+      "subtitle": "Claude Code에 이 명령어를 붙여넣어 시작하세요"
+    },
+    "stats": {
+      "tools": "MCP 도구",
+      "industries": "산업 앱",
+      "speed": "랜딩 페이지 생성",
+      "skills": "핵심 스킬"
+    },
+    "features": {
+      "ai": {
+        "title": "한 문장만 입력하세요",
+        "desc": "브랜드 자산을 업로드하면 AI가 필요한 마케팅 자료를 분석하고 자동으로 생성합니다.",
+        "pipelineSteps": {
+          "brandAnalysis": "브랜드 분석",
+          "strategist": "전략가",
+          "architect": "설계사",
+          "factory": "제작소",
+          "supervisor": "감독관",
+          "goLive": "배포"
+        }
+      },
+      "allInOne": {
+        "title": "모든 마케팅을 한곳에서",
+        "desc": "랜딩 페이지, 릴스, 소셜 포스팅, KOL 매칭, 분석 — 하나의 플랫폼에서 모든 마케팅 니즈를 관리하세요."
+      },
+      "payg": {
+        "title": "사용한 만큼만 결제",
+        "desc": "$1 USD = 30 포인트, 월 구독료 없음. 랜딩 페이지 약 75-250 포인트, 릴스 약 50-150 포인트, 소셜 포스트 5-10 포인트."
+      }
+    },
+    "industries": {
+      "sectionTitle1": "어떤 산업에서든 ",
+      "sectionTitle2": "마케팅 파워를",
+      "sectionTitle3": " 배포하세요",
+      "sectionSubtitle": "8개 산업, 40+ 검증된 시나리오, 모든 페인포인트에 솔루션",
+      "ecommerce": {
+        "title": "이커머스",
+        "pain": "신제품 출시에 3주 소요, 프로모션 자료 지연",
+        "solution": "AI가 30분 만에 랜딩 페이지 + 릴스 생성",
+        "benefit": "출시: 3주 → 72시간, 비용 70% 절감"
+      },
+      "medical": {
+        "title": "의료 & 뷰티",
+        "pain": "높은 광고 규정 위반 리스크",
+        "solution": "컴플라이언스 엔진 자동 규정 검사",
+        "benefit": "게시 중단율 30% → 5%, 규정 준수율 95%"
+      },
+      "food": {
+        "title": "F&B 체인",
+        "pain": "다점포 브랜딩 불일치, 느린 프로모션",
+        "solution": "브랜드 템플릿 + 일괄 생성 + QR 추적",
+        "benefit": "30개 매장 1시간 내 완료, 브랜드 일관성 100%"
+      },
+      "saas": {
+        "title": "B2B SaaS",
+        "pain": "콘텐츠 부족, 낮은 랜딩 페이지 전환율",
+        "solution": "딥 리서치 + A/B 변형 테스트",
+        "benefit": "주 3편 기사, 3개월 내 전환율 35% 향상"
+      },
+      "education": {
+        "title": "교육",
+        "pain": "모집 시즌 폭주, 퍼널 추적 어려움",
+        "solution": "TA 세분화 + 분석 + 퍼스널 브랜딩",
+        "benefit": "자료 생산량 10배, 전환율 25% 향상"
+      },
+      "finance": {
+        "title": "금융 & 보험",
+        "pain": "엄격한 규제, 높은 신뢰 장벽",
+        "solution": "Trust Readiness + 팩트 체커",
+        "benefit": "규정 준수율 98%, 정확도 50% 향상"
+      },
+      "travel": {
+        "title": "여행 & 관광",
+        "pain": "시즌별 폭주, 다국어 니즈",
+        "solution": "i18n + 릴스 파이프라인 + KOL 태스크 관리",
+        "benefit": "국제 커버리지 4배, 월 50편 영상"
+      },
+      "manufacturing": {
+        "title": "제조업",
+        "pain": "자체 브랜드 원하지만 마케팅 노하우 부족",
+        "solution": "Brand Analyzer + 3-플랜 AI 전략",
+        "benefit": "브랜드 런칭 비용 90% 절감, 전시 준비 1개월 → 3일"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "프리미엄 마케팅 경험, ",
+      "sectionTitle2": "바로 사용 가능",
+      "items": {
+        "pipeline": {
+          "title": "AI 4단계 파이프라인",
+          "desc": "전략가 → 설계자 → 공장 → 감독관, 완전 자동화"
+        },
+        "reels": {
+          "title": "릴스 자동화",
+          "desc": "6단계 파이프라인: 장면, 자막, 보이스오버"
+        },
+        "publish": {
+          "title": "멀티 플랫폼 퍼블리싱",
+          "desc": "IG/FB/TikTok, 한 번에 모든 채널로 발행"
+        },
+        "kol": {
+          "title": "스마트 KOL 매칭",
+          "desc": "AI 이중 레이어 정량 + 정성 분석"
+        },
+        "monitor": {
+          "title": "버터플라이 이펙트 모니터",
+          "desc": "실시간 경쟁사, 규정, 트렌드 감지"
+        },
+        "i18n": {
+          "title": "10개 언어 지원",
+          "desc": "RTL 아랍어 포함, 4레이어 문화 적응"
+        },
+        "compliance": {
+          "title": "컴플라이언스 엔진",
+          "desc": "의료/건강/금융 자동 규정 검사"
+        },
+        "research": {
+          "title": "딥 리서치 + 콘텐츠",
+          "desc": "다중 소스 산업 스캐닝, 4단계 에디토리얼"
+        },
+        "brand": {
+          "title": "브랜드 인텔리전스",
+          "desc": "브랜드 정보 자동 추출, AI 전략 제안"
+        },
+        "analytics": {
+          "title": "실시간 분석",
+          "desc": "방문자 추적, 스크롤 행동, 참여도 점수"
+        },
+        "docs": {
+          "title": "기업 문서",
+          "desc": "프레젠테이션, 계약서, 교육 매뉴얼, 원클릭"
+        },
+        "stripe": {
+          "title": "Stripe 결제",
+          "desc": "포인트 충전, 신용카드 / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "네 단계로 시작하기",
+      "subtitle": "가입부터 게시까지, 1시간 이내",
+      "steps": {
+        "s1": {
+          "title": "계정 생성",
+          "desc": "30초 가입, Google 빠른 로그인 지원"
+        },
+        "s2": {
+          "title": "플러그인 설치",
+          "desc": "Claude Code에 명령어 하나 붙여넣기, 200+ 도구 자동 연결"
+        },
+        "s3": {
+          "title": "AI 자산 생성",
+          "desc": "한 문장으로 니즈 설명, 30분 만에 완전한 마케팅 자산"
+        },
+        "s4": {
+          "title": "게시 & 추적",
+          "desc": "멀티 플랫폼 게시, 실시간 분석, AI 지속 최적화"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "사용한 만큼만 ",
+      "title2": "결제하세요",
+      "subtitle": "월 요금 없음, 숨겨진 비용 없음. 필요할 때 충전하고, 사용한 만큼만 결제하세요.",
+      "badge": "종량제",
+      "perUsd": "USD",
+      "pts": "포인트",
+      "items": {
+        "lp": "랜딩 페이지 ≈ 75–250 포인트",
+        "reels": "릴스 영상 ≈ 50–150 포인트",
+        "social": "소셜 포스트 ≈ 5–10 포인트 / 건",
+        "kol": "KOL 분석 ≈ 20–50 포인트 / 명",
+        "research": "딥 리서치 ≈ 30–100 포인트 / 회"
+      },
+      "ctaLoggedIn": "충전하러 가기",
+      "cta": "가입 & 충전",
+      "freeCredits": "가입 시 50 포인트 무료"
+    },
+    "finalCta": {
+      "title1": "AI에게 마케팅을",
+      "title2": "맡길 준비가 되셨나요?",
+      "subtitle": "오늘 시작하세요 — 한 문장으로 마케팅 팀 전체가 필요했던 일을 해보세요.",
+      "ctaLoggedIn": "콘솔로 이동",
+      "cta": "무료로 시작하기"
+    },
+    "footer": {
+      "brand": "MarketingX by Landing AI",
+      "terms": "이용약관",
+      "privacy": "개인정보처리방침",
+      "contact": "문의하기"
+    },
+    "copy": "복사",
+    "copied": "복사됨"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "계정 생성 완료",
+      "title1": "환영합니다 ",
+      "title2": "MarketingX",
+      "subtitle": "이 4단계를 완료하여 모든 AI 마케팅 기능을 잠금 해제하세요"
+    },
+    "step1": {
+      "title": "MarketingX 플러그인 활성화",
+      "desc": "Claude Code에 다음 명령어를 입력하여 플러그인을 설치하고 200+ MCP 마케팅 도구에 접근하세요.",
+      "copyBtn": "Claude에 명령어 복사",
+      "copiedBtn": "클립보드에 복사됨!"
+    },
+    "step2": {
+      "title": "Meta 계정 연결",
+      "desc": "Facebook / Instagram 계정을 연결하여 AI가 포스트, 스토리, 릴스를 자동 게시하도록 하세요. 개인 및 비즈니스 계정 모두 지원됩니다.",
+      "btn": "Facebook / Instagram 연결",
+      "connected": "Meta 계정 연결됨"
+    },
+    "step3": {
+      "title": "Google 계정 연결",
+      "desc": "Google 계정을 연결하여 Google 드라이브 콘텐츠에 접근하세요. AI가 브랜드 자료와 문서를 직접 읽을 수 있습니다. Google로 가입했다면 이 단계는 이미 완료되었습니다.",
+      "btn": "Google 계정 연결",
+      "connected": "Google 계정 연결됨"
+    },
+    "step4": {
+      "title": "포인트 충전",
+      "desc": "$1 USD = 30 포인트. 충전 후 랜딩 페이지 생성, 릴스, 소셜 퍼블리싱 등 모든 기능을 사용할 수 있습니다.",
+      "balance": "현재 잔액",
+      "usd": "USD",
+      "pts": "포인트",
+      "costRef": "랜딩 페이지 ≈ 75–250 포인트 · 릴스 ≈ 50–150 포인트 · 소셜 ≈ 5–10 포인트",
+      "btn": "충전하러 가기"
+    },
+    "status": {
+      "ready": "할 일",
+      "connected": "완료",
+      "pending": "선택사항"
+    },
+    "bottom": {
+      "note": "설정 완료 후, Claude Code로 돌아가 첫 번째 마케팅 프로젝트를 시작하세요",
+      "dashboard": "대시보드로 이동",
+      "home": "홈으로 돌아가기"
+    }
+  }
+}

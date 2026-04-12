@@ -1,0 +1,272 @@
+{
+  "MarketingX": {
+    "nav": {
+      "features": "功能特色",
+      "industries": "產業應用",
+      "capabilities": "核心能力",
+      "pricing": "方案價格",
+      "login": "登入",
+      "getStarted": "立即開始",
+      "console": "控制台"
+    },
+    "badge": "Claude Code 外掛 — 200+ MCP 工具",
+    "badgeNew": "全新",
+    "hero": {
+      "title1": "你的 AI 行銷師",
+      "title2": "幫你搞定所有",
+      "subtitle": "透過 AI 對話，30 分鐘自動部署任何品牌的行銷素材",
+      "ctaPrimary": "免費開始使用",
+      "ctaPrimaryLoggedIn": "前往控制台",
+      "ctaSecondary": "看看怎麼運作"
+    },
+    "typewriter": {
+      "landingPage": "Landing Page",
+      "reels": "Reels 影片",
+      "social": "社群貼文",
+      "kol": "KOL 合作",
+      "brand": "品牌分析",
+      "research": "市場研究"
+    },
+    "pluginInstall": {
+      "title1": "一行指令，",
+      "title2": "即刻上線",
+      "subtitle": "在 Claude Code 貼上這行指令即可開始"
+    },
+    "stats": {
+      "tools": "MCP 工具",
+      "industries": "產業應用",
+      "speed": "生成 Landing Page",
+      "skills": "核心技能"
+    },
+    "features": {
+      "ai": {
+        "title": "說一句話就搞定",
+        "desc": "上傳品牌素材，AI 分析你需要什麼行銷物料並自動生成。",
+        "pipelineSteps": {
+          "brandAnalysis": "品牌分析",
+          "strategist": "策略師",
+          "architect": "建築師",
+          "factory": "工廠",
+          "supervisor": "監工",
+          "goLive": "上線"
+        }
+      },
+      "allInOne": {
+        "title": "所有行銷一站搞定",
+        "desc": "Landing Page、Reels、社群發佈、KOL 媒合、數據分析 — 一個平台管理所有行銷需求。"
+      },
+      "payg": {
+        "title": "用多少付多少",
+        "desc": "$1 美元 = 30 點，無月費訂閱。Landing Page 約 75-250 點、Reels 約 50-150 點、社群貼文 5-10 點。"
+      }
+    },
+    "industries": {
+      "sectionTitle1": "在任何產業",
+      "sectionTitle2": "部署你的行銷",
+      "sectionTitle3": "戰力",
+      "sectionSubtitle": "8 大產業、40+ 實證場景，每個痛點都有解法",
+      "ecommerce": {
+        "title": "電商",
+        "pain": "新品上架要 3 週，促銷素材跟不上",
+        "solution": "AI 30 分鐘生成 Landing Page + Reels",
+        "benefit": "上架：3 週 → 72 小時，成本降低 70%"
+      },
+      "medical": {
+        "title": "醫美",
+        "pain": "廣告合規風險高，療效宣稱違規",
+        "solution": "合規引擎自動比對法規",
+        "benefit": "下架率 30% → 5%，合規率 95%"
+      },
+      "food": {
+        "title": "連鎖餐飲",
+        "pain": "多門市品牌不一致，促銷推進慢",
+        "solution": "品牌模板 + 批量生成 + QR 追蹤",
+        "benefit": "30 門市 1 小時搞定，品牌一致性 100%"
+      },
+      "saas": {
+        "title": "B2B SaaS",
+        "pain": "內容產出不足，Landing Page 轉換低",
+        "solution": "Deep Research + A/B 變體測試",
+        "benefit": "每週 3 篇文章，3 個月轉換提升 35%"
+      },
+      "education": {
+        "title": "教育",
+        "pain": "招生旺季爆量，漏斗追蹤困難",
+        "solution": "TA 分群 + 數據分析 + 個人品牌",
+        "benefit": "素材產出 10 倍，轉換提升 25%"
+      },
+      "finance": {
+        "title": "金融保險",
+        "pain": "法規嚴格，信任門檻高",
+        "solution": "Trust Readiness + 事實查核",
+        "benefit": "合規率 98%，精準度提升 50%"
+      },
+      "travel": {
+        "title": "旅遊觀光",
+        "pain": "季節性爆量，多語系需求",
+        "solution": "i18n + Reels 流水線 + KOL 任務管理",
+        "benefit": "國際覆蓋 4 倍，每月 50 支影片"
+      },
+      "manufacturing": {
+        "title": "製造業",
+        "pain": "想做自有品牌但不懂行銷",
+        "solution": "Brand Analyzer + 三方案 AI 策略",
+        "benefit": "品牌建立成本降 90%，展會準備 1 個月 → 3 天"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "頂級行銷體驗，",
+      "sectionTitle2": "開箱即用",
+      "items": {
+        "pipeline": {
+          "title": "AI 四階段流水線",
+          "desc": "策略師 → 架構師 → 工廠 → 監工，全自動化"
+        },
+        "reels": {
+          "title": "Reels 自動化",
+          "desc": "六階段流水線：場景、字幕、配音"
+        },
+        "publish": {
+          "title": "多平台發佈",
+          "desc": "IG/FB/TikTok，一鍵全通路發佈"
+        },
+        "kol": {
+          "title": "智慧 KOL 媒合",
+          "desc": "AI 雙層量化 + 質化分析"
+        },
+        "monitor": {
+          "title": "蝴蝶效應監控",
+          "desc": "即時偵測競品、法規、趨勢變化"
+        },
+        "i18n": {
+          "title": "10 國語系支援",
+          "desc": "含 RTL 阿拉伯文，四層文化適配"
+        },
+        "compliance": {
+          "title": "合規引擎",
+          "desc": "醫療/保健/金融自動法規比對"
+        },
+        "research": {
+          "title": "深度研究 + 內容",
+          "desc": "多源產業掃描，四階段編輯流程"
+        },
+        "brand": {
+          "title": "品牌智慧",
+          "desc": "自動擷取品牌資訊，AI 策略建議"
+        },
+        "analytics": {
+          "title": "即時數據分析",
+          "desc": "訪客追蹤、滾動行為、互動評分"
+        },
+        "docs": {
+          "title": "企業文件",
+          "desc": "簡報、合約、教育手冊，一鍵生成"
+        },
+        "stripe": {
+          "title": "Stripe 付款",
+          "desc": "點數儲值，信用卡 / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "四步驟開始使用",
+      "subtitle": "從註冊到發佈，不用一小時",
+      "steps": {
+        "s1": {
+          "title": "建立帳號",
+          "desc": "30 秒完成註冊，支援 Google 快速登入"
+        },
+        "s2": {
+          "title": "安裝外掛",
+          "desc": "在 Claude Code 貼上一行指令，自動連結 200+ 工具"
+        },
+        "s3": {
+          "title": "AI 生成素材",
+          "desc": "一句話描述需求，30 分鐘完整行銷素材到手"
+        },
+        "s4": {
+          "title": "發佈 & 追蹤",
+          "desc": "多平台發佈、即時分析、AI 持續優化"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "用多少，",
+      "title2": "付多少",
+      "subtitle": "無月費、無隱藏費用。需要時儲值，用多少付多少。",
+      "badge": "按量計費",
+      "perUsd": "美元",
+      "pts": "點",
+      "items": {
+        "lp": "Landing Page ≈ 75–250 點",
+        "reels": "Reels 影片 ≈ 50–150 點",
+        "social": "社群貼文 ≈ 5–10 點 / 則",
+        "kol": "KOL 分析 ≈ 20–50 點 / 人",
+        "research": "深度研究 ≈ 30–100 點 / 次"
+      },
+      "ctaLoggedIn": "前往儲值",
+      "cta": "註冊並儲值",
+      "freeCredits": "註冊即送 50 點"
+    },
+    "finalCta": {
+      "title1": "準備好讓 AI",
+      "title2": "接管你的行銷了嗎？",
+      "subtitle": "今天就開始 — 一句話完成過去整個行銷團隊的工作。",
+      "ctaLoggedIn": "前往控制台",
+      "cta": "免費開始使用"
+    },
+    "footer": {
+      "brand": "MarketingX by Landing AI",
+      "terms": "服務條款",
+      "privacy": "隱私權政策",
+      "contact": "聯絡我們"
+    },
+    "copy": "複製",
+    "copied": "已複製"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "帳號已建立",
+      "title1": "歡迎來到 ",
+      "title2": "MarketingX",
+      "subtitle": "完成以下 4 個步驟，解鎖所有 AI 行銷能力"
+    },
+    "step1": {
+      "title": "啟用 MarketingX 外掛",
+      "desc": "在 Claude Code 輸入以下指令，安裝外掛並存取 200+ MCP 行銷工具。",
+      "copyBtn": "複製指令到 Claude",
+      "copiedBtn": "已複製到剪貼簿！"
+    },
+    "step2": {
+      "title": "連結 Meta 帳號",
+      "desc": "連結你的 Facebook / Instagram 帳號，讓 AI 自動發佈貼文、限時動態和 Reels。支援個人與專業帳號。",
+      "btn": "連結 Facebook / Instagram",
+      "connected": "Meta 帳號已連結"
+    },
+    "step3": {
+      "title": "連結 Google 帳號",
+      "desc": "連結你的 Google 帳號以存取 Google 雲端硬碟內容。AI 可以直接讀取你的品牌素材和文件。如果你用 Google 註冊，此步驟已自動完成。",
+      "btn": "連結 Google 帳號",
+      "connected": "Google 帳號已連結"
+    },
+    "step4": {
+      "title": "儲值點數",
+      "desc": "$1 美元 = 30 點。儲值後即可使用 Landing Page 生成、Reels、社群發佈等所有功能。",
+      "balance": "目前餘額",
+      "usd": "美元",
+      "pts": "點",
+      "costRef": "Landing Page ≈ 75–250 點 · Reels ≈ 50–150 點 · 社群 ≈ 5–10 點",
+      "btn": "前往儲值"
+    },
+    "status": {
+      "ready": "待完成",
+      "connected": "已完成",
+      "pending": "選填"
+    },
+    "bottom": {
+      "note": "設定完成後，回到 Claude Code 開始你的第一個行銷專案",
+      "dashboard": "前往儀表板",
+      "home": "回首頁"
+    }
+  }
+}

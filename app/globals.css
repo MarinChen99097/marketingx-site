@@ -1,0 +1,296 @@
+/* Import Font Library */
+@import '../styles/fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Claude Light Theme - Warm Cream & Coral */
+    --background: 40 30% 97%;
+    --foreground: 30 20% 15%;
+
+    --card: 40 25% 99%;
+    --card-foreground: 30 20% 15%;
+
+    --popover: 40 25% 99%;
+    --popover-foreground: 30 20% 15%;
+
+    --primary: 16 70% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 25% 95%;
+    --secondary-foreground: 30 15% 30%;
+
+    --muted: 35 20% 94%;
+    --muted-foreground: 25 10% 50%;
+
+    --accent: 16 50% 90%;
+    --accent-foreground: 16 50% 30%;
+
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 15% 90%;
+    --input: 30 15% 88%;
+    --ring: 16 70% 56%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Enhanced Dark Theme - Deeper contrast with warm accents */
+    --background: 25 18% 8%;
+    --foreground: 35 12% 95%;
+
+    --card: 28 14% 13%;
+    --card-foreground: 35 12% 95%;
+
+    --popover: 28 14% 12%;
+    --popover-foreground: 35 12% 95%;
+
+    --primary: 16 72% 62%;
+    --primary-foreground: 25 18% 6%;
+
+    --secondary: 28 12% 16%;
+    --secondary-foreground: 35 12% 90%;
+
+    --muted: 28 10% 14%;
+    --muted-foreground: 25 8% 64%;
+
+    --accent: 16 45% 22%;
+    --accent-foreground: 16 45% 88%;
+
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 28 12% 20%;
+    --input: 28 12% 18%;
+    --ring: 16 72% 62%;
+
+    --success: 142 50% 45%;
+    --success-foreground: 142 50% 92%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 92% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.65;
+    letter-spacing: -0.011em;
+  }
+}
+
+@layer utilities {
+
+  /* Claude-style card */
+  .claude-card {
+    @apply bg-card border border-border/40 shadow-sm rounded-2xl transition-all duration-200;
+  }
+
+  .claude-card:hover {
+    @apply border-border/70 shadow-md;
+  }
+
+  /* Hero gradient text */
+  .text-gradient-hero {
+    @apply text-primary;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(16 80% 65%) 50%, hsl(35 90% 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth hover — subtle lift */
+  .hover-lift {
+    @apply transition-transform duration-200 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-px;
+  }
+
+  /* 3D tilt card on hover */
+  .card-tilt {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-tilt:hover {
+    transform: rotateX(-2deg) rotateY(3deg) translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15),
+                0 0 0 1px hsl(var(--border) / 0.4);
+  }
+
+  .dark .card-tilt:hover {
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4),
+                0 0 0 1px hsl(var(--primary) / 0.1);
+  }
+
+  /* CTA shimmer sweep */
+  .cta-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    animation: shimmer-sweep 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes shimmer-sweep {
+    0% { left: -100%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
+  }
+
+  /* Pulse CTA idle animation */
+  .cta-pulse {
+    animation: cta-breathe 3s ease-in-out infinite;
+  }
+
+  @keyframes cta-breathe {
+    0%, 100% { box-shadow: 0 4px 14px -3px hsl(var(--primary) / 0.35); }
+    50% { box-shadow: 0 4px 20px -2px hsl(var(--primary) / 0.5); }
+  }
+
+  /* Hero animated gradient background */
+  .hero-gradient-animate {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.08) 0%,
+      hsl(35 90% 55% / 0.06) 25%,
+      hsl(160 80% 45% / 0.04) 50%,
+      hsl(var(--primary) / 0.08) 75%,
+      hsl(35 90% 55% / 0.06) 100%
+    );
+    background-size: 400% 400%;
+    animation: hero-flow 12s ease-in-out infinite;
+  }
+
+  @keyframes hero-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Typewriter cursor blink */
+  .typewriter-cursor::after {
+    content: '|';
+    animation: cursor-blink 1s step-end infinite;
+    @apply text-primary ml-0.5;
+  }
+
+  @keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* Trust zone background */
+  .zone-trust {
+    background: linear-gradient(180deg,
+      transparent 0%,
+      hsl(200 60% 97%) 50%,
+      transparent 100%
+    );
+  }
+
+  .dark .zone-trust {
+    background: linear-gradient(180deg,
+      transparent 0%,
+      hsl(200 30% 10%) 50%,
+      transparent 100%
+    );
+  }
+
+  /* Section fade transition — soft gradient top edge */
+  .section-fade-top {
+    position: relative;
+  }
+
+  .section-fade-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--border) / 0.5), transparent);
+  }
+
+  /* Elevated card variant */
+  .card-elevated {
+    @apply bg-card border border-border/40 shadow-md rounded-2xl;
+    background-image: linear-gradient(to bottom, hsl(var(--card)), hsl(var(--card) / 0.95));
+  }
+
+  .dark .card-elevated {
+    @apply border-border/40;
+    background-image: linear-gradient(
+      180deg,
+      hsl(var(--card)) 0%,
+      hsl(28 14% 11%) 100%
+    );
+    box-shadow: 0 4px 12px -2px rgba(0,0,0,0.4),
+                0 0 0 1px hsl(var(--primary) / 0.06),
+                inset 0 1px 0 0 hsl(var(--foreground) / 0.04);
+  }
+
+  /* Claude card dark mode enhancement */
+  .dark .claude-card {
+    @apply border-border/50 shadow-lg;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.35), 0 1px 3px -1px rgba(0,0,0,0.3),
+                0 0 0 1px hsl(var(--primary) / 0.08),
+                inset 0 1px 0 0 hsl(var(--foreground) / 0.03);
+  }
+
+  .dark .claude-card:hover {
+    @apply border-border/70;
+    box-shadow: 0 8px 20px -4px rgba(0,0,0,0.5), 0 4px 8px -2px rgba(0,0,0,0.35),
+                0 0 0 1px hsl(var(--primary) / 0.12);
+  }
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(28 12% 22%);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(28 12% 30%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient-animate,
+  .cta-shimmer::after,
+  .cta-pulse {
+    animation: none !important;
+  }
+}

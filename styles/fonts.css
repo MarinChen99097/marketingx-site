@@ -1,0 +1,15 @@
+/**
+ * Font Library for MarketingX Site
+ *
+ * Only the two default fonts (Noto Sans TC + Inter) are loaded statically.
+ */
+
+/* =============================================================================
+ * Default Fonts (static imports — always available)
+ * ============================================================================= */
+
+/* 思源黑體 - Noto Sans TC (Default Chinese) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+
+/* Inter - Modern UI font (Default English) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');

@@ -1,0 +1,272 @@
+{
+  "MarketingX": {
+    "nav": {
+      "features": "Fonctionnalités",
+      "industries": "Industries",
+      "capabilities": "Capacités",
+      "pricing": "Tarifs",
+      "login": "Connexion",
+      "getStarted": "Commencer",
+      "console": "Console"
+    },
+    "badge": "Plugin Claude Code — 200+ outils MCP",
+    "badgeNew": "NOUVEAU",
+    "hero": {
+      "title1": "Votre marketeur IA ",
+      "title2": "gère tout pour vous ",
+      "subtitle": "Déployez automatiquement les ressources marketing de n'importe quelle marque en 30 minutes via une conversation IA",
+      "ctaPrimary": "Commencer gratuitement",
+      "ctaPrimaryLoggedIn": "Aller à la console",
+      "ctaSecondary": "Voir comment ça marche"
+    },
+    "typewriter": {
+      "landingPage": "Pages d'atterrissage",
+      "reels": "Vidéos Reels",
+      "social": "Publications sociales",
+      "kol": "Campagnes KOL",
+      "brand": "Analyse de marque",
+      "research": "Étude de marché"
+    },
+    "pluginInstall": {
+      "title1": "Une commande, ",
+      "title2": "instantanément en ligne",
+      "subtitle": "Collez cette commande dans Claude Code pour commencer"
+    },
+    "stats": {
+      "tools": "Outils MCP",
+      "industries": "Apps sectorielles",
+      "speed": "Générer une page d'atterrissage",
+      "skills": "Compétences clés"
+    },
+    "features": {
+      "ai": {
+        "title": "Tapez simplement une phrase",
+        "desc": "Importez vos ressources de marque, l'IA analyse les supports marketing nécessaires et les génère automatiquement.",
+        "pipelineSteps": {
+          "brandAnalysis": "Analyse de marque",
+          "strategist": "Stratège",
+          "architect": "Architecte",
+          "factory": "Usine",
+          "supervisor": "Superviseur",
+          "goLive": "Mise en ligne"
+        }
+      },
+      "allInOne": {
+        "title": "Tout le marketing en un seul endroit",
+        "desc": "Pages d'atterrissage, Reels, publications sociales, correspondance KOL, analytics — gérez tous vos besoins marketing sur une seule plateforme."
+      },
+      "payg": {
+        "title": "Payez à l'utilisation",
+        "desc": "1 $ USD = 30 pts, sans abonnement mensuel. Pages d'atterrissage ~75-250 pts, Reels ~50-150 pts, publications sociales 5-10 pts."
+      }
+    },
+    "industries": {
+      "sectionTitle1": "Déployez votre ",
+      "sectionTitle2": "puissance marketing",
+      "sectionTitle3": " dans n'importe quelle industrie",
+      "sectionSubtitle": "8 industries, 40+ scénarios éprouvés, chaque point de douleur a une solution",
+      "ecommerce": {
+        "title": "E-Commerce",
+        "pain": "Le lancement produit prend 3 semaines, les supports promo ne suivent pas",
+        "solution": "L'IA génère page d'atterrissage + Reels en 30 min",
+        "benefit": "Lancement : 3 semaines → 72 heures, coût réduit de 70%"
+      },
+      "medical": {
+        "title": "Médical & Beauté",
+        "pain": "Risque élevé de non-conformité publicitaire",
+        "solution": "Moteur de conformité vérifie automatiquement les réglementations",
+        "benefit": "Taux de retrait 30% → 5%, conformité 95%"
+      },
+      "food": {
+        "title": "Chaînes de restauration",
+        "pain": "Image de marque multi-sites incohérente, promotions lentes",
+        "solution": "Modèles de marque + génération en masse + suivi QR",
+        "benefit": "30 points de vente en 1 heure, cohérence de marque 100%"
+      },
+      "saas": {
+        "title": "B2B SaaS",
+        "pain": "Pénurie de contenu, faible conversion des pages d'atterrissage",
+        "solution": "Recherche approfondie + tests de variantes A/B",
+        "benefit": "3 articles/semaine, conversion +35% en 3 mois"
+      },
+      "education": {
+        "title": "Éducation",
+        "pain": "Afflux d'inscriptions, entonnoir difficile à suivre",
+        "solution": "Segmentation TA + Analytics + marque personnelle",
+        "benefit": "Production de supports x10, conversion +25%"
+      },
+      "finance": {
+        "title": "Finance & Assurance",
+        "pain": "Réglementations strictes, forte barrière de confiance",
+        "solution": "Trust Readiness + Vérificateur de faits",
+        "benefit": "Conformité 98%, précision +50%"
+      },
+      "travel": {
+        "title": "Voyage & Tourisme",
+        "pain": "Pics saisonniers, besoins multilingues",
+        "solution": "i18n + Pipeline Reels + Gestion des tâches KOL",
+        "benefit": "Couverture internationale x4, 50 vidéos/mois"
+      },
+      "manufacturing": {
+        "title": "Industrie manufacturière",
+        "pain": "Veut sa propre marque mais manque de savoir-faire marketing",
+        "solution": "Brand Analyzer + Stratégie IA à 3 plans",
+        "benefit": "Coût de lancement de marque -90%, préparation salon 1 mois → 3 jours"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "Expérience marketing premium, ",
+      "sectionTitle2": "prête à l'emploi",
+      "items": {
+        "pipeline": {
+          "title": "Pipeline IA en 4 étapes",
+          "desc": "Stratège → Architecte → Usine → Superviseur, entièrement automatisé"
+        },
+        "reels": {
+          "title": "Automatisation Reels",
+          "desc": "Pipeline en 6 étapes : scènes, sous-titres, voix off"
+        },
+        "publish": {
+          "title": "Publication multi-plateforme",
+          "desc": "IG/FB/TikTok, une commande pour tous les canaux"
+        },
+        "kol": {
+          "title": "Matching KOL intelligent",
+          "desc": "Analyse IA double couche quantitative + qualitative"
+        },
+        "monitor": {
+          "title": "Moniteur Effet papillon",
+          "desc": "Détection en temps réel des concurrents, réglementations, tendances"
+        },
+        "i18n": {
+          "title": "Support 10 langues",
+          "desc": "Y compris l'arabe RTL, adaptation culturelle à 4 niveaux"
+        },
+        "compliance": {
+          "title": "Moteur de conformité",
+          "desc": "Vérification automatique médical/santé/finance"
+        },
+        "research": {
+          "title": "Recherche approfondie + Contenu",
+          "desc": "Scan sectoriel multi-sources, éditorial en 4 étapes"
+        },
+        "brand": {
+          "title": "Intelligence de marque",
+          "desc": "Extraction auto des infos de marque, suggestions stratégiques IA"
+        },
+        "analytics": {
+          "title": "Analytics en temps réel",
+          "desc": "Suivi visiteurs, comportement de défilement, score d'engagement"
+        },
+        "docs": {
+          "title": "Documents d'entreprise",
+          "desc": "Présentations, contrats, manuels de formation, en un clic"
+        },
+        "stripe": {
+          "title": "Paiement Stripe",
+          "desc": "Recharge de points, carte bancaire / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Quatre étapes pour commencer",
+      "subtitle": "De l'inscription à la publication, en moins d'une heure",
+      "steps": {
+        "s1": {
+          "title": "Créer un compte",
+          "desc": "Inscription en 30 secondes, connexion rapide Google supportée"
+        },
+        "s2": {
+          "title": "Installer le plugin",
+          "desc": "Collez une commande dans Claude Code, connexion auto à 200+ outils"
+        },
+        "s3": {
+          "title": "L'IA génère les ressources",
+          "desc": "Décrivez vos besoins en une phrase, 30 min pour des ressources marketing complètes"
+        },
+        "s4": {
+          "title": "Publier & Suivre",
+          "desc": "Publication multi-plateforme, analytics en temps réel, optimisation continue par l'IA"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "Payez pour ce que ",
+      "title2": "vous utilisez",
+      "subtitle": "Pas de frais mensuels, pas de coûts cachés. Rechargez selon vos besoins, payez ce que vous utilisez.",
+      "badge": "Paiement à l'utilisation",
+      "perUsd": "USD",
+      "pts": "pts",
+      "items": {
+        "lp": "Page d'atterrissage ≈ 75–250 pts",
+        "reels": "Vidéo Reels ≈ 50–150 pts",
+        "social": "Publication sociale ≈ 5–10 pts / publication",
+        "kol": "Analyse KOL ≈ 20–50 pts / personne",
+        "research": "Recherche approfondie ≈ 30–100 pts / session"
+      },
+      "ctaLoggedIn": "Aller à la recharge",
+      "cta": "S'inscrire & Recharger",
+      "freeCredits": "50 pts gratuits à l'inscription"
+    },
+    "finalCta": {
+      "title1": "Prêt à laisser l'IA",
+      "title2": "prendre en charge votre marketing ?",
+      "subtitle": "Commencez aujourd'hui — faites en une phrase ce qui nécessitait une équipe marketing entière.",
+      "ctaLoggedIn": "Aller à la console",
+      "cta": "Commencer gratuitement"
+    },
+    "footer": {
+      "brand": "MarketingX by Landing AI",
+      "terms": "Conditions d'utilisation",
+      "privacy": "Politique de confidentialité",
+      "contact": "Nous contacter"
+    },
+    "copy": "Copier",
+    "copied": "Copié"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "Compte créé",
+      "title1": "Bienvenue sur ",
+      "title2": "MarketingX",
+      "subtitle": "Complétez ces 4 étapes pour débloquer toutes les capacités marketing IA"
+    },
+    "step1": {
+      "title": "Activer le plugin MarketingX",
+      "desc": "Entrez la commande suivante dans Claude Code pour installer le plugin et accéder à 200+ outils marketing MCP.",
+      "copyBtn": "Copier la commande vers Claude",
+      "copiedBtn": "Copié dans le presse-papiers !"
+    },
+    "step2": {
+      "title": "Connecter le compte Meta",
+      "desc": "Liez votre compte Facebook / Instagram pour permettre à l'IA de publier automatiquement des posts, stories et Reels. Les comptes personnels et professionnels sont pris en charge.",
+      "btn": "Connecter Facebook / Instagram",
+      "connected": "Compte Meta connecté"
+    },
+    "step3": {
+      "title": "Connecter le compte Google",
+      "desc": "Liez votre compte Google pour accéder au contenu Google Drive. L'IA peut lire directement vos supports de marque et documents. Si vous vous êtes inscrit avec Google, cette étape est déjà faite.",
+      "btn": "Connecter le compte Google",
+      "connected": "Compte Google connecté"
+    },
+    "step4": {
+      "title": "Recharger des points",
+      "desc": "1 $ USD = 30 pts. Après la recharge, vous pouvez utiliser la génération de pages d'atterrissage, Reels, publication sociale et toutes les autres fonctionnalités.",
+      "balance": "Solde actuel",
+      "usd": "USD",
+      "pts": "pts",
+      "costRef": "Page d'atterrissage ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",
+      "btn": "Aller à la recharge"
+    },
+    "status": {
+      "ready": "À faire",
+      "connected": "Fait",
+      "pending": "Optionnel"
+    },
+    "bottom": {
+      "note": "Après la configuration, retournez dans Claude Code pour démarrer votre premier projet marketing",
+      "dashboard": "Aller au tableau de bord",
+      "home": "Retour à l'accueil"
+    }
+  }
+}

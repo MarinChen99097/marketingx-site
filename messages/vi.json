@@ -1,0 +1,272 @@
+{
+  "MarketingX": {
+    "nav": {
+      "features": "Tính năng",
+      "industries": "Ngành nghề",
+      "capabilities": "Năng lực",
+      "pricing": "Bảng giá",
+      "login": "Đăng nhập",
+      "getStarted": "Bắt đầu ngay",
+      "console": "Bảng điều khiển"
+    },
+    "badge": "Plugin Claude Code — 200+ Công cụ MCP",
+    "badgeNew": "MỚI",
+    "hero": {
+      "title1": "AI Marketer của bạn ",
+      "title2": "lo liệu tất cả ",
+      "subtitle": "Triển khai tự động tài sản marketing cho bất kỳ thương hiệu nào trong 30 phút qua hội thoại AI",
+      "ctaPrimary": "Bắt đầu miễn phí",
+      "ctaPrimaryLoggedIn": "Đến Bảng điều khiển",
+      "ctaSecondary": "Xem cách hoạt động"
+    },
+    "typewriter": {
+      "landingPage": "Trang đích",
+      "reels": "Video Reels",
+      "social": "Bài đăng MXH",
+      "kol": "Chiến dịch KOL",
+      "brand": "Phân tích thương hiệu",
+      "research": "Nghiên cứu thị trường"
+    },
+    "pluginInstall": {
+      "title1": "Một lệnh duy nhất, ",
+      "title2": "chạy ngay lập tức",
+      "subtitle": "Dán lệnh này vào Claude Code để bắt đầu"
+    },
+    "stats": {
+      "tools": "Công cụ MCP",
+      "industries": "Ứng dụng ngành",
+      "speed": "Tạo trang đích",
+      "skills": "Kỹ năng cốt lõi"
+    },
+    "features": {
+      "ai": {
+        "title": "Chỉ cần gõ một câu",
+        "desc": "Tải lên tài sản thương hiệu, AI phân tích bạn cần tài liệu marketing gì và tự động tạo ra.",
+        "pipelineSteps": {
+          "brandAnalysis": "Phân tích thương hiệu",
+          "strategist": "Chiến lược gia",
+          "architect": "Kiến trúc sư",
+          "factory": "Nhà máy",
+          "supervisor": "Giám sát",
+          "goLive": "Ra mắt"
+        }
+      },
+      "allInOne": {
+        "title": "Tất cả marketing một nơi",
+        "desc": "Trang đích, Reels, đăng bài MXH, kết nối KOL, phân tích — quản lý mọi nhu cầu marketing trên một nền tảng."
+      },
+      "payg": {
+        "title": "Trả theo lượng dùng",
+        "desc": "$1 USD = 30 điểm, không phí hàng tháng. Trang đích khoảng 75-250 điểm, Reels khoảng 50-150 điểm, bài MXH 5-10 điểm."
+      }
+    },
+    "industries": {
+      "sectionTitle1": "Triển khai ",
+      "sectionTitle2": "sức mạnh marketing",
+      "sectionTitle3": " ở mọi ngành nghề",
+      "sectionSubtitle": "8 ngành, 40+ kịch bản đã được chứng minh, mọi điểm đau đều có giải pháp",
+      "ecommerce": {
+        "title": "Thương mại điện tử",
+        "pain": "Ra mắt sản phẩm mất 3 tuần, tài liệu khuyến mãi không kịp",
+        "solution": "AI tạo trang đích + Reels trong 30 phút",
+        "benefit": "Ra mắt: 3 tuần → 72 giờ, chi phí giảm 70%"
+      },
+      "medical": {
+        "title": "Y tế & Làm đẹp",
+        "pain": "Rủi ro tuân thủ quảng cáo cao, vi phạm cam kết",
+        "solution": "Công cụ tuân thủ tự động kiểm tra quy định",
+        "benefit": "Tỉ lệ gỡ bài 30% → 5%, tuân thủ 95%"
+      },
+      "food": {
+        "title": "Chuỗi F&B",
+        "pain": "Thương hiệu đa cửa hàng không nhất quán, khuyến mãi chậm",
+        "solution": "Mẫu thương hiệu + tạo hàng loạt + theo dõi QR",
+        "benefit": "30 cửa hàng trong 1 giờ, nhất quán thương hiệu 100%"
+      },
+      "saas": {
+        "title": "B2B SaaS",
+        "pain": "Thiếu nội dung, tỉ lệ chuyển đổi trang đích thấp",
+        "solution": "Nghiên cứu sâu + kiểm thử biến thể A/B",
+        "benefit": "3 bài/tuần, chuyển đổi tăng 35% trong 3 tháng"
+      },
+      "education": {
+        "title": "Giáo dục",
+        "pain": "Mùa tuyển sinh cao điểm, phễu khó theo dõi",
+        "solution": "Phân khúc TA + Phân tích + thương hiệu cá nhân",
+        "benefit": "Sản lượng tài liệu gấp 10 lần, chuyển đổi tăng 25%"
+      },
+      "finance": {
+        "title": "Tài chính & Bảo hiểm",
+        "pain": "Quy định nghiêm ngặt, rào cản tin tưởng cao",
+        "solution": "Trust Readiness + Kiểm tra sự thật",
+        "benefit": "Tuân thủ 98%, độ chính xác tăng 50%"
+      },
+      "travel": {
+        "title": "Du lịch & Lữ hành",
+        "pain": "Cao điểm theo mùa, nhu cầu đa ngôn ngữ",
+        "solution": "i18n + Pipeline Reels + Quản lý tác vụ KOL",
+        "benefit": "Phủ sóng quốc tế gấp 4 lần, 50 video/tháng"
+      },
+      "manufacturing": {
+        "title": "Sản xuất",
+        "pain": "Muốn có thương hiệu riêng nhưng không biết marketing",
+        "solution": "Brand Analyzer + Chiến lược AI 3 phương án",
+        "benefit": "Chi phí xây dựng thương hiệu giảm 90%, chuẩn bị triển lãm 1 tháng → 3 ngày"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "Trải nghiệm marketing cao cấp, ",
+      "sectionTitle2": "sẵn sàng sử dụng ngay",
+      "items": {
+        "pipeline": {
+          "title": "Pipeline AI 4 giai đoạn",
+          "desc": "Chiến lược gia → Kiến trúc sư → Nhà máy → Giám sát viên, hoàn toàn tự động"
+        },
+        "reels": {
+          "title": "Tự động hóa Reels",
+          "desc": "Pipeline 6 giai đoạn: cảnh, phụ đề, lồng tiếng"
+        },
+        "publish": {
+          "title": "Đăng đa nền tảng",
+          "desc": "IG/FB/TikTok, một lệnh đến tất cả kênh"
+        },
+        "kol": {
+          "title": "Kết nối KOL thông minh",
+          "desc": "AI phân tích hai lớp định lượng + định tính"
+        },
+        "monitor": {
+          "title": "Giám sát Hiệu ứng bướm",
+          "desc": "Phát hiện đối thủ, quy định, xu hướng theo thời gian thực"
+        },
+        "i18n": {
+          "title": "Hỗ trợ 10 ngôn ngữ",
+          "desc": "Bao gồm tiếng Ả Rập RTL, thích ứng văn hóa 4 lớp"
+        },
+        "compliance": {
+          "title": "Công cụ tuân thủ",
+          "desc": "Y tế/sức khỏe/tài chính tự động kiểm tra quy định"
+        },
+        "research": {
+          "title": "Nghiên cứu sâu + Nội dung",
+          "desc": "Quét ngành đa nguồn, biên tập 4 giai đoạn"
+        },
+        "brand": {
+          "title": "Trí tuệ thương hiệu",
+          "desc": "Tự động trích xuất thông tin thương hiệu, đề xuất chiến lược AI"
+        },
+        "analytics": {
+          "title": "Phân tích thời gian thực",
+          "desc": "Theo dõi khách truy cập, hành vi cuộn, điểm tương tác"
+        },
+        "docs": {
+          "title": "Tài liệu doanh nghiệp",
+          "desc": "Bài thuyết trình, hợp đồng, sổ tay đào tạo, một cú nhấp"
+        },
+        "stripe": {
+          "title": "Thanh toán Stripe",
+          "desc": "Nạp điểm, thẻ tín dụng / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Bốn bước để bắt đầu",
+      "subtitle": "Từ đăng ký đến xuất bản, dưới một giờ",
+      "steps": {
+        "s1": {
+          "title": "Tạo tài khoản",
+          "desc": "Đăng ký 30 giây, hỗ trợ đăng nhập nhanh bằng Google"
+        },
+        "s2": {
+          "title": "Cài đặt Plugin",
+          "desc": "Dán một lệnh vào Claude Code, tự động kết nối 200+ công cụ"
+        },
+        "s3": {
+          "title": "AI tạo tài sản",
+          "desc": "Mô tả nhu cầu bằng một câu, 30 phút có đầy đủ tài sản marketing"
+        },
+        "s4": {
+          "title": "Xuất bản & Theo dõi",
+          "desc": "Đăng đa nền tảng, phân tích thời gian thực, AI tối ưu liên tục"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "Trả cho những gì ",
+      "title2": "bạn sử dụng",
+      "subtitle": "Không phí hàng tháng, không chi phí ẩn. Nạp khi cần, trả cho những gì bạn dùng.",
+      "badge": "Trả theo lượng dùng",
+      "perUsd": "USD",
+      "pts": "điểm",
+      "items": {
+        "lp": "Trang đích ≈ 75–250 điểm",
+        "reels": "Video Reels ≈ 50–150 điểm",
+        "social": "Bài đăng MXH ≈ 5–10 điểm / bài",
+        "kol": "Phân tích KOL ≈ 20–50 điểm / người",
+        "research": "Nghiên cứu sâu ≈ 30–100 điểm / lần"
+      },
+      "ctaLoggedIn": "Đến trang nạp điểm",
+      "cta": "Đăng ký & Nạp điểm",
+      "freeCredits": "Tặng 50 điểm khi đăng ký"
+    },
+    "finalCta": {
+      "title1": "Sẵn sàng để AI",
+      "title2": "tiếp quản marketing của bạn?",
+      "subtitle": "Bắt đầu ngay hôm nay — làm bằng một câu những gì từng cần cả đội marketing.",
+      "ctaLoggedIn": "Đến Bảng điều khiển",
+      "cta": "Bắt đầu miễn phí"
+    },
+    "footer": {
+      "brand": "MarketingX by Landing AI",
+      "terms": "Điều khoản dịch vụ",
+      "privacy": "Chính sách bảo mật",
+      "contact": "Liên hệ"
+    },
+    "copy": "Sao chép",
+    "copied": "Đã sao chép"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "Tài khoản đã tạo",
+      "title1": "Chào mừng đến ",
+      "title2": "MarketingX",
+      "subtitle": "Hoàn thành 4 bước này để mở khóa tất cả khả năng AI marketing"
+    },
+    "step1": {
+      "title": "Kích hoạt Plugin MarketingX",
+      "desc": "Nhập lệnh sau vào Claude Code để cài đặt Plugin và truy cập 200+ công cụ marketing MCP.",
+      "copyBtn": "Sao chép lệnh đến Claude",
+      "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"
+    },
+    "step2": {
+      "title": "Kết nối tài khoản Meta",
+      "desc": "Liên kết tài khoản Facebook / Instagram của bạn để AI tự động đăng bài, story và Reels. Hỗ trợ cả tài khoản cá nhân và chuyên nghiệp.",
+      "btn": "Kết nối Facebook / Instagram",
+      "connected": "Tài khoản Meta đã kết nối"
+    },
+    "step3": {
+      "title": "Kết nối tài khoản Google",
+      "desc": "Liên kết tài khoản Google để truy cập nội dung Google Drive. AI có thể đọc trực tiếp tài liệu và tài sản thương hiệu của bạn. Nếu bạn đăng ký bằng Google, bước này đã hoàn thành.",
+      "btn": "Kết nối tài khoản Google",
+      "connected": "Tài khoản Google đã kết nối"
+    },
+    "step4": {
+      "title": "Nạp điểm",
+      "desc": "$1 USD = 30 điểm. Sau khi nạp, bạn có thể sử dụng tạo trang đích, Reels, đăng bài MXH và tất cả tính năng khác.",
+      "balance": "Số dư hiện tại",
+      "usd": "USD",
+      "pts": "điểm",
+      "costRef": "Trang đích ≈ 75–250 điểm · Reels ≈ 50–150 điểm · MXH ≈ 5–10 điểm",
+      "btn": "Đến trang nạp điểm"
+    },
+    "status": {
+      "ready": "Cần làm",
+      "connected": "Hoàn thành",
+      "pending": "Tùy chọn"
+    },
+    "bottom": {
+      "note": "Sau khi thiết lập, quay lại Claude Code để bắt đầu dự án marketing đầu tiên",
+      "dashboard": "Đến Bảng điều khiển",
+      "home": "Về trang chủ"
+    }
+  }
+}
