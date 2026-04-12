@@ -234,26 +234,20 @@ export default function GetStartedPage() {
           step={1} icon={Bot}
           title={t("step1.title")}
           description={t("step1.desc")}
-          status="ready" delay={0.1}
+          status={copied ? "connected" : "ready"} delay={0.1}
         >
           <div className="space-y-3">
-            <div className="relative rounded-xl border border-white/[0.08] bg-[#111113] p-4 overflow-hidden">
+            <div className="rounded-xl border border-white/[0.08] bg-[#111113] p-4 overflow-hidden">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
                 <span className="text-[10px] text-white/20 ml-2 font-mono">Claude Code</span>
               </div>
-              <div className="font-mono text-xs sm:text-sm leading-relaxed text-white/80 pr-12 whitespace-pre-wrap break-all">
+              <div className="font-mono text-xs sm:text-sm leading-relaxed text-white/80 whitespace-pre-wrap break-all">
                 <span className="text-[hsl(16,70%,60%)]">&#10095;</span> Generate a landing page for me with this plugin{"\n"}
                 <span className="text-blue-400">https://github.com/MarinChen99097/marketingx.plugin</span>
               </div>
-              <button
-                onClick={handleCopy}
-                className="absolute top-4 right-4 flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/40 hover:text-white text-xs transition-all"
-              >
-                {copied ? <><Check className="w-3 h-3 text-green-400" /> {t("step1.copiedBtn")}</> : <><Copy className="w-3 h-3" /> {t("step1.copyBtn")}</>}
-              </button>
             </div>
             <Button
               onClick={handleCopy}
