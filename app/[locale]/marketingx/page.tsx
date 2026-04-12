@@ -365,26 +365,6 @@ export default function MarketingXPage() {
           {t("hero.subtitle")}
         </motion.p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="relative z-10 flex flex-col sm:flex-row gap-4 mt-10 px-4"
-        >
-          <button
-            onClick={handleCopy}
-            className="h-12 px-8 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold text-base rounded-xl shadow-xl shadow-[hsl(16,70%,56%)]/30 transition-all hover:shadow-[hsl(16,70%,56%)]/40 hover:scale-[1.02] inline-flex items-center"
-          >
-            {copied ? <><Check className="mr-2 w-5 h-5" /> {t("copied")}</> : <><Copy className="mr-2 w-5 h-5" /> {t("hero.ctaCopy")}</>}
-          </button>
-          <a href={ctaHref} target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" className="h-12 px-8 text-white/70 hover:text-white border border-white/10 hover:border-white/20 hover:bg-white/[0.04] rounded-xl text-base">
-              {t("hero.ctaPrimary")} <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </a>
-        </motion.div>
-
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -683,12 +663,7 @@ export default function MarketingXPage() {
                 ))}
               </div>
 
-              <a href={ctaHref} target="_blank" rel="noopener noreferrer" className="block pt-2">
-                <Button className="w-full h-12 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold rounded-xl text-base shadow-lg shadow-[hsl(16,70%,56%)]/25">
-                  {t("pricing.cta")} <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </a>
-              <p className="text-xs text-white/30">{t("pricing.freeCredits")}</p>
+              <p className="text-xs text-white/30 pt-2">{t("pricing.freeCredits")}</p>
             </div>
           </GlowCard>
         </div>
@@ -715,13 +690,6 @@ export default function MarketingXPage() {
           <p className="text-white/45 text-base md:text-lg max-w-lg mx-auto">
             {t("finalCta.subtitle")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={ctaHref} target="_blank" rel="noopener noreferrer">
-              <Button className="h-13 px-10 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold text-lg rounded-xl shadow-xl shadow-[hsl(16,70%,56%)]/30 transition-all hover:scale-[1.02]">
-                {t("finalCta.cta")} <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
-          </div>
         </motion.div>
       </section>
 
