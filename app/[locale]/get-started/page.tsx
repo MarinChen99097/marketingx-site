@@ -160,7 +160,7 @@ export default function GetStartedPage() {
 
     const checkMeta = async () => {
       try {
-        const res = await zereoApi.get("/social/accounts");
+        const res = await zereoApi.get("/social/accounts/");
         const accounts = res.data?.accounts || res.data || [];
         if (Array.isArray(accounts) && accounts.some((a: any) =>
           a.platform === "meta" || a.platform === "facebook" || a.platform === "instagram"
