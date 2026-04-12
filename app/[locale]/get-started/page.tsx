@@ -127,7 +127,10 @@ export default function GetStartedPage() {
         }
         window.history.replaceState(null, "", `/${locale}/get-started`);
       };
-      exchangeCode();
+      // Must await before fetchProfile runs
+      exchangeCode().then(() => {});
+      // Skip fetchProfile/checkMeta below — exchangeCode already sets state
+      return;
     }
 
     // ── 3. Handle Stripe success (?topup=success) ──
@@ -158,6 +161,16 @@ export default function GetStartedPage() {
       }
     };
 
+    // Check GDrive connection status
+    const checkGDrive = async () => {
+      try {
+        const res = await api.get("/ai-agent/gdrive/status");
+        if (res.data?.connections?.length > 0 || res.data?.google_email) {
+          setGoogleConnected(true);
+        }
+      } catch { /* endpoint may not exist */ }
+    };
+
     const checkMeta = async () => {
       try {
         const res = await zereoApi.get("/social/accounts/");
@@ -170,6 +183,7 @@ export default function GetStartedPage() {
 
     fetchProfile();
     checkMeta();
+    checkGDrive();
   }, [locale, router]);
 
   const handleCopy = async () => {
