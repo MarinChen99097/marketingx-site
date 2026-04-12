@@ -265,20 +265,17 @@ export default function MarketingXPage() {
     t("features.ai.pipelineSteps.goLive"),
   ];
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [copied, setCopied] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    setIsLoggedIn(!!localStorage.getItem("token"));
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const ctaHref = isLoggedIn
-    ? `/${locale}/get-started`
-    : `/${locale}/register?returnUrl=/${locale}/get-started`;
+  const LANDING_AI_URL = "https://landingai.info";
+  const ctaHref = `${LANDING_AI_URL}/${locale}/register`;
 
   const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/marketingx.plugin`;
 
@@ -311,24 +308,11 @@ export default function MarketingXPage() {
         </div>
 
         <div className="flex gap-3 items-center">
-          {isLoggedIn ? (
-            <Link href={`/${locale}/get-started`}>
-              <Button size="sm" className="bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-lg h-9 px-5 text-sm shadow-lg shadow-[hsl(16,70%,56%)]/25">
-                {t("nav.console")}
-              </Button>
-            </Link>
-          ) : (
-            <>
-              <Link href={`/${locale}/login?returnUrl=/${locale}/get-started`} className="hidden sm:block">
-                <Button variant="ghost" size="sm" className="text-white/60 hover:text-white hover:bg-white/[0.06] h-9 rounded-lg text-sm">{t("nav.login")}</Button>
-              </Link>
-              <Link href={ctaHref}>
-                <Button size="sm" className="bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-lg h-9 px-5 text-sm shadow-lg shadow-[hsl(16,70%,56%)]/25">
-                  {t("nav.getStarted")}
-                </Button>
-              </Link>
-            </>
-          )}
+          <a href={ctaHref} target="_blank" rel="noopener noreferrer">
+            <Button size="sm" className="bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-lg h-9 px-5 text-sm shadow-lg shadow-[hsl(16,70%,56%)]/25">
+              {t("nav.getStarted")}
+            </Button>
+          </a>
         </div>
       </nav>
 
@@ -388,14 +372,15 @@ export default function MarketingXPage() {
           transition={{ delay: 1, duration: 0.6 }}
           className="relative z-10 flex flex-col sm:flex-row gap-4 mt-10 px-4"
         >
-          <Link href={ctaHref}>
-            <Button className="h-12 px-8 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold text-base rounded-xl shadow-xl shadow-[hsl(16,70%,56%)]/30 transition-all hover:shadow-[hsl(16,70%,56%)]/40 hover:scale-[1.02]">
-              {isLoggedIn ? t("hero.ctaPrimaryLoggedIn") : t("hero.ctaPrimary")} <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
-          <a href="#plugin-install">
+          <button
+            onClick={handleCopy}
+            className="h-12 px-8 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold text-base rounded-xl shadow-xl shadow-[hsl(16,70%,56%)]/30 transition-all hover:shadow-[hsl(16,70%,56%)]/40 hover:scale-[1.02] inline-flex items-center"
+          >
+            {copied ? <><Check className="mr-2 w-5 h-5" /> {t("copied")}</> : <><Copy className="mr-2 w-5 h-5" /> {t("hero.ctaCopy")}</>}
+          </button>
+          <a href={ctaHref} target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" className="h-12 px-8 text-white/70 hover:text-white border border-white/10 hover:border-white/20 hover:bg-white/[0.04] rounded-xl text-base">
-              <Play className="mr-2 w-4 h-4" /> {t("hero.ctaSecondary")}
+              {t("hero.ctaPrimary")} <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </a>
         </motion.div>
@@ -698,11 +683,11 @@ export default function MarketingXPage() {
                 ))}
               </div>
 
-              <Link href={ctaHref} className="block pt-2">
+              <a href={ctaHref} target="_blank" rel="noopener noreferrer" className="block pt-2">
                 <Button className="w-full h-12 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold rounded-xl text-base shadow-lg shadow-[hsl(16,70%,56%)]/25">
-                  {isLoggedIn ? t("pricing.ctaLoggedIn") : t("pricing.cta")} <ArrowRight className="ml-2 w-5 h-5" />
+                  {t("pricing.cta")} <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-              </Link>
+              </a>
               <p className="text-xs text-white/30">{t("pricing.freeCredits")}</p>
             </div>
           </GlowCard>
@@ -731,11 +716,11 @@ export default function MarketingXPage() {
             {t("finalCta.subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={ctaHref}>
+            <a href={ctaHref} target="_blank" rel="noopener noreferrer">
               <Button className="h-13 px-10 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold text-lg rounded-xl shadow-xl shadow-[hsl(16,70%,56%)]/30 transition-all hover:scale-[1.02]">
-                {isLoggedIn ? t("finalCta.ctaLoggedIn") : t("finalCta.cta")} <ArrowRight className="ml-2 w-5 h-5" />
+                {t("finalCta.cta")} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-            </Link>
+            </a>
           </div>
         </motion.div>
       </section>

@@ -17,7 +17,8 @@
       "subtitle": "AI会話を通じて、あらゆるブランドのマーケティング素材を30分で自動デプロイ",
       "ctaPrimary": "無料で始める",
       "ctaPrimaryLoggedIn": "コンソールへ",
-      "ctaSecondary": "仕組みを見る"
+      "ctaSecondary": "仕組みを見る",
+      "ctaCopy": "プロンプトをコピー"
     },
     "typewriter": {
       "landingPage": "ランディングページ",

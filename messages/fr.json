@@ -17,7 +17,8 @@
       "subtitle": "Déployez automatiquement les ressources marketing de n'importe quelle marque en 30 minutes via une conversation IA",
       "ctaPrimary": "Commencer gratuitement",
       "ctaPrimaryLoggedIn": "Aller à la console",
-      "ctaSecondary": "Voir comment ça marche"
+      "ctaSecondary": "Voir comment ça marche",
+      "ctaCopy": "Copier la commande"
     },
     "typewriter": {
       "landingPage": "Pages d'atterrissage",

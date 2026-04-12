@@ -17,7 +17,8 @@
       "subtitle": "透過 AI 對話，30 分鐘自動部署任何品牌的行銷素材",
       "ctaPrimary": "免費開始使用",
       "ctaPrimaryLoggedIn": "前往控制台",
-      "ctaSecondary": "看看怎麼運作"
+      "ctaSecondary": "看看怎麼運作",
+      "ctaCopy": "複製指令"
     },
     "typewriter": {
       "landingPage": "Landing Page",

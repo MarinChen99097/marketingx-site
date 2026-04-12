@@ -17,7 +17,8 @@
       "subtitle": "Despliega automáticamente los activos de marketing de cualquier marca en 30 minutos mediante conversación con IA",
       "ctaPrimary": "Comenzar gratis",
       "ctaPrimaryLoggedIn": "Ir a la consola",
-      "ctaSecondary": "Ver cómo funciona"
+      "ctaSecondary": "Ver cómo funciona",
+      "ctaCopy": "Copiar comando"
     },
     "typewriter": {
       "landingPage": "Páginas de destino",

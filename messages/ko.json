@@ -17,7 +17,8 @@
       "subtitle": "AI 대화를 통해 30분 만에 모든 브랜드의 마케팅 자산을 자동 배포하세요",
       "ctaPrimary": "무료로 시작하기",
       "ctaPrimaryLoggedIn": "콘솔로 이동",
-      "ctaSecondary": "작동 방식 보기"
+      "ctaSecondary": "작동 방식 보기",
+      "ctaCopy": "프롬프트 복사"
     },
     "typewriter": {
       "landingPage": "랜딩 페이지",
