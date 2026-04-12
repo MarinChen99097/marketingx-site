@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { LandingAILogo } from "@/components/LandingAILogo";
 import { Button } from "@/components/ui/button";
-import api from "@/lib/api";
+import api, { zereoApi } from "@/lib/api";
 
 /* ═══════════════════════════════════════════════════════════════════
  * ACTION CARD
@@ -118,12 +118,13 @@ export default function GetStartedPage() {
 
     const checkMeta = async () => {
       try {
-        const res = await api.get("/social/accounts");
+        // Social accounts are on Zereo backend
+        const res = await zereoApi.get("/social/accounts");
         const accounts = res.data?.accounts || res.data || [];
         if (Array.isArray(accounts) && accounts.some((a: any) =>
           a.platform === "meta" || a.platform === "facebook" || a.platform === "instagram"
         )) setMetaConnected(true);
-      } catch { /* may not exist */ }
+      } catch { /* may not exist on this backend */ }
     };
 
     fetchProfile();
@@ -139,30 +140,53 @@ export default function GetStartedPage() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleMetaConnect = () => {
-    const zereoUrl = process.env.NEXT_PUBLIC_ZEREO_URL || "https://zereo-backend-876464738390.asia-east1.run.app";
-    const token = localStorage.getItem("token");
-    const cb = `${window.location.origin}/${locale}/get-started`;
-    window.location.href = `${zereoUrl}/social/accounts/meta/auth?token=${token}&callback_url=${encodeURIComponent(cb)}`;
+  const handleMetaConnect = async () => {
+    try {
+      const cb = `${window.location.origin}/${locale}/get-started`;
+      // Zereo backend returns { auth_url, state }
+      const res = await zereoApi.get("/social/accounts/meta/auth-url", {
+        params: { redirect_uri: cb },
+      });
+      if (res.data?.auth_url) {
+        // Store state for CSRF verification on callback
+        if (res.data.state) sessionStorage.setItem("meta_oauth_state", res.data.state);
+        window.location.href = res.data.auth_url;
+        return;
+      }
+    } catch (err) {
+      console.error("[GetStarted] Meta auth error:", err);
+    }
+    alert("Meta 連結暫時無法使用，請稍後再試");
   };
 
-  const handleGoogleConnect = () => {
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL || "https://marketing-backend-v2-876464738390.asia-east1.run.app";
-    const token = localStorage.getItem("token");
-    const cb = `${window.location.origin}/${locale}/get-started`;
-    window.location.href = `${backendUrl}/ai-agent/gdrive/connect?token=${token}&callback_url=${encodeURIComponent(cb)}`;
+  const handleGoogleConnect = async () => {
+    try {
+      const cb = `${window.location.origin}/${locale}/get-started`;
+      // marketing_backend Google Drive connect
+      const res = await api.post("/ai-agent/gdrive/connect", {
+        callback_url: cb,
+      });
+      if (res.data?.auth_url) {
+        window.location.href = res.data.auth_url;
+        return;
+      }
+    } catch (err) {
+      console.error("[GetStarted] Google connect error:", err);
+    }
+    alert("Google 連結暫時無法使用，請稍後再試");
   };
 
   const handleStripeTopup = async () => {
     try {
       const res = await api.post("/pricing/checkout", {
-        plan_id: "pts_topup",
         success_url: `${window.location.origin}/${locale}/get-started?topup=success`,
         cancel_url: `${window.location.origin}/${locale}/get-started`,
       });
       if (res.data?.checkout_url) { window.location.href = res.data.checkout_url; return; }
+      if (res.data?.url) { window.location.href = res.data.url; return; }
     } catch (err) { console.error("[GetStarted] Stripe error:", err); }
-    router.push(`/${locale}/account/billing`);
+    // Fallback: open Landing AI billing page
+    window.location.href = `https://landingai.info/${locale}/account/billing`;
   };
 
   const handleLogout = () => {
