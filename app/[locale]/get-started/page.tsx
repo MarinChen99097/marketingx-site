@@ -77,9 +77,28 @@ export default function GetStartedPage() {
   const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/marketingx.plugin`;
 
   useEffect(() => {
+    // Accept token from Landing AI SSO redirect (hash: #token=xxx or query: ?__rt=xxx)
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash.includes("token=")) {
+        const tokenMatch = hash.match(/token=([^&]+)/);
+        if (tokenMatch?.[1]) {
+          localStorage.setItem("token", tokenMatch[1]);
+          // Also grab refresh token from query params if present
+          const params = new URLSearchParams(window.location.search);
+          const rt = params.get("__rt");
+          if (rt) localStorage.setItem("refresh_token", rt);
+          // Clean URL
+          window.history.replaceState(null, "", `/${locale}/get-started`);
+        }
+      }
+    }
+
     const token = localStorage.getItem("token");
     if (!token) {
-      router.push(`/${locale}/login?returnUrl=/${locale}/get-started`);
+      // No token — redirect to Landing AI register with returnUrl
+      const siteUrl = window.location.origin;
+      window.location.href = `https://landingai.info/${locale}/register?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
       return;
     }
     setIsLoggedIn(true);
