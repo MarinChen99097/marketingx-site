@@ -465,21 +465,6 @@ export default function MarketingXPage() {
                 <p className="text-white/50 text-base md:text-lg leading-relaxed max-w-2xl">{f.desc}</p>
 
                 {/* Visual area — styled chart/graphic like Zeabur */}
-                {f.visual === "pricing" && (
-                  <div className="mt-8 flex items-end gap-3 h-32">
-                    {[40, 65, 30, 50, 25, 70, 55, 45, 60, 35].map((h, j) => (
-                      <motion.div
-                        key={j}
-                        initial={{ height: 0 }}
-                        whileInView={{ height: `${h}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.3 + j * 0.05 }}
-                        className="flex-1 rounded-t-sm bg-gradient-to-t from-white/10 to-white/5"
-                      />
-                    ))}
-                  </div>
-                )}
-
                 {f.visual === "all-in-one" && (
                   <div className="mt-8 flex gap-4 flex-wrap">
                     {["Landing Page", "Reels", "IG", "FB", "TikTok", "KOL", "Analytics", "Research"].map((tag, j) => (
