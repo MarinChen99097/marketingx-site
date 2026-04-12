@@ -178,12 +178,13 @@ export default function GetStartedPage() {
 
   const handleStripeTopup = async () => {
     try {
+      // POST /pricing/checkout — minimum $20 USD = 600 pts
       const res = await api.post("/pricing/checkout", {
+        amount_usd: 20,
         success_url: `${window.location.origin}/${locale}/get-started?topup=success`,
         cancel_url: `${window.location.origin}/${locale}/get-started`,
       });
       if (res.data?.checkout_url) { window.location.href = res.data.checkout_url; return; }
-      if (res.data?.url) { window.location.href = res.data.url; return; }
     } catch (err) { console.error("[GetStarted] Stripe error:", err); }
     // Fallback: open Landing AI billing page
     window.location.href = `https://landingai.info/${locale}/account/billing`;
