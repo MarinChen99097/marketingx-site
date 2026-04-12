@@ -275,7 +275,8 @@ export default function MarketingXPage() {
   }, []);
 
   const LANDING_AI_URL = "https://landingai.info";
-  const ctaHref = `${LANDING_AI_URL}/${locale}/register`;
+  const SITE_URL = typeof window !== "undefined" ? window.location.origin : "https://marketingx-site-876464738390.asia-east1.run.app";
+  const ctaHref = `${LANDING_AI_URL}/${locale}/register?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
 
   const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/marketingx.plugin`;
 
@@ -304,7 +305,6 @@ export default function MarketingXPage() {
           <a href="#features" className="hover:text-white transition-colors duration-200">{t("nav.features")}</a>
           <a href="#industries" className="hover:text-white transition-colors duration-200">{t("nav.industries")}</a>
           <a href="#capabilities" className="hover:text-white transition-colors duration-200">{t("nav.capabilities")}</a>
-          <a href="#pricing" className="hover:text-white transition-colors duration-200">{t("nav.pricing")}</a>
         </div>
 
         <div className="flex gap-3 items-center">
@@ -618,54 +618,6 @@ export default function MarketingXPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ════════════ PRICING ════════════ */}
-      <section id="pricing" className="py-20 md:py-28 px-4 sm:px-6">
-        <div className="max-w-lg mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-              {t("pricing.title1")}<span className="bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("pricing.title2")}</span>
-            </h2>
-            <p className="text-white/40 text-sm md:text-base">{t("pricing.subtitle")}</p>
-          </motion.div>
-
-          <GlowCard>
-            <div className="p-8 md:p-10 text-center space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[hsl(16,70%,56%)]/20 bg-[hsl(16,70%,56%)]/5 text-[hsl(16,70%,56%)] text-sm font-medium">
-                <Zap className="w-4 h-4" /> {t("pricing.badge")}
-              </div>
-              <div>
-                <span className="text-5xl md:text-6xl font-black bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">$1</span>
-                <span className="text-xl text-white/40 ml-2">{t("pricing.perUsd")}</span>
-                <div className="text-lg text-white/70 font-semibold mt-1">= 30 {t("pricing.pts")}</div>
-              </div>
-
-              <div className="text-left space-y-2.5 pt-2">
-                {[
-                  t("pricing.items.lp"),
-                  t("pricing.items.reels"),
-                  t("pricing.items.social"),
-                  t("pricing.items.kol"),
-                  t("pricing.items.research"),
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 text-sm">
-                    <Zap className="w-3.5 h-3.5 text-[hsl(16,70%,56%)]/60 shrink-0 mt-1" />
-                    <span className="text-white/50">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <p className="text-xs text-white/30 pt-2">{t("pricing.freeCredits")}</p>
-            </div>
-          </GlowCard>
         </div>
       </section>
 
