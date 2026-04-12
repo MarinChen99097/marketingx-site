@@ -335,10 +335,6 @@ export default function GetStartedPage() {
               </div>
             </div>
 
-            <p className="text-[11px] text-white/30">
-              {t("step4.costRef")}
-            </p>
-
             <Button
               onClick={handleStripeTopup}
               className="w-full h-11 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20"
@@ -350,27 +346,6 @@ export default function GetStartedPage() {
           </div>
         </ActionCard>
 
-        {/* ════════════ BOTTOM ════════════ */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          className="text-center pt-10 space-y-4"
-        >
-          <p className="text-sm text-white/30">{t("bottom.note")}</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href={`/${locale}/dashboard`}>
-              <Button className="h-10 px-6 border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/70 rounded-xl text-sm">
-                {t("bottom.dashboard")}
-              </Button>
-            </Link>
-            <Link href={`/${locale}/marketingx`}>
-              <Button variant="ghost" className="h-10 px-6 text-white/30 hover:text-white/60 rounded-xl text-sm">
-                {t("bottom.home")}
-              </Button>
-            </Link>
-          </div>
-        </motion.div>
       </div>
     </div>
   );
