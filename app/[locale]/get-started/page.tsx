@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { LandingAILogo } from "@/components/LandingAILogo";
 import { Button } from "@/components/ui/button";
-import api, { zereoApi } from "@/lib/api";
+import api from "@/lib/api";
 
 /* ═══════════════════════════════════════════════════════════════════
  * ACTION CARD
@@ -74,6 +74,7 @@ export default function GetStartedPage() {
   const [googleConnected, setGoogleConnected] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const LANDING_AI_URL = "https://landingai.info";
   const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/marketingx.plugin`;
 
   useEffect(() => {
@@ -117,14 +118,7 @@ export default function GetStartedPage() {
     };
 
     const checkMeta = async () => {
-      try {
-        // Social accounts are on Zereo backend
-        const res = await zereoApi.get("/social/accounts");
-        const accounts = res.data?.accounts || res.data || [];
-        if (Array.isArray(accounts) && accounts.some((a: any) =>
-          a.platform === "meta" || a.platform === "facebook" || a.platform === "instagram"
-        )) setMetaConnected(true);
-      } catch { /* may not exist on this backend */ }
+      // Meta connection status — skip for now, user can check on Landing AI
     };
 
     fetchProfile();
@@ -140,40 +134,14 @@ export default function GetStartedPage() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleMetaConnect = async () => {
-    try {
-      const cb = `${window.location.origin}/${locale}/get-started`;
-      // Zereo backend returns { auth_url, state }
-      const res = await zereoApi.get("/social/accounts/meta/auth-url", {
-        params: { redirect_uri: cb },
-      });
-      if (res.data?.auth_url) {
-        // Store state for CSRF verification on callback
-        if (res.data.state) sessionStorage.setItem("meta_oauth_state", res.data.state);
-        window.location.href = res.data.auth_url;
-        return;
-      }
-    } catch (err) {
-      console.error("[GetStarted] Meta auth error:", err);
-    }
-    alert("Meta 連結暫時無法使用，請稍後再試");
+  const handleMetaConnect = () => {
+    // Redirect to Landing AI's Meta binding page (already configured in Meta Developer Console)
+    window.open(`${LANDING_AI_URL}/${locale}/account/settings?bind=meta`, "_blank");
   };
 
-  const handleGoogleConnect = async () => {
-    try {
-      const cb = `${window.location.origin}/${locale}/get-started`;
-      // marketing_backend Google Drive connect
-      const res = await api.post("/ai-agent/gdrive/connect", {
-        callback_url: cb,
-      });
-      if (res.data?.auth_url) {
-        window.location.href = res.data.auth_url;
-        return;
-      }
-    } catch (err) {
-      console.error("[GetStarted] Google connect error:", err);
-    }
-    alert("Google 連結暫時無法使用，請稍後再試");
+  const handleGoogleConnect = () => {
+    // Redirect to Landing AI's Google binding page (already configured in Google Cloud Console)
+    window.open(`${LANDING_AI_URL}/${locale}/account/settings?bind=google`, "_blank");
   };
 
   const handleStripeTopup = async () => {
