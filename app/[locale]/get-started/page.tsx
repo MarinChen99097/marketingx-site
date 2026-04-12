@@ -94,26 +94,40 @@ export default function GetStartedPage() {
       }
     }
 
-    // ── 2. Handle Meta OAuth callback (?code=xxx&state=xxx) ──
-    const metaCode = params.get("code");
-    const metaState = params.get("state");
-    if (metaCode && !params.get("topup")) {
-      const exchangeMetaCode = async () => {
-        try {
-          const redirectUri = `${window.location.origin}/${locale}/get-started`;
-          await zereoApi.post("/social/accounts/meta/callback", {
-            code: metaCode,
-            redirect_uri: redirectUri,
-            state: metaState || "",
-          });
-          setMetaConnected(true);
-        } catch (err) {
-          console.error("[GetStarted] Meta callback exchange failed:", err);
+    // ── 2. Handle OAuth callback (?code=xxx&state=xxx) ──
+    const oauthCode = params.get("code");
+    const oauthState = params.get("state");
+    const oauthScope = params.get("scope") || "";
+    if (oauthCode && !params.get("topup") && localStorage.getItem("token")) {
+      const exchangeCode = async () => {
+        const redirectUri = `${window.location.origin}/${locale}/get-started`;
+        if (oauthScope.includes("drive") || oauthScope.includes("googleapis")) {
+          // Google Drive OAuth callback
+          try {
+            await api.post("/ai-agent/gdrive/auth-callback", {
+              code: oauthCode,
+              redirect_uri: redirectUri,
+            });
+            setGoogleConnected(true);
+          } catch (err) {
+            console.error("[GetStarted] Google Drive callback failed:", err);
+          }
+        } else {
+          // Meta OAuth callback
+          try {
+            await zereoApi.post("/social/accounts/meta/callback", {
+              code: oauthCode,
+              redirect_uri: redirectUri,
+              state: oauthState || "",
+            });
+            setMetaConnected(true);
+          } catch (err) {
+            console.error("[GetStarted] Meta callback failed:", err);
+          }
         }
-        // Clean URL
         window.history.replaceState(null, "", `/${locale}/get-started`);
       };
-      if (localStorage.getItem("token")) exchangeMetaCode();
+      exchangeCode();
     }
 
     // ── 3. Handle Stripe success (?topup=success) ──
@@ -186,15 +200,15 @@ export default function GetStartedPage() {
   const handleGoogleConnect = async () => {
     try {
       const redirectUri = `${window.location.origin}/${locale}/get-started`;
-      const res = await api.post("/ai-agent/gdrive/connect", {
-        callback_url: redirectUri,
+      const res = await api.post("/ai-agent/gdrive/auth-url", {
+        redirect_uri: redirectUri,
       });
       if (res.data?.auth_url) {
         window.location.href = res.data.auth_url;
         return;
       }
     } catch (err) {
-      console.error("[GetStarted] Google connect error:", err);
+      console.error("[GetStarted] Google Drive auth error:", err);
     }
     alert("Google 連結暫時無法使用，請稍後再試");
   };
