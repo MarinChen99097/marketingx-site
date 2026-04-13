@@ -1,5 +1,5 @@
 {
-  "MarketingX": {
+  "SaleCraft": {
     "nav": {
       "features": "功能特色",
       "industries": "產業應用",
@@ -84,11 +84,11 @@
         "solution": "品牌模板 + 批量生成 + QR 追蹤",
         "benefit": "30 門市 1 小時搞定，品牌一致性 100%"
       },
-      "saas": {
-        "title": "B2B SaaS",
-        "pain": "內容產出不足，Landing Page 轉換低",
-        "solution": "Deep Research + A/B 變體測試",
-        "benefit": "每週 3 篇文章，3 個月轉換提升 35%"
+      "fashion": {
+        "title": "時尚服飾",
+        "pain": "新品系列需要快速視覺內容、換季壓力大",
+        "solution": "AI 30 分鐘產出 Lookbook Landing Page + Reels",
+        "benefit": "新品上架 3 週→72 小時，視覺成本降 80%"
       },
       "education": {
         "title": "教育",
@@ -217,7 +217,7 @@
       "cta": "免費開始使用"
     },
     "footer": {
-      "brand": "MarketingX by Landing AI",
+      "brand": "SaleCraft by Landing AI",
       "terms": "服務條款",
       "privacy": "隱私權政策",
       "contact": "聯絡我們"
@@ -229,11 +229,11 @@
     "welcome": {
       "badge": "帳號已建立",
       "title1": "歡迎來到 ",
-      "title2": "MarketingX",
+      "title2": "SaleCraft",
       "subtitle": "完成以下 4 個步驟，解鎖所有 AI 行銷能力"
     },
     "step1": {
-      "title": "啟用 MarketingX 外掛",
+      "title": "啟用 SaleCraft 外掛",
       "desc": "在 Claude Code 輸入以下指令，安裝外掛並存取 200+ MCP 行銷工具。",
       "copyBtn": "複製指令到 Claude",
       "copiedBtn": "已複製到剪貼簿！"

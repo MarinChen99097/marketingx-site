@@ -271,7 +271,7 @@ export default function GetStartedPage() {
           <div className="w-9 h-9 bg-gradient-to-br from-[hsl(16,70%,56%)] to-[hsl(16,80%,45%)] rounded-lg flex items-center justify-center shadow-lg shadow-[hsl(16,70%,56%)]/20">
             <LandingAILogo size={18} className="text-white" />
           </div>
-          <span className="text-lg font-bold tracking-tight">MarketingX</span>
+          <span className="text-lg font-bold tracking-tight">SaleCraft</span>
         </Link>
 
         <div className="flex gap-2 md:gap-3 items-center">
@@ -307,7 +307,7 @@ export default function GetStartedPage() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">
             {t("welcome.title1")}
             <span className="bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">
-              MarketingX
+              SaleCraft
             </span>
           </h1>
           <p className="text-white/40 text-sm md:text-base max-w-md mx-auto">

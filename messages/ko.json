@@ -1,5 +1,5 @@
 {
-  "MarketingX": {
+  "SaleCraft": {
     "nav": {
       "features": "기능",
       "industries": "산업",
@@ -84,11 +84,11 @@
         "solution": "브랜드 템플릿 + 일괄 생성 + QR 추적",
         "benefit": "30개 매장 1시간 내 완료, 브랜드 일관성 100%"
       },
-      "saas": {
-        "title": "B2B SaaS",
-        "pain": "콘텐츠 부족, 낮은 랜딩 페이지 전환율",
-        "solution": "딥 리서치 + A/B 변형 테스트",
-        "benefit": "주 3편 기사, 3개월 내 전환율 35% 향상"
+      "fashion": {
+        "title": "패션 의류",
+        "pain": "신상품 출시에 빠른 비주얼 콘텐츠 필요, 시즌 압박",
+        "solution": "AI가 30분 만에 룩북 랜딩 페이지 + 릴스 생성",
+        "benefit": "출시 3주→72시간, 비주얼 비용 80% 절감"
       },
       "education": {
         "title": "교육",
@@ -217,7 +217,7 @@
       "cta": "무료로 시작하기"
     },
     "footer": {
-      "brand": "MarketingX by Landing AI",
+      "brand": "SaleCraft by Landing AI",
       "terms": "이용약관",
       "privacy": "개인정보처리방침",
       "contact": "문의하기"
@@ -229,11 +229,11 @@
     "welcome": {
       "badge": "계정 생성 완료",
       "title1": "환영합니다 ",
-      "title2": "MarketingX",
+      "title2": "SaleCraft",
       "subtitle": "이 4단계를 완료하여 모든 AI 마케팅 기능을 잠금 해제하세요"
     },
     "step1": {
-      "title": "MarketingX 플러그인 활성화",
+      "title": "SaleCraft 플러그인 활성화",
       "desc": "Claude Code에 다음 명령어를 입력하여 플러그인을 설치하고 200+ MCP 마케팅 도구에 접근하세요.",
       "copyBtn": "Claude에 명령어 복사",
       "copiedBtn": "클립보드에 복사됨!"

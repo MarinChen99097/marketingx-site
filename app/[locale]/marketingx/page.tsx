@@ -190,15 +190,15 @@ function IndustryCard({ icon: Icon, title, pain, solution, benefit, delay }: {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
- * DATA — moved inside component, see MarketingXPage()
+ * DATA — moved inside component, see SaleCraftPage()
  * ═══════════════════════════════════════════════════════════════════ */
 
 /* ═══════════════════════════════════════════════════════════════════
  * MAIN PAGE
  * ═══════════════════════════════════════════════════════════════════ */
-export default function MarketingXPage() {
+export default function SaleCraftPage() {
   const locale = useLocale();
-  const t = useTranslations("MarketingX");
+  const t = useTranslations("SaleCraft");
 
   /* ── Data arrays (inside component to access t()) ── */
   const TYPEWRITER_WORDS = [
@@ -241,7 +241,7 @@ export default function MarketingXPage() {
     { icon: ShoppingCart, title: t("industries.ecommerce.title"), pain: t("industries.ecommerce.pain"), solution: t("industries.ecommerce.solution"), benefit: t("industries.ecommerce.benefit") },
     { icon: Heart, title: t("industries.medical.title"), pain: t("industries.medical.pain"), solution: t("industries.medical.solution"), benefit: t("industries.medical.benefit") },
     { icon: Utensils, title: t("industries.food.title"), pain: t("industries.food.pain"), solution: t("industries.food.solution"), benefit: t("industries.food.benefit") },
-    { icon: Building2, title: t("industries.saas.title"), pain: t("industries.saas.pain"), solution: t("industries.saas.solution"), benefit: t("industries.saas.benefit") },
+    { icon: Building2, title: t("industries.fashion.title"), pain: t("industries.fashion.pain"), solution: t("industries.fashion.solution"), benefit: t("industries.fashion.benefit") },
     { icon: GraduationCap, title: t("industries.education.title"), pain: t("industries.education.pain"), solution: t("industries.education.solution"), benefit: t("industries.education.benefit") },
     { icon: Landmark, title: t("industries.finance.title"), pain: t("industries.finance.pain"), solution: t("industries.finance.solution"), benefit: t("industries.finance.benefit") },
     { icon: Plane, title: t("industries.travel.title"), pain: t("industries.travel.pain"), solution: t("industries.travel.solution"), benefit: t("industries.travel.benefit") },
@@ -299,7 +299,7 @@ export default function MarketingXPage() {
           <div className="w-9 h-9 bg-gradient-to-br from-[hsl(16,70%,56%)] to-[hsl(16,80%,45%)] rounded-lg flex items-center justify-center shadow-lg shadow-[hsl(16,70%,56%)]/20">
             <LandingAILogo size={18} className="text-white" />
           </div>
-          <span className="text-lg font-bold tracking-tight">MarketingX</span>
+          <span className="text-lg font-bold tracking-tight">SaleCraft</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-[13px] text-white/50">

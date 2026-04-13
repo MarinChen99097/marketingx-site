@@ -1,5 +1,5 @@
 {
-  "MarketingX": {
+  "SaleCraft": {
     "nav": {
       "features": "Tính năng",
       "industries": "Ngành nghề",
@@ -84,11 +84,11 @@
         "solution": "Mẫu thương hiệu + tạo hàng loạt + theo dõi QR",
         "benefit": "30 cửa hàng trong 1 giờ, nhất quán thương hiệu 100%"
       },
-      "saas": {
-        "title": "B2B SaaS",
-        "pain": "Thiếu nội dung, tỉ lệ chuyển đổi trang đích thấp",
-        "solution": "Nghiên cứu sâu + kiểm thử biến thể A/B",
-        "benefit": "3 bài/tuần, chuyển đổi tăng 35% trong 3 tháng"
+      "fashion": {
+        "title": "Thời trang",
+        "pain": "Ra mắt bộ sưu tập cần nội dung hình ảnh nhanh, áp lực mùa vụ",
+        "solution": "AI tạo Landing Page lookbook + Reels trong 30 phút",
+        "benefit": "Ra mắt 3 tuần→72 giờ, chi phí hình ảnh giảm 80%"
       },
       "education": {
         "title": "Giáo dục",
@@ -217,7 +217,7 @@
       "cta": "Bắt đầu miễn phí"
     },
     "footer": {
-      "brand": "MarketingX by Landing AI",
+      "brand": "SaleCraft by Landing AI",
       "terms": "Điều khoản dịch vụ",
       "privacy": "Chính sách bảo mật",
       "contact": "Liên hệ"
@@ -229,11 +229,11 @@
     "welcome": {
       "badge": "Tài khoản đã tạo",
       "title1": "Chào mừng đến ",
-      "title2": "MarketingX",
+      "title2": "SaleCraft",
       "subtitle": "Hoàn thành 4 bước này để mở khóa tất cả khả năng AI marketing"
     },
     "step1": {
-      "title": "Kích hoạt Plugin MarketingX",
+      "title": "Kích hoạt Plugin SaleCraft",
       "desc": "Nhập lệnh sau vào Claude Code để cài đặt Plugin và truy cập 200+ công cụ marketing MCP.",
       "copyBtn": "Sao chép lệnh đến Claude",
       "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"

@@ -6,7 +6,7 @@ import { routing } from '@/i18n/routing';
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "MarketingX — AI Marketing Plugin for Claude Code",
+  title: "SaleCraft — AI Marketing Plugin for Claude Code",
   description: "200+ MCP tools. Generate landing pages, reels, social posts in 30 minutes.",
 };
 

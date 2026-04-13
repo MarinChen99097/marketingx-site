@@ -1,5 +1,5 @@
 {
-  "MarketingX": {
+  "SaleCraft": {
     "nav": {
       "features": "Funcionalidades",
       "industries": "Industrias",
@@ -84,11 +84,11 @@
         "solution": "Plantillas de marca + generación en lote + seguimiento QR",
         "benefit": "30 tiendas en 1 hora, consistencia de marca 100%"
       },
-      "saas": {
-        "title": "B2B SaaS",
-        "pain": "Escasez de contenido, baja conversión de páginas de destino",
-        "solution": "Investigación profunda + pruebas de variantes A/B",
-        "benefit": "3 artículos/semana, conversión +35% en 3 meses"
+      "fashion": {
+        "title": "Moda y Ropa",
+        "pain": "Lanzamiento de colección necesita contenido visual rápido, presión estacional",
+        "solution": "IA genera Landing Pages lookbook + Reels en 30 min",
+        "benefit": "Lanzamiento 3 semanas→72h, costo visual -80%"
       },
       "education": {
         "title": "Educación",
@@ -217,7 +217,7 @@
       "cta": "Comenzar gratis"
     },
     "footer": {
-      "brand": "MarketingX by Landing AI",
+      "brand": "SaleCraft by Landing AI",
       "terms": "Términos de servicio",
       "privacy": "Política de privacidad",
       "contact": "Contáctanos"
@@ -229,11 +229,11 @@
     "welcome": {
       "badge": "Cuenta creada",
       "title1": "Bienvenido a ",
-      "title2": "MarketingX",
+      "title2": "SaleCraft",
       "subtitle": "Completa estos 4 pasos para desbloquear todas las capacidades de marketing con IA"
     },
     "step1": {
-      "title": "Activar plugin MarketingX",
+      "title": "Activar plugin SaleCraft",
       "desc": "Ingresa el siguiente comando en Claude Code para instalar el plugin y acceder a 200+ herramientas de marketing MCP.",
       "copyBtn": "Copiar comando a Claude",
       "copiedBtn": "¡Copiado al portapapeles!"
