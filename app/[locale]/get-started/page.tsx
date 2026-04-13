@@ -408,9 +408,13 @@ export default function GetStartedPage() {
               <button
                 onClick={async () => {
                   try {
-                    await zereoApi.delete("/social/accounts/disconnect-all/");
-                    setMetaConnected(false);
-                  } catch { setMetaConnected(false); }
+                    const res = await zereoApi.get("/social/accounts/");
+                    const accounts = res.data || [];
+                    for (const a of accounts) {
+                      await zereoApi.delete(`/social/accounts/${a.id}`);
+                    }
+                  } catch (err) { console.error("[GetStarted] Meta disconnect:", err); }
+                  setMetaConnected(false);
                 }}
                 className="text-xs text-white/30 hover:text-red-400 transition-colors"
               >解除綁定</button>
@@ -443,9 +447,13 @@ export default function GetStartedPage() {
               <button
                 onClick={async () => {
                   try {
-                    await api.delete("/ai-agent/gdrive/disconnect-all");
-                    setGoogleConnected(false);
-                  } catch { setGoogleConnected(false); }
+                    const res = await api.get("/ai-agent/gdrive/status");
+                    const accounts = res.data?.accounts || [];
+                    for (const a of accounts) {
+                      await api.delete(`/ai-agent/gdrive/${a.id}`);
+                    }
+                  } catch (err) { console.error("[GetStarted] GDrive disconnect:", err); }
+                  setGoogleConnected(false);
                 }}
                 className="text-xs text-white/30 hover:text-red-400 transition-colors"
               >解除綁定</button>
