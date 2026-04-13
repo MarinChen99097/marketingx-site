@@ -268,6 +268,8 @@ export default function MarketingXPage() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Ensure page starts at top on load (mobile browsers sometimes restore scroll)
+    window.scrollTo(0, 0);
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -316,7 +318,7 @@ export default function MarketingXPage() {
       </nav>
 
       {/* ════════════ HERO ════════════ */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden">
         {/* Star field */}
         <StarField />
 
