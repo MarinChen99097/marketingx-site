@@ -72,6 +72,7 @@ export default function GetStartedPage() {
   const [prevCredits, setPrevCredits] = useState<number | null>(null);
   const [topupSuccess, setTopupSuccess] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [topupAmount, setTopupAmount] = useState(20);
   const [metaConnected, setMetaConnected] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -237,7 +238,7 @@ export default function GetStartedPage() {
     localStorage.setItem("mx_prev_credits", String(userCredits));
     try {
       const res = await api.post("/pricing/checkout", {
-        amount_usd: 20,
+        amount_usd: topupAmount,
         success_url: `${window.location.origin}/${locale}/get-started?topup=success`,
         cancel_url: `${window.location.origin}/${locale}/get-started`,
       });
@@ -456,14 +457,37 @@ export default function GetStartedPage() {
               <span className="text-lg font-bold text-[hsl(16,70%,56%)]">{userCredits} pts</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 text-center">
-              <div className="px-3 py-2.5 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-                <div className="text-lg font-bold text-white">$1</div>
-                <div className="text-[11px] text-white/30">{t("step4.usd")}</div>
+            {/* Amount selector */}
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-white/50">儲值金額</span>
+                <span className="text-xs text-white/30">$1 USD = 30 pts</span>
               </div>
-              <div className="px-3 py-2.5 rounded-xl border border-[hsl(16,70%,56%)]/20 bg-[hsl(16,70%,56%)]/5">
-                <div className="text-lg font-bold text-[hsl(16,70%,56%)]">30 pts</div>
-                <div className="text-[11px] text-white/40">{t("step4.pts")}</div>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setTopupAmount(Math.max(20, topupAmount - 10))}
+                  className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/60 text-lg font-bold transition-colors"
+                >−</button>
+                <div className="flex-1 text-center py-2.5 rounded-xl border border-[hsl(16,70%,56%)]/20 bg-[hsl(16,70%,56%)]/5">
+                  <div className="text-2xl font-black text-[hsl(16,70%,56%)]">${topupAmount}</div>
+                  <div className="text-xs text-white/40">= {topupAmount * 30} pts</div>
+                </div>
+                <button
+                  onClick={() => setTopupAmount(topupAmount + 10)}
+                  className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/60 text-lg font-bold transition-colors"
+                >+</button>
+              </div>
+              {/* Quick amount buttons */}
+              <div className="grid grid-cols-4 gap-2">
+                {[20, 50, 100, 200].map((amt) => (
+                  <button
+                    key={amt}
+                    onClick={() => setTopupAmount(amt)}
+                    className={`py-2 rounded-lg text-sm font-medium transition-all ${topupAmount === amt ? "bg-[hsl(16,70%,56%)] text-white" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
+                  >
+                    ${amt}
+                  </button>
+                ))}
               </div>
             </div>
 
