@@ -73,6 +73,7 @@ export default function GetStartedPage() {
   const [topupSuccess, setTopupSuccess] = useState(false);
   const [copied, setCopied] = useState(false);
   const [topupAmount, setTopupAmount] = useState(20);
+  const [customAmount, setCustomAmount] = useState(false);
   const [metaConnected, setMetaConnected] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -463,32 +464,45 @@ export default function GetStartedPage() {
                 <span className="text-sm text-white/50">儲值金額</span>
                 <span className="text-xs text-white/30">$1 USD = 30 pts</span>
               </div>
-              <div className="flex items-center gap-3">
+              {/* 3 options: $20, $75, Custom */}
+              <div className="grid grid-cols-3 gap-2">
                 <button
-                  onClick={() => setTopupAmount(Math.max(20, topupAmount - 1))}
-                  className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/60 text-lg font-bold transition-colors"
-                >−</button>
-                <div className="flex-1 text-center py-2.5 rounded-xl border border-[hsl(16,70%,56%)]/20 bg-[hsl(16,70%,56%)]/5">
-                  <div className="text-2xl font-black text-[hsl(16,70%,56%)]">${topupAmount}</div>
-                  <div className="text-xs text-white/40">= {topupAmount * 30} pts</div>
+                  onClick={() => { setTopupAmount(20); setCustomAmount(false); }}
+                  className={`py-3 rounded-xl text-center transition-all ${!customAmount && topupAmount === 20 ? "bg-[hsl(16,70%,56%)] text-white ring-2 ring-[hsl(16,70%,56%)]/30" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
+                >
+                  <div className="text-lg font-bold">$20</div>
+                  <div className="text-[10px] opacity-60">600 pts</div>
+                </button>
+                <button
+                  onClick={() => { setTopupAmount(75); setCustomAmount(false); }}
+                  className={`py-3 rounded-xl text-center transition-all ${!customAmount && topupAmount === 75 ? "bg-[hsl(16,70%,56%)] text-white ring-2 ring-[hsl(16,70%,56%)]/30" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
+                >
+                  <div className="text-lg font-bold">$75</div>
+                  <div className="text-[10px] opacity-60">2,250 pts</div>
+                </button>
+                <button
+                  onClick={() => setCustomAmount(true)}
+                  className={`py-3 rounded-xl text-center transition-all ${customAmount ? "bg-[hsl(16,70%,56%)] text-white ring-2 ring-[hsl(16,70%,56%)]/30" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
+                >
+                  <div className="text-lg font-bold">自訂</div>
+                  <div className="text-[10px] opacity-60">min $20</div>
+                </button>
+              </div>
+              {/* Custom amount input */}
+              {customAmount && (
+                <div className="flex items-center gap-3">
+                  <span className="text-white/50 text-lg font-bold">$</span>
+                  <input
+                    type="number"
+                    min={20}
+                    step={1}
+                    value={topupAmount}
+                    onChange={(e) => setTopupAmount(Math.max(20, parseInt(e.target.value) || 20))}
+                    className="flex-1 h-11 rounded-xl border border-white/10 bg-white/[0.04] text-white text-center text-xl font-bold px-4 outline-none focus:border-[hsl(16,70%,56%)]/50 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  />
+                  <span className="text-white/40 text-sm">= {topupAmount * 30} pts</span>
                 </div>
-                <button
-                  onClick={() => setTopupAmount(topupAmount + 1)}
-                  className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/60 text-lg font-bold transition-colors"
-                >+</button>
-              </div>
-              {/* Quick amount buttons */}
-              <div className="grid grid-cols-4 gap-2">
-                {[20, 50, 100, 200].map((amt) => (
-                  <button
-                    key={amt}
-                    onClick={() => setTopupAmount(amt)}
-                    className={`py-2 rounded-lg text-sm font-medium transition-all ${topupAmount === amt ? "bg-[hsl(16,70%,56%)] text-white" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
-                  >
-                    ${amt}
-                  </button>
-                ))}
-              </div>
+              )}
             </div>
 
             <Button
