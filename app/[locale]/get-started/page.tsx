@@ -158,7 +158,7 @@ export default function GetStartedPage() {
         const res = await api.get("/settings/profile");
         setUserEmail(res.data.email || "");
         setUserCredits(res.data.credits || 0);
-        if (res.data.google_id) setGoogleConnected(true);
+        // google_id only means Google login, NOT Drive access — don't set connected
       } catch (err) {
         console.error("[GetStarted] profile fetch failed:", err);
       } finally {
