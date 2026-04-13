@@ -171,7 +171,7 @@ export default function GetStartedPage() {
     const checkGDrive = async () => {
       try {
         const res = await api.get("/ai-agent/gdrive/status");
-        if (res.data?.connections?.length > 0 || res.data?.google_email) {
+        if (res.data?.connected || res.data?.accounts?.length > 0) {
           setGoogleConnected(true);
         }
       } catch { /* endpoint may not exist */ }
