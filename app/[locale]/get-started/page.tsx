@@ -69,6 +69,8 @@ export default function GetStartedPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState("");
   const [userCredits, setUserCredits] = useState(0);
+  const [prevCredits, setPrevCredits] = useState<number | null>(null);
+  const [topupSuccess, setTopupSuccess] = useState(false);
   const [copied, setCopied] = useState(false);
   const [metaConnected, setMetaConnected] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
@@ -134,6 +136,10 @@ export default function GetStartedPage() {
 
     // ── 3. Handle Stripe success (?topup=success) ──
     if (params.get("topup") === "success") {
+      // Save previous credits from localStorage (set before redirect)
+      const savedPrev = localStorage.getItem("mx_prev_credits");
+      if (savedPrev) setPrevCredits(parseInt(savedPrev, 10));
+      setTopupSuccess(true);
       window.history.replaceState(null, "", `/${locale}/get-started`);
     }
 
@@ -227,6 +233,8 @@ export default function GetStartedPage() {
   };
 
   const handleStripeTopup = async () => {
+    // Save current credits before redirect so we can show diff on return
+    localStorage.setItem("mx_prev_credits", String(userCredits));
     try {
       const res = await api.post("/pricing/checkout", {
         amount_usd: 20,
@@ -305,6 +313,39 @@ export default function GetStartedPage() {
           </p>
         </motion.div>
       </div>
+
+      {/* ════════════ TOPUP SUCCESS BANNER ════════════ */}
+      {topupSuccess && (
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 pb-4">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-green-500/20 bg-green-500/5 p-6 space-y-4"
+          >
+            <div className="flex items-center gap-2 text-green-400 text-lg font-bold">
+              <CheckCircle className="w-6 h-6" />
+              <span>儲值成功！</span>
+            </div>
+            <div className="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div className="text-xs text-white/40 mb-1">原餘額</div>
+                <div className="text-lg font-bold text-white/60">{prevCredits ?? "—"} pts</div>
+              </div>
+              <div>
+                <div className="text-xs text-white/40 mb-1">新增</div>
+                <div className="text-lg font-bold text-green-400">
+                  +{prevCredits !== null ? userCredits - prevCredits : userCredits} pts
+                </div>
+              </div>
+              <div>
+                <div className="text-xs text-white/40 mb-1">最終餘額</div>
+                <div className="text-lg font-bold text-[hsl(16,70%,56%)]">{userCredits} pts</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
 
       {/* ════════════ 4 ACTION CARDS ════════════ */}
       <div className="max-w-2xl mx-auto px-4 sm:px-6 pb-16 md:pb-24 space-y-4">
