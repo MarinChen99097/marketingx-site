@@ -314,35 +314,46 @@ export default function GetStartedPage() {
         </motion.div>
       </div>
 
-      {/* ════════════ TOPUP SUCCESS BANNER ════════════ */}
+      {/* ════════════ TOPUP SUCCESS MODAL ════════════ */}
       {topupSuccess && (
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 pb-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="rounded-2xl border border-green-500/20 bg-green-500/5 p-6 space-y-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="w-full max-w-sm rounded-2xl border border-green-500/20 bg-[#111113] p-8 space-y-6 shadow-2xl"
           >
-            <div className="flex items-center gap-2 text-green-400 text-lg font-bold">
-              <CheckCircle className="w-6 h-6" />
-              <span>儲值成功！</span>
-            </div>
-            <div className="grid grid-cols-3 gap-4 text-center">
-              <div>
-                <div className="text-xs text-white/40 mb-1">原餘額</div>
-                <div className="text-lg font-bold text-white/60">{prevCredits ?? "—"} pts</div>
+            <div className="text-center space-y-2">
+              <div className="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center mx-auto">
+                <CheckCircle className="w-8 h-8 text-green-400" />
               </div>
-              <div>
-                <div className="text-xs text-white/40 mb-1">新增</div>
-                <div className="text-lg font-bold text-green-400">
-                  +{prevCredits !== null ? userCredits - prevCredits : userCredits} pts
+              <h3 className="text-xl font-bold text-white">儲值成功！</h3>
+            </div>
+            <div className="grid grid-cols-3 gap-3 text-center">
+              <div className="py-3 rounded-xl bg-white/[0.03]">
+                <div className="text-[11px] text-white/40 mb-1">原餘額</div>
+                <div className="text-base font-bold text-white/60">{prevCredits ?? "—"}</div>
+                <div className="text-[10px] text-white/30">pts</div>
+              </div>
+              <div className="py-3 rounded-xl bg-green-500/5">
+                <div className="text-[11px] text-white/40 mb-1">新增</div>
+                <div className="text-base font-bold text-green-400">
+                  +{prevCredits !== null && userCredits > prevCredits ? userCredits - prevCredits : 600}
                 </div>
+                <div className="text-[10px] text-white/30">pts</div>
               </div>
-              <div>
-                <div className="text-xs text-white/40 mb-1">最終餘額</div>
-                <div className="text-lg font-bold text-[hsl(16,70%,56%)]">{userCredits} pts</div>
+              <div className="py-3 rounded-xl bg-[hsl(16,70%,56%)]/5">
+                <div className="text-[11px] text-white/40 mb-1">最終餘額</div>
+                <div className="text-base font-bold text-[hsl(16,70%,56%)]">{userCredits}</div>
+                <div className="text-[10px] text-white/30">pts</div>
               </div>
             </div>
+            <Button
+              onClick={() => { setTopupSuccess(false); localStorage.removeItem("mx_prev_credits"); }}
+              className="w-full h-11 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold rounded-xl text-sm"
+            >
+              確認
+            </Button>
           </motion.div>
         </div>
       )}
