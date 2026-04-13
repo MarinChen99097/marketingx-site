@@ -400,9 +400,20 @@ export default function GetStartedPage() {
           status={metaConnected ? "connected" : "ready"} delay={0.2}
         >
           {metaConnected ? (
-            <div className="flex items-center gap-2 text-green-400">
-              <CheckCircle className="w-5 h-5" />
-              <span className="text-sm font-medium">{t("step2.connected")}</span>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-green-400">
+                <CheckCircle className="w-5 h-5" />
+                <span className="text-sm font-medium">{t("step2.connected")}</span>
+              </div>
+              <button
+                onClick={async () => {
+                  try {
+                    await zereoApi.delete("/social/accounts/disconnect-all/");
+                    setMetaConnected(false);
+                  } catch { setMetaConnected(false); }
+                }}
+                className="text-xs text-white/30 hover:text-red-400 transition-colors"
+              >解除綁定</button>
             </div>
           ) : (
             <Button
@@ -424,9 +435,20 @@ export default function GetStartedPage() {
           status={googleConnected ? "connected" : "pending"} delay={0.3}
         >
           {googleConnected ? (
-            <div className="flex items-center gap-2 text-green-400">
-              <CheckCircle className="w-5 h-5" />
-              <span className="text-sm font-medium">{t("step3.connected")}</span>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-green-400">
+                <CheckCircle className="w-5 h-5" />
+                <span className="text-sm font-medium">{t("step3.connected")}</span>
+              </div>
+              <button
+                onClick={async () => {
+                  try {
+                    await api.delete("/ai-agent/gdrive/disconnect-all");
+                    setGoogleConnected(false);
+                  } catch { setGoogleConnected(false); }
+                }}
+                className="text-xs text-white/30 hover:text-red-400 transition-colors"
+              >解除綁定</button>
             </div>
           ) : (
             <Button
