@@ -99,38 +99,37 @@ export default function GetStartedPage() {
     const oauthState = params.get("state");
     const oauthScope = params.get("scope") || "";
     if (oauthCode && !params.get("topup") && localStorage.getItem("token")) {
-      const exchangeCode = async () => {
-        const redirectUri = `${window.location.origin}/${locale}/get-started`;
-        if (oauthScope.includes("drive") || oauthScope.includes("googleapis")) {
-          // Google Drive OAuth callback
-          try {
-            await api.post("/ai-agent/gdrive/auth-callback", {
-              code: oauthCode,
-              redirect_uri: redirectUri,
-            });
-            setGoogleConnected(true);
-          } catch (err) {
-            console.error("[GetStarted] Google Drive callback failed:", err);
-          }
-        } else {
-          // Meta OAuth callback
-          try {
-            await zereoApi.post("/social/accounts/meta/callback", {
-              code: oauthCode,
-              redirect_uri: redirectUri,
-              state: oauthState || "",
-            });
-            setMetaConnected(true);
-          } catch (err) {
-            console.error("[GetStarted] Meta callback failed:", err);
-          }
-        }
-        window.history.replaceState(null, "", `/${locale}/get-started`);
-      };
-      // Must await before fetchProfile runs
-      exchangeCode().then(() => {});
-      // Skip fetchProfile/checkMeta below — exchangeCode already sets state
-      return;
+      // Clean URL immediately to prevent retry loops on refresh
+      window.history.replaceState(null, "", `/${locale}/get-started`);
+
+      const redirectUri = `${window.location.origin}/${locale}/get-started`;
+      if (oauthScope.includes("drive") || oauthScope.includes("googleapis")) {
+        // Google Drive OAuth callback
+        api.post("/ai-agent/gdrive/auth-callback", {
+          code: oauthCode,
+          redirect_uri: redirectUri,
+        }).then(() => {
+          setGoogleConnected(true);
+          setLoading(false);
+        }).catch((err) => {
+          console.error("[GetStarted] Google Drive callback failed:", err);
+          setLoading(false);
+        });
+      } else {
+        // Meta OAuth callback
+        zereoApi.post("/social/accounts/meta/callback", {
+          code: oauthCode,
+          redirect_uri: redirectUri,
+          state: oauthState || "",
+        }).then(() => {
+          setMetaConnected(true);
+          setLoading(false);
+        }).catch((err) => {
+          console.error("[GetStarted] Meta callback failed:", err);
+          setLoading(false);
+        });
+      }
+      // Don't skip — still need to fetch profile for credits/email
     }
 
     // ── 3. Handle Stripe success (?topup=success) ──
