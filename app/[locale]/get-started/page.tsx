@@ -465,7 +465,7 @@ export default function GetStartedPage() {
               </div>
               <div className="flex items-center gap-3">
                 <button
-                  onClick={() => setTopupAmount(Math.max(20, topupAmount - 10))}
+                  onClick={() => setTopupAmount(Math.max(20, topupAmount - 1))}
                   className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/60 text-lg font-bold transition-colors"
                 >−</button>
                 <div className="flex-1 text-center py-2.5 rounded-xl border border-[hsl(16,70%,56%)]/20 bg-[hsl(16,70%,56%)]/5">
@@ -473,7 +473,7 @@ export default function GetStartedPage() {
                   <div className="text-xs text-white/40">= {topupAmount * 30} pts</div>
                 </div>
                 <button
-                  onClick={() => setTopupAmount(topupAmount + 10)}
+                  onClick={() => setTopupAmount(topupAmount + 1)}
                   className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/60 text-lg font-bold transition-colors"
                 >+</button>
               </div>
