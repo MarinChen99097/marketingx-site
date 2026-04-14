@@ -9,7 +9,7 @@
       "getStarted": "Bắt đầu ngay",
       "console": "Bảng điều khiển"
     },
-    "badge": "Plugin Claude Code — 200+ Công cụ MCP",
+    "badge": "Plugin Marketing AI — Tương thích MCP",
     "badgeNew": "MỚI",
     "hero": {
       "title1": "AI Marketer của bạn ",
@@ -31,7 +31,7 @@
     "pluginInstall": {
       "title1": "Một lệnh duy nhất, ",
       "title2": "chạy ngay lập tức",
-      "subtitle": "Dán lệnh này vào Claude Code để bắt đầu"
+      "subtitle": "Thêm plugin này vào bất kỳ nền tảng AI hỗ trợ MCP"
     },
     "stats": {
       "platforms": "Nền tảng",
@@ -237,8 +237,8 @@
       "subtitle": "Hoàn thành 4 bước này để mở khóa tất cả khả năng AI marketing"
     },
     "step1": {
-      "title": "Kích hoạt Plugin SaleCraft",
-      "desc": "Nhập lệnh sau vào Claude Code để cài đặt Plugin và truy cập 200+ công cụ marketing MCP.",
+      "title": "Cài đặt Plugin SaleCraft",
+      "desc": "Thêm URL plugin này vào cài đặt MCP của nền tảng AI để sử dụng tất cả công cụ marketing.",
       "copyBtn": "Sao chép lệnh đến Claude",
       "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"
     },

@@ -9,7 +9,7 @@
       "getStarted": "Commencer",
       "console": "Console"
     },
-    "badge": "Plugin Claude Code — 200+ outils MCP",
+    "badge": "Plugin Marketing IA — Compatible MCP",
     "badgeNew": "NOUVEAU",
     "hero": {
       "title1": "Votre marketeur IA ",
@@ -31,7 +31,7 @@
     "pluginInstall": {
       "title1": "Une commande, ",
       "title2": "instantanément en ligne",
-      "subtitle": "Collez cette commande dans Claude Code pour commencer"
+      "subtitle": "Ajoutez ce plugin à toute plateforme IA compatible MCP"
     },
     "stats": {
       "platforms": "Plateformes",
@@ -237,8 +237,8 @@
       "subtitle": "Complétez ces 4 étapes pour débloquer toutes les capacités marketing IA"
     },
     "step1": {
-      "title": "Activer le plugin SaleCraft",
-      "desc": "Entrez la commande suivante dans Claude Code pour installer le plugin et accéder à 200+ outils marketing MCP.",
+      "title": "Installer le plugin SaleCraft",
+      "desc": "Ajoutez cette URL de plugin aux paramètres MCP de votre plateforme IA pour accéder à tous les outils marketing.",
       "copyBtn": "Copier la commande vers Claude",
       "copiedBtn": "Copié dans le presse-papiers !"
     },

@@ -9,7 +9,7 @@
       "getStarted": "今すぐ始める",
       "console": "コンソール"
     },
-    "badge": "Claude Code プラグイン — 200+ MCP ツール",
+    "badge": "AI マーケティングプラグイン — MCP 対応",
     "badgeNew": "NEW",
     "hero": {
       "title1": "あなたのAIマーケター が",
@@ -31,7 +31,7 @@
     "pluginInstall": {
       "title1": "コマンド一つで、",
       "title2": "即座に稼働",
-      "subtitle": "Claude Codeにこのコマンドを貼り付けて始めましょう"
+      "subtitle": "MCP対応AIプラットフォームにこのプラグインを追加"
     },
     "stats": {
       "platforms": "プラットフォーム",
@@ -237,8 +237,8 @@
       "subtitle": "この4ステップを完了して、すべてのAIマーケティング機能をアンロックしましょう"
     },
     "step1": {
-      "title": "SaleCraft プラグインを有効化",
-      "desc": "Claude Codeに以下のコマンドを入力して、プラグインをインストールし200+ MCPマーケティングツールにアクセスしましょう。",
+      "title": "SaleCraft プラグインをインストール",
+      "desc": "このプラグインURLをAIプラットフォームのMCP設定に追加すると、すべてのマーケティングツールが利用できます。",
       "copyBtn": "Claudeにコマンドをコピー",
       "copiedBtn": "クリップボードにコピー済み！"
     },

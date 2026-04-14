@@ -9,7 +9,7 @@
       "getStarted": "Get Started",
       "console": "Console"
     },
-    "badge": "Claude Code Plugin — 200+ MCP Tools",
+    "badge": "AI Marketing Plugin — MCP Compatible",
     "badgeNew": "NEW",
     "hero": {
       "title1": "Your AI Marketer ",
@@ -31,7 +31,7 @@
     "pluginInstall": {
       "title1": "One command, ",
       "title2": "instantly live",
-      "subtitle": "Paste this command in Claude Code to get started"
+      "subtitle": "Add this plugin to any MCP-compatible AI platform"
     },
     "stats": {
       "platforms": "Platforms",
@@ -237,8 +237,8 @@
       "subtitle": "Complete these 4 steps to unlock all AI marketing capabilities"
     },
     "step1": {
-      "title": "Activate SaleCraft Plugin",
-      "desc": "Enter the following command in Claude Code to install the Plugin and access 200+ MCP marketing tools.",
+      "title": "Install SaleCraft Plugin",
+      "desc": "Add this plugin URL to your AI platform's MCP settings to access all marketing tools.",
       "copyBtn": "Copy Command to Claude",
       "copiedBtn": "Copied to Clipboard!"
     },

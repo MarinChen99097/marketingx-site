@@ -376,7 +376,7 @@ export default function GetStartedPage() {
                 <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-                <span className="text-[10px] text-white/20 ml-2 font-mono">Claude Code</span>
+                <span className="text-[10px] text-white/20 ml-2 font-mono">MCP Plugin</span>
               </div>
               <div className="font-mono text-xs sm:text-sm leading-relaxed text-white/80 whitespace-pre-wrap break-all">
                 <span className="text-[hsl(16,70%,60%)]">&#10095;</span> Generate a landing page for me with this plugin{"\n"}

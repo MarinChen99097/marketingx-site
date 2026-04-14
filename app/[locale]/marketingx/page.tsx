@@ -409,7 +409,7 @@ export default function SaleCraftPage() {
                 <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                 <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
                 <div className="w-3 h-3 rounded-full bg-[#28c840]" />
-                <span className="text-xs text-white/30 ml-3 font-mono">Claude Code</span>
+                <span className="text-xs text-white/30 ml-3 font-mono">MCP Terminal</span>
               </div>
               {/* Command */}
               <div className="font-mono text-sm md:text-base leading-relaxed">
