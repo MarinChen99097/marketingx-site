@@ -453,39 +453,81 @@ export default function SaleCraftPage() {
         </div>
       </section>
 
-      {/* ════════════ BIG FEATURE CARDS (Zeabur-style) ════════════ */}
+      {/* ════════════ AI FACTORY (Hero Feature) ════════════ */}
       <section id="features" className="py-20 md:py-28 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto space-y-6">
-          {HERO_FEATURES.map((f, i) => (
-            <GlowCard key={i} delay={i * 0.15}>
-              <div className="p-8 md:p-12 space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-[hsl(16,70%,56%)]/10 flex items-center justify-center mb-2">
-                  <f.icon className="w-6 h-6 text-[hsl(16,70%,56%)]" />
+        <div className="max-w-5xl mx-auto">
+          <GlowCard delay={0.15}>
+            <div className="p-8 sm:p-10 md:p-14 lg:p-16 space-y-6 md:space-y-8">
+              {/* Icon + Title */}
+              <div className="space-y-4">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[hsl(16,70%,56%)]/10 flex items-center justify-center">
+                  <Factory className="w-7 h-7 md:w-8 md:h-8 text-[hsl(16,70%,56%)]" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white">{f.title}</h3>
-                <p className="text-white/50 text-base md:text-lg leading-relaxed max-w-2xl">{f.desc}</p>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+                  {t("features.factory.title")}
+                </h3>
+              </div>
 
-                {/* Visual area — AI Factory pipeline */}
-                {f.visual === "ai-pipeline" && (
-                  <div className="mt-8 flex items-center gap-3 overflow-x-auto pb-2">
-                    {PIPELINE_STEPS.map((step, j) => (
+              {/* Description — larger, better line breaks */}
+              <p className="text-white/50 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl">
+                {t("features.factory.desc")}
+              </p>
+
+              {/* 3D Pipeline visual — isometric factory blocks */}
+              <div className="pt-6 md:pt-10">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-6" style={{ perspective: "800px" }}>
+                  {PIPELINE_STEPS.map((step, j) => {
+                    const isLast = j === PIPELINE_STEPS.length - 1;
+                    const accentColor = isLast ? "hsl(16,70%,56%)" : `hsl(${16 + j * 8},${50 + j * 5}%,${56 - j * 3}%)`;
+                    return (
                       <motion.div
                         key={j}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30, rotateX: 20 }}
+                        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: 0.4 + j * 0.08 }}
-                        className="flex items-center gap-3 shrink-0"
+                        transition={{ duration: 0.5, delay: 0.2 + j * 0.12 }}
+                        className="relative group"
                       >
-                        <span className="px-3 py-2 rounded-lg border border-white/[0.08] bg-white/[0.03] text-sm text-white/70 whitespace-nowrap">{step}</span>
-                        {j < 5 && <ArrowRight className="w-4 h-4 text-[hsl(16,70%,56%)]/40 shrink-0" />}
+                        {/* 3D Block */}
+                        <div
+                          className="relative w-[90px] h-[90px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
+                          style={{ transformStyle: "preserve-3d", transform: "rotateX(10deg) rotateY(-15deg)" }}
+                        >
+                          {/* Top face */}
+                          <div
+                            className="absolute inset-0 rounded-xl"
+                            style={{
+                              background: `linear-gradient(135deg, ${accentColor}20, ${accentColor}08)`,
+                              border: `1px solid ${accentColor}30`,
+                              transform: "translateZ(20px)",
+                              boxShadow: `0 0 30px ${accentColor}15`,
+                            }}
+                          />
+                          {/* Front face */}
+                          <div
+                            className="absolute inset-0 rounded-xl flex flex-col items-center justify-center"
+                            style={{
+                              background: `linear-gradient(180deg, ${accentColor}15, transparent)`,
+                              border: `1px solid ${accentColor}20`,
+                            }}
+                          >
+                            <div className="text-[10px] md:text-xs text-white/30 font-mono mb-1">0{j + 1}</div>
+                            <div className={`text-xs sm:text-sm md:text-base font-bold ${isLast ? "text-[hsl(16,70%,56%)]" : "text-white/80"}`}>{step}</div>
+                          </div>
+                        </div>
+                        {/* Connector arrow */}
+                        {j < PIPELINE_STEPS.length - 1 && (
+                          <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                            <ArrowRight className="w-4 h-4 text-[hsl(16,70%,56%)]/30" />
+                          </div>
+                        )}
                       </motion.div>
-                    ))}
-                  </div>
-                )}
+                    );
+                  })}
+                </div>
               </div>
-            </GlowCard>
-          ))}
+            </div>
+          </GlowCard>
         </div>
       </section>
 
