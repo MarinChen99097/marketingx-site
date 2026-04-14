@@ -12,15 +12,16 @@
     "badge": "AI マーケティングプラグイン — MCP 対応",
     "badgeNew": "NEW",
     "hero": {
-      "title1": "あなたのAIマーケター が",
-      "title2": "すべてを対応します ",
-      "subtitle": "AI会話を通じて、あらゆるブランドのマーケティング素材を30分で自動デプロイ",
+      "title1": "あなたのAIマーケティング ",
+      "title2": "コンサルタント ",
+      "subtitle": "まず無料相談。製品を理解し、マーケティングの課題を診断し、戦略を立案 — 準備ができたらAIが実行します。",
       "ctaPrimary": "無料で始める",
       "ctaPrimaryLoggedIn": "コンソールへ",
       "ctaSecondary": "仕組みを見る",
       "ctaCopy": "プロンプトをコピー"
     },
     "typewriter": {
+      "consultation": "無料相談",
       "landingPage": "ランディングページ",
       "reels": "リール動画",
       "social": "ソーシャル投稿",

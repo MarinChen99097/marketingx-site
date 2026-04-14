@@ -12,15 +12,16 @@
     "badge": "AI Marketing Plugin — MCP Compatible",
     "badgeNew": "NEW",
     "hero": {
-      "title1": "Your AI Marketer ",
-      "title2": "handles all your ",
-      "subtitle": "Deploy any brand's marketing assets automatically in 30 minutes through AI conversation",
+      "title1": "Your AI Marketing ",
+      "title2": "Consultant for ",
+      "subtitle": "Free consultation first. Understand your product, diagnose marketing gaps, plan strategy — then AI executes when you're ready.",
       "ctaPrimary": "Get Started Free",
       "ctaPrimaryLoggedIn": "Go to Console",
       "ctaSecondary": "See How It Works",
       "ctaCopy": "Copy Prompt"
     },
     "typewriter": {
+      "consultation": "Free Consultation",
       "landingPage": "Landing Pages",
       "reels": "Reels Videos",
       "social": "Social Posts",

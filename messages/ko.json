@@ -12,15 +12,16 @@
     "badge": "AI 마케팅 플러그인 — MCP 호환",
     "badgeNew": "NEW",
     "hero": {
-      "title1": "당신의 AI 마케터가 ",
-      "title2": "모든 것을 처리합니다 ",
-      "subtitle": "AI 대화를 통해 30분 만에 모든 브랜드의 마케팅 자산을 자동 배포하세요",
+      "title1": "당신의 AI 마케팅 ",
+      "title2": "컨설턴트 ",
+      "subtitle": "먼저 무료 상담. 제품 이해, 마케팅 진단, 전략 수립 — 준비되면 AI가 실행합니다.",
       "ctaPrimary": "무료로 시작하기",
       "ctaPrimaryLoggedIn": "콘솔로 이동",
       "ctaSecondary": "작동 방식 보기",
       "ctaCopy": "프롬프트 복사"
     },
     "typewriter": {
+      "consultation": "무료 상담",
       "landingPage": "랜딩 페이지",
       "reels": "릴스 영상",
       "social": "소셜 포스트",

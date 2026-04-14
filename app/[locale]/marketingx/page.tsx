@@ -202,11 +202,11 @@ export default function SaleCraftPage() {
 
   /* ── Data arrays (inside component to access t()) ── */
   const TYPEWRITER_WORDS = [
+    t("typewriter.consultation"),
+    t("typewriter.brand"),
     t("typewriter.landingPage"),
     t("typewriter.reels"),
     t("typewriter.social"),
-    t("typewriter.kol"),
-    t("typewriter.brand"),
     t("typewriter.research"),
   ];
 
@@ -473,84 +473,59 @@ export default function SaleCraftPage() {
                 {t("features.factory.desc")}
               </p>
 
-              {/* 3D Isometric Pipeline — CSS cube blocks */}
+              {/* Interactive 3D Pipeline */}
               <div className="pt-8 md:pt-12">
-                <div className="flex flex-wrap justify-center items-end gap-5 sm:gap-6 md:gap-8">
+                <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 md:gap-5">
                   {PIPELINE_STEPS.map((step, j) => {
                     const isLast = j === PIPELINE_STEPS.length - 1;
-                    const h = 70 + j * 10; // each block slightly taller
+                    const icons = ["🔍", "🎯", "📐", "🏭", "✅", "🚀"];
                     return (
                       <motion.div
                         key={j}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 30, rotateY: -20 }}
+                        whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.15 + j * 0.1 }}
-                        className="flex flex-col items-center gap-3"
+                        transition={{ duration: 0.5, delay: 0.15 + j * 0.1, type: "spring", stiffness: 100 }}
+                        whileHover={{ scale: 1.08, rotateY: 10, rotateX: -5, z: 30 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="cursor-pointer group"
+                        style={{ perspective: "600px" }}
                       >
-                        {/* Isometric cube */}
-                        <div className="relative" style={{ width: 80, height: h }}>
-                          {/* Right face */}
-                          <div
-                            className="absolute bottom-0 right-0 rounded-r-lg"
-                            style={{
-                              width: 20,
-                              height: h - 10,
-                              background: isLast
-                                ? "linear-gradient(180deg, hsl(16,70%,40%), hsl(16,70%,28%))"
-                                : `linear-gradient(180deg, hsl(${220 + j * 15},30%,25%), hsl(${220 + j * 15},30%,15%))`,
-                              borderRight: "1px solid rgba(255,255,255,0.06)",
-                              borderBottom: "1px solid rgba(255,255,255,0.06)",
-                              transform: "skewY(-30deg)",
-                              transformOrigin: "bottom right",
-                            }}
-                          />
-                          {/* Front face */}
-                          <div
-                            className="absolute bottom-0 left-0 rounded-l-lg flex flex-col items-center justify-center"
-                            style={{
-                              width: 62,
-                              height: h - 10,
-                              background: isLast
-                                ? "linear-gradient(180deg, hsl(16,70%,50%), hsl(16,70%,36%))"
-                                : `linear-gradient(180deg, hsl(${220 + j * 15},30%,30%), hsl(${220 + j * 15},30%,20%))`,
-                              borderLeft: "1px solid rgba(255,255,255,0.08)",
-                              borderBottom: "1px solid rgba(255,255,255,0.06)",
-                              boxShadow: isLast ? "0 0 40px hsla(16,70%,50%,0.2)" : "none",
-                            }}
+                        <div
+                          className={`relative rounded-2xl p-4 md:p-5 text-center transition-all duration-300 ${isLast
+                            ? "bg-gradient-to-br from-[hsl(16,70%,56%)]/20 to-[hsl(16,70%,40%)]/10 border border-[hsl(16,70%,56%)]/30 shadow-lg shadow-[hsl(16,70%,56%)]/10 group-hover:shadow-[hsl(16,70%,56%)]/30"
+                            : "bg-white/[0.03] border border-white/[0.06] group-hover:border-white/15 group-hover:bg-white/[0.06]"
+                          }`}
+                          style={{ transformStyle: "preserve-3d" }}
+                        >
+                          {/* Floating icon */}
+                          <motion.div
+                            className="text-2xl md:text-3xl mb-2"
+                            animate={{ y: [0, -4, 0] }}
+                            transition={{ duration: 2 + j * 0.3, repeat: Infinity, ease: "easeInOut" }}
                           >
-                            <div className="text-[10px] text-white/25 font-mono">0{j + 1}</div>
+                            {icons[j]}
+                          </motion.div>
+                          {/* Step number */}
+                          <div className="text-[10px] text-white/25 font-mono mb-1">0{j + 1}</div>
+                          {/* Label */}
+                          <div className={`text-xs sm:text-sm font-bold ${isLast ? "text-[hsl(16,70%,56%)]" : "text-white/70 group-hover:text-white"}`}>
+                            {step}
                           </div>
-                          {/* Top face */}
-                          <div
-                            className="absolute top-0 left-0"
-                            style={{
-                              width: 62,
-                              height: 20,
-                              background: isLast
-                                ? "linear-gradient(135deg, hsl(16,70%,58%), hsl(16,70%,48%))"
-                                : `linear-gradient(135deg, hsl(${220 + j * 15},30%,38%), hsl(${220 + j * 15},30%,28%))`,
-                              transform: "skewX(-30deg) translateX(10px)",
-                              borderTop: "1px solid rgba(255,255,255,0.1)",
-                              borderRadius: "4px 4px 0 0",
-                            }}
-                          />
+                          {/* Glow on hover */}
+                          <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ${isLast ? "bg-[hsl(16,70%,56%)]/5" : "bg-white/[0.02]"}`} />
                         </div>
-                        {/* Label */}
-                        <div className={`text-xs sm:text-sm font-semibold ${isLast ? "text-[hsl(16,70%,56%)]" : "text-white/60"}`}>
-                          {step}
-                        </div>
-                        {/* Connector arrow below */}
+                        {/* Connector */}
+                        {j < PIPELINE_STEPS.length - 1 && j !== 2 && (
+                          <div className="hidden sm:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                            <motion.div animate={{ x: [0, 3, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+                              <ArrowRight className="w-3.5 h-3.5 text-[hsl(16,70%,56%)]/30" />
+                            </motion.div>
+                          </div>
+                        )}
                       </motion.div>
                     );
                   })}
-                </div>
-                {/* Horizontal flow arrow */}
-                <div className="hidden sm:flex justify-center mt-6">
-                  <div className="flex items-center gap-1 text-white/20">
-                    <div className="w-48 md:w-80 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                    <ArrowRight className="w-4 h-4 text-[hsl(16,70%,56%)]/40" />
-                  </div>
                 </div>
               </div>
             </div>

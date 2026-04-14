@@ -12,15 +12,16 @@
     "badge": "Plugin Marketing AI — Tương thích MCP",
     "badgeNew": "MỚI",
     "hero": {
-      "title1": "AI Marketer của bạn ",
-      "title2": "lo liệu tất cả ",
-      "subtitle": "Triển khai tự động tài sản marketing cho bất kỳ thương hiệu nào trong 30 phút qua hội thoại AI",
+      "title1": "Tư vấn Marketing AI ",
+      "title2": "cho ",
+      "subtitle": "Tư vấn miễn phí trước. Hiểu sản phẩm, chẩn đoán marketing, lập chiến lược — sẵn sàng thì AI thực hiện.",
       "ctaPrimary": "Bắt đầu miễn phí",
       "ctaPrimaryLoggedIn": "Đến Bảng điều khiển",
       "ctaSecondary": "Xem cách hoạt động",
       "ctaCopy": "Sao chép lệnh"
     },
     "typewriter": {
+      "consultation": "Tư vấn miễn phí",
       "landingPage": "Trang đích",
       "reels": "Video Reels",
       "social": "Bài đăng MXH",

@@ -12,15 +12,16 @@
     "badge": "Plugin de Marketing IA — Compatível MCP",
     "badgeNew": "NOVO",
     "hero": {
-      "title1": "Seu Marketer IA ",
-      "title2": "cuida de tudo para você ",
-      "subtitle": "Implante automaticamente os ativos de marketing de qualquer marca em 30 minutos por meio de conversa com IA",
+      "title1": "Seu Consultor de ",
+      "title2": "Marketing IA para ",
+      "subtitle": "Consultoria gratuita primeiro. Entender seu produto, diagnosticar gaps de marketing, planejar — depois a IA executa quando você estiver pronto.",
       "ctaPrimary": "Comece grátis",
       "ctaPrimaryLoggedIn": "Ir para o Console",
       "ctaSecondary": "Veja como funciona",
       "ctaCopy": "Copiar comando"
     },
     "typewriter": {
+      "consultation": "Consultoria gratuita",
       "landingPage": "Páginas de Destino",
       "reels": "Vídeos Reels",
       "social": "Publicações Sociais",
