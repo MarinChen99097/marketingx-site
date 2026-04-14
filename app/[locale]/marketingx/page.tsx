@@ -211,15 +211,14 @@ export default function SaleCraftPage() {
   ];
 
   const STATS = [
-    { value: 200, suffix: "+", label: t("stats.tools"), icon: Layers },
-    { value: 40, suffix: "+", label: t("stats.industries"), icon: Building2 },
     { value: 30, suffix: " min", label: t("stats.speed"), icon: Zap },
+    { value: 6, suffix: "", label: t("stats.platforms"), icon: Globe },
+    { value: 8, suffix: "", label: t("stats.industries"), icon: Building2 },
     { value: 10, suffix: "+", label: t("stats.skills"), icon: Star },
   ];
 
   const HERO_FEATURES = [
-    { icon: Bot, title: t("features.ai.title"), desc: t("features.ai.desc"), visual: "ai-pipeline" as const },
-    { icon: Layers, title: t("features.allInOne.title"), desc: t("features.allInOne.desc"), visual: "all-in-one" as const },
+    { icon: Factory, title: t("features.factory.title"), desc: t("features.factory.desc"), visual: "ai-pipeline" as const },
   ];
 
   const CAPABILITIES = [

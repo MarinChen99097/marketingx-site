@@ -34,7 +34,7 @@
       "subtitle": "Collez cette commande dans Claude Code pour commencer"
     },
     "stats": {
-      "tools": "Outils MCP",
+      "platforms": "Plateformes",
       "industries": "Apps sectorielles",
       "speed": "Générer une page d'atterrissage",
       "skills": "Compétences clés"
@@ -55,6 +55,10 @@
       "allInOne": {
         "title": "Tout le marketing en un seul endroit",
         "desc": "Pages d'atterrissage, Reels, publications sociales, correspondance KOL, analytics — gérez tous vos besoins marketing sur une seule plateforme."
+      },
+      "factory": {
+        "title": "Usine IA",
+        "desc": "Téléchargez vos assets → L'IA analyse votre produit → Stratège planifie → Architecte conçoit → Usine génère → Superviseur inspecte. Entièrement automatisé, 30 minutes."
       },
       "payg": {
         "title": "Payez à l'utilisation",

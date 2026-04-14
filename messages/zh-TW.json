@@ -34,7 +34,7 @@
       "subtitle": "在 Claude Code 貼上這行指令即可開始"
     },
     "stats": {
-      "tools": "MCP 工具",
+      "platforms": "發佈平台",
       "industries": "產業應用",
       "speed": "生成 Landing Page",
       "skills": "核心技能"
@@ -55,6 +55,10 @@
       "allInOne": {
         "title": "所有行銷一站搞定",
         "desc": "Landing Page、Reels、社群發佈、KOL 媒合、數據分析 — 一個平台管理所有行銷需求。"
+      },
+      "factory": {
+        "title": "AI 工廠",
+        "desc": "上傳品牌素材 → AI 分析你的產品 → 策略師規劃 → 建築師設計 → 工廠生成 → 監工檢查。全自動化，30 分鐘交件。"
       },
       "payg": {
         "title": "用多少付多少",

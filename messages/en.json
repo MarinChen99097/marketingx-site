@@ -34,7 +34,7 @@
       "subtitle": "Paste this command in Claude Code to get started"
     },
     "stats": {
-      "tools": "MCP Tools",
+      "platforms": "Platforms",
       "industries": "Industry Apps",
       "speed": "Generate Landing Page",
       "skills": "Core Skills"
@@ -55,6 +55,10 @@
       "allInOne": {
         "title": "All marketing in one place",
         "desc": "Landing Pages, Reels, social posting, KOL matching, analytics — manage all marketing needs in one platform."
+      },
+      "factory": {
+        "title": "AI Factory",
+        "desc": "Upload brand assets → AI analyzes your product → Strategist plans → Architect designs → Factory generates → Supervisor inspects. Fully automated, 30-minute turnaround."
       },
       "payg": {
         "title": "Pay as you go",

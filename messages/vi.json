@@ -34,7 +34,7 @@
       "subtitle": "Dán lệnh này vào Claude Code để bắt đầu"
     },
     "stats": {
-      "tools": "Công cụ MCP",
+      "platforms": "Nền tảng",
       "industries": "Ứng dụng ngành",
       "speed": "Tạo trang đích",
       "skills": "Kỹ năng cốt lõi"
@@ -55,6 +55,10 @@
       "allInOne": {
         "title": "Tất cả marketing một nơi",
         "desc": "Trang đích, Reels, đăng bài MXH, kết nối KOL, phân tích — quản lý mọi nhu cầu marketing trên một nền tảng."
+      },
+      "factory": {
+        "title": "Nhà máy AI",
+        "desc": "Tải lên tài liệu thương hiệu → AI phân tích sản phẩm → Chiến lược gia lên kế hoạch → Kiến trúc sư thiết kế → Nhà máy tạo → Giám sát kiểm tra. Tự động hoàn toàn, 30 phút hoàn thành."
       },
       "payg": {
         "title": "Trả theo lượng dùng",

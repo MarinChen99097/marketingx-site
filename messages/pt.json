@@ -34,7 +34,7 @@
       "subtitle": "Cole este comando no Claude Code para começar"
     },
     "stats": {
-      "tools": "Ferramentas MCP",
+      "platforms": "Plataformas",
       "industries": "Apps Setoriais",
       "speed": "Gerar Página de Destino",
       "skills": "Habilidades Principais"
@@ -55,6 +55,10 @@
       "allInOne": {
         "title": "Todo o marketing em um só lugar",
         "desc": "Páginas de destino, Reels, publicações sociais, matching de KOL, analytics — gerencie todas as necessidades de marketing em uma plataforma."
+      },
+      "factory": {
+        "title": "Fábrica IA",
+        "desc": "Envie os assets da marca → IA analisa seu produto → Estrategista planeja → Arquiteto projeta → Fábrica gera → Supervisor inspeciona. Totalmente automatizado, 30 minutos."
       },
       "payg": {
         "title": "Pague conforme o uso",
