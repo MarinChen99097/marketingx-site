@@ -465,24 +465,7 @@ export default function SaleCraftPage() {
                 <h3 className="text-2xl md:text-3xl font-bold text-white">{f.title}</h3>
                 <p className="text-white/50 text-base md:text-lg leading-relaxed max-w-2xl">{f.desc}</p>
 
-                {/* Visual area — styled chart/graphic like Zeabur */}
-                {f.visual === "all-in-one" && (
-                  <div className="mt-8 flex gap-4 flex-wrap">
-                    {["Landing Page", "Reels", "IG", "FB", "TikTok", "KOL", "Analytics", "Research"].map((tag, j) => (
-                      <motion.span
-                        key={j}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: 0.4 + j * 0.06 }}
-                        className="px-3 py-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] text-sm text-white/60"
-                      >
-                        {tag}
-                      </motion.span>
-                    ))}
-                  </div>
-                )}
-
+                {/* Visual area — AI Factory pipeline */}
                 {f.visual === "ai-pipeline" && (
                   <div className="mt-8 flex items-center gap-3 overflow-x-auto pb-2">
                     {PIPELINE_STEPS.map((step, j) => (
