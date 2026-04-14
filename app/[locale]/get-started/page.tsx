@@ -79,7 +79,7 @@ export default function GetStartedPage() {
   const [loading, setLoading] = useState(true);
 
   const LANDING_AI_URL = "https://landingai.info";
-  const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/marketingx.plugin`;
+  const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/salecraft`;
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -380,7 +380,7 @@ export default function GetStartedPage() {
               </div>
               <div className="font-mono text-xs sm:text-sm leading-relaxed text-white/80 whitespace-pre-wrap break-all">
                 <span className="text-[hsl(16,70%,60%)]">&#10095;</span> Generate a landing page for me with this plugin{"\n"}
-                <span className="text-blue-400">https://github.com/MarinChen99097/marketingx.plugin</span>
+                <span className="text-blue-400">https://github.com/MarinChen99097/salecraft</span>
               </div>
             </div>
             <Button
