@@ -473,57 +473,84 @@ export default function SaleCraftPage() {
                 {t("features.factory.desc")}
               </p>
 
-              {/* 3D Pipeline visual — isometric factory blocks */}
-              <div className="pt-6 md:pt-10">
-                <div className="flex flex-wrap justify-center gap-4 md:gap-6" style={{ perspective: "800px" }}>
+              {/* 3D Isometric Pipeline — CSS cube blocks */}
+              <div className="pt-8 md:pt-12">
+                <div className="flex flex-wrap justify-center items-end gap-5 sm:gap-6 md:gap-8">
                   {PIPELINE_STEPS.map((step, j) => {
                     const isLast = j === PIPELINE_STEPS.length - 1;
-                    const accentColor = isLast ? "hsl(16,70%,56%)" : `hsl(${16 + j * 8},${50 + j * 5}%,${56 - j * 3}%)`;
+                    const h = 70 + j * 10; // each block slightly taller
                     return (
                       <motion.div
                         key={j}
-                        initial={{ opacity: 0, y: 30, rotateX: 20 }}
-                        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 + j * 0.12 }}
-                        className="relative group"
+                        transition={{ duration: 0.5, delay: 0.15 + j * 0.1 }}
+                        className="flex flex-col items-center gap-3"
                       >
-                        {/* 3D Block */}
-                        <div
-                          className="relative w-[90px] h-[90px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
-                          style={{ transformStyle: "preserve-3d", transform: "rotateX(10deg) rotateY(-15deg)" }}
-                        >
-                          {/* Top face */}
+                        {/* Isometric cube */}
+                        <div className="relative" style={{ width: 80, height: h }}>
+                          {/* Right face */}
                           <div
-                            className="absolute inset-0 rounded-xl"
+                            className="absolute bottom-0 right-0 rounded-r-lg"
                             style={{
-                              background: `linear-gradient(135deg, ${accentColor}20, ${accentColor}08)`,
-                              border: `1px solid ${accentColor}30`,
-                              transform: "translateZ(20px)",
-                              boxShadow: `0 0 30px ${accentColor}15`,
+                              width: 20,
+                              height: h - 10,
+                              background: isLast
+                                ? "linear-gradient(180deg, hsl(16,70%,40%), hsl(16,70%,28%))"
+                                : `linear-gradient(180deg, hsl(${220 + j * 15},30%,25%), hsl(${220 + j * 15},30%,15%))`,
+                              borderRight: "1px solid rgba(255,255,255,0.06)",
+                              borderBottom: "1px solid rgba(255,255,255,0.06)",
+                              transform: "skewY(-30deg)",
+                              transformOrigin: "bottom right",
                             }}
                           />
                           {/* Front face */}
                           <div
-                            className="absolute inset-0 rounded-xl flex flex-col items-center justify-center"
+                            className="absolute bottom-0 left-0 rounded-l-lg flex flex-col items-center justify-center"
                             style={{
-                              background: `linear-gradient(180deg, ${accentColor}15, transparent)`,
-                              border: `1px solid ${accentColor}20`,
+                              width: 62,
+                              height: h - 10,
+                              background: isLast
+                                ? "linear-gradient(180deg, hsl(16,70%,50%), hsl(16,70%,36%))"
+                                : `linear-gradient(180deg, hsl(${220 + j * 15},30%,30%), hsl(${220 + j * 15},30%,20%))`,
+                              borderLeft: "1px solid rgba(255,255,255,0.08)",
+                              borderBottom: "1px solid rgba(255,255,255,0.06)",
+                              boxShadow: isLast ? "0 0 40px hsla(16,70%,50%,0.2)" : "none",
                             }}
                           >
-                            <div className="text-[10px] md:text-xs text-white/30 font-mono mb-1">0{j + 1}</div>
-                            <div className={`text-xs sm:text-sm md:text-base font-bold ${isLast ? "text-[hsl(16,70%,56%)]" : "text-white/80"}`}>{step}</div>
+                            <div className="text-[10px] text-white/25 font-mono">0{j + 1}</div>
                           </div>
+                          {/* Top face */}
+                          <div
+                            className="absolute top-0 left-0"
+                            style={{
+                              width: 62,
+                              height: 20,
+                              background: isLast
+                                ? "linear-gradient(135deg, hsl(16,70%,58%), hsl(16,70%,48%))"
+                                : `linear-gradient(135deg, hsl(${220 + j * 15},30%,38%), hsl(${220 + j * 15},30%,28%))`,
+                              transform: "skewX(-30deg) translateX(10px)",
+                              borderTop: "1px solid rgba(255,255,255,0.1)",
+                              borderRadius: "4px 4px 0 0",
+                            }}
+                          />
                         </div>
-                        {/* Connector arrow */}
-                        {j < PIPELINE_STEPS.length - 1 && (
-                          <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                            <ArrowRight className="w-4 h-4 text-[hsl(16,70%,56%)]/30" />
-                          </div>
-                        )}
+                        {/* Label */}
+                        <div className={`text-xs sm:text-sm font-semibold ${isLast ? "text-[hsl(16,70%,56%)]" : "text-white/60"}`}>
+                          {step}
+                        </div>
+                        {/* Connector arrow below */}
                       </motion.div>
                     );
                   })}
+                </div>
+                {/* Horizontal flow arrow */}
+                <div className="hidden sm:flex justify-center mt-6">
+                  <div className="flex items-center gap-1 text-white/20">
+                    <div className="w-48 md:w-80 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                    <ArrowRight className="w-4 h-4 text-[hsl(16,70%,56%)]/40" />
+                  </div>
                 </div>
               </div>
             </div>
