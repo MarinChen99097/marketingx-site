@@ -32,7 +32,8 @@
     "pluginInstall": {
       "title1": "一行指令，",
       "title2": "即刻上線",
-      "subtitle": "在任何支援 MCP 的 AI 平台加入此外掛即可開始"
+      "subtitle": "在任何支援 MCP 的 AI 平台加入此外掛即可開始",
+      "command": "我想使用這個行銷 Plugin 來免費諮詢"
     },
     "stats": {
       "platforms": "發佈平台",
@@ -240,6 +241,7 @@
     "step1": {
       "title": "安裝 SaleCraft 外掛",
       "desc": "將此外掛 URL 加入你的 AI 平台的 MCP 設定，即可使用所有行銷工具。",
+      "command": "我想使用這個行銷 Plugin 來免費諮詢",
       "copyBtn": "複製指令到 Claude",
       "copiedBtn": "已複製到剪貼簿！"
     },

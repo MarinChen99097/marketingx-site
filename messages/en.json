@@ -32,7 +32,8 @@
     "pluginInstall": {
       "title1": "One command, ",
       "title2": "instantly live",
-      "subtitle": "Add this plugin to any MCP-compatible AI platform"
+      "subtitle": "Add this plugin to any MCP-compatible AI platform",
+      "command": "I want to use this marketing plugin for a free consultation"
     },
     "stats": {
       "platforms": "Platforms",
@@ -240,6 +241,7 @@
     "step1": {
       "title": "Install SaleCraft Plugin",
       "desc": "Add this plugin URL to your AI platform's MCP settings to access all marketing tools.",
+      "command": "I want to use this marketing plugin for a free consultation",
       "copyBtn": "Copy Command to Claude",
       "copiedBtn": "Copied to Clipboard!"
     },

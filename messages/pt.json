@@ -32,7 +32,8 @@
     "pluginInstall": {
       "title1": "Um comando, ",
       "title2": "instantaneamente online",
-      "subtitle": "Adicione este plugin a qualquer plataforma IA compatível com MCP"
+      "subtitle": "Adicione este plugin a qualquer plataforma IA compatível com MCP",
+      "command": "Quero usar este plugin de marketing para uma consultoria gratuita"
     },
     "stats": {
       "platforms": "Plataformas",
@@ -240,6 +241,7 @@
     "step1": {
       "title": "Instalar plugin SaleCraft",
       "desc": "Adicione esta URL de plugin às configurações MCP da sua plataforma IA para acessar todas as ferramentas de marketing.",
+      "command": "Quero usar este plugin de marketing para uma consultoria gratuita",
       "copyBtn": "Copiar comando para o Claude",
       "copiedBtn": "Copiado para a área de transferência!"
     },

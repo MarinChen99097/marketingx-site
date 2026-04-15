@@ -79,7 +79,7 @@ export default function GetStartedPage() {
   const [loading, setLoading] = useState(true);
 
   const LANDING_AI_URL = "https://landingai.info";
-  const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/Salecraft-Plugin`;
+  const PLUGIN_CMD = `${t("step1.command")}\nhttps://github.com/MarinChen99097/Salecraft-Plugin`;
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -379,7 +379,7 @@ export default function GetStartedPage() {
                 <span className="text-[10px] text-white/20 ml-2 font-mono">MCP Plugin</span>
               </div>
               <div className="font-mono text-xs sm:text-sm leading-relaxed text-white/80 whitespace-pre-wrap break-all">
-                <span className="text-[hsl(16,70%,60%)]">&#10095;</span> Generate a landing page for me with this plugin{"\n"}
+                <span className="text-[hsl(16,70%,60%)]">&#10095;</span> {t("step1.command")}{"\n"}
                 <span className="text-blue-400">https://github.com/MarinChen99097/Salecraft-Plugin</span>
               </div>
             </div>

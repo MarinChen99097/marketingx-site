@@ -278,7 +278,7 @@ export default function SaleCraftPage() {
   const SITE_URL = typeof window !== "undefined" ? window.location.origin : "https://marketingx-site-876464738390.asia-east1.run.app";
   const ctaHref = `${LANDING_AI_URL}/${locale}/register?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
 
-  const PLUGIN_CMD = `Generate a landing page for me with this plugin\nhttps://github.com/MarinChen99097/Salecraft-Plugin`;
+  const PLUGIN_CMD = `${t("pluginInstall.command")}\nhttps://github.com/MarinChen99097/Salecraft-Plugin`;
 
   const handleCopy = async () => {
     try { await navigator.clipboard.writeText(PLUGIN_CMD); } catch {
@@ -414,7 +414,7 @@ export default function SaleCraftPage() {
               {/* Command */}
               <div className="font-mono text-sm md:text-base leading-relaxed">
                 <span className="text-[hsl(16,70%,60%)]">&#10095;</span>{" "}
-                <span className="text-white/80">Generate a landing page for me with this plugin</span>
+                <span className="text-white/80">{t("pluginInstall.command")}</span>
                 <br />
                 <span className="text-[hsl(16,70%,60%)]">&#10095;</span>{" "}
                 <span className="text-blue-400 break-all">https://github.com/MarinChen99097/Salecraft-Plugin</span>
