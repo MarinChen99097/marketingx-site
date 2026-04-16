@@ -242,7 +242,7 @@
       "title": "Installer le plugin SaleCraft",
       "desc": "Ajoutez cette URL de plugin aux paramètres MCP de votre plateforme IA pour accéder à tous les outils marketing.",
       "command": "J'aimerais utiliser ce plugin pour obtenir des conseils sur la commercialisation de mon produit",
-      "copyBtn": "Copier la commande vers Claude",
+      "copyBtn": "Copier la commande",
       "copiedBtn": "Copié dans le presse-papiers !"
     },
     "step2": {

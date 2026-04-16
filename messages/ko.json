@@ -242,7 +242,7 @@
       "title": "SaleCraft 플러그인 설치",
       "desc": "이 플러그인 URL을 AI 플랫폼의 MCP 설정에 추가하면 모든 마케팅 도구를 사용할 수 있습니다.",
       "command": "이 플러그인을 사용해 제품 마케팅 방법에 대해 상담받고 싶습니다",
-      "copyBtn": "Claude에 명령어 복사",
+      "copyBtn": "명령어 복사",
       "copiedBtn": "클립보드에 복사됨!"
     },
     "step2": {

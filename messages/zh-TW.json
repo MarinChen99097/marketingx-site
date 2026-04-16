@@ -242,7 +242,7 @@
       "title": "安裝 SaleCraft 外掛",
       "desc": "將此外掛 URL 加入你的 AI 平台的 MCP 設定，即可使用所有行銷工具。",
       "command": "我想用這個外掛來諮詢如何行銷我的產品",
-      "copyBtn": "複製指令到 Claude",
+      "copyBtn": "複製指令",
       "copiedBtn": "已複製到剪貼簿！"
     },
     "step2": {

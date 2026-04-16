@@ -242,7 +242,7 @@
       "title": "Cài đặt Plugin SaleCraft",
       "desc": "Thêm URL plugin này vào cài đặt MCP của nền tảng AI để sử dụng tất cả công cụ marketing.",
       "command": "Tôi muốn dùng plugin này để được tư vấn cách tiếp thị sản phẩm",
-      "copyBtn": "Sao chép lệnh đến Claude",
+      "copyBtn": "Sao chép lệnh",
       "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"
     },
     "step2": {
