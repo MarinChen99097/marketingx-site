@@ -1,0 +1,13 @@
+{
+  "name": "SaleCraft",
+  "short_name": "SaleCraft",
+  "description": "AI Marketing Consultant",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#DD6A40",
+  "icons": [
+    { "src": "/icon", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-icon", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -70,7 +70,7 @@ export function LandingAILogo({
             /* ── Detailed filled with crossbar + counter ──────── */
             case "bold":
                 return (
-                    <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Landing AI" role="img">
+                    <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="SaleCraft" role="img">
                         <path d={L_DETAIL} fill="currentColor" />
                         <path fillRule="evenodd" d={A_DETAIL} fill="currentColor" />
                     </svg>
@@ -79,7 +79,7 @@ export function LandingAILogo({
             /* ── L = foreground, A = coral with crossbar ─────── */
             case "dual":
                 return (
-                    <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Landing AI" role="img">
+                    <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="SaleCraft" role="img">
                         <path d={L_DETAIL} fill="currentColor" />
                         <path fillRule="evenodd" d={A_DETAIL} style={{ fill: "hsl(var(--primary))" }} />
                     </svg>
@@ -88,7 +88,7 @@ export function LandingAILogo({
             /* ── Dual-color inside concentric rings ──────────── */
             case "circle":
                 return (
-                    <svg width={size} height={size} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-label="Landing AI" role="img">
+                    <svg width={size} height={size} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-label="SaleCraft" role="img">
                         <circle cx="24" cy="24" r="22.5" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.2" />
                         <circle cx="24" cy="24" r="18.5" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" />
                         <path d={L_CIRCLE} fill="currentColor" />
@@ -99,7 +99,7 @@ export function LandingAILogo({
             /* ── Thin stroke — organic & subtle ──────────────── */
             case "minimal":
                 return (
-                    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Landing AI" role="img">
+                    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SaleCraft" role="img">
                         <path d={LA_STROKE} stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                         <line x1="17" y1="17.5" x2="25" y2="17.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                     </svg>
@@ -109,7 +109,7 @@ export function LandingAILogo({
             case "default":
             default:
                 return (
-                    <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Landing AI" role="img">
+                    <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="SaleCraft" role="img">
                         <path d={L_BOLD} fill="currentColor" />
                         <path d={A_BOLD} fill="currentColor" />
                     </svg>
@@ -122,7 +122,7 @@ export function LandingAILogo({
             {svg}
             {showText && (
                 <span className={cn("font-bold tracking-tight", textClassName)}>
-                    Landing AI
+                    SaleCraft
                 </span>
             )}
         </span>

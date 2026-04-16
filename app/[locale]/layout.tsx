@@ -6,8 +6,47 @@ import { routing } from '@/i18n/routing';
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "SaleCraft — AI Marketing Plugin for Claude Code",
-  description: "200+ MCP tools. Generate landing pages, reels, social posts in 30 minutes.",
+  metadataBase: new URL("https://salecraft.ai"),
+  title: {
+    default: "SaleCraft — AI Marketing Consultant",
+    template: "%s | SaleCraft",
+  },
+  description:
+    "Free AI marketing consultant for product sellers. Brand analysis, strategy planning, landing pages, reels, and social posts — all in 30 minutes.",
+  keywords: [
+    "AI marketing",
+    "landing page generator",
+    "marketing consultant",
+    "brand analysis",
+    "social media marketing",
+    "reels generator",
+  ],
+  authors: [{ name: "SaleCraft" }],
+  creator: "SaleCraft",
+  publisher: "SaleCraft",
+  openGraph: {
+    type: "website",
+    locale: "en",
+    url: "https://salecraft.ai",
+    siteName: "SaleCraft",
+    title: "SaleCraft — AI Marketing Consultant",
+    description:
+      "Free AI marketing consultant for product sellers. Brand analysis, strategy planning, landing pages, reels, and social posts — all in 30 minutes.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SaleCraft — AI Marketing Consultant",
+    description:
+      "Free AI marketing consultant for product sellers. Brand analysis, strategy planning, landing pages, reels, and social posts.",
+  },
+  icons: {
+    icon: [
+      { url: "/icon", sizes: "32x32", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon", sizes: "180x180" }],
+  },
+  manifest: "/manifest.webmanifest",
 };
 
 const RTL_LOCALES = ['ar'];
