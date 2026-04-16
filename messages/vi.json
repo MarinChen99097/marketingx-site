@@ -33,7 +33,7 @@
       "title1": "Một lệnh duy nhất, ",
       "title2": "chạy ngay lập tức",
       "subtitle": "Thêm plugin này vào bất kỳ nền tảng AI hỗ trợ MCP",
-      "command": "Tôi muốn dùng plugin marketing này để tư vấn miễn phí"
+      "command": "Tôi muốn dùng plugin này để được tư vấn cách tiếp thị sản phẩm"
     },
     "stats": {
       "platforms": "Nền tảng",
@@ -241,7 +241,7 @@
     "step1": {
       "title": "Cài đặt Plugin SaleCraft",
       "desc": "Thêm URL plugin này vào cài đặt MCP của nền tảng AI để sử dụng tất cả công cụ marketing.",
-      "command": "Tôi muốn dùng plugin marketing này để tư vấn miễn phí",
+      "command": "Tôi muốn dùng plugin này để được tư vấn cách tiếp thị sản phẩm",
       "copyBtn": "Sao chép lệnh đến Claude",
       "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"
     },
