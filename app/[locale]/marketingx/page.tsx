@@ -275,7 +275,7 @@ export default function SaleCraftPage() {
   }, []);
 
   const LANDING_AI_URL = "https://landingai.info";
-  const SITE_URL = typeof window !== "undefined" ? window.location.origin : "https://marketingx-site-876464738390.asia-east1.run.app";
+  const SITE_URL = typeof window !== "undefined" ? window.location.origin : "https://salecraft.ai";
   const ctaHref = `${LANDING_AI_URL}/${locale}/register?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
 
   const PLUGIN_CMD = `${t("pluginInstall.command")}\nhttps://github.com/connactai/Salecraft-Plugin`;

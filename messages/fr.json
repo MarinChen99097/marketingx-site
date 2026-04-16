@@ -261,6 +261,8 @@
       "title": "Recharger des points",
       "desc": "1 $ USD = 30 pts. Après la recharge, vous pouvez utiliser la génération de pages d'atterrissage, Reels, publication sociale et toutes les autres fonctionnalités.",
       "balance": "Solde actuel",
+      "amountLabel": "Montant à recharger",
+      "custom": "Personnalisé",
       "usd": "USD",
       "pts": "pts",
       "costRef": "Page d'atterrissage ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",

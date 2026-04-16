@@ -261,6 +261,8 @@
       "title": "儲值點數",
       "desc": "$1 美元 = 30 點。儲值後即可使用 Landing Page 生成、Reels、社群發佈等所有功能。",
       "balance": "目前餘額",
+      "amountLabel": "儲值金額",
+      "custom": "自訂",
       "usd": "美元",
       "pts": "點",
       "costRef": "Landing Page ≈ 75–250 點 · Reels ≈ 50–150 點 · 社群 ≈ 5–10 點",

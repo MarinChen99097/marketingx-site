@@ -491,7 +491,7 @@ export default function GetStartedPage() {
             {/* Amount selector */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-white/50">儲值金額</span>
+                <span className="text-sm text-white/50">{t("step4.amountLabel")}</span>
                 <span className="text-xs text-white/30">$1 USD = 30 pts</span>
               </div>
               {/* 3 options: $20, $75, Custom */}
@@ -514,7 +514,7 @@ export default function GetStartedPage() {
                   onClick={() => setCustomAmount(true)}
                   className={`py-3 rounded-xl text-center transition-all ${customAmount ? "bg-[hsl(16,70%,56%)] text-white ring-2 ring-[hsl(16,70%,56%)]/30" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
                 >
-                  <div className="text-lg font-bold">自訂</div>
+                  <div className="text-lg font-bold">{t("step4.custom")}</div>
                   <div className="text-[10px] opacity-60">min $20</div>
                 </button>
               </div>

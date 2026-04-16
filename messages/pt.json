@@ -261,6 +261,8 @@
       "title": "Recarregar Pontos",
       "desc": "$1 USD = 30 pts. Após a recarga, você pode usar geração de páginas de destino, Reels, publicação social e todos os outros recursos.",
       "balance": "Saldo Atual",
+      "amountLabel": "Valor a carregar",
+      "custom": "Personalizado",
       "usd": "USD",
       "pts": "pts",
       "costRef": "Página de Destino ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",

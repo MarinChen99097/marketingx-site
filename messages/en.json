@@ -261,6 +261,8 @@
       "title": "Top Up Points",
       "desc": "$1 USD = 30 pts. After topping up, you can use Landing Page generation, Reels, social publishing, and all other features.",
       "balance": "Current Balance",
+      "amountLabel": "Top Up Amount",
+      "custom": "Custom",
       "usd": "USD",
       "pts": "pts",
       "costRef": "Landing Page ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",

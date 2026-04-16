@@ -261,6 +261,8 @@
       "title": "Nạp điểm",
       "desc": "$1 USD = 30 điểm. Sau khi nạp, bạn có thể sử dụng tạo trang đích, Reels, đăng bài MXH và tất cả tính năng khác.",
       "balance": "Số dư hiện tại",
+      "amountLabel": "Số tiền nạp",
+      "custom": "Tùy chỉnh",
       "usd": "USD",
       "pts": "điểm",
       "costRef": "Trang đích ≈ 75–250 điểm · Reels ≈ 50–150 điểm · MXH ≈ 5–10 điểm",
