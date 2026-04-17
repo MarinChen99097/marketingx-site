@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -10,7 +10,6 @@ import {
   ArrowRight, CheckCircle, ExternalLink,
   Copy, Check, Sparkles, LogOut, Loader2, KeyRound
 } from "lucide-react";
-import { useMemo } from "react";
 import { LandingAILogo } from "@/components/LandingAILogo";
 import { Button } from "@/components/ui/button";
 import api, { zereoApi } from "@/lib/api";
