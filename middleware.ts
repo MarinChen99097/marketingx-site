@@ -45,5 +45,12 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/(en|zh-TW|ko|ja|vi|fr|th|es|pt|ar)/:path*']
+  // Include '/get-started' (without locale) so LLMs who forget the locale
+  // prefix don't hit a 404 — next-intl middleware will detect Accept-Language
+  // and 302 to /{locale}/get-started.
+  matcher: [
+    '/',
+    '/get-started',
+    '/(en|zh-TW|ko|ja|vi|fr|th|es|pt|ar)/:path*',
+  ],
 };
