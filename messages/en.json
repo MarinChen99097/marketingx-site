@@ -185,7 +185,7 @@
         },
         "s2": {
           "title": "Install Plugin",
-          "desc": "Paste one command in Claude Code, auto-connect 200+ tools"
+          "desc": "Paste one command in your AI assistant, auto-connect 200+ tools"
         },
         "s3": {
           "title": "AI Generates Assets",
@@ -236,7 +236,7 @@
       "badge": "Account Created",
       "title1": "Welcome to ",
       "title2": "SaleCraft",
-      "subtitle": "Complete these 4 steps to unlock all AI marketing capabilities"
+      "subtitle": "Complete these 5 steps to unlock all AI marketing capabilities"
     },
     "step1": {
       "title": "Install SaleCraft Plugin",
@@ -246,18 +246,34 @@
       "copiedBtn": "Copied to Clipboard!"
     },
     "step2": {
+      "title": "Copy Your AI Login Token",
+      "desc": "Paste this token to your AI assistant (ChatGPT, Claude, Gemini, etc.) and it can log you into SaleCraft without your email or password. The token expires in 12 hours.",
+      "loading": "Generating your token...",
+      "notReady": "(not generated yet)",
+      "copyBtn": "Copy Token",
+      "copiedBtn": "Copied!",
+      "copyFailed": "Auto-copy failed. Tap the input below to select the token, then press Cmd/Ctrl+C.",
+      "tapToSelect": "Tap to Select Token",
+      "regenerate": "Regenerate",
+      "expiresAt": "Expires at {time}",
+      "expiresSoon": "⚠️ Token expires soon — please regenerate",
+      "singleLiveWarning": "Regenerating will immediately invalidate the token anywhere else you pasted it. Only regenerate if you suspect the token leaked.",
+      "featureUnavailable": "This feature is under maintenance. Please log in with email and password for now.",
+      "createFailed": "Couldn't generate a token. Please try again or refresh the page."
+    },
+    "step3": {
       "title": "Connect Meta Account",
       "desc": "Link your Facebook / Instagram account to let AI auto-publish posts, stories, and Reels. Both personal and professional accounts are supported.",
       "btn": "Connect Facebook / Instagram",
       "connected": "Meta account connected"
     },
-    "step3": {
+    "step4": {
       "title": "Connect Google Account",
       "desc": "Link your Google account to access Google Drive content. AI can directly read your brand materials and documents. If you signed up with Google, this step is already done.",
       "btn": "Connect Google Account",
       "connected": "Google account connected"
     },
-    "step4": {
+    "step5": {
       "title": "Top Up Points",
       "desc": "$1 USD = 30 pts. After topping up, you can use Landing Page generation, Reels, social publishing, and all other features.",
       "balance": "Current Balance",
@@ -274,7 +290,7 @@
       "pending": "Optional"
     },
     "bottom": {
-      "note": "After setup, return to Claude Code to start your first marketing project",
+      "note": "After setup, return to your AI assistant to start your first marketing project",
       "dashboard": "Go to Dashboard",
       "home": "Back to Home"
     }

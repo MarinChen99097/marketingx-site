@@ -185,7 +185,7 @@
         },
         "s2": {
           "title": "Instalar plugin",
-          "desc": "Cole um comando no Claude Code, conexão automática a 200+ ferramentas"
+          "desc": "Cole um comando no seu assistente de IA, conexão automática a 200+ ferramentas"
         },
         "s3": {
           "title": "IA gera ativos",
@@ -236,7 +236,7 @@
       "badge": "Conta Criada",
       "title1": "Bem-vindo ao ",
       "title2": "SaleCraft",
-      "subtitle": "Complete estes 4 passos para desbloquear todas as capacidades de marketing com IA"
+      "subtitle": "Complete estes 5 passos para desbloquear todos os recursos de marketing com IA"
     },
     "step1": {
       "title": "Instalar plugin SaleCraft",
@@ -246,18 +246,34 @@
       "copiedBtn": "Copiado para a área de transferência!"
     },
     "step2": {
+      "title": "Copie seu Token de login da IA",
+      "desc": "Cole este token no seu assistente de IA (ChatGPT, Claude, Gemini, etc.) para entrar no SaleCraft sem e-mail ou senha. O token expira em 12 horas.",
+      "loading": "Gerando seu token...",
+      "notReady": "(ainda não gerado)",
+      "copyBtn": "Copiar Token",
+      "copiedBtn": "Copiado!",
+      "copyFailed": "Cópia automática falhou. Toque no campo abaixo para selecionar o token e pressione Cmd/Ctrl+C.",
+      "tapToSelect": "Toque para selecionar",
+      "regenerate": "Regenerar",
+      "expiresAt": "Expira às {time}",
+      "expiresSoon": "⚠️ O token expira em breve — regenere-o",
+      "singleLiveWarning": "Regenerar invalida imediatamente o token que você colou em outros lugares. Regenere apenas se suspeitar de vazamento.",
+      "featureUnavailable": "Este recurso está em manutenção. Por favor, faça login com e-mail e senha.",
+      "createFailed": "Não foi possível gerar o token. Tente novamente ou atualize a página."
+    },
+    "step3": {
       "title": "Conectar conta Meta",
       "desc": "Vincule sua conta do Facebook / Instagram para que a IA publique automaticamente posts, stories e Reels. Contas pessoais e profissionais são suportadas.",
       "btn": "Conectar Facebook / Instagram",
       "connected": "Conta Meta conectada"
     },
-    "step3": {
+    "step4": {
       "title": "Conectar conta Google",
       "desc": "Vincule sua conta Google para acessar conteúdo do Google Drive. A IA pode ler diretamente seus materiais de marca e documentos. Se você se cadastrou com Google, este passo já está concluído.",
       "btn": "Conectar conta Google",
       "connected": "Conta Google conectada"
     },
-    "step4": {
+    "step5": {
       "title": "Recarregar Pontos",
       "desc": "$1 USD = 30 pts. Após a recarga, você pode usar geração de páginas de destino, Reels, publicação social e todos os outros recursos.",
       "balance": "Saldo Atual",
@@ -274,7 +290,7 @@
       "pending": "Opcional"
     },
     "bottom": {
-      "note": "Após a configuração, volte ao Claude Code para iniciar seu primeiro projeto de marketing",
+      "note": "Após a configuração, volte ao seu assistente de IA para iniciar seu primeiro projeto de marketing",
       "dashboard": "Ir para o Painel",
       "home": "Voltar ao Início"
     }

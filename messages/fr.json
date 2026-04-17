@@ -185,7 +185,7 @@
         },
         "s2": {
           "title": "Installer le plugin",
-          "desc": "Collez une commande dans Claude Code, connexion auto à 200+ outils"
+          "desc": "Collez une commande dans votre assistant IA, connexion auto à 200+ outils"
         },
         "s3": {
           "title": "L'IA génère les ressources",
@@ -236,7 +236,7 @@
       "badge": "Compte créé",
       "title1": "Bienvenue sur ",
       "title2": "SaleCraft",
-      "subtitle": "Complétez ces 4 étapes pour débloquer toutes les capacités marketing IA"
+      "subtitle": "Complétez ces 5 étapes pour débloquer toutes les capacités marketing IA"
     },
     "step1": {
       "title": "Installer le plugin SaleCraft",
@@ -246,18 +246,34 @@
       "copiedBtn": "Copié dans le presse-papiers !"
     },
     "step2": {
+      "title": "Copier votre Token de connexion IA",
+      "desc": "Collez ce token à votre assistant IA (ChatGPT, Claude, Gemini, etc.) pour vous connecter à SaleCraft sans e-mail ni mot de passe. Le token expire dans 12 heures.",
+      "loading": "Génération du token...",
+      "notReady": "(pas encore généré)",
+      "copyBtn": "Copier le Token",
+      "copiedBtn": "Copié !",
+      "copyFailed": "La copie automatique a échoué. Cliquez sur le champ ci-dessous pour sélectionner le token, puis appuyez sur Cmd/Ctrl+C.",
+      "tapToSelect": "Cliquez pour sélectionner",
+      "regenerate": "Regénérer",
+      "expiresAt": "Expire à {time}",
+      "expiresSoon": "⚠️ Le token expire bientôt — regénérez-le",
+      "singleLiveWarning": "La regénération invalide immédiatement le token que vous avez collé ailleurs. Ne regénérez qu'en cas de fuite suspectée.",
+      "featureUnavailable": "Cette fonctionnalité est en maintenance. Veuillez vous connecter avec e-mail et mot de passe.",
+      "createFailed": "Impossible de générer un token. Réessayez ou actualisez la page."
+    },
+    "step3": {
       "title": "Connecter le compte Meta",
       "desc": "Liez votre compte Facebook / Instagram pour permettre à l'IA de publier automatiquement des posts, stories et Reels. Les comptes personnels et professionnels sont pris en charge.",
       "btn": "Connecter Facebook / Instagram",
       "connected": "Compte Meta connecté"
     },
-    "step3": {
+    "step4": {
       "title": "Connecter le compte Google",
       "desc": "Liez votre compte Google pour accéder au contenu Google Drive. L'IA peut lire directement vos supports de marque et documents. Si vous vous êtes inscrit avec Google, cette étape est déjà faite.",
       "btn": "Connecter le compte Google",
       "connected": "Compte Google connecté"
     },
-    "step4": {
+    "step5": {
       "title": "Recharger des points",
       "desc": "1 $ USD = 30 pts. Après la recharge, vous pouvez utiliser la génération de pages d'atterrissage, Reels, publication sociale et toutes les autres fonctionnalités.",
       "balance": "Solde actuel",
@@ -274,7 +290,7 @@
       "pending": "Optionnel"
     },
     "bottom": {
-      "note": "Après la configuration, retournez dans Claude Code pour démarrer votre premier projet marketing",
+      "note": "Après la configuration, retournez à votre assistant IA pour démarrer votre premier projet marketing",
       "dashboard": "Aller au tableau de bord",
       "home": "Retour à l'accueil"
     }
