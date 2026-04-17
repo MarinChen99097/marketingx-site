@@ -145,11 +145,12 @@ export default function GetStartedPage() {
       window.history.replaceState(null, "", `/${locale}/get-started`);
     }
 
-    // ── 4. No token → redirect to register ──
+    // ── 4. No token → redirect to login (login page has a link to register) ──
     const token = localStorage.getItem("token");
     if (!token) {
-      const siteUrl = window.location.origin;
-      window.location.href = `https://landingai.info/${locale}/register?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
+      // Force the custom domain — window.location.origin could be the Cloud Run URL.
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
+      window.location.href = `https://landingai.info/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
       return;
     }
     setIsLoggedIn(true);

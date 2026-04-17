@@ -275,8 +275,11 @@ export default function SaleCraftPage() {
   }, []);
 
   const LANDING_AI_URL = "https://landingai.info";
-  const SITE_URL = typeof window !== "undefined" ? window.location.origin : (process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai");
-  const ctaHref = `${LANDING_AI_URL}/${locale}/register?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
+  // Force the canonical custom domain for returnUrl. Using window.location.origin here would
+  // leak the Cloud Run URL (marketingx-site-*.run.app) when users land on it directly (old
+  // email links, shares, OAuth callbacks), locking them out of salecraft.ai after login.
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
+  const ctaHref = `${LANDING_AI_URL}/${locale}/login?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
 
   const PLUGIN_CMD = `${t("pluginInstall.command")}\nhttps://github.com/connactai/Salecraft-Plugin`;
 
