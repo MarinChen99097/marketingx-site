@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -86,19 +86,21 @@ export default function GetStartedPage() {
   const [aiTokenError, setAiTokenError] = useState<string | null>(null);
   const [showFallbackInput, setShowFallbackInput] = useState(false);
 
-  // Tick every minute so expirySoon flips when time passes (useMemo alone
-  // only re-runs on deps change, not on the passage of time).
-  const [nowMs, setNowMs] = useState(() => Date.now());
+  // Drive expirySoon with a single setTimeout scheduled to fire at the
+  // "entering last 30 min" boundary — not a minute-ticking setInterval.
+  // This avoids re-rendering the page every 60 s for 11+ hours when
+  // the token is nowhere near expiry.
+  const [expirySoon, setExpirySoon] = useState(false);
   useEffect(() => {
-    const id = setInterval(() => setNowMs(Date.now()), 60_000);
-    return () => clearInterval(id);
-  }, []);
-
-  const expirySoon = useMemo(() => {
-    if (!aiTokenExpiresAt) return false;
-    const msLeft = new Date(aiTokenExpiresAt).getTime() - nowMs;
-    return msLeft > 0 && msLeft < 30 * 60 * 1000;
-  }, [aiTokenExpiresAt, nowMs]);
+    if (!aiTokenExpiresAt) { setExpirySoon(false); return; }
+    const expiresMs = new Date(aiTokenExpiresAt).getTime();
+    const warnAtMs = expiresMs - 30 * 60 * 1000;
+    const now = Date.now();
+    if (now >= warnAtMs) { setExpirySoon(true); return; }
+    setExpirySoon(false);
+    const id = setTimeout(() => setExpirySoon(true), warnAtMs - now);
+    return () => clearTimeout(id);
+  }, [aiTokenExpiresAt]);
 
   const fetchAiToken = async () => {
     setAiTokenLoading(true);
