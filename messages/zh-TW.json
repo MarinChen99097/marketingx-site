@@ -248,6 +248,8 @@
     "step2": {
       "title": "複製 AI 登入 Token",
       "desc": "把下面這串 token 貼給你的 AI 助手（ChatGPT、Claude、Gemini 等），它就能幫你登入 SaleCraft，不需要給密碼。Token 12 小時後自動過期。",
+      "generatePrompt": "只有要使用付費功能（Landing Page 生成、社群發佈、短影音、廣告）時才需要 token。準備好了再點下方生成。",
+      "generateBtn": "生成 AI Token",
       "loading": "正在生成你的 Token...",
       "notReady": "（尚未生成）",
       "copyBtn": "複製 Token",

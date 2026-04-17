@@ -248,6 +248,8 @@
     "step2": {
       "title": "Copy Your AI Login Token",
       "desc": "Paste this token to your AI assistant (ChatGPT, Claude, Gemini, etc.) and it can log you into SaleCraft without your email or password. The token expires in 12 hours.",
+      "generatePrompt": "You only need a token if you want to use paid features (LP generation, social publishing, reels, ads). Click below when you're ready.",
+      "generateBtn": "Generate AI Token",
       "loading": "Generating your token...",
       "notReady": "(not generated yet)",
       "copyBtn": "Copy Token",

@@ -248,6 +248,8 @@
     "step2": {
       "title": "Copier votre Token de connexion IA",
       "desc": "Collez ce token à votre assistant IA (ChatGPT, Claude, Gemini, etc.) pour vous connecter à SaleCraft sans e-mail ni mot de passe. Le token expire dans 12 heures.",
+      "generatePrompt": "Vous n'avez besoin d'un token que pour les fonctionnalités payantes (génération LP, publication sociale, reels, publicités). Cliquez ci-dessous quand vous êtes prêt.",
+      "generateBtn": "Générer un token IA",
       "loading": "Génération du token...",
       "notReady": "(pas encore généré)",
       "copyBtn": "Copier le Token",

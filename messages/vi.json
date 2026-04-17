@@ -248,6 +248,8 @@
     "step2": {
       "title": "Sao chép Token Đăng nhập AI",
       "desc": "Dán token này cho trợ lý AI của bạn (ChatGPT, Claude, Gemini, v.v.) để đăng nhập SaleCraft mà không cần email hay mật khẩu. Token sẽ hết hạn sau 12 giờ.",
+      "generatePrompt": "Bạn chỉ cần token khi dùng tính năng trả phí (tạo LP, đăng SNS, Reels, quảng cáo). Nhấn bên dưới khi đã sẵn sàng.",
+      "generateBtn": "Tạo AI Token",
       "loading": "Đang tạo token...",
       "notReady": "(chưa tạo)",
       "copyBtn": "Sao chép Token",

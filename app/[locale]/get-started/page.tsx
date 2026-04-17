@@ -102,6 +102,26 @@ export default function GetStartedPage() {
     return () => clearTimeout(id);
   }, [aiTokenExpiresAt]);
 
+  // Generating a new AI Token REVOKES any previously issued one (backend
+  // bumps ai_token_version). Only call this as a deliberate user action —
+  // never on page mount — or we'd silently invalidate tokens the user
+  // already pasted into other AI assistants. Current session's plaintext
+  // is kept in sessionStorage so a same-tab refresh doesn't lose the view
+  // (sessionStorage clears on tab close, which is the right TTL for an
+  // ephemeral bearer-precursor value).
+  const AI_TOKEN_SS_KEY = "mx_ai_token";
+  const AI_TOKEN_EXPIRES_SS_KEY = "mx_ai_token_expires";
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const cached = sessionStorage.getItem(AI_TOKEN_SS_KEY);
+    const cachedExp = sessionStorage.getItem(AI_TOKEN_EXPIRES_SS_KEY);
+    if (cached && cachedExp && new Date(cachedExp).getTime() > Date.now()) {
+      setAiToken(cached);
+      setAiTokenExpiresAt(cachedExp);
+    }
+  }, []);
+
   const fetchAiToken = async () => {
     setAiTokenLoading(true);
     setAiTokenError(null);
@@ -111,6 +131,8 @@ export default function GetStartedPage() {
       const res = await api.post("/auth/ai-token/create");
       setAiToken(res.data.ai_token);
       setAiTokenExpiresAt(res.data.expires_at);
+      sessionStorage.setItem(AI_TOKEN_SS_KEY, res.data.ai_token);
+      sessionStorage.setItem(AI_TOKEN_EXPIRES_SS_KEY, res.data.expires_at);
     } catch (err: unknown) {
       console.error("[GetStarted] AI token create failed:", err);
       const status = (err as { response?: { status?: number } })?.response?.status;
@@ -249,9 +271,11 @@ export default function GetStartedPage() {
     };
 
     fetchProfile();
-    fetchAiToken();
     checkMeta();
     checkGDrive();
+    // fetchAiToken() is intentionally NOT called here — it would revoke
+    // any previously-issued AI token on every page visit. The user
+    // triggers it explicitly via the STEP 2 "Generate Token" button.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale, router]);
 
@@ -466,6 +490,20 @@ export default function GetStartedPage() {
               <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-4 text-sm text-red-300">
                 {aiTokenError}
               </div>
+            ) : !aiToken && !aiTokenLoading ? (
+              // No token yet — show a single explicit generate button so
+              // merely visiting this page doesn't silently revoke an already-
+              // issued token living in another AI chat.
+              <div className="rounded-xl border border-white/[0.08] bg-[#111113] p-5 space-y-3">
+                <p className="text-sm text-white/60">{t("step2.generatePrompt")}</p>
+                <Button
+                  onClick={fetchAiToken}
+                  className="h-10 px-6 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20"
+                >
+                  <KeyRound className="mr-2 w-4 h-4" />
+                  {t("step2.generateBtn")}
+                </Button>
+              </div>
             ) : showFallbackInput ? (
               <>
                 <p className="text-xs text-yellow-400">{t("step2.copyFailed")}</p>
@@ -480,44 +518,48 @@ export default function GetStartedPage() {
             ) : (
               <div className="rounded-xl border border-white/[0.08] bg-[#111113] p-4">
                 <div className="font-mono text-xs sm:text-sm text-white/80 break-all">
-                  {aiTokenLoading ? t("step2.loading") : (aiToken ?? t("step2.notReady"))}
+                  {aiTokenLoading ? t("step2.loading") : aiToken}
                 </div>
               </div>
             )}
-            <div className="flex items-center gap-3 flex-wrap">
-              <Button
-                onClick={showFallbackInput ? undefined : handleAiTokenCopy}
-                disabled={!aiToken || aiTokenLoading || showFallbackInput}
-                className="h-10 px-6 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20 disabled:opacity-50"
-              >
-                {showFallbackInput
-                  ? <>{t("step2.tapToSelect")}</>
-                  : aiTokenCopied
-                    ? <><Check className="mr-2 w-4 h-4" /> {t("step2.copiedBtn")}</>
-                    : <><Copy className="mr-2 w-4 h-4" /> {t("step2.copyBtn")}</>
-                }
-              </Button>
-              <button
-                onClick={fetchAiToken}
-                disabled={aiTokenLoading}
-                className="text-xs text-white/50 hover:text-white transition-colors disabled:opacity-50 underline underline-offset-2"
-              >
-                {t("step2.regenerate")}
-              </button>
-              {aiTokenExpiresAt && (
-                <span className={`text-xs ${expirySoon ? "text-yellow-400" : "text-white/30"}`}>
-                  {expirySoon
-                    ? t("step2.expiresSoon")
-                    : t("step2.expiresAt", {
-                        time: new Date(aiTokenExpiresAt).toLocaleString(locale)
-                      })
-                  }
-                </span>
-              )}
-            </div>
-            <p className="text-xs text-yellow-400/70 leading-relaxed">
-              ⚠️ {t("step2.singleLiveWarning")}
-            </p>
+            {aiToken && !aiTokenError && (
+              <>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <Button
+                    onClick={showFallbackInput ? undefined : handleAiTokenCopy}
+                    disabled={!aiToken || aiTokenLoading || showFallbackInput}
+                    className="h-10 px-6 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20 disabled:opacity-50"
+                  >
+                    {showFallbackInput
+                      ? <>{t("step2.tapToSelect")}</>
+                      : aiTokenCopied
+                        ? <><Check className="mr-2 w-4 h-4" /> {t("step2.copiedBtn")}</>
+                        : <><Copy className="mr-2 w-4 h-4" /> {t("step2.copyBtn")}</>
+                    }
+                  </Button>
+                  <button
+                    onClick={fetchAiToken}
+                    disabled={aiTokenLoading}
+                    className="text-xs text-white/50 hover:text-white transition-colors disabled:opacity-50 underline underline-offset-2"
+                  >
+                    {t("step2.regenerate")}
+                  </button>
+                  {aiTokenExpiresAt && (
+                    <span className={`text-xs ${expirySoon ? "text-yellow-400" : "text-white/30"}`}>
+                      {expirySoon
+                        ? t("step2.expiresSoon")
+                        : t("step2.expiresAt", {
+                            time: new Date(aiTokenExpiresAt).toLocaleString(locale)
+                          })
+                      }
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-yellow-400/70 leading-relaxed">
+                  ⚠️ {t("step2.singleLiveWarning")}
+                </p>
+              </>
+            )}
           </div>
         </ActionCard>
 
