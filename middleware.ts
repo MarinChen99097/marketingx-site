@@ -10,9 +10,15 @@ const intlMiddleware = createMiddleware(routing);
 export default function middleware(request: NextRequest) {
   const host = request.headers.get('host') || '';
   const isCloudRun = host.includes('.run.app');
+  // Cloudflare always sets `cf-ray`. If the request bears one, it was
+  // proxied through Cloudflare Worker (which rewrites Host → Cloud Run
+  // to bypass missing custom-domain mapping). In that case the "real"
+  // host the user typed is salecraft.ai — we must NOT 301 back, or we
+  // create a Cloudflare-origin redirect loop → HTTP 522.
+  const viaCloudflare = Boolean(request.headers.get('cf-ray'));
 
-  // 1. Direct Cloud Run access → 301 redirect to canonical domain
-  if (isCloudRun) {
+  // 1. Direct (non-Cloudflare) Cloud Run access → 301 to canonical domain
+  if (isCloudRun && !viaCloudflare) {
     const url = new URL(request.url);
     url.host = CANONICAL_HOST;
     url.port = '';
@@ -20,7 +26,8 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(url.toString(), 301);
   }
 
-  // 2. Normal request through salecraft.ai → run intl middleware
+  // 2. Normal request (either salecraft.ai direct, or Cloudflare-proxied
+  //    Host-rewritten request) → run intl middleware
   const response = intlMiddleware(request);
 
   // 3. If intl middleware produced a redirect, rewrite the Location header
