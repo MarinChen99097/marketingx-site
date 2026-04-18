@@ -274,7 +274,10 @@ export default function SaleCraftPage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const LANDING_AI_URL = "https://salecraft.ai";
+  // MUST stay https://landingai.info — this is the host of the Landing AI auth
+  // service that issues the JWT. salecraft.ai has no /login route; pointing
+  // this at the same origin sends users to a 404-styled fallback.
+  const LANDING_AI_URL = "https://landingai.info";
   // Force the canonical custom domain for returnUrl. Using window.location.origin here would
   // leak the Cloud Run URL (marketingx-site-*.run.app) when users land on it directly (old
   // email links, shares, OAuth callbacks), locking them out of salecraft.ai after login.
