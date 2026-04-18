@@ -232,12 +232,6 @@
     "copied": "已複製"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "帳號已建立",
-      "title1": "歡迎來到 ",
-      "title2": "SaleCraft",
-      "subtitle": "完成以下 4 個步驟，解鎖所有 AI 行銷能力"
-    },
     "step1": {
       "title": "連結 SaleCraft 到你的 AI",
       "desc": "將此連結加入你的 AI 助手設定，即可使用所有行銷工具。支援 ChatGPT、Claude、Gemini 等平台。",
@@ -246,18 +240,36 @@
       "copiedBtn": "已複製到剪貼簿！"
     },
     "step2": {
+      "title": "複製 AI 登入 Token",
+      "desc": "生成後把下面這串 token 貼給你的 AI 助手（ChatGPT、Claude、Gemini 等），它就能幫你登入 SaleCraft，不需要給密碼。Token 12 小時後自動過期。",
+      "generatePrompt": "按下按鈕生成一組專屬於你的 AI Token。",
+      "generateBtn": "生成 AI Token",
+      "loading": "正在生成你的 Token...",
+      "notReady": "（尚未生成）",
+      "copyBtn": "複製 Token",
+      "copiedBtn": "已複製！",
+      "copyFailed": "自動複製失敗，請點擊下方輸入框選取 token 後按 Cmd/Ctrl+C",
+      "tapToSelect": "點擊上方選取 Token",
+      "regenerate": "重新生成",
+      "expiresAt": "於 {time} 過期",
+      "expiresSoon": "⚠️ Token 即將過期，請重新生成",
+      "singleLiveWarning": "重新生成會讓所有已經貼過 token 的 AI 立刻失效，只在懷疑 token 外洩時才這麼做。",
+      "featureUnavailable": "此功能正在維護中，請先使用 Email 密碼登入",
+      "createFailed": "無法生成 Token，請稍後再試或重新整理頁面"
+    },
+    "step3": {
       "title": "連結 Meta 帳號",
       "desc": "連結你的 Facebook / Instagram 帳號，讓 AI 自動發佈貼文、限時動態和 Reels。支援個人與專業帳號。",
       "btn": "連結 Facebook / Instagram",
       "connected": "Meta 帳號已連結"
     },
-    "step3": {
+    "step4": {
       "title": "連結 Google 帳號",
       "desc": "連結你的 Google 帳號以存取 Google 雲端硬碟內容。AI 可以直接讀取你的品牌素材和文件。如果你用 Google 註冊，此步驟已自動完成。",
       "btn": "連結 Google 帳號",
       "connected": "Google 帳號已連結"
     },
-    "step4": {
+    "step5": {
       "title": "儲值點數",
       "desc": "$1 美元 = 30 點。儲值後即可使用 Landing Page 生成、Reels、社群發佈等所有功能。",
       "balance": "目前餘額",
@@ -267,6 +279,12 @@
       "pts": "點",
       "costRef": "Landing Page ≈ 75–250 點 · Reels ≈ 50–150 點 · 社群 ≈ 5–10 點",
       "btn": "前往儲值"
+    },
+    "welcome": {
+      "badge": "帳號已建立",
+      "title1": "歡迎來到 ",
+      "title2": "SaleCraft",
+      "subtitle": "完成以下 4 個步驟，解鎖所有 AI 行銷能力"
     },
     "status": {
       "ready": "待完成",

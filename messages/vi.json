@@ -232,12 +232,6 @@
     "copied": "Đã sao chép"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "Tài khoản đã tạo",
-      "title1": "Chào mừng đến ",
-      "title2": "SaleCraft",
-      "subtitle": "Hoàn thành 4 bước này để mở khóa tất cả khả năng AI marketing"
-    },
     "step1": {
       "title": "Kết nối SaleCraft với AI",
       "desc": "Thêm vào cài đặt trợ lý AI để sử dụng tất cả công cụ marketing. Hỗ trợ ChatGPT, Claude, Gemini và nhiều nền tảng khác.",
@@ -246,18 +240,36 @@
       "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"
     },
     "step2": {
+      "title": "Sao chép AI Login Token",
+      "desc": "Sau khi tạo, dán token này cho AI (ChatGPT, Claude, Gemini, v.v.) để đăng nhập SaleCraft mà không cần email/mật khẩu. Token tự hết hạn sau 12 giờ.",
+      "generatePrompt": "Nhấn nút để tạo một AI Token riêng của bạn.",
+      "generateBtn": "Tạo AI Token",
+      "loading": "Đang tạo token...",
+      "notReady": "(chưa tạo)",
+      "copyBtn": "Sao chép Token",
+      "copiedBtn": "Đã sao chép!",
+      "copyFailed": "Sao chép tự động thất bại. Nhấn vào ô dưới để chọn token, sau đó nhấn Cmd/Ctrl+C.",
+      "tapToSelect": "Nhấn để chọn Token",
+      "regenerate": "Tạo lại",
+      "expiresAt": "Hết hạn lúc {time}",
+      "expiresSoon": "⚠️ Token sắp hết hạn — hãy tạo lại",
+      "singleLiveWarning": "Tạo lại sẽ vô hiệu hóa ngay token đã dán ở nơi khác. Chỉ tạo lại khi nghi ngờ token bị lộ.",
+      "featureUnavailable": "Tính năng này đang bảo trì. Vui lòng đăng nhập bằng email/mật khẩu tạm thời.",
+      "createFailed": "Không thể tạo token. Vui lòng thử lại hoặc làm mới trang."
+    },
+    "step3": {
       "title": "Kết nối tài khoản Meta",
       "desc": "Liên kết tài khoản Facebook / Instagram của bạn để AI tự động đăng bài, story và Reels. Hỗ trợ cả tài khoản cá nhân và chuyên nghiệp.",
       "btn": "Kết nối Facebook / Instagram",
       "connected": "Tài khoản Meta đã kết nối"
     },
-    "step3": {
+    "step4": {
       "title": "Kết nối tài khoản Google",
       "desc": "Liên kết tài khoản Google để truy cập nội dung Google Drive. AI có thể đọc trực tiếp tài liệu và tài sản thương hiệu của bạn. Nếu bạn đăng ký bằng Google, bước này đã hoàn thành.",
       "btn": "Kết nối tài khoản Google",
       "connected": "Tài khoản Google đã kết nối"
     },
-    "step4": {
+    "step5": {
       "title": "Nạp điểm",
       "desc": "$1 USD = 30 điểm. Sau khi nạp, bạn có thể sử dụng tạo trang đích, Reels, đăng bài MXH và tất cả tính năng khác.",
       "balance": "Số dư hiện tại",
@@ -267,6 +279,12 @@
       "pts": "điểm",
       "costRef": "Trang đích ≈ 75–250 điểm · Reels ≈ 50–150 điểm · MXH ≈ 5–10 điểm",
       "btn": "Đến trang nạp điểm"
+    },
+    "welcome": {
+      "badge": "Tài khoản đã tạo",
+      "title1": "Chào mừng đến ",
+      "title2": "SaleCraft",
+      "subtitle": "Hoàn thành 4 bước này để mở khóa tất cả khả năng AI marketing"
     },
     "status": {
       "ready": "Cần làm",

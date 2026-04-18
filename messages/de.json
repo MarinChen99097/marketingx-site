@@ -232,12 +232,6 @@
     "copied": "Kopiert"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "Konto erstellt",
-      "title1": "Willkommen bei ",
-      "title2": "SaleCraft",
-      "subtitle": "Schließen Sie diese 4 Schritte ab, um alle KI-Marketing-Funktionen freizuschalten"
-    },
     "step1": {
       "title": "SaleCraft mit Ihrer KI verbinden",
       "desc": "Fügen Sie dies zu den Einstellungen Ihres KI-Assistenten hinzu, um alle Marketing-Tools freizuschalten. Funktioniert mit ChatGPT, Claude, Gemini und mehr.",
@@ -246,18 +240,36 @@
       "copiedBtn": "In die Zwischenablage kopiert!"
     },
     "step2": {
+      "title": "KI-Anmelde-Token kopieren",
+      "desc": "Nach der Erstellung fügen Sie diesen Token in Ihren KI-Assistenten (ChatGPT, Claude, Gemini usw.) ein, um sich bei SaleCraft ohne E-Mail oder Passwort anzumelden. Der Token läuft in 12 Stunden ab.",
+      "generatePrompt": "Drücken Sie die Schaltfläche, um einen persönlichen KI-Token zu generieren.",
+      "generateBtn": "KI-Token generieren",
+      "loading": "Token wird generiert...",
+      "notReady": "(noch nicht generiert)",
+      "copyBtn": "Token kopieren",
+      "copiedBtn": "Kopiert!",
+      "copyFailed": "Automatisches Kopieren fehlgeschlagen. Tippen Sie auf das Feld unten, um den Token auszuwählen, und drücken Sie Cmd/Ctrl+C.",
+      "tapToSelect": "Tippen Sie, um den Token auszuwählen",
+      "regenerate": "Neu generieren",
+      "expiresAt": "Läuft um {time} ab",
+      "expiresSoon": "⚠️ Token läuft bald ab — bitte neu generieren",
+      "singleLiveWarning": "Die Neuerstellung macht den an anderer Stelle eingefügten Token sofort ungültig. Nur bei Verdacht auf Leck neu generieren.",
+      "featureUnavailable": "Diese Funktion wird gewartet. Bitte melden Sie sich vorerst mit E-Mail und Passwort an.",
+      "createFailed": "Token konnte nicht generiert werden. Bitte erneut versuchen oder Seite neu laden."
+    },
+    "step3": {
       "title": "Meta-Konto verbinden",
       "desc": "Verknüpfen Sie Ihr Facebook- / Instagram-Konto, damit die KI automatisch Beiträge, Stories und Reels veröffentlicht. Persönliche und professionelle Konten werden unterstützt.",
       "btn": "Facebook / Instagram verbinden",
       "connected": "Meta-Konto verbunden"
     },
-    "step3": {
+    "step4": {
       "title": "Google-Konto verbinden",
       "desc": "Verknüpfen Sie Ihr Google-Konto, um auf Google Drive-Inhalte zuzugreifen. Die KI kann Ihre Markenmaterialien und Dokumente direkt lesen. Wenn Sie sich mit Google registriert haben, ist dieser Schritt bereits erledigt.",
       "btn": "Google-Konto verbinden",
       "connected": "Google-Konto verbunden"
     },
-    "step4": {
+    "step5": {
       "title": "Punkte aufladen",
       "desc": "$1 USD = 30 Punkte. Nach dem Aufladen können Sie Landing Page-Generierung, Reels, Social-Media-Veröffentlichung und alle anderen Funktionen nutzen.",
       "balance": "Aktuelles Guthaben",
@@ -267,6 +279,12 @@
       "pts": "Punkte",
       "costRef": "Landing Page ≈ 75–250 Punkte · Reels ≈ 50–150 Punkte · Social ≈ 5–10 Punkte",
       "btn": "Zum Aufladen"
+    },
+    "welcome": {
+      "badge": "Konto erstellt",
+      "title1": "Willkommen bei ",
+      "title2": "SaleCraft",
+      "subtitle": "Schließen Sie diese 4 Schritte ab, um alle KI-Marketing-Funktionen freizuschalten"
     },
     "status": {
       "ready": "Ausstehend",

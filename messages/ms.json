@@ -232,12 +232,6 @@
     "copied": "Disalin"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "Akaun Dicipta",
-      "title1": "Selamat datang ke ",
-      "title2": "SaleCraft",
-      "subtitle": "Lengkapkan 4 langkah ini untuk membuka semua keupayaan pemasaran AI"
-    },
     "step1": {
       "title": "Sambungkan SaleCraft ke AI Anda",
       "desc": "Tambah ini ke tetapan pembantu AI anda untuk membuka semua alat pemasaran. Berfungsi dengan ChatGPT, Claude, Gemini, dan lain-lain.",
@@ -246,18 +240,36 @@
       "copiedBtn": "Disalin ke Papan Keratan!"
     },
     "step2": {
+      "title": "Salin Token Log Masuk AI Anda",
+      "desc": "Selepas dijana, tampal token ini ke pembantu AI anda (ChatGPT, Claude, Gemini, dll) untuk log masuk ke SaleCraft tanpa e-mel atau kata laluan. Token tamat tempoh dalam 12 jam.",
+      "generatePrompt": "Tekan butang untuk menjana Token AI peribadi anda.",
+      "generateBtn": "Jana Token AI",
+      "loading": "Menjana token...",
+      "notReady": "(belum dijana)",
+      "copyBtn": "Salin Token",
+      "copiedBtn": "Disalin!",
+      "copyFailed": "Salinan automatik gagal. Ketuk medan di bawah untuk memilih token, kemudian tekan Cmd/Ctrl+C.",
+      "tapToSelect": "Ketuk untuk pilih Token",
+      "regenerate": "Jana Semula",
+      "expiresAt": "Tamat tempoh pada {time}",
+      "expiresSoon": "⚠️ Token akan tamat tempoh — sila jana semula",
+      "singleLiveWarning": "Menjana semula akan segera membatalkan token yang ditampal di tempat lain. Hanya jana semula jika disyaki bocor.",
+      "featureUnavailable": "Ciri ini dalam penyelenggaraan. Sila log masuk dengan e-mel dan kata laluan buat masa ini.",
+      "createFailed": "Tidak dapat menjana token. Sila cuba lagi atau segarkan halaman."
+    },
+    "step3": {
       "title": "Sambungkan Akaun Meta",
       "desc": "Pautkan akaun Facebook / Instagram anda agar AI secara automatik menerbitkan siaran, cerita, dan Reels. Menyokong akaun peribadi dan profesional.",
       "btn": "Sambung Facebook / Instagram",
       "connected": "Akaun Meta disambungkan"
     },
-    "step3": {
+    "step4": {
       "title": "Sambungkan Akaun Google",
       "desc": "Pautkan akaun Google anda untuk mengakses kandungan Google Drive. AI boleh terus membaca bahan jenama dan dokumen anda. Jika anda mendaftar dengan Google, langkah ini sudah selesai.",
       "btn": "Sambung Akaun Google",
       "connected": "Akaun Google disambungkan"
     },
-    "step4": {
+    "step5": {
       "title": "Tambah Nilai Mata",
       "desc": "$1 USD = 30 mata. Selepas tambah nilai, anda boleh menggunakan penjanaan Landing Page, Reels, penerbitan sosial, dan semua ciri lain.",
       "balance": "Baki Semasa",
@@ -267,6 +279,12 @@
       "pts": "mata",
       "costRef": "Landing Page ≈ 75–250 mata · Reels ≈ 50–150 mata · Sosial ≈ 5–10 mata",
       "btn": "Ke Halaman Tambah Nilai"
+    },
+    "welcome": {
+      "badge": "Akaun Dicipta",
+      "title1": "Selamat datang ke ",
+      "title2": "SaleCraft",
+      "subtitle": "Lengkapkan 4 langkah ini untuk membuka semua keupayaan pemasaran AI"
     },
     "status": {
       "ready": "Belum Selesai",

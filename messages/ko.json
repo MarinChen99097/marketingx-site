@@ -232,12 +232,6 @@
     "copied": "복사됨"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "계정 생성 완료",
-      "title1": "환영합니다 ",
-      "title2": "SaleCraft",
-      "subtitle": "이 4단계를 완료하여 모든 AI 마케팅 기능을 잠금 해제하세요"
-    },
     "step1": {
       "title": "SaleCraft를 AI에 연결",
       "desc": "AI 어시스턴트 설정에 추가하면 모든 마케팅 도구를 사용할 수 있습니다. ChatGPT, Claude, Gemini 등 지원.",
@@ -246,18 +240,36 @@
       "copiedBtn": "클립보드에 복사됨!"
     },
     "step2": {
+      "title": "AI 로그인 토큰 복사",
+      "desc": "생성 후 이 토큰을 AI 어시스턴트(ChatGPT, Claude, Gemini 등)에 붙여넣으면 이메일과 비밀번호 없이 SaleCraft에 로그인할 수 있습니다. 토큰은 12시간 후 자동으로 만료됩니다.",
+      "generatePrompt": "버튼을 눌러 전용 AI 토큰을 생성하세요.",
+      "generateBtn": "AI 토큰 생성",
+      "loading": "토큰 생성 중...",
+      "notReady": "(아직 생성되지 않음)",
+      "copyBtn": "토큰 복사",
+      "copiedBtn": "복사됨!",
+      "copyFailed": "자동 복사 실패. 아래 입력란을 탭하여 토큰을 선택한 후 Cmd/Ctrl+C를 누르세요.",
+      "tapToSelect": "탭하여 토큰 선택",
+      "regenerate": "다시 생성",
+      "expiresAt": "{time}에 만료",
+      "expiresSoon": "⚠️ 토큰이 곧 만료됩니다 — 다시 생성하세요",
+      "singleLiveWarning": "다시 생성하면 다른 곳에 붙여넣은 토큰이 즉시 무효화됩니다. 토큰 유출이 의심될 때만 다시 생성하세요.",
+      "featureUnavailable": "이 기능은 유지보수 중입니다. 이메일과 비밀번호로 로그인해 주세요.",
+      "createFailed": "토큰을 생성할 수 없습니다. 나중에 다시 시도하거나 페이지를 새로고침하세요."
+    },
+    "step3": {
       "title": "Meta 계정 연결",
       "desc": "Facebook / Instagram 계정을 연결하여 AI가 포스트, 스토리, 릴스를 자동 게시하도록 하세요. 개인 및 비즈니스 계정 모두 지원됩니다.",
       "btn": "Facebook / Instagram 연결",
       "connected": "Meta 계정 연결됨"
     },
-    "step3": {
+    "step4": {
       "title": "Google 계정 연결",
       "desc": "Google 계정을 연결하여 Google 드라이브 콘텐츠에 접근하세요. AI가 브랜드 자료와 문서를 직접 읽을 수 있습니다. Google로 가입했다면 이 단계는 이미 완료되었습니다.",
       "btn": "Google 계정 연결",
       "connected": "Google 계정 연결됨"
     },
-    "step4": {
+    "step5": {
       "title": "포인트 충전",
       "desc": "$1 USD = 30 포인트. 충전 후 랜딩 페이지 생성, 릴스, 소셜 퍼블리싱 등 모든 기능을 사용할 수 있습니다.",
       "balance": "현재 잔액",
@@ -267,6 +279,12 @@
       "pts": "포인트",
       "costRef": "랜딩 페이지 ≈ 75–250 포인트 · 릴스 ≈ 50–150 포인트 · 소셜 ≈ 5–10 포인트",
       "btn": "충전하러 가기"
+    },
+    "welcome": {
+      "badge": "계정 생성 완료",
+      "title1": "환영합니다 ",
+      "title2": "SaleCraft",
+      "subtitle": "이 4단계를 완료하여 모든 AI 마케팅 기능을 잠금 해제하세요"
     },
     "status": {
       "ready": "할 일",

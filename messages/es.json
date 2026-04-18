@@ -232,12 +232,6 @@
     "copied": "Copiado"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "Cuenta creada",
-      "title1": "Bienvenido a ",
-      "title2": "SaleCraft",
-      "subtitle": "Completa estos 4 pasos para desbloquear todas las capacidades de marketing con IA"
-    },
     "step1": {
       "title": "Conecta SaleCraft a tu IA",
       "desc": "Añade esto a la configuración de tu asistente IA para acceder a todas las herramientas de marketing. Compatible con ChatGPT, Claude, Gemini y más.",
@@ -246,18 +240,36 @@
       "copiedBtn": "¡Copiado al portapapeles!"
     },
     "step2": {
+      "title": "Copia tu token de inicio de sesión de IA",
+      "desc": "Después de generarlo, pega este token en tu asistente de IA (ChatGPT, Claude, Gemini, etc.) para iniciar sesión en SaleCraft sin correo ni contraseña. El token expira en 12 horas.",
+      "generatePrompt": "Pulsa el botón para generar tu token de IA personal.",
+      "generateBtn": "Generar token de IA",
+      "loading": "Generando tu token...",
+      "notReady": "(aún no generado)",
+      "copyBtn": "Copiar token",
+      "copiedBtn": "¡Copiado!",
+      "copyFailed": "Copia automática fallida. Pulsa el campo de abajo para seleccionar el token y pulsa Cmd/Ctrl+C.",
+      "tapToSelect": "Pulsa para seleccionar el token",
+      "regenerate": "Regenerar",
+      "expiresAt": "Expira a las {time}",
+      "expiresSoon": "⚠️ El token expira pronto — por favor, regenéralo",
+      "singleLiveWarning": "Regenerar invalidará al instante el token que hayas pegado en otro lugar. Solo regenera si sospechas que se filtró.",
+      "featureUnavailable": "Esta función está en mantenimiento. Inicia sesión con correo y contraseña por ahora.",
+      "createFailed": "No se pudo generar el token. Inténtalo de nuevo o recarga la página."
+    },
+    "step3": {
       "title": "Conectar cuenta Meta",
       "desc": "Vincula tu cuenta de Facebook / Instagram para que la IA publique automáticamente posts, stories y Reels. Se admiten cuentas personales y profesionales.",
       "btn": "Conectar Facebook / Instagram",
       "connected": "Cuenta Meta conectada"
     },
-    "step3": {
+    "step4": {
       "title": "Conectar cuenta Google",
       "desc": "Vincula tu cuenta de Google para acceder al contenido de Google Drive. La IA puede leer directamente tus materiales de marca y documentos. Si te registraste con Google, este paso ya está hecho.",
       "btn": "Conectar cuenta Google",
       "connected": "Cuenta Google conectada"
     },
-    "step4": {
+    "step5": {
       "title": "Recargar puntos",
       "desc": "$1 USD = 30 pts. Después de recargar, puedes usar generación de páginas de destino, Reels, publicación social y todas las demás funciones.",
       "balance": "Saldo actual",
@@ -267,6 +279,12 @@
       "pts": "pts",
       "costRef": "Página de destino ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",
       "btn": "Ir a recargar"
+    },
+    "welcome": {
+      "badge": "Cuenta creada",
+      "title1": "Bienvenido a ",
+      "title2": "SaleCraft",
+      "subtitle": "Completa estos 4 pasos para desbloquear todas las capacidades de marketing con IA"
     },
     "status": {
       "ready": "Pendiente",

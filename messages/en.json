@@ -232,12 +232,6 @@
     "copied": "Copied"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "Account Created",
-      "title1": "Welcome to ",
-      "title2": "SaleCraft",
-      "subtitle": "Complete these 4 steps to unlock all AI marketing capabilities"
-    },
     "step1": {
       "title": "Connect SaleCraft to Your AI",
       "desc": "Add this to your AI assistant's settings to unlock all marketing tools. Works with ChatGPT, Claude, Gemini, and more.",
@@ -246,18 +240,36 @@
       "copiedBtn": "Copied to Clipboard!"
     },
     "step2": {
+      "title": "Copy Your AI Login Token",
+      "desc": "Paste this token to your AI assistant (ChatGPT, Claude, Gemini, etc.) and it can log you into SaleCraft without your email or password. The token expires in 12 hours.",
+      "generatePrompt": "Press the button to generate a personal AI Token.",
+      "generateBtn": "Generate AI Token",
+      "loading": "Generating your token...",
+      "notReady": "(not generated yet)",
+      "copyBtn": "Copy Token",
+      "copiedBtn": "Copied!",
+      "copyFailed": "Automatic copy failed. Tap the input below to select the token, then press Cmd/Ctrl+C.",
+      "tapToSelect": "Tap to Select Token",
+      "regenerate": "Regenerate",
+      "expiresAt": "Expires at {time}",
+      "expiresSoon": "⚠️ Token expires soon — please regenerate",
+      "singleLiveWarning": "Regenerating will instantly invalidate the token anywhere else you pasted it. Only regenerate if you suspect the token leaked.",
+      "featureUnavailable": "This feature is under maintenance. Please log in with email and password for now.",
+      "createFailed": "Couldn't generate a token. Please try again or refresh the page."
+    },
+    "step3": {
       "title": "Connect Meta Account",
       "desc": "Link your Facebook / Instagram account to let AI auto-publish posts, stories, and Reels. Both personal and professional accounts are supported.",
       "btn": "Connect Facebook / Instagram",
       "connected": "Meta account connected"
     },
-    "step3": {
+    "step4": {
       "title": "Connect Google Account",
       "desc": "Link your Google account to access Google Drive content. AI can directly read your brand materials and documents. If you signed up with Google, this step is already done.",
       "btn": "Connect Google Account",
       "connected": "Google account connected"
     },
-    "step4": {
+    "step5": {
       "title": "Top Up Points",
       "desc": "$1 USD = 30 pts. After topping up, you can use Landing Page generation, Reels, social publishing, and all other features.",
       "balance": "Current Balance",
@@ -267,6 +279,12 @@
       "pts": "pts",
       "costRef": "Landing Page ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",
       "btn": "Go to Top Up"
+    },
+    "welcome": {
+      "badge": "Account Created",
+      "title1": "Welcome to ",
+      "title2": "SaleCraft",
+      "subtitle": "Complete these 4 steps to unlock all AI marketing capabilities"
     },
     "status": {
       "ready": "To Do",

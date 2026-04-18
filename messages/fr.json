@@ -232,12 +232,6 @@
     "copied": "Copié"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "Compte créé",
-      "title1": "Bienvenue sur ",
-      "title2": "SaleCraft",
-      "subtitle": "Complétez ces 4 étapes pour débloquer toutes les capacités marketing IA"
-    },
     "step1": {
       "title": "Connecter SaleCraft à votre IA",
       "desc": "Ajoutez ceci aux paramètres de votre assistant IA pour accéder à tous les outils marketing. Compatible ChatGPT, Claude, Gemini et plus.",
@@ -246,18 +240,36 @@
       "copiedBtn": "Copié dans le presse-papiers !"
     },
     "step2": {
+      "title": "Copier votre jeton de connexion IA",
+      "desc": "Après génération, collez ce jeton dans votre assistant IA (ChatGPT, Claude, Gemini, etc.) pour vous connecter à SaleCraft sans email ni mot de passe. Le jeton expire dans 12 heures.",
+      "generatePrompt": "Appuyez sur le bouton pour générer votre jeton IA personnel.",
+      "generateBtn": "Générer un jeton IA",
+      "loading": "Génération de votre jeton...",
+      "notReady": "(pas encore généré)",
+      "copyBtn": "Copier le jeton",
+      "copiedBtn": "Copié !",
+      "copyFailed": "Échec de la copie automatique. Tapez sur le champ ci-dessous pour sélectionner le jeton, puis appuyez sur Cmd/Ctrl+C.",
+      "tapToSelect": "Appuyez pour sélectionner le jeton",
+      "regenerate": "Régénérer",
+      "expiresAt": "Expire à {time}",
+      "expiresSoon": "⚠️ Le jeton expire bientôt — veuillez régénérer",
+      "singleLiveWarning": "La régénération invalide instantanément le jeton collé ailleurs. Ne régénérez qu'en cas de fuite suspectée.",
+      "featureUnavailable": "Cette fonctionnalité est en maintenance. Veuillez vous connecter avec email et mot de passe pour le moment.",
+      "createFailed": "Impossible de générer le jeton. Réessayez ou actualisez la page."
+    },
+    "step3": {
       "title": "Connecter le compte Meta",
       "desc": "Liez votre compte Facebook / Instagram pour permettre à l'IA de publier automatiquement des posts, stories et Reels. Les comptes personnels et professionnels sont pris en charge.",
       "btn": "Connecter Facebook / Instagram",
       "connected": "Compte Meta connecté"
     },
-    "step3": {
+    "step4": {
       "title": "Connecter le compte Google",
       "desc": "Liez votre compte Google pour accéder au contenu Google Drive. L'IA peut lire directement vos supports de marque et documents. Si vous vous êtes inscrit avec Google, cette étape est déjà faite.",
       "btn": "Connecter le compte Google",
       "connected": "Compte Google connecté"
     },
-    "step4": {
+    "step5": {
       "title": "Recharger des points",
       "desc": "1 $ USD = 30 pts. Après la recharge, vous pouvez utiliser la génération de pages d'atterrissage, Reels, publication sociale et toutes les autres fonctionnalités.",
       "balance": "Solde actuel",
@@ -267,6 +279,12 @@
       "pts": "pts",
       "costRef": "Page d'atterrissage ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",
       "btn": "Aller à la recharge"
+    },
+    "welcome": {
+      "badge": "Compte créé",
+      "title1": "Bienvenue sur ",
+      "title2": "SaleCraft",
+      "subtitle": "Complétez ces 4 étapes pour débloquer toutes les capacités marketing IA"
     },
     "status": {
       "ready": "À faire",

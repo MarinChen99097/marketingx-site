@@ -232,12 +232,6 @@
     "copied": "已复制"
   },
   "GetStarted": {
-    "welcome": {
-      "badge": "账号已创建",
-      "title1": "欢迎来到 ",
-      "title2": "SaleCraft",
-      "subtitle": "完成以下 4 个步骤，解锁所有 AI 营销能力"
-    },
     "step1": {
       "title": "连接 SaleCraft 到你的 AI",
       "desc": "将此连接加入你的 AI 助手设置，即可使用所有营销工具。支持 ChatGPT、Claude、Gemini 等平台。",
@@ -246,18 +240,36 @@
       "copiedBtn": "已复制到剪贴板！"
     },
     "step2": {
+      "title": "复制 AI 登录 Token",
+      "desc": "生成后把下面这串 token 贴给你的 AI 助手（ChatGPT、Claude、Gemini 等），它就能帮你登录 SaleCraft，不需要给密码。Token 12 小时后自动过期。",
+      "generatePrompt": "按下按钮生成一组专属于你的 AI Token。",
+      "generateBtn": "生成 AI Token",
+      "loading": "正在生成你的 Token...",
+      "notReady": "（尚未生成）",
+      "copyBtn": "复制 Token",
+      "copiedBtn": "已复制！",
+      "copyFailed": "自动复制失败，请点击下方输入框选取 token 后按 Cmd/Ctrl+C",
+      "tapToSelect": "点击上方选取 Token",
+      "regenerate": "重新生成",
+      "expiresAt": "于 {time} 过期",
+      "expiresSoon": "⚠️ Token 即将过期，请重新生成",
+      "singleLiveWarning": "重新生成会让所有已经贴过 token 的 AI 立刻失效，只在怀疑 token 泄漏时才这么做。",
+      "featureUnavailable": "此功能正在维护中，请先使用 Email 密码登录",
+      "createFailed": "无法生成 Token，请稍后再试或刷新页面"
+    },
+    "step3": {
       "title": "连接 Meta 账号",
       "desc": "连接你的 Facebook / Instagram 账号，让 AI 自动发布帖子、故事和 Reels。支持个人与专业账号。",
       "btn": "连接 Facebook / Instagram",
       "connected": "Meta 账号已连接"
     },
-    "step3": {
+    "step4": {
       "title": "连接 Google 账号",
       "desc": "连接你的 Google 账号以访问 Google 云端硬盘内容。AI 可以直接读取你的品牌素材和文档。如果你用 Google 注册，此步骤已自动完成。",
       "btn": "连接 Google 账号",
       "connected": "Google 账号已连接"
     },
-    "step4": {
+    "step5": {
       "title": "充值点数",
       "desc": "$1 美元 = 30 点。充值后即可使用 Landing Page 生成、Reels、社交发布等所有功能。",
       "balance": "当前余额",
@@ -267,6 +279,12 @@
       "pts": "点",
       "costRef": "Landing Page ≈ 75–250 点 · Reels ≈ 50–150 点 · 社交 ≈ 5–10 点",
       "btn": "前往充值"
+    },
+    "welcome": {
+      "badge": "账号已创建",
+      "title1": "欢迎来到 ",
+      "title2": "SaleCraft",
+      "subtitle": "完成以下 4 个步骤，解锁所有 AI 营销能力"
     },
     "status": {
       "ready": "待完成",
