@@ -263,6 +263,12 @@
       "btn": "Kết nối Facebook / Instagram",
       "connected": "Tài khoản Meta đã kết nối"
     },
+    "tiktok": {
+      "title": "Kết nối tài khoản TikTok",
+      "desc": "Liên kết tài khoản TikTok của bạn để AI tự động đăng Reels và video lên hồ sơ TikTok của bạn.",
+      "btn": "Kết nối TikTok",
+      "connected": "Đã kết nối tài khoản TikTok"
+    },
     "step4": {
       "title": "Kết nối tài khoản Google",
       "desc": "Liên kết tài khoản Google để truy cập nội dung Google Drive. AI có thể đọc trực tiếp tài liệu và tài sản thương hiệu của bạn. Nếu bạn đăng ký bằng Google, bước này đã hoàn thành.",
@@ -284,7 +290,7 @@
       "badge": "Tài khoản đã tạo",
       "title1": "Chào mừng đến ",
       "title2": "SaleCraft",
-      "subtitle": "Hoàn thành 4 bước này để mở khóa tất cả khả năng AI marketing"
+      "subtitle": "Hoàn thành 6 bước này để mở khóa tất cả khả năng AI marketing"
     },
     "status": {
       "ready": "Cần làm",

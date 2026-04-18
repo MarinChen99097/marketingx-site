@@ -263,6 +263,12 @@
       "btn": "Facebook / Instagram を接続",
       "connected": "Meta アカウント接続済み"
     },
+    "tiktok": {
+      "title": "TikTok アカウントを連携",
+      "desc": "TikTok アカウントを連携すると、AI が Reels や動画をあなたの TikTok プロフィールに自動投稿できます。",
+      "btn": "TikTok を連携",
+      "connected": "TikTok アカウント連携済み"
+    },
     "step4": {
       "title": "Google アカウントを接続",
       "desc": "Google アカウントを連携して Google ドライブのコンテンツにアクセスしましょう。AIがブランド素材やドキュメントを直接読み取れます。Googleで登録した場合、このステップは完了済みです。",
@@ -284,7 +290,7 @@
       "badge": "アカウント作成済み",
       "title1": "ようこそ ",
       "title2": "SaleCraft",
-      "subtitle": "この4ステップを完了して、すべてのAIマーケティング機能をアンロックしましょう"
+      "subtitle": "この6ステップを完了して、すべてのAIマーケティング機能をアンロックしましょう"
     },
     "status": {
       "ready": "未完了",

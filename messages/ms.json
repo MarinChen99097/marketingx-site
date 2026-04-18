@@ -263,6 +263,12 @@
       "btn": "Sambung Facebook / Instagram",
       "connected": "Akaun Meta disambungkan"
     },
+    "tiktok": {
+      "title": "Sambungkan Akaun TikTok",
+      "desc": "Sambungkan akaun TikTok anda supaya AI boleh menyiarkan Reels dan video secara automatik ke profil TikTok anda.",
+      "btn": "Sambungkan TikTok",
+      "connected": "Akaun TikTok disambungkan"
+    },
     "step4": {
       "title": "Sambungkan Akaun Google",
       "desc": "Pautkan akaun Google anda untuk mengakses kandungan Google Drive. AI boleh terus membaca bahan jenama dan dokumen anda. Jika anda mendaftar dengan Google, langkah ini sudah selesai.",
@@ -284,7 +290,7 @@
       "badge": "Akaun Dicipta",
       "title1": "Selamat datang ke ",
       "title2": "SaleCraft",
-      "subtitle": "Lengkapkan 4 langkah ini untuk membuka semua keupayaan pemasaran AI"
+      "subtitle": "Lengkapkan 6 langkah ini untuk membuka semua keupayaan pemasaran AI"
     },
     "status": {
       "ready": "Belum Selesai",

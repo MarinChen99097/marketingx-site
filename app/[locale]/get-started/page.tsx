@@ -14,6 +14,16 @@ import { LandingAILogo } from "@/components/LandingAILogo";
 import { Button } from "@/components/ui/button";
 import api, { zereoApi } from "@/lib/api";
 
+// lucide-react has no TikTok icon — inline an ElementType-compatible SVG
+// so it can be passed as `icon={TikTokIcon}` to ActionCard.
+function TikTokIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+  );
+}
+
 /* ═══════════════════════════════════════════════════════════════════
  * ACTION CARD
  * ═══════════════════════════════════════════════════════════════════ */
@@ -75,6 +85,7 @@ export default function GetStartedPage() {
   const [topupAmount, setTopupAmount] = useState(20);
   const [customAmount, setCustomAmount] = useState(false);
   const [metaConnected, setMetaConnected] = useState(false);
+  const [tiktokConnected, setTiktokConnected] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -217,6 +228,19 @@ export default function GetStartedPage() {
       // Don't skip — still need to fetch profile for credits/email
     }
 
+    // ── 2b. Handle TikTok OAuth backend redirect (?tiktok=connected|error) ──
+    // (TikTok OAuth is server-side: backend exchanges the code then redirects
+    // back here with a result flag — the FE never sees ?code=... for TikTok.)
+    const tiktokResult = params.get("tiktok");
+    if (tiktokResult === "connected") {
+      setTiktokConnected(true);
+      window.history.replaceState(null, "", `/${locale}/get-started`);
+    } else if (tiktokResult === "error") {
+      const msg = params.get("msg") || "";
+      console.error("[GetStarted] TikTok OAuth error:", msg);
+      window.history.replaceState(null, "", `/${locale}/get-started`);
+    }
+
     // ── 3. Handle Stripe success (?topup=success) ──
     if (params.get("topup") === "success") {
       // Save previous credits from localStorage (set before redirect)
@@ -267,6 +291,9 @@ export default function GetStartedPage() {
         if (Array.isArray(accounts) && accounts.some((a: any) =>
           a.platform === "meta" || a.platform === "facebook" || a.platform === "instagram"
         )) setMetaConnected(true);
+        if (Array.isArray(accounts) && accounts.some((a: any) => a.platform === "tiktok")) {
+          setTiktokConnected(true);
+        }
       } catch { /* endpoint may not exist yet */ }
     };
 
@@ -302,6 +329,22 @@ export default function GetStartedPage() {
       console.error("[GetStarted] Meta auth error:", err);
     }
     alert("Meta 連結暫時無法使用，請稍後再試");
+  };
+
+  const handleTiktokConnect = async () => {
+    try {
+      const finalRedirect = `${window.location.origin}/${locale}/get-started`;
+      const res = await zereoApi.get("/social/accounts/tiktok/auth-url", {
+        params: { final_redirect: finalRedirect },
+      });
+      if (res.data?.auth_url) {
+        window.location.href = res.data.auth_url;
+        return;
+      }
+    } catch (err) {
+      console.error("[GetStarted] TikTok auth error:", err);
+    }
+    alert("TikTok 連結暫時無法使用，請稍後再試");
   };
 
   const handleGoogleConnect = async () => {
@@ -580,9 +623,11 @@ export default function GetStartedPage() {
                 onClick={async () => {
                   try {
                     const res = await zereoApi.get("/social/accounts/");
-                    const accounts = res.data || [];
+                    const accounts = (res.data || []) as Array<{ id: string; platform: string }>;
                     for (const a of accounts) {
-                      await zereoApi.delete(`/social/accounts/${a.id}`);
+                      if (a.platform === "meta" || a.platform === "facebook" || a.platform === "instagram") {
+                        await zereoApi.delete(`/social/accounts/${a.id}`);
+                      }
                     }
                   } catch (err) { console.error("[GetStarted] Meta disconnect:", err); }
                   setMetaConnected(false);
@@ -602,12 +647,55 @@ export default function GetStartedPage() {
           )}
         </ActionCard>
 
-        {/* 4. Google */}
+        {/* 4. TikTok
+            i18n key is `tiktok.*` (not `step4.*`) — existing step4/step5 keys
+            stay mapped to Google/Stripe below to minimize translation churn. */}
         <ActionCard
-          step={4} icon={HardDrive}
+          step={4} icon={TikTokIcon}
+          title={t("tiktok.title")}
+          description={t("tiktok.desc")}
+          status={tiktokConnected ? "connected" : "pending"} delay={0.4}
+        >
+          {tiktokConnected ? (
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-green-400">
+                <CheckCircle className="w-5 h-5" />
+                <span className="text-sm font-medium">{t("tiktok.connected")}</span>
+              </div>
+              <button
+                onClick={async () => {
+                  try {
+                    const res = await zereoApi.get("/social/accounts/");
+                    const accounts = (res.data || []) as Array<{ id: string; platform: string }>;
+                    for (const a of accounts) {
+                      if (a.platform === "tiktok") {
+                        await zereoApi.delete(`/social/accounts/${a.id}`);
+                      }
+                    }
+                  } catch (err) { console.error("[GetStarted] TikTok disconnect:", err); }
+                  setTiktokConnected(false);
+                }}
+                className="text-xs text-white/30 hover:text-red-400 transition-colors"
+              >解除綁定</button>
+            </div>
+          ) : (
+            <Button
+              onClick={handleTiktokConnect}
+              className="w-full sm:w-auto h-10 px-6 bg-black hover:bg-neutral-900 border border-white/15 text-white font-medium rounded-xl text-sm"
+            >
+              <TikTokIcon className="mr-2 w-4 h-4" />
+              {t("tiktok.btn")}
+              <ExternalLink className="ml-2 w-3.5 h-3.5 opacity-60" />
+            </Button>
+          )}
+        </ActionCard>
+
+        {/* 5. Google (legacy i18n key: step4) */}
+        <ActionCard
+          step={5} icon={HardDrive}
           title={t("step4.title")}
           description={t("step4.desc")}
-          status={googleConnected ? "connected" : "pending"} delay={0.4}
+          status={googleConnected ? "connected" : "pending"} delay={0.5}
         >
           {googleConnected ? (
             <div className="flex items-center justify-between">
@@ -646,12 +734,12 @@ export default function GetStartedPage() {
           )}
         </ActionCard>
 
-        {/* 5. Stripe Top-up */}
+        {/* 6. Stripe Top-up (legacy i18n key: step5) */}
         <ActionCard
-          step={5} icon={CreditCard}
+          step={6} icon={CreditCard}
           title={t("step5.title")}
           description={t("step5.desc")}
-          status={userCredits > 0 ? "connected" : "ready"} delay={0.5}
+          status={userCredits > 0 ? "connected" : "ready"} delay={0.6}
         >
           <div className="space-y-4">
             <div className="flex items-center justify-between px-4 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02]">

@@ -263,6 +263,12 @@
       "btn": "连接 Facebook / Instagram",
       "connected": "Meta 账号已连接"
     },
+    "tiktok": {
+      "title": "连接 TikTok 账号",
+      "desc": "连接你的 TikTok 账号，让 AI 自动将 Reels 和短视频发布到你的 TikTok 个人主页。",
+      "btn": "连接 TikTok",
+      "connected": "TikTok 账号已连接"
+    },
     "step4": {
       "title": "连接 Google 账号",
       "desc": "连接你的 Google 账号以访问 Google 云端硬盘内容。AI 可以直接读取你的品牌素材和文档。如果你用 Google 注册，此步骤已自动完成。",
@@ -284,7 +290,7 @@
       "badge": "账号已创建",
       "title1": "欢迎来到 ",
       "title2": "SaleCraft",
-      "subtitle": "完成以下 4 个步骤，解锁所有 AI 营销能力"
+      "subtitle": "完成以下 6 个步骤，解锁所有 AI 营销能力"
     },
     "status": {
       "ready": "待完成",

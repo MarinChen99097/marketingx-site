@@ -263,6 +263,12 @@
       "btn": "Conectar Facebook / Instagram",
       "connected": "Cuenta Meta conectada"
     },
+    "tiktok": {
+      "title": "Conectar cuenta de TikTok",
+      "desc": "Conecta tu cuenta de TikTok para que la IA publique Reels y vídeos automáticamente en tu perfil de TikTok.",
+      "btn": "Conectar TikTok",
+      "connected": "Cuenta de TikTok conectada"
+    },
     "step4": {
       "title": "Conectar cuenta Google",
       "desc": "Vincula tu cuenta de Google para acceder al contenido de Google Drive. La IA puede leer directamente tus materiales de marca y documentos. Si te registraste con Google, este paso ya está hecho.",
@@ -284,7 +290,7 @@
       "badge": "Cuenta creada",
       "title1": "Bienvenido a ",
       "title2": "SaleCraft",
-      "subtitle": "Completa estos 4 pasos para desbloquear todas las capacidades de marketing con IA"
+      "subtitle": "Completa estos 6 pasos para desbloquear todas las capacidades de marketing con IA"
     },
     "status": {
       "ready": "Pendiente",

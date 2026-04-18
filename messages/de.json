@@ -263,6 +263,12 @@
       "btn": "Facebook / Instagram verbinden",
       "connected": "Meta-Konto verbunden"
     },
+    "tiktok": {
+      "title": "TikTok-Konto verknüpfen",
+      "desc": "Verbinde dein TikTok-Konto, damit die KI Reels und Videos automatisch auf deinem TikTok-Profil veröffentlicht.",
+      "btn": "TikTok verbinden",
+      "connected": "TikTok-Konto verbunden"
+    },
     "step4": {
       "title": "Google-Konto verbinden",
       "desc": "Verknüpfen Sie Ihr Google-Konto, um auf Google Drive-Inhalte zuzugreifen. Die KI kann Ihre Markenmaterialien und Dokumente direkt lesen. Wenn Sie sich mit Google registriert haben, ist dieser Schritt bereits erledigt.",
@@ -284,7 +290,7 @@
       "badge": "Konto erstellt",
       "title1": "Willkommen bei ",
       "title2": "SaleCraft",
-      "subtitle": "Schließen Sie diese 4 Schritte ab, um alle KI-Marketing-Funktionen freizuschalten"
+      "subtitle": "Schließen Sie diese 6 Schritte ab, um alle KI-Marketing-Funktionen freizuschalten"
     },
     "status": {
       "ready": "Ausstehend",

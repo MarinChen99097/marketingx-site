@@ -263,6 +263,12 @@
       "btn": "Facebook / Instagram 연결",
       "connected": "Meta 계정 연결됨"
     },
+    "tiktok": {
+      "title": "TikTok 계정 연결",
+      "desc": "TikTok 계정을 연결하면 AI가 Reels와 동영상을 내 TikTok 프로필에 자동으로 게시할 수 있습니다.",
+      "btn": "TikTok 연결",
+      "connected": "TikTok 계정 연결됨"
+    },
     "step4": {
       "title": "Google 계정 연결",
       "desc": "Google 계정을 연결하여 Google 드라이브 콘텐츠에 접근하세요. AI가 브랜드 자료와 문서를 직접 읽을 수 있습니다. Google로 가입했다면 이 단계는 이미 완료되었습니다.",
@@ -284,7 +290,7 @@
       "badge": "계정 생성 완료",
       "title1": "환영합니다 ",
       "title2": "SaleCraft",
-      "subtitle": "이 4단계를 완료하여 모든 AI 마케팅 기능을 잠금 해제하세요"
+      "subtitle": "이 6단계를 완료하여 모든 AI 마케팅 기능을 잠금 해제하세요"
     },
     "status": {
       "ready": "할 일",

@@ -263,6 +263,12 @@
       "btn": "連結 Facebook / Instagram",
       "connected": "Meta 帳號已連結"
     },
+    "tiktok": {
+      "title": "連結 TikTok 帳號",
+      "desc": "連結你的 TikTok 帳號，讓 AI 自動將 Reels 與短影片發佈到你的 TikTok 個人檔案。",
+      "btn": "連結 TikTok",
+      "connected": "TikTok 帳號已連結"
+    },
     "step4": {
       "title": "連結 Google 帳號",
       "desc": "連結你的 Google 帳號以存取 Google 雲端硬碟內容。AI 可以直接讀取你的品牌素材和文件。如果你用 Google 註冊，此步驟已自動完成。",
@@ -284,7 +290,7 @@
       "badge": "帳號已建立",
       "title1": "歡迎來到 ",
       "title2": "SaleCraft",
-      "subtitle": "完成以下 4 個步驟，解鎖所有 AI 行銷能力"
+      "subtitle": "完成以下 6 個步驟，解鎖所有 AI 行銷能力"
     },
     "status": {
       "ready": "待完成",
