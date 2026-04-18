@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import {
   Bot, Facebook, HardDrive, CreditCard,
   ArrowRight, CheckCircle, ExternalLink,
-  Copy, Check, Sparkles, LogOut, Loader2
+  Copy, Check, Sparkles, LogOut, Loader2, KeyRound
 } from "lucide-react";
 import { LandingAILogo } from "@/components/LandingAILogo";
 import { Button } from "@/components/ui/button";
@@ -78,6 +78,87 @@ export default function GetStartedPage() {
   const [googleConnected, setGoogleConnected] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // AI Token (STEP 2) state
+  const [aiToken, setAiToken] = useState<string | null>(null);
+  const [aiTokenExpiresAt, setAiTokenExpiresAt] = useState<string | null>(null);
+  const [aiTokenCopied, setAiTokenCopied] = useState(false);
+  const [aiTokenLoading, setAiTokenLoading] = useState(false);
+  const [aiTokenError, setAiTokenError] = useState<string | null>(null);
+  const [showFallbackInput, setShowFallbackInput] = useState(false);
+
+  // Drive expirySoon with a single setTimeout scheduled to fire at the
+  // "entering last 30 min" boundary — not a minute-ticking setInterval.
+  // This avoids re-rendering the page every 60 s for 11+ hours when
+  // the token is nowhere near expiry.
+  const [expirySoon, setExpirySoon] = useState(false);
+  useEffect(() => {
+    if (!aiTokenExpiresAt) { setExpirySoon(false); return; }
+    const expiresMs = new Date(aiTokenExpiresAt).getTime();
+    const warnAtMs = expiresMs - 30 * 60 * 1000;
+    const now = Date.now();
+    if (now >= warnAtMs) { setExpirySoon(true); return; }
+    setExpirySoon(false);
+    const id = setTimeout(() => setExpirySoon(true), warnAtMs - now);
+    return () => clearTimeout(id);
+  }, [aiTokenExpiresAt]);
+
+  // Generating a new AI Token REVOKES any previously issued one (backend
+  // bumps ai_token_version). Only call this as a deliberate user action —
+  // never on page mount — or we'd silently invalidate tokens the user
+  // already pasted into other AI assistants. Current session's plaintext
+  // is kept in sessionStorage so a same-tab refresh doesn't lose the view
+  // (sessionStorage clears on tab close, which is the right TTL for an
+  // ephemeral bearer-precursor value).
+  const AI_TOKEN_SS_KEY = "mx_ai_token";
+  const AI_TOKEN_EXPIRES_SS_KEY = "mx_ai_token_expires";
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const cached = sessionStorage.getItem(AI_TOKEN_SS_KEY);
+    const cachedExp = sessionStorage.getItem(AI_TOKEN_EXPIRES_SS_KEY);
+    if (cached && cachedExp && new Date(cachedExp).getTime() > Date.now()) {
+      setAiToken(cached);
+      setAiTokenExpiresAt(cachedExp);
+    }
+  }, []);
+
+  const fetchAiToken = async () => {
+    setAiTokenLoading(true);
+    setAiTokenError(null);
+    setShowFallbackInput(false);
+    setAiTokenCopied(false);
+    try {
+      const res = await api.post("/auth/ai-token/create");
+      setAiToken(res.data.ai_token);
+      setAiTokenExpiresAt(res.data.expires_at);
+      sessionStorage.setItem(AI_TOKEN_SS_KEY, res.data.ai_token);
+      sessionStorage.setItem(AI_TOKEN_EXPIRES_SS_KEY, res.data.expires_at);
+    } catch (err: unknown) {
+      console.error("[GetStarted] AI token create failed:", err);
+      const status = (err as { response?: { status?: number } })?.response?.status;
+      if (status === 404) {
+        setAiTokenError(t("step2.featureUnavailable"));
+      } else {
+        setAiTokenError(t("step2.createFailed"));
+      }
+    } finally {
+      setAiTokenLoading(false);
+    }
+  };
+
+  const handleAiTokenCopy = async () => {
+    if (!aiToken) return;
+    try {
+      await navigator.clipboard.writeText(aiToken);
+      setAiTokenCopied(true);
+      setTimeout(() => setAiTokenCopied(false), 2500);
+    } catch (err) {
+      console.warn("[GetStarted] clipboard.writeText failed:", err);
+      // iOS Safari / private mode — show a readonly input for manual selection
+      setShowFallbackInput(true);
+    }
+  };
+
   const LANDING_AI_URL = "https://salecraft.ai";
   const PLUGIN_CMD = `${t("step1.command")}\nhttps://github.com/connactai/Salecraft-Plugin`;
 
@@ -145,11 +226,12 @@ export default function GetStartedPage() {
       window.history.replaceState(null, "", `/${locale}/get-started`);
     }
 
-    // ── 4. No token → redirect to register ──
+    // ── 4. No token → redirect to login (login page has a link to register) ──
     const token = localStorage.getItem("token");
     if (!token) {
-      const siteUrl = window.location.origin;
-      window.location.href = `https://salecraft.ai/${locale}/register?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
+      // Force the custom domain — window.location.origin could be the Cloud Run URL.
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
+      window.location.href = `https://salecraft.ai/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
       return;
     }
     setIsLoggedIn(true);
@@ -191,6 +273,10 @@ export default function GetStartedPage() {
     fetchProfile();
     checkMeta();
     checkGDrive();
+    // fetchAiToken() is intentionally NOT called here — it would revoke
+    // any previously-issued AI token on every page visit. The user
+    // triggers it explicitly via the STEP 2 "Generate Token" button.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale, router]);
 
   const handleCopy = async () => {
@@ -392,18 +478,103 @@ export default function GetStartedPage() {
           </div>
         </ActionCard>
 
-        {/* 2. Meta (FB/IG) */}
+        {/* 2. AI Login Token */}
         <ActionCard
-          step={2} icon={Facebook}
+          step={2} icon={KeyRound}
           title={t("step2.title")}
           description={t("step2.desc")}
-          status={metaConnected ? "connected" : "ready"} delay={0.2}
+          status={aiToken && !aiTokenError ? "connected" : "ready"} delay={0.2}
+        >
+          <div className="space-y-3">
+            {aiTokenError ? (
+              <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-4 text-sm text-red-300">
+                {aiTokenError}
+              </div>
+            ) : !aiToken && !aiTokenLoading ? (
+              // No token yet — show a single explicit generate button so
+              // merely visiting this page doesn't silently revoke an already-
+              // issued token living in another AI chat.
+              <div className="rounded-xl border border-white/[0.08] bg-[#111113] p-5 space-y-3">
+                <p className="text-sm text-white/60">{t("step2.generatePrompt")}</p>
+                <Button
+                  onClick={fetchAiToken}
+                  className="h-10 px-6 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20"
+                >
+                  <KeyRound className="mr-2 w-4 h-4" />
+                  {t("step2.generateBtn")}
+                </Button>
+              </div>
+            ) : showFallbackInput ? (
+              <>
+                <p className="text-xs text-yellow-400">{t("step2.copyFailed")}</p>
+                <input
+                  readOnly
+                  value={aiToken ?? ""}
+                  onFocus={(e) => e.currentTarget.select()}
+                  onClick={(e) => (e.currentTarget as HTMLInputElement).select()}
+                  className="w-full font-mono text-xs sm:text-sm bg-[#111113] border border-white/[0.08] rounded-xl px-4 py-3 text-white/80"
+                />
+              </>
+            ) : (
+              <div className="rounded-xl border border-white/[0.08] bg-[#111113] p-4">
+                <div className="font-mono text-xs sm:text-sm text-white/80 break-all">
+                  {aiTokenLoading ? t("step2.loading") : aiToken}
+                </div>
+              </div>
+            )}
+            {aiToken && !aiTokenError && (
+              <>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <Button
+                    onClick={showFallbackInput ? undefined : handleAiTokenCopy}
+                    disabled={!aiToken || aiTokenLoading || showFallbackInput}
+                    className="h-10 px-6 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20 disabled:opacity-50"
+                  >
+                    {showFallbackInput
+                      ? <>{t("step2.tapToSelect")}</>
+                      : aiTokenCopied
+                        ? <><Check className="mr-2 w-4 h-4" /> {t("step2.copiedBtn")}</>
+                        : <><Copy className="mr-2 w-4 h-4" /> {t("step2.copyBtn")}</>
+                    }
+                  </Button>
+                  <button
+                    onClick={fetchAiToken}
+                    disabled={aiTokenLoading}
+                    className="text-xs text-white/50 hover:text-white transition-colors disabled:opacity-50 underline underline-offset-2"
+                  >
+                    {t("step2.regenerate")}
+                  </button>
+                  {aiTokenExpiresAt && (
+                    <span className={`text-xs ${expirySoon ? "text-yellow-400" : "text-white/30"}`}>
+                      {expirySoon
+                        ? t("step2.expiresSoon")
+                        : t("step2.expiresAt", {
+                            time: new Date(aiTokenExpiresAt).toLocaleString(locale)
+                          })
+                      }
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-yellow-400/70 leading-relaxed">
+                  ⚠️ {t("step2.singleLiveWarning")}
+                </p>
+              </>
+            )}
+          </div>
+        </ActionCard>
+
+        {/* 3. Meta (FB/IG) */}
+        <ActionCard
+          step={3} icon={Facebook}
+          title={t("step3.title")}
+          description={t("step3.desc")}
+          status={metaConnected ? "connected" : "ready"} delay={0.3}
         >
           {metaConnected ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-green-400">
                 <CheckCircle className="w-5 h-5" />
-                <span className="text-sm font-medium">{t("step2.connected")}</span>
+                <span className="text-sm font-medium">{t("step3.connected")}</span>
               </div>
               <button
                 onClick={async () => {
@@ -425,24 +596,24 @@ export default function GetStartedPage() {
               className="w-full sm:w-auto h-10 px-6 bg-[#1877F2] hover:bg-[#166FE5] text-white font-medium rounded-xl text-sm"
             >
               <Facebook className="mr-2 w-4 h-4" />
-              {t("step2.btn")}
+              {t("step3.btn")}
               <ExternalLink className="ml-2 w-3.5 h-3.5 opacity-60" />
             </Button>
           )}
         </ActionCard>
 
-        {/* 3. Google */}
+        {/* 4. Google */}
         <ActionCard
-          step={3} icon={HardDrive}
-          title={t("step3.title")}
-          description={t("step3.desc")}
-          status={googleConnected ? "connected" : "pending"} delay={0.3}
+          step={4} icon={HardDrive}
+          title={t("step4.title")}
+          description={t("step4.desc")}
+          status={googleConnected ? "connected" : "pending"} delay={0.4}
         >
           {googleConnected ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-green-400">
                 <CheckCircle className="w-5 h-5" />
-                <span className="text-sm font-medium">{t("step3.connected")}</span>
+                <span className="text-sm font-medium">{t("step4.connected")}</span>
               </div>
               <button
                 onClick={async () => {
@@ -469,29 +640,29 @@ export default function GetStartedPage() {
                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
               </svg>
-              {t("step3.btn")}
+              {t("step4.btn")}
               <ExternalLink className="ml-2 w-3.5 h-3.5 opacity-60" />
             </Button>
           )}
         </ActionCard>
 
-        {/* 4. Stripe Top-up */}
+        {/* 5. Stripe Top-up */}
         <ActionCard
-          step={4} icon={CreditCard}
-          title={t("step4.title")}
-          description={t("step4.desc")}
-          status={userCredits > 0 ? "connected" : "ready"} delay={0.4}
+          step={5} icon={CreditCard}
+          title={t("step5.title")}
+          description={t("step5.desc")}
+          status={userCredits > 0 ? "connected" : "ready"} delay={0.5}
         >
           <div className="space-y-4">
             <div className="flex items-center justify-between px-4 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-              <span className="text-sm text-white/40">{t("step4.balance")}</span>
+              <span className="text-sm text-white/40">{t("step5.balance")}</span>
               <span className="text-lg font-bold text-[hsl(16,70%,56%)]">{userCredits} pts</span>
             </div>
 
             {/* Amount selector */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-white/50">{t("step4.amountLabel")}</span>
+                <span className="text-sm text-white/50">{t("step5.amountLabel")}</span>
                 <span className="text-xs text-white/30">$1 USD = 30 pts</span>
               </div>
               {/* 3 options: $20, $75, Custom */}
@@ -514,7 +685,7 @@ export default function GetStartedPage() {
                   onClick={() => setCustomAmount(true)}
                   className={`py-3 rounded-xl text-center transition-all ${customAmount ? "bg-[hsl(16,70%,56%)] text-white ring-2 ring-[hsl(16,70%,56%)]/30" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
                 >
-                  <div className="text-lg font-bold">{t("step4.custom")}</div>
+                  <div className="text-lg font-bold">{t("step5.custom")}</div>
                   <div className="text-[10px] opacity-60">min $20</div>
                 </button>
               </div>
@@ -540,7 +711,7 @@ export default function GetStartedPage() {
               className="w-full h-11 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20"
             >
               <CreditCard className="mr-2 w-4 h-4" />
-              {t("step4.btn")}
+              {t("step5.btn")}
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
