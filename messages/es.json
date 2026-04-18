@@ -9,7 +9,7 @@
       "getStarted": "Comenzar",
       "console": "Consola"
     },
-    "badge": "Plugin de Marketing IA — Compatible MCP",
+    "badge": "Asistente de Marketing IA — Funciona con cualquier IA",
     "badgeNew": "NUEVO",
     "hero": {
       "title1": "Tu Consultor de ",
@@ -32,7 +32,7 @@
     "pluginInstall": {
       "title1": "Un comando, ",
       "title2": "al instante en línea",
-      "subtitle": "Agrega este plugin a cualquier plataforma IA compatible con MCP",
+      "subtitle": "Conecta SaleCraft a cualquier plataforma IA — ChatGPT, Claude, Gemini y más",
       "command": "Me gustaría usar este plugin para pedir consejos sobre cómo comercializar mi producto"
     },
     "stats": {
@@ -146,7 +146,7 @@
           "desc": "Detección en tiempo real de competidores, regulaciones, tendencias"
         },
         "i18n": {
-          "title": "Soporte 10 idiomas",
+          "title": "Soporte 15+ idiomas",
           "desc": "Incluyendo árabe RTL, adaptación cultural de 4 capas"
         },
         "compliance": {
@@ -184,8 +184,8 @@
           "desc": "Registro en 30 segundos, inicio rápido con Google"
         },
         "s2": {
-          "title": "Instalar plugin",
-          "desc": "Pega un comando en Claude Code, conexión automática a 200+ herramientas"
+          "title": "Conectar SaleCraft",
+          "desc": "Pega un comando en tu asistente IA, conexión automática a 200+ herramientas"
         },
         "s3": {
           "title": "La IA genera activos",
@@ -239,8 +239,8 @@
       "subtitle": "Completa estos 4 pasos para desbloquear todas las capacidades de marketing con IA"
     },
     "step1": {
-      "title": "Instalar plugin SaleCraft",
-      "desc": "Agrega esta URL de plugin a la configuración MCP de tu plataforma IA para acceder a todas las herramientas de marketing.",
+      "title": "Conecta SaleCraft a tu IA",
+      "desc": "Añade esto a la configuración de tu asistente IA para acceder a todas las herramientas de marketing. Compatible con ChatGPT, Claude, Gemini y más.",
       "command": "Me gustaría usar este plugin para pedir consejos sobre cómo comercializar mi producto",
       "copyBtn": "Copiar comando",
       "copiedBtn": "¡Copiado al portapapeles!"
@@ -274,7 +274,7 @@
       "pending": "Opcional"
     },
     "bottom": {
-      "note": "Después de la configuración, vuelve a Claude Code para iniciar tu primer proyecto de marketing",
+      "note": "Después de la configuración, vuelve a tu asistente IA para iniciar tu primer proyecto de marketing",
       "dashboard": "Ir al panel",
       "home": "Volver al inicio"
     }

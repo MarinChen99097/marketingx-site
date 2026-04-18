@@ -1,0 +1,282 @@
+{
+  "SaleCraft": {
+    "nav": {
+      "features": "Funktionen",
+      "industries": "Branchen",
+      "capabilities": "Leistungen",
+      "pricing": "Preise",
+      "login": "Anmelden",
+      "getStarted": "Jetzt starten",
+      "console": "Konsole"
+    },
+    "badge": "KI-Marketing-Assistent — Funktioniert mit jeder KI",
+    "badgeNew": "NEU",
+    "hero": {
+      "title1": "Ihr KI-Marketing-",
+      "title2": "Berater für ",
+      "subtitle": "Zuerst kostenlose Beratung. Ihr Produkt verstehen, Marketing-Lücken diagnostizieren, Strategie planen — dann führt die KI aus, wenn Sie bereit sind.",
+      "ctaPrimary": "Kostenlos starten",
+      "ctaPrimaryLoggedIn": "Zur Konsole",
+      "ctaSecondary": "So funktioniert's",
+      "ctaCopy": "Befehl kopieren"
+    },
+    "typewriter": {
+      "consultation": "Kostenlose Beratung",
+      "landingPage": "Landing Pages",
+      "reels": "Reels-Videos",
+      "social": "Social-Media-Beiträge",
+      "kol": "KOL-Kampagnen",
+      "brand": "Markenanalyse",
+      "research": "Marktforschung"
+    },
+    "pluginInstall": {
+      "title1": "Ein Befehl, ",
+      "title2": "sofort einsatzbereit",
+      "subtitle": "Verbinden Sie SaleCraft mit jeder KI-Plattform — ChatGPT, Claude, Gemini und mehr",
+      "command": "Ich möchte dieses Plugin nutzen, um Beratung zur Vermarktung meines Produkts zu erhalten"
+    },
+    "stats": {
+      "platforms": "Plattformen",
+      "industries": "Branchenanwendungen",
+      "speed": "Landing Page erstellen",
+      "skills": "Kernfähigkeiten"
+    },
+    "features": {
+      "ai": {
+        "title": "Einfach einen Satz eingeben",
+        "desc": "Laden Sie Markenmaterialien hoch, die KI analysiert, welche Marketingmaterialien Sie benötigen, und erstellt sie automatisch.",
+        "pipelineSteps": {
+          "brandAnalysis": "Markenanalyse",
+          "strategist": "Stratege",
+          "architect": "Architekt",
+          "factory": "Fabrik",
+          "supervisor": "Supervisor",
+          "goLive": "Live schalten"
+        }
+      },
+      "allInOne": {
+        "title": "Alles Marketing an einem Ort",
+        "desc": "Landing Pages, Reels, Social-Media-Posting, KOL-Matching, Analysen — verwalten Sie alle Marketingbedürfnisse auf einer Plattform."
+      },
+      "factory": {
+        "title": "KI-Fabrik",
+        "desc": "Markenmaterialien hochladen → KI analysiert Ihr Produkt → Stratege plant → Architekt gestaltet → Fabrik produziert → Supervisor prüft. Vollautomatisch, 30 Minuten Lieferzeit."
+      },
+      "payg": {
+        "title": "Zahlen Sie nur, was Sie nutzen",
+        "desc": "$1 USD = 30 Punkte, kein monatliches Abo. Landing Pages ~75-250 Punkte, Reels ~50-150 Punkte, Social-Media-Beiträge 5-10 Punkte."
+      }
+    },
+    "industries": {
+      "sectionTitle1": "Setzen Sie Ihre ",
+      "sectionTitle2": "Marketingkraft",
+      "sectionTitle3": " in jeder Branche ein",
+      "sectionSubtitle": "8 Branchen, 40+ bewährte Szenarien, für jeden Schmerzpunkt eine Lösung",
+      "ecommerce": {
+        "title": "E-Commerce",
+        "pain": "Produkteinführung dauert 3 Wochen, Werbematerialien hinken hinterher",
+        "solution": "KI generiert Landing Page + Reels in 30 Min.",
+        "benefit": "Launch: 3 Wochen → 72 Stunden, Kosten um 70% gesenkt"
+      },
+      "medical": {
+        "title": "Medizin & Beauty",
+        "pain": "Hohes Compliance-Risiko bei Werbung, Verstöße bei Wirkaussagen",
+        "solution": "Compliance-Engine prüft automatisch Vorschriften",
+        "benefit": "Entfernungsrate 30% → 5%, Compliance 95%"
+      },
+      "food": {
+        "title": "Gastro-Ketten",
+        "pain": "Inkonsistentes Branding bei mehreren Filialen, langsame Aktionen",
+        "solution": "Markenvorlagen + Batch-Generierung + QR-Tracking",
+        "benefit": "30 Filialen in 1 Stunde, 100% Markenkonsistenz"
+      },
+      "fashion": {
+        "title": "Mode & Bekleidung",
+        "pain": "Neue Kollektionen brauchen schnelle visuelle Inhalte, saisonaler Druck",
+        "solution": "KI generiert Lookbook Landing Pages + Reels in 30 Min.",
+        "benefit": "Kollektion-Launch 3 Wochen → 72 Stunden, Visualkosten um 80% gesenkt"
+      },
+      "education": {
+        "title": "Bildung",
+        "pain": "Anmeldeansturm, Trichter schwer nachzuverfolgen",
+        "solution": "Zielgruppensegmentierung + Analysen + Personal Branding",
+        "benefit": "10-fache Materialproduktion, Konversion um 25% gesteigert"
+      },
+      "finance": {
+        "title": "Finanzen & Versicherung",
+        "pain": "Strenge Vorschriften, hohe Vertrauenshürde",
+        "solution": "Trust Readiness + Faktenprüfung",
+        "benefit": "98% Compliance, Präzision um 50% gesteigert"
+      },
+      "travel": {
+        "title": "Reisen & Tourismus",
+        "pain": "Saisonale Spitzen, mehrsprachige Anforderungen",
+        "solution": "i18n + Reels-Pipeline + KOL-Aufgabenverwaltung",
+        "benefit": "4-fache internationale Abdeckung, 50 Videos/Monat"
+      },
+      "manufacturing": {
+        "title": "Fertigung",
+        "pain": "Eigene Marke gewünscht, aber kein Marketing-Know-how",
+        "solution": "Brand Analyzer + 3-Plan KI-Strategie",
+        "benefit": "Markenaufbaukosten um 90% gesenkt, Messevorbereitung 1 Monat → 3 Tage"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "Premium-Marketing-Erlebnis, ",
+      "sectionTitle2": "sofort einsatzbereit",
+      "items": {
+        "pipeline": {
+          "title": "KI 4-Stufen-Pipeline",
+          "desc": "Stratege → Architekt → Fabrik → Supervisor, vollautomatisch"
+        },
+        "reels": {
+          "title": "Reels-Automatisierung",
+          "desc": "6-Stufen-Pipeline: Szenen, Untertitel, Vertonung"
+        },
+        "publish": {
+          "title": "Multi-Plattform-Veröffentlichung",
+          "desc": "IG/FB/TikTok, ein Befehl für alle Kanäle"
+        },
+        "kol": {
+          "title": "Intelligentes KOL-Matching",
+          "desc": "KI-basierte quantitative + qualitative Doppelanalyse"
+        },
+        "monitor": {
+          "title": "Schmetterlingseffekt-Monitor",
+          "desc": "Echtzeit-Erkennung von Wettbewerbern, Vorschriften, Trends"
+        },
+        "i18n": {
+          "title": "15+ Sprachen Unterstützung",
+          "desc": "Inkl. RTL-Arabisch, 4-Schichten kulturelle Anpassung"
+        },
+        "compliance": {
+          "title": "Compliance-Engine",
+          "desc": "Medizin/Gesundheit/Finanzen — automatische Vorschriftsprüfung"
+        },
+        "research": {
+          "title": "Tiefenrecherche + Inhalte",
+          "desc": "Multi-Quellen-Branchenscan, 4-Stufen-Redaktion"
+        },
+        "brand": {
+          "title": "Markenintelligenz",
+          "desc": "Automatische Markeninfo-Extraktion, KI-Strategievorschläge"
+        },
+        "analytics": {
+          "title": "Echtzeit-Analysen",
+          "desc": "Besucherverfolgung, Scrollverhalten, Engagement-Scoring"
+        },
+        "docs": {
+          "title": "Unternehmensdokumente",
+          "desc": "Präsentationen, Verträge, Schulungshandbücher — per Klick"
+        },
+        "stripe": {
+          "title": "Stripe-Zahlung",
+          "desc": "Punkte aufladen, Kreditkarte / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "In vier Schritten starten",
+      "subtitle": "Von der Anmeldung bis zur Veröffentlichung in unter einer Stunde",
+      "steps": {
+        "s1": {
+          "title": "Konto erstellen",
+          "desc": "Registrierung in 30 Sekunden, Google-Schnellanmeldung möglich"
+        },
+        "s2": {
+          "title": "SaleCraft verbinden",
+          "desc": "Einen Befehl in Ihrem KI-Assistenten einfügen, automatisch 200+ Tools verbinden"
+        },
+        "s3": {
+          "title": "KI generiert Materialien",
+          "desc": "Beschreiben Sie Ihren Bedarf in einem Satz, in 30 Min. vollständige Marketingmaterialien"
+        },
+        "s4": {
+          "title": "Veröffentlichen & Verfolgen",
+          "desc": "Multi-Plattform-Veröffentlichung, Echtzeit-Analysen, KI-Daueroptimierung"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "Zahlen Sie nur, ",
+      "title2": "was Sie nutzen",
+      "subtitle": "Keine Monatsgebühren, keine versteckten Kosten. Bei Bedarf aufladen, nur zahlen, was Sie nutzen.",
+      "badge": "Nutzungsbasiert",
+      "perUsd": "USD",
+      "pts": "Punkte",
+      "items": {
+        "lp": "Landing Page ≈ 75–250 Punkte",
+        "reels": "Reels-Video ≈ 50–150 Punkte",
+        "social": "Social-Media-Beitrag ≈ 5–10 Punkte / Beitrag",
+        "kol": "KOL-Analyse ≈ 20–50 Punkte / Person",
+        "research": "Tiefenrecherche ≈ 30–100 Punkte / Sitzung"
+      },
+      "ctaLoggedIn": "Zum Aufladen",
+      "cta": "Registrieren & Aufladen",
+      "freeCredits": "50 Gratis-Punkte bei Registrierung"
+    },
+    "finalCta": {
+      "title1": "Bereit, die KI",
+      "title2": "Ihr Marketing übernehmen zu lassen?",
+      "subtitle": "Starten Sie heute — erledigen Sie mit einem Satz, was früher ein ganzes Marketing-Team erforderte.",
+      "ctaLoggedIn": "Zur Konsole",
+      "cta": "Kostenlos starten"
+    },
+    "footer": {
+      "brand": "SaleCraft by Landing AI",
+      "terms": "Nutzungsbedingungen",
+      "privacy": "Datenschutzrichtlinie",
+      "contact": "Kontakt"
+    },
+    "copy": "Kopieren",
+    "copied": "Kopiert"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "Konto erstellt",
+      "title1": "Willkommen bei ",
+      "title2": "SaleCraft",
+      "subtitle": "Schließen Sie diese 4 Schritte ab, um alle KI-Marketing-Funktionen freizuschalten"
+    },
+    "step1": {
+      "title": "SaleCraft mit Ihrer KI verbinden",
+      "desc": "Fügen Sie dies zu den Einstellungen Ihres KI-Assistenten hinzu, um alle Marketing-Tools freizuschalten. Funktioniert mit ChatGPT, Claude, Gemini und mehr.",
+      "command": "Ich möchte dieses Plugin nutzen, um Beratung zur Vermarktung meines Produkts zu erhalten",
+      "copyBtn": "Befehl kopieren",
+      "copiedBtn": "In die Zwischenablage kopiert!"
+    },
+    "step2": {
+      "title": "Meta-Konto verbinden",
+      "desc": "Verknüpfen Sie Ihr Facebook- / Instagram-Konto, damit die KI automatisch Beiträge, Stories und Reels veröffentlicht. Persönliche und professionelle Konten werden unterstützt.",
+      "btn": "Facebook / Instagram verbinden",
+      "connected": "Meta-Konto verbunden"
+    },
+    "step3": {
+      "title": "Google-Konto verbinden",
+      "desc": "Verknüpfen Sie Ihr Google-Konto, um auf Google Drive-Inhalte zuzugreifen. Die KI kann Ihre Markenmaterialien und Dokumente direkt lesen. Wenn Sie sich mit Google registriert haben, ist dieser Schritt bereits erledigt.",
+      "btn": "Google-Konto verbinden",
+      "connected": "Google-Konto verbunden"
+    },
+    "step4": {
+      "title": "Punkte aufladen",
+      "desc": "$1 USD = 30 Punkte. Nach dem Aufladen können Sie Landing Page-Generierung, Reels, Social-Media-Veröffentlichung und alle anderen Funktionen nutzen.",
+      "balance": "Aktuelles Guthaben",
+      "amountLabel": "Aufladebetrag",
+      "custom": "Individuell",
+      "usd": "USD",
+      "pts": "Punkte",
+      "costRef": "Landing Page ≈ 75–250 Punkte · Reels ≈ 50–150 Punkte · Social ≈ 5–10 Punkte",
+      "btn": "Zum Aufladen"
+    },
+    "status": {
+      "ready": "Ausstehend",
+      "connected": "Erledigt",
+      "pending": "Optional"
+    },
+    "bottom": {
+      "note": "Nach der Einrichtung kehren Sie zu Ihrem KI-Assistenten zurück, um Ihr erstes Marketingprojekt zu starten",
+      "dashboard": "Zum Dashboard",
+      "home": "Zurück zur Startseite"
+    }
+  }
+}

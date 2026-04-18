@@ -1,0 +1,282 @@
+{
+  "SaleCraft": {
+    "nav": {
+      "features": "Fitur",
+      "industries": "Industri",
+      "capabilities": "Kemampuan",
+      "pricing": "Harga",
+      "login": "Masuk",
+      "getStarted": "Mulai Sekarang",
+      "console": "Konsol"
+    },
+    "badge": "Asisten Pemasaran AI — Bekerja dengan Semua AI",
+    "badgeNew": "BARU",
+    "hero": {
+      "title1": "Konsultan Pemasaran ",
+      "title2": "AI Anda untuk ",
+      "subtitle": "Konsultasi gratis dulu. Pahami produk Anda, diagnosis celah pemasaran, rencanakan strategi — lalu AI eksekusi saat Anda siap.",
+      "ctaPrimary": "Mulai Gratis",
+      "ctaPrimaryLoggedIn": "Ke Konsol",
+      "ctaSecondary": "Lihat Cara Kerjanya",
+      "ctaCopy": "Salin Perintah"
+    },
+    "typewriter": {
+      "consultation": "Konsultasi Gratis",
+      "landingPage": "Landing Page",
+      "reels": "Video Reels",
+      "social": "Postingan Sosial",
+      "kol": "Kampanye KOL",
+      "brand": "Analisis Merek",
+      "research": "Riset Pasar"
+    },
+    "pluginInstall": {
+      "title1": "Satu perintah, ",
+      "title2": "langsung aktif",
+      "subtitle": "Hubungkan SaleCraft ke platform AI manapun — ChatGPT, Claude, Gemini dan lainnya",
+      "command": "Saya ingin menggunakan plugin ini untuk meminta saran cara memasarkan produk saya"
+    },
+    "stats": {
+      "platforms": "Platform",
+      "industries": "Aplikasi Industri",
+      "speed": "Buat Landing Page",
+      "skills": "Keahlian Inti"
+    },
+    "features": {
+      "ai": {
+        "title": "Cukup ketik satu kalimat",
+        "desc": "Unggah aset merek, AI menganalisis materi pemasaran apa yang Anda butuhkan dan membuatnya secara otomatis.",
+        "pipelineSteps": {
+          "brandAnalysis": "Analisis Merek",
+          "strategist": "Ahli Strategi",
+          "architect": "Arsitek",
+          "factory": "Pabrik",
+          "supervisor": "Pengawas",
+          "goLive": "Tayangkan"
+        }
+      },
+      "allInOne": {
+        "title": "Semua pemasaran di satu tempat",
+        "desc": "Landing Page, Reels, posting sosial, pencocokan KOL, analitik — kelola semua kebutuhan pemasaran di satu platform."
+      },
+      "factory": {
+        "title": "Pabrik AI",
+        "desc": "Unggah aset merek → AI menganalisis produk Anda → Ahli Strategi merencanakan → Arsitek mendesain → Pabrik menghasilkan → Pengawas memeriksa. Sepenuhnya otomatis, selesai dalam 30 menit."
+      },
+      "payg": {
+        "title": "Bayar sesuai pemakaian",
+        "desc": "$1 USD = 30 poin, tanpa langganan bulanan. Landing Page ~75-250 poin, Reels ~50-150 poin, postingan sosial 5-10 poin."
+      }
+    },
+    "industries": {
+      "sectionTitle1": "Terapkan kekuatan ",
+      "sectionTitle2": "pemasaran Anda",
+      "sectionTitle3": " di industri manapun",
+      "sectionSubtitle": "8 industri, 40+ skenario terbukti, setiap masalah ada solusinya",
+      "ecommerce": {
+        "title": "E-Commerce",
+        "pain": "Peluncuran produk butuh 3 minggu, materi promo tidak bisa mengikuti",
+        "solution": "AI membuat Landing Page + Reels dalam 30 menit",
+        "benefit": "Peluncuran: 3 minggu → 72 jam, biaya turun 70%"
+      },
+      "medical": {
+        "title": "Medis & Kecantikan",
+        "pain": "Risiko kepatuhan iklan tinggi, pelanggaran klaim",
+        "solution": "Mesin Kepatuhan otomatis memeriksa regulasi",
+        "benefit": "Tingkat penghapusan 30% → 5%, kepatuhan 95%"
+      },
+      "food": {
+        "title": "Jaringan F&B",
+        "pain": "Branding tidak konsisten di banyak cabang, promosi lambat",
+        "solution": "Template merek + pembuatan massal + pelacakan QR",
+        "benefit": "30 cabang dalam 1 jam, konsistensi merek 100%"
+      },
+      "fashion": {
+        "title": "Mode & Pakaian",
+        "pain": "Koleksi baru butuh konten visual cepat, tekanan musiman",
+        "solution": "AI membuat lookbook Landing Page + Reels dalam 30 menit",
+        "benefit": "Peluncuran koleksi 3 minggu → 72 jam, biaya visual turun 80%"
+      },
+      "education": {
+        "title": "Pendidikan",
+        "pain": "Lonjakan pendaftaran, corong sulit dilacak",
+        "solution": "Segmentasi TA + Analitik + personal branding",
+        "benefit": "Output materi 10x lipat, konversi naik 25%"
+      },
+      "finance": {
+        "title": "Keuangan & Asuransi",
+        "pain": "Regulasi ketat, hambatan kepercayaan tinggi",
+        "solution": "Trust Readiness + Pemeriksa Fakta",
+        "benefit": "Kepatuhan 98%, presisi naik 50%"
+      },
+      "travel": {
+        "title": "Wisata & Pariwisata",
+        "pain": "Lonjakan musiman, kebutuhan multibahasa",
+        "solution": "i18n + Pipeline Reels + Manajemen tugas KOL",
+        "benefit": "Jangkauan internasional 4x lipat, 50 video/bulan"
+      },
+      "manufacturing": {
+        "title": "Manufaktur",
+        "pain": "Ingin punya merek sendiri tapi tidak paham pemasaran",
+        "solution": "Brand Analyzer + Strategi AI 3 Rencana",
+        "benefit": "Biaya pembangunan merek turun 90%, persiapan pameran 1 bulan → 3 hari"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "Pengalaman pemasaran premium, ",
+      "sectionTitle2": "siap pakai langsung",
+      "items": {
+        "pipeline": {
+          "title": "Pipeline AI 4 Tahap",
+          "desc": "Ahli Strategi → Arsitek → Pabrik → Pengawas, sepenuhnya otomatis"
+        },
+        "reels": {
+          "title": "Otomatisasi Reels",
+          "desc": "Pipeline 6 tahap: adegan, subtitle, sulih suara"
+        },
+        "publish": {
+          "title": "Publikasi Multi-platform",
+          "desc": "IG/FB/TikTok, satu perintah ke semua kanal"
+        },
+        "kol": {
+          "title": "Pencocokan KOL Cerdas",
+          "desc": "Analisis dua lapis AI: kuantitatif + kualitatif"
+        },
+        "monitor": {
+          "title": "Monitor Efek Kupu-kupu",
+          "desc": "Deteksi real-time kompetitor, regulasi, tren"
+        },
+        "i18n": {
+          "title": "Dukungan 15+ Bahasa",
+          "desc": "Termasuk RTL Arab, adaptasi budaya 4 lapis"
+        },
+        "compliance": {
+          "title": "Mesin Kepatuhan",
+          "desc": "Pemeriksaan regulasi otomatis medis/kesehatan/keuangan"
+        },
+        "research": {
+          "title": "Riset Mendalam + Konten",
+          "desc": "Pemindaian industri multi-sumber, editorial 4 tahap"
+        },
+        "brand": {
+          "title": "Kecerdasan Merek",
+          "desc": "Ekstraksi info merek otomatis, saran strategi AI"
+        },
+        "analytics": {
+          "title": "Analitik Real-time",
+          "desc": "Pelacakan pengunjung, perilaku scroll, skor engagement"
+        },
+        "docs": {
+          "title": "Dokumen Bisnis",
+          "desc": "Presentasi, kontrak, manual pelatihan, sekali klik"
+        },
+        "stripe": {
+          "title": "Pembayaran Stripe",
+          "desc": "Isi ulang poin, kartu kredit / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Empat langkah untuk memulai",
+      "subtitle": "Dari pendaftaran hingga publikasi, kurang dari satu jam",
+      "steps": {
+        "s1": {
+          "title": "Buat Akun",
+          "desc": "Daftar 30 detik, mendukung login cepat Google"
+        },
+        "s2": {
+          "title": "Hubungkan SaleCraft",
+          "desc": "Tempel satu perintah di asisten AI Anda, otomatis terhubung ke 200+ alat"
+        },
+        "s3": {
+          "title": "AI Membuat Aset",
+          "desc": "Jelaskan kebutuhan Anda dalam satu kalimat, 30 menit untuk materi pemasaran lengkap"
+        },
+        "s4": {
+          "title": "Publikasi & Lacak",
+          "desc": "Publikasi multi-platform, analitik real-time, optimasi berkelanjutan oleh AI"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "Bayar sesuai ",
+      "title2": "pemakaian",
+      "subtitle": "Tanpa biaya bulanan, tanpa biaya tersembunyi. Isi ulang sesuai kebutuhan, bayar sesuai pemakaian.",
+      "badge": "Bayar-sesuai-pakai",
+      "perUsd": "USD",
+      "pts": "poin",
+      "items": {
+        "lp": "Landing Page ≈ 75–250 poin",
+        "reels": "Video Reels ≈ 50–150 poin",
+        "social": "Postingan Sosial ≈ 5–10 poin / postingan",
+        "kol": "Analisis KOL ≈ 20–50 poin / orang",
+        "research": "Riset Mendalam ≈ 30–100 poin / sesi"
+      },
+      "ctaLoggedIn": "Ke Halaman Isi Ulang",
+      "cta": "Daftar & Isi Ulang",
+      "freeCredits": "50 poin gratis saat mendaftar"
+    },
+    "finalCta": {
+      "title1": "Siap membiarkan AI",
+      "title2": "mengambil alih pemasaran Anda?",
+      "subtitle": "Mulai hari ini — lakukan dengan satu kalimat apa yang dulu membutuhkan seluruh tim pemasaran.",
+      "ctaLoggedIn": "Ke Konsol",
+      "cta": "Mulai Gratis"
+    },
+    "footer": {
+      "brand": "SaleCraft by Landing AI",
+      "terms": "Ketentuan Layanan",
+      "privacy": "Kebijakan Privasi",
+      "contact": "Hubungi Kami"
+    },
+    "copy": "Salin",
+    "copied": "Tersalin"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "Akun Dibuat",
+      "title1": "Selamat datang di ",
+      "title2": "SaleCraft",
+      "subtitle": "Selesaikan 4 langkah ini untuk membuka semua kemampuan pemasaran AI"
+    },
+    "step1": {
+      "title": "Hubungkan SaleCraft ke AI Anda",
+      "desc": "Tambahkan ini ke pengaturan asisten AI Anda untuk membuka semua alat pemasaran. Bekerja dengan ChatGPT, Claude, Gemini, dan lainnya.",
+      "command": "Saya ingin menggunakan plugin ini untuk meminta saran cara memasarkan produk saya",
+      "copyBtn": "Salin Perintah",
+      "copiedBtn": "Tersalin ke Clipboard!"
+    },
+    "step2": {
+      "title": "Hubungkan Akun Meta",
+      "desc": "Tautkan akun Facebook / Instagram Anda agar AI otomatis memposting, story, dan Reels. Mendukung akun personal maupun profesional.",
+      "btn": "Hubungkan Facebook / Instagram",
+      "connected": "Akun Meta terhubung"
+    },
+    "step3": {
+      "title": "Hubungkan Akun Google",
+      "desc": "Tautkan akun Google Anda untuk mengakses konten Google Drive. AI dapat langsung membaca materi merek dan dokumen Anda. Jika Anda mendaftar dengan Google, langkah ini sudah selesai.",
+      "btn": "Hubungkan Akun Google",
+      "connected": "Akun Google terhubung"
+    },
+    "step4": {
+      "title": "Isi Ulang Poin",
+      "desc": "$1 USD = 30 poin. Setelah isi ulang, Anda dapat menggunakan pembuatan Landing Page, Reels, publikasi sosial, dan semua fitur lainnya.",
+      "balance": "Saldo Saat Ini",
+      "amountLabel": "Jumlah Isi Ulang",
+      "custom": "Kustom",
+      "usd": "USD",
+      "pts": "poin",
+      "costRef": "Landing Page ≈ 75–250 poin · Reels ≈ 50–150 poin · Sosial ≈ 5–10 poin",
+      "btn": "Ke Halaman Isi Ulang"
+    },
+    "status": {
+      "ready": "Belum Selesai",
+      "connected": "Selesai",
+      "pending": "Opsional"
+    },
+    "bottom": {
+      "note": "Setelah pengaturan selesai, kembali ke asisten AI Anda untuk memulai proyek pemasaran pertama Anda",
+      "dashboard": "Ke Dashboard",
+      "home": "Kembali ke Beranda"
+    }
+  }
+}

@@ -274,7 +274,7 @@ export default function SaleCraftPage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const LANDING_AI_URL = "https://landingai.info";
+  const LANDING_AI_URL = "https://salecraft.ai";
   const SITE_URL = typeof window !== "undefined" ? window.location.origin : (process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai");
   const ctaHref = `${LANDING_AI_URL}/${locale}/register?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
 
@@ -667,7 +667,7 @@ export default function SaleCraftPage() {
           <div className="flex gap-6 text-xs text-white/30">
             <Link href={`/${locale}/terms`} className="hover:text-white/60 transition-colors">{t("footer.terms")}</Link>
             <Link href={`/${locale}/privacy`} className="hover:text-white/60 transition-colors">{t("footer.privacy")}</Link>
-            <a href="mailto:support@landingai.info" className="hover:text-white/60 transition-colors">{t("footer.contact")}</a>
+            <a href="mailto:zereo@connact.ai" className="hover:text-white/60 transition-colors">{t("footer.contact")}</a>
           </div>
         </div>
       </footer>

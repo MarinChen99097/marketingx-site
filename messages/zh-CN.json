@@ -1,0 +1,282 @@
+{
+  "SaleCraft": {
+    "nav": {
+      "features": "功能特色",
+      "industries": "行业应用",
+      "capabilities": "核心能力",
+      "pricing": "方案价格",
+      "login": "登录",
+      "getStarted": "立即开始",
+      "console": "控制台"
+    },
+    "badge": "AI 营销助手 — 支持所有 AI 平台",
+    "badgeNew": "全新",
+    "hero": {
+      "title1": "你的 AI 营销 ",
+      "title2": "顾问，擅长 ",
+      "subtitle": "先免费咨询。了解你的产品、诊断营销缺口、规划策略 — 准备好了，AI 帮你执行。",
+      "ctaPrimary": "免费开始使用",
+      "ctaPrimaryLoggedIn": "前往控制台",
+      "ctaSecondary": "看看怎么运作",
+      "ctaCopy": "复制指令"
+    },
+    "typewriter": {
+      "consultation": "免费咨询",
+      "landingPage": "Landing Page",
+      "reels": "Reels 视频",
+      "social": "社交帖子",
+      "kol": "KOL 合作",
+      "brand": "品牌分析",
+      "research": "市场研究"
+    },
+    "pluginInstall": {
+      "title1": "一行指令，",
+      "title2": "即刻上线",
+      "subtitle": "将 SaleCraft 连接到任何 AI 平台 — ChatGPT、Claude、Gemini 等",
+      "command": "我想用这个插件来咨询如何营销我的产品"
+    },
+    "stats": {
+      "platforms": "发布平台",
+      "industries": "行业应用",
+      "speed": "生成 Landing Page",
+      "skills": "核心技能"
+    },
+    "features": {
+      "ai": {
+        "title": "说一句话就搞定",
+        "desc": "上传品牌素材，AI 分析你需要什么营销物料并自动生成。",
+        "pipelineSteps": {
+          "brandAnalysis": "品牌分析",
+          "strategist": "策略师",
+          "architect": "架构师",
+          "factory": "工厂",
+          "supervisor": "监工",
+          "goLive": "上线"
+        }
+      },
+      "allInOne": {
+        "title": "所有营销一站搞定",
+        "desc": "Landing Page、Reels、社交发布、KOL 匹配、数据分析 — 一个平台管理所有营销需求。"
+      },
+      "factory": {
+        "title": "AI 工厂",
+        "desc": "上传品牌素材 → AI 分析你的产品 → 策略师规划 → 架构师设计 → 工厂生成 → 监工检查。全自动化，30 分钟交付。"
+      },
+      "payg": {
+        "title": "用多少付多少",
+        "desc": "$1 美元 = 30 点，无月费订阅。Landing Page 约 75-250 点、Reels 约 50-150 点、社交帖子 5-10 点。"
+      }
+    },
+    "industries": {
+      "sectionTitle1": "在任何行业",
+      "sectionTitle2": "部署你的营销",
+      "sectionTitle3": "战力",
+      "sectionSubtitle": "8 大行业、40+ 实证场景，每个痛点都有解法",
+      "ecommerce": {
+        "title": "电商",
+        "pain": "新品上架要 3 周，促销素材跟不上",
+        "solution": "AI 30 分钟生成 Landing Page + Reels",
+        "benefit": "上架：3 周 → 72 小时，成本降低 70%"
+      },
+      "medical": {
+        "title": "医美",
+        "pain": "广告合规风险高，疗效宣称违规",
+        "solution": "合规引擎自动比对法规",
+        "benefit": "下架率 30% → 5%，合规率 95%"
+      },
+      "food": {
+        "title": "连锁餐饮",
+        "pain": "多门店品牌不一致，促销推进慢",
+        "solution": "品牌模板 + 批量生成 + QR 追踪",
+        "benefit": "30 门店 1 小时搞定，品牌一致性 100%"
+      },
+      "fashion": {
+        "title": "时尚服饰",
+        "pain": "新品系列需要快速视觉内容、换季压力大",
+        "solution": "AI 30 分钟产出 Lookbook Landing Page + Reels",
+        "benefit": "新品上架 3 周→72 小时，视觉成本降 80%"
+      },
+      "education": {
+        "title": "教育",
+        "pain": "招生旺季爆量，漏斗追踪困难",
+        "solution": "TA 分群 + 数据分析 + 个人品牌",
+        "benefit": "素材产出 10 倍，转化提升 25%"
+      },
+      "finance": {
+        "title": "金融保险",
+        "pain": "法规严格，信任门槛高",
+        "solution": "Trust Readiness + 事实核查",
+        "benefit": "合规率 98%，精准度提升 50%"
+      },
+      "travel": {
+        "title": "旅游观光",
+        "pain": "季节性爆量，多语言需求",
+        "solution": "i18n + Reels 流水线 + KOL 任务管理",
+        "benefit": "国际覆盖 4 倍，每月 50 条视频"
+      },
+      "manufacturing": {
+        "title": "制造业",
+        "pain": "想做自有品牌但不懂营销",
+        "solution": "Brand Analyzer + 三方案 AI 策略",
+        "benefit": "品牌建立成本降 90%，展会准备 1 个月 → 3 天"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "顶级营销体验，",
+      "sectionTitle2": "开箱即用",
+      "items": {
+        "pipeline": {
+          "title": "AI 四阶段流水线",
+          "desc": "策略师 → 架构师 → 工厂 → 监工，全自动化"
+        },
+        "reels": {
+          "title": "Reels 自动化",
+          "desc": "六阶段流水线：场景、字幕、配音"
+        },
+        "publish": {
+          "title": "多平台发布",
+          "desc": "IG/FB/TikTok，一键全渠道发布"
+        },
+        "kol": {
+          "title": "智能 KOL 匹配",
+          "desc": "AI 双层量化 + 质化分析"
+        },
+        "monitor": {
+          "title": "蝴蝶效应监控",
+          "desc": "实时检测竞品、法规、趋势变化"
+        },
+        "i18n": {
+          "title": "15+ 国语言支持",
+          "desc": "含 RTL 阿拉伯文，四层文化适配"
+        },
+        "compliance": {
+          "title": "合规引擎",
+          "desc": "医疗/保健/金融自动法规比对"
+        },
+        "research": {
+          "title": "深度研究 + 内容",
+          "desc": "多源行业扫描，四阶段编辑流程"
+        },
+        "brand": {
+          "title": "品牌智能",
+          "desc": "自动提取品牌信息，AI 策略建议"
+        },
+        "analytics": {
+          "title": "实时数据分析",
+          "desc": "访客追踪、滚动行为、互动评分"
+        },
+        "docs": {
+          "title": "企业文档",
+          "desc": "演示文稿、合同、培训手册，一键生成"
+        },
+        "stripe": {
+          "title": "Stripe 付款",
+          "desc": "点数充值，信用卡 / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "四步骤开始使用",
+      "subtitle": "从注册到发布，不用一小时",
+      "steps": {
+        "s1": {
+          "title": "创建账号",
+          "desc": "30 秒完成注册，支持 Google 快速登录"
+        },
+        "s2": {
+          "title": "连接 SaleCraft",
+          "desc": "在你的 AI 助手粘贴一行指令，自动连接 200+ 工具"
+        },
+        "s3": {
+          "title": "AI 生成素材",
+          "desc": "一句话描述需求，30 分钟完整营销素材到手"
+        },
+        "s4": {
+          "title": "发布 & 追踪",
+          "desc": "多平台发布、实时分析、AI 持续优化"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "用多少，",
+      "title2": "付多少",
+      "subtitle": "无月费、无隐藏费用。需要时充值，用多少付多少。",
+      "badge": "按量计费",
+      "perUsd": "美元",
+      "pts": "点",
+      "items": {
+        "lp": "Landing Page ≈ 75–250 点",
+        "reels": "Reels 视频 ≈ 50–150 点",
+        "social": "社交帖子 ≈ 5–10 点 / 条",
+        "kol": "KOL 分析 ≈ 20–50 点 / 人",
+        "research": "深度研究 ≈ 30–100 点 / 次"
+      },
+      "ctaLoggedIn": "前往充值",
+      "cta": "注册并充值",
+      "freeCredits": "注册即送 50 点"
+    },
+    "finalCta": {
+      "title1": "准备好让 AI",
+      "title2": "接管你的营销了吗？",
+      "subtitle": "今天就开始 — 一句话完成过去整个营销团队的工作。",
+      "ctaLoggedIn": "前往控制台",
+      "cta": "免费开始使用"
+    },
+    "footer": {
+      "brand": "SaleCraft by Landing AI",
+      "terms": "服务条款",
+      "privacy": "隐私政策",
+      "contact": "联系我们"
+    },
+    "copy": "复制",
+    "copied": "已复制"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "账号已创建",
+      "title1": "欢迎来到 ",
+      "title2": "SaleCraft",
+      "subtitle": "完成以下 4 个步骤，解锁所有 AI 营销能力"
+    },
+    "step1": {
+      "title": "连接 SaleCraft 到你的 AI",
+      "desc": "将此连接加入你的 AI 助手设置，即可使用所有营销工具。支持 ChatGPT、Claude、Gemini 等平台。",
+      "command": "我想用这个插件来咨询如何营销我的产品",
+      "copyBtn": "复制指令",
+      "copiedBtn": "已复制到剪贴板！"
+    },
+    "step2": {
+      "title": "连接 Meta 账号",
+      "desc": "连接你的 Facebook / Instagram 账号，让 AI 自动发布帖子、故事和 Reels。支持个人与专业账号。",
+      "btn": "连接 Facebook / Instagram",
+      "connected": "Meta 账号已连接"
+    },
+    "step3": {
+      "title": "连接 Google 账号",
+      "desc": "连接你的 Google 账号以访问 Google 云端硬盘内容。AI 可以直接读取你的品牌素材和文档。如果你用 Google 注册，此步骤已自动完成。",
+      "btn": "连接 Google 账号",
+      "connected": "Google 账号已连接"
+    },
+    "step4": {
+      "title": "充值点数",
+      "desc": "$1 美元 = 30 点。充值后即可使用 Landing Page 生成、Reels、社交发布等所有功能。",
+      "balance": "当前余额",
+      "amountLabel": "充值金额",
+      "custom": "自定",
+      "usd": "美元",
+      "pts": "点",
+      "costRef": "Landing Page ≈ 75–250 点 · Reels ≈ 50–150 点 · 社交 ≈ 5–10 点",
+      "btn": "前往充值"
+    },
+    "status": {
+      "ready": "待完成",
+      "connected": "已完成",
+      "pending": "选填"
+    },
+    "bottom": {
+      "note": "设置完成后，回到你的 AI 助手开始你的第一个营销项目",
+      "dashboard": "前往仪表盘",
+      "home": "回首页"
+    }
+  }
+}

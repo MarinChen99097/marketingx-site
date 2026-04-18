@@ -9,7 +9,7 @@
       "getStarted": "Commencer",
       "console": "Console"
     },
-    "badge": "Plugin Marketing IA — Compatible MCP",
+    "badge": "Assistant Marketing IA — Compatible avec tous les AI",
     "badgeNew": "NOUVEAU",
     "hero": {
       "title1": "Votre Consultant ",
@@ -32,7 +32,7 @@
     "pluginInstall": {
       "title1": "Une commande, ",
       "title2": "instantanément en ligne",
-      "subtitle": "Ajoutez ce plugin à toute plateforme IA compatible MCP",
+      "subtitle": "Connectez SaleCraft à n'importe quelle plateforme IA — ChatGPT, Claude, Gemini et plus",
       "command": "J'aimerais utiliser ce plugin pour obtenir des conseils sur la commercialisation de mon produit"
     },
     "stats": {
@@ -146,7 +146,7 @@
           "desc": "Détection en temps réel des concurrents, réglementations, tendances"
         },
         "i18n": {
-          "title": "Support 10 langues",
+          "title": "Support 15+ langues",
           "desc": "Y compris l'arabe RTL, adaptation culturelle à 4 niveaux"
         },
         "compliance": {
@@ -184,8 +184,8 @@
           "desc": "Inscription en 30 secondes, connexion rapide Google supportée"
         },
         "s2": {
-          "title": "Installer le plugin",
-          "desc": "Collez une commande dans Claude Code, connexion auto à 200+ outils"
+          "title": "Connecter SaleCraft",
+          "desc": "Collez une commande dans votre assistant IA, connexion auto à 200+ outils"
         },
         "s3": {
           "title": "L'IA génère les ressources",
@@ -239,8 +239,8 @@
       "subtitle": "Complétez ces 4 étapes pour débloquer toutes les capacités marketing IA"
     },
     "step1": {
-      "title": "Installer le plugin SaleCraft",
-      "desc": "Ajoutez cette URL de plugin aux paramètres MCP de votre plateforme IA pour accéder à tous les outils marketing.",
+      "title": "Connecter SaleCraft à votre IA",
+      "desc": "Ajoutez ceci aux paramètres de votre assistant IA pour accéder à tous les outils marketing. Compatible ChatGPT, Claude, Gemini et plus.",
       "command": "J'aimerais utiliser ce plugin pour obtenir des conseils sur la commercialisation de mon produit",
       "copyBtn": "Copier la commande",
       "copiedBtn": "Copié dans le presse-papiers !"
@@ -274,7 +274,7 @@
       "pending": "Optionnel"
     },
     "bottom": {
-      "note": "Après la configuration, retournez dans Claude Code pour démarrer votre premier projet marketing",
+      "note": "Après la configuration, retournez dans votre assistant IA pour démarrer votre premier projet marketing",
       "dashboard": "Aller au tableau de bord",
       "home": "Retour à l'accueil"
     }

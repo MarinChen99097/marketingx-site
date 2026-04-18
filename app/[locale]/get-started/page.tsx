@@ -78,7 +78,7 @@ export default function GetStartedPage() {
   const [googleConnected, setGoogleConnected] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const LANDING_AI_URL = "https://landingai.info";
+  const LANDING_AI_URL = "https://salecraft.ai";
   const PLUGIN_CMD = `${t("step1.command")}\nhttps://github.com/connactai/Salecraft-Plugin`;
 
   useEffect(() => {
@@ -149,7 +149,7 @@ export default function GetStartedPage() {
     const token = localStorage.getItem("token");
     if (!token) {
       const siteUrl = window.location.origin;
-      window.location.href = `https://landingai.info/${locale}/register?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
+      window.location.href = `https://salecraft.ai/${locale}/register?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
       return;
     }
     setIsLoggedIn(true);
@@ -245,7 +245,7 @@ export default function GetStartedPage() {
       });
       if (res.data?.checkout_url) { window.location.href = res.data.checkout_url; return; }
     } catch (err) { console.error("[GetStarted] Stripe error:", err); }
-    window.location.href = `https://landingai.info/${locale}/account/billing`;
+    window.location.href = `https://salecraft.ai/${locale}/account/billing`;
   };
 
   const handleLogout = () => {

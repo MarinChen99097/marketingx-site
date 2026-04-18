@@ -9,7 +9,7 @@
       "getStarted": "시작하기",
       "console": "콘솔"
     },
-    "badge": "AI 마케팅 플러그인 — MCP 호환",
+    "badge": "AI 마케팅 어시스턴트 — 모든 AI 플랫폼 지원",
     "badgeNew": "NEW",
     "hero": {
       "title1": "당신의 AI 마케팅 ",
@@ -32,7 +32,7 @@
     "pluginInstall": {
       "title1": "명령어 하나로, ",
       "title2": "즉시 실행",
-      "subtitle": "MCP 호환 AI 플랫폼에 이 플러그인을 추가하세요",
+      "subtitle": "SaleCraft를 모든 AI 플랫폼에 연결 — ChatGPT, Claude, Gemini 등",
       "command": "이 플러그인을 사용해 제품 마케팅 방법에 대해 상담받고 싶습니다"
     },
     "stats": {
@@ -146,7 +146,7 @@
           "desc": "실시간 경쟁사, 규정, 트렌드 감지"
         },
         "i18n": {
-          "title": "10개 언어 지원",
+          "title": "15+개 언어 지원",
           "desc": "RTL 아랍어 포함, 4레이어 문화 적응"
         },
         "compliance": {
@@ -184,8 +184,8 @@
           "desc": "30초 가입, Google 빠른 로그인 지원"
         },
         "s2": {
-          "title": "플러그인 설치",
-          "desc": "Claude Code에 명령어 하나 붙여넣기, 200+ 도구 자동 연결"
+          "title": "SaleCraft 연결",
+          "desc": "AI 어시스턴트에 명령어 하나 붙여넣기, 200+ 도구 자동 연결"
         },
         "s3": {
           "title": "AI 자산 생성",
@@ -239,8 +239,8 @@
       "subtitle": "이 4단계를 완료하여 모든 AI 마케팅 기능을 잠금 해제하세요"
     },
     "step1": {
-      "title": "SaleCraft 플러그인 설치",
-      "desc": "이 플러그인 URL을 AI 플랫폼의 MCP 설정에 추가하면 모든 마케팅 도구를 사용할 수 있습니다.",
+      "title": "SaleCraft를 AI에 연결",
+      "desc": "AI 어시스턴트 설정에 추가하면 모든 마케팅 도구를 사용할 수 있습니다. ChatGPT, Claude, Gemini 등 지원.",
       "command": "이 플러그인을 사용해 제품 마케팅 방법에 대해 상담받고 싶습니다",
       "copyBtn": "명령어 복사",
       "copiedBtn": "클립보드에 복사됨!"
@@ -274,7 +274,7 @@
       "pending": "선택사항"
     },
     "bottom": {
-      "note": "설정 완료 후, Claude Code로 돌아가 첫 번째 마케팅 프로젝트를 시작하세요",
+      "note": "설정 완료 후, AI 어시스턴트로 돌아가 첫 번째 마케팅 프로젝트를 시작하세요",
       "dashboard": "대시보드로 이동",
       "home": "홈으로 돌아가기"
     }

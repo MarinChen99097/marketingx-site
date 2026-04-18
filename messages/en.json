@@ -9,7 +9,7 @@
       "getStarted": "Get Started",
       "console": "Console"
     },
-    "badge": "AI Marketing Plugin — MCP Compatible",
+    "badge": "AI Marketing Assistant — Works with Any AI",
     "badgeNew": "NEW",
     "hero": {
       "title1": "Your AI Marketing ",
@@ -32,7 +32,7 @@
     "pluginInstall": {
       "title1": "One command, ",
       "title2": "instantly live",
-      "subtitle": "Add this plugin to any MCP-compatible AI platform",
+      "subtitle": "Connect SaleCraft to any AI platform — ChatGPT, Claude, Gemini, and more",
       "command": "I'd like to use this plugin to ask for advice on how to market my product"
     },
     "stats": {
@@ -146,7 +146,7 @@
           "desc": "Real-time competitor, regulation, trend detection"
         },
         "i18n": {
-          "title": "10 Language Support",
+          "title": "15+ Language Support",
           "desc": "Including RTL Arabic, 4-layer cultural adaptation"
         },
         "compliance": {
@@ -184,8 +184,8 @@
           "desc": "30-second signup, Google quick login supported"
         },
         "s2": {
-          "title": "Install Plugin",
-          "desc": "Paste one command in Claude Code, auto-connect 200+ tools"
+          "title": "Connect SaleCraft",
+          "desc": "Paste one command in your AI assistant, auto-connect 200+ tools"
         },
         "s3": {
           "title": "AI Generates Assets",
@@ -239,8 +239,8 @@
       "subtitle": "Complete these 4 steps to unlock all AI marketing capabilities"
     },
     "step1": {
-      "title": "Install SaleCraft Plugin",
-      "desc": "Add this plugin URL to your AI platform's MCP settings to access all marketing tools.",
+      "title": "Connect SaleCraft to Your AI",
+      "desc": "Add this to your AI assistant's settings to unlock all marketing tools. Works with ChatGPT, Claude, Gemini, and more.",
       "command": "I'd like to use this plugin to ask for advice on how to market my product",
       "copyBtn": "Copy Command",
       "copiedBtn": "Copied to Clipboard!"
@@ -274,7 +274,7 @@
       "pending": "Optional"
     },
     "bottom": {
-      "note": "After setup, return to Claude Code to start your first marketing project",
+      "note": "After setup, return to your AI assistant to start your first marketing project",
       "dashboard": "Go to Dashboard",
       "home": "Back to Home"
     }

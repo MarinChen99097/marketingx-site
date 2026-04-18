@@ -1,0 +1,282 @@
+{
+  "SaleCraft": {
+    "nav": {
+      "features": "Ciri-ciri",
+      "industries": "Industri",
+      "capabilities": "Keupayaan",
+      "pricing": "Harga",
+      "login": "Log Masuk",
+      "getStarted": "Mula Sekarang",
+      "console": "Konsol"
+    },
+    "badge": "Pembantu Pemasaran AI — Berfungsi dengan Semua AI",
+    "badgeNew": "BAHARU",
+    "hero": {
+      "title1": "Perunding Pemasaran ",
+      "title2": "AI Anda untuk ",
+      "subtitle": "Perundingan percuma dahulu. Fahami produk anda, diagnosis jurang pemasaran, rancang strategi — kemudian AI laksanakan apabila anda bersedia.",
+      "ctaPrimary": "Mula Percuma",
+      "ctaPrimaryLoggedIn": "Ke Konsol",
+      "ctaSecondary": "Lihat Cara Ia Berfungsi",
+      "ctaCopy": "Salin Arahan"
+    },
+    "typewriter": {
+      "consultation": "Perundingan Percuma",
+      "landingPage": "Landing Page",
+      "reels": "Video Reels",
+      "social": "Siaran Sosial",
+      "kol": "Kempen KOL",
+      "brand": "Analisis Jenama",
+      "research": "Kajian Pasaran"
+    },
+    "pluginInstall": {
+      "title1": "Satu arahan, ",
+      "title2": "terus aktif",
+      "subtitle": "Sambungkan SaleCraft ke mana-mana platform AI — ChatGPT, Claude, Gemini dan lain-lain",
+      "command": "Saya ingin menggunakan plugin ini untuk mendapatkan nasihat tentang cara memasarkan produk saya"
+    },
+    "stats": {
+      "platforms": "Platform",
+      "industries": "Aplikasi Industri",
+      "speed": "Jana Landing Page",
+      "skills": "Kemahiran Teras"
+    },
+    "features": {
+      "ai": {
+        "title": "Taip satu ayat sahaja",
+        "desc": "Muat naik aset jenama, AI menganalisis bahan pemasaran yang anda perlukan dan menjananya secara automatik.",
+        "pipelineSteps": {
+          "brandAnalysis": "Analisis Jenama",
+          "strategist": "Ahli Strategi",
+          "architect": "Arkitek",
+          "factory": "Kilang",
+          "supervisor": "Penyelia",
+          "goLive": "Lancarkan"
+        }
+      },
+      "allInOne": {
+        "title": "Semua pemasaran di satu tempat",
+        "desc": "Landing Page, Reels, siaran sosial, padanan KOL, analitik — urus semua keperluan pemasaran di satu platform."
+      },
+      "factory": {
+        "title": "Kilang AI",
+        "desc": "Muat naik aset jenama → AI menganalisis produk anda → Ahli Strategi merancang → Arkitek mereka bentuk → Kilang menghasilkan → Penyelia memeriksa. Sepenuhnya automatik, siap dalam 30 minit."
+      },
+      "payg": {
+        "title": "Bayar mengikut penggunaan",
+        "desc": "$1 USD = 30 mata, tanpa langganan bulanan. Landing Page ~75-250 mata, Reels ~50-150 mata, siaran sosial 5-10 mata."
+      }
+    },
+    "industries": {
+      "sectionTitle1": "Kerahkan kuasa ",
+      "sectionTitle2": "pemasaran anda",
+      "sectionTitle3": " di mana-mana industri",
+      "sectionSubtitle": "8 industri, 40+ senario terbukti, setiap masalah ada penyelesaian",
+      "ecommerce": {
+        "title": "E-Dagang",
+        "pain": "Pelancaran produk ambil 3 minggu, bahan promosi tidak sempat",
+        "solution": "AI jana Landing Page + Reels dalam 30 minit",
+        "benefit": "Pelancaran: 3 minggu → 72 jam, kos turun 70%"
+      },
+      "medical": {
+        "title": "Perubatan & Kecantikan",
+        "pain": "Risiko pematuhan iklan tinggi, pelanggaran tuntutan",
+        "solution": "Enjin Pematuhan semak peraturan secara automatik",
+        "benefit": "Kadar penyingkiran 30% → 5%, pematuhan 95%"
+      },
+      "food": {
+        "title": "Rangkaian F&B",
+        "pain": "Penjenamaan tidak konsisten di banyak cawangan, promosi lambat",
+        "solution": "Templat jenama + penjanaan pukal + penjejakan QR",
+        "benefit": "30 cawangan dalam 1 jam, konsistensi jenama 100%"
+      },
+      "fashion": {
+        "title": "Fesyen & Pakaian",
+        "pain": "Koleksi baharu perlukan kandungan visual pantas, tekanan bermusim",
+        "solution": "AI jana lookbook Landing Page + Reels dalam 30 minit",
+        "benefit": "Pelancaran koleksi 3 minggu → 72 jam, kos visual turun 80%"
+      },
+      "education": {
+        "title": "Pendidikan",
+        "pain": "Lonjakan pendaftaran, corong sukar dijejak",
+        "solution": "Segmentasi TA + Analitik + penjenamaan peribadi",
+        "benefit": "Output bahan 10x ganda, penukaran naik 25%"
+      },
+      "finance": {
+        "title": "Kewangan & Insurans",
+        "pain": "Peraturan ketat, halangan kepercayaan tinggi",
+        "solution": "Trust Readiness + Penyemak Fakta",
+        "benefit": "Pematuhan 98%, ketepatan naik 50%"
+      },
+      "travel": {
+        "title": "Pelancongan & Pelancongan",
+        "pain": "Lonjakan bermusim, keperluan pelbagai bahasa",
+        "solution": "i18n + Saluran Reels + Pengurusan tugas KOL",
+        "benefit": "Liputan antarabangsa 4x ganda, 50 video/bulan"
+      },
+      "manufacturing": {
+        "title": "Pembuatan",
+        "pain": "Mahu jenama sendiri tetapi tidak faham pemasaran",
+        "solution": "Brand Analyzer + Strategi AI 3 Pelan",
+        "benefit": "Kos pembinaan jenama turun 90%, persediaan ekspo 1 bulan → 3 hari"
+      }
+    },
+    "capabilities": {
+      "sectionTitle1": "Pengalaman pemasaran premium, ",
+      "sectionTitle2": "sedia guna terus",
+      "items": {
+        "pipeline": {
+          "title": "Saluran AI 4 Peringkat",
+          "desc": "Ahli Strategi → Arkitek → Kilang → Penyelia, sepenuhnya automatik"
+        },
+        "reels": {
+          "title": "Automasi Reels",
+          "desc": "Saluran 6 peringkat: adegan, sarikata, alih suara"
+        },
+        "publish": {
+          "title": "Penerbitan Pelbagai Platform",
+          "desc": "IG/FB/TikTok, satu arahan ke semua saluran"
+        },
+        "kol": {
+          "title": "Padanan KOL Pintar",
+          "desc": "Analisis dua lapisan AI: kuantitatif + kualitatif"
+        },
+        "monitor": {
+          "title": "Monitor Kesan Rama-rama",
+          "desc": "Pengesanan masa nyata pesaing, peraturan, trend"
+        },
+        "i18n": {
+          "title": "Sokongan 15+ Bahasa",
+          "desc": "Termasuk RTL Arab, adaptasi budaya 4 lapisan"
+        },
+        "compliance": {
+          "title": "Enjin Pematuhan",
+          "desc": "Semakan peraturan automatik perubatan/kesihatan/kewangan"
+        },
+        "research": {
+          "title": "Kajian Mendalam + Kandungan",
+          "desc": "Imbasan industri pelbagai sumber, editorial 4 peringkat"
+        },
+        "brand": {
+          "title": "Kecerdasan Jenama",
+          "desc": "Pengekstrakan info jenama automatik, cadangan strategi AI"
+        },
+        "analytics": {
+          "title": "Analitik Masa Nyata",
+          "desc": "Penjejakan pelawat, tingkah laku tatal, skor penglibatan"
+        },
+        "docs": {
+          "title": "Dokumen Perusahaan",
+          "desc": "Pembentangan, kontrak, manual latihan, satu klik"
+        },
+        "stripe": {
+          "title": "Pembayaran Stripe",
+          "desc": "Tambah nilai mata, kad kredit / LINE Pay"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Empat langkah untuk bermula",
+      "subtitle": "Dari pendaftaran hingga penerbitan, kurang dari satu jam",
+      "steps": {
+        "s1": {
+          "title": "Buat Akaun",
+          "desc": "Daftar 30 saat, menyokong log masuk pantas Google"
+        },
+        "s2": {
+          "title": "Sambungkan SaleCraft",
+          "desc": "Tampal satu arahan di pembantu AI anda, sambung automatik 200+ alat"
+        },
+        "s3": {
+          "title": "AI Menjana Aset",
+          "desc": "Jelaskan keperluan anda dalam satu ayat, 30 minit untuk bahan pemasaran lengkap"
+        },
+        "s4": {
+          "title": "Terbit & Jejak",
+          "desc": "Penerbitan pelbagai platform, analitik masa nyata, pengoptimuman berterusan oleh AI"
+        }
+      }
+    },
+    "pricing": {
+      "title1": "Bayar untuk apa ",
+      "title2": "yang anda guna",
+      "subtitle": "Tiada yuran bulanan, tiada kos tersembunyi. Tambah nilai apabila diperlukan, bayar mengikut penggunaan.",
+      "badge": "Bayar-mengikut-guna",
+      "perUsd": "USD",
+      "pts": "mata",
+      "items": {
+        "lp": "Landing Page ≈ 75–250 mata",
+        "reels": "Video Reels ≈ 50–150 mata",
+        "social": "Siaran Sosial ≈ 5–10 mata / siaran",
+        "kol": "Analisis KOL ≈ 20–50 mata / orang",
+        "research": "Kajian Mendalam ≈ 30–100 mata / sesi"
+      },
+      "ctaLoggedIn": "Ke Halaman Tambah Nilai",
+      "cta": "Daftar & Tambah Nilai",
+      "freeCredits": "50 mata percuma semasa mendaftar"
+    },
+    "finalCta": {
+      "title1": "Bersedia biarkan AI",
+      "title2": "mengambil alih pemasaran anda?",
+      "subtitle": "Mula hari ini — lakukan dengan satu ayat apa yang dahulu memerlukan seluruh pasukan pemasaran.",
+      "ctaLoggedIn": "Ke Konsol",
+      "cta": "Mula Percuma"
+    },
+    "footer": {
+      "brand": "SaleCraft by Landing AI",
+      "terms": "Terma Perkhidmatan",
+      "privacy": "Dasar Privasi",
+      "contact": "Hubungi Kami"
+    },
+    "copy": "Salin",
+    "copied": "Disalin"
+  },
+  "GetStarted": {
+    "welcome": {
+      "badge": "Akaun Dicipta",
+      "title1": "Selamat datang ke ",
+      "title2": "SaleCraft",
+      "subtitle": "Lengkapkan 4 langkah ini untuk membuka semua keupayaan pemasaran AI"
+    },
+    "step1": {
+      "title": "Sambungkan SaleCraft ke AI Anda",
+      "desc": "Tambah ini ke tetapan pembantu AI anda untuk membuka semua alat pemasaran. Berfungsi dengan ChatGPT, Claude, Gemini, dan lain-lain.",
+      "command": "Saya ingin menggunakan plugin ini untuk mendapatkan nasihat tentang cara memasarkan produk saya",
+      "copyBtn": "Salin Arahan",
+      "copiedBtn": "Disalin ke Papan Keratan!"
+    },
+    "step2": {
+      "title": "Sambungkan Akaun Meta",
+      "desc": "Pautkan akaun Facebook / Instagram anda agar AI secara automatik menerbitkan siaran, cerita, dan Reels. Menyokong akaun peribadi dan profesional.",
+      "btn": "Sambung Facebook / Instagram",
+      "connected": "Akaun Meta disambungkan"
+    },
+    "step3": {
+      "title": "Sambungkan Akaun Google",
+      "desc": "Pautkan akaun Google anda untuk mengakses kandungan Google Drive. AI boleh terus membaca bahan jenama dan dokumen anda. Jika anda mendaftar dengan Google, langkah ini sudah selesai.",
+      "btn": "Sambung Akaun Google",
+      "connected": "Akaun Google disambungkan"
+    },
+    "step4": {
+      "title": "Tambah Nilai Mata",
+      "desc": "$1 USD = 30 mata. Selepas tambah nilai, anda boleh menggunakan penjanaan Landing Page, Reels, penerbitan sosial, dan semua ciri lain.",
+      "balance": "Baki Semasa",
+      "amountLabel": "Jumlah Tambah Nilai",
+      "custom": "Tersuai",
+      "usd": "USD",
+      "pts": "mata",
+      "costRef": "Landing Page ≈ 75–250 mata · Reels ≈ 50–150 mata · Sosial ≈ 5–10 mata",
+      "btn": "Ke Halaman Tambah Nilai"
+    },
+    "status": {
+      "ready": "Belum Selesai",
+      "connected": "Selesai",
+      "pending": "Pilihan"
+    },
+    "bottom": {
+      "note": "Selepas persediaan selesai, kembali ke pembantu AI anda untuk memulakan projek pemasaran pertama anda",
+      "dashboard": "Ke Papan Pemuka",
+      "home": "Kembali ke Laman Utama"
+    }
+  }
+}

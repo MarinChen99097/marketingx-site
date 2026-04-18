@@ -9,7 +9,7 @@
       "getStarted": "Bắt đầu ngay",
       "console": "Bảng điều khiển"
     },
-    "badge": "Plugin Marketing AI — Tương thích MCP",
+    "badge": "Trợ lý Marketing AI — Hoạt động trên mọi nền tảng AI",
     "badgeNew": "MỚI",
     "hero": {
       "title1": "Tư vấn Marketing AI ",
@@ -32,7 +32,7 @@
     "pluginInstall": {
       "title1": "Một lệnh duy nhất, ",
       "title2": "chạy ngay lập tức",
-      "subtitle": "Thêm plugin này vào bất kỳ nền tảng AI hỗ trợ MCP",
+      "subtitle": "Kết nối SaleCraft với mọi nền tảng AI — ChatGPT, Claude, Gemini và nhiều hơn",
       "command": "Tôi muốn dùng plugin này để được tư vấn cách tiếp thị sản phẩm"
     },
     "stats": {
@@ -146,7 +146,7 @@
           "desc": "Phát hiện đối thủ, quy định, xu hướng theo thời gian thực"
         },
         "i18n": {
-          "title": "Hỗ trợ 10 ngôn ngữ",
+          "title": "Hỗ trợ 15+ ngôn ngữ",
           "desc": "Bao gồm tiếng Ả Rập RTL, thích ứng văn hóa 4 lớp"
         },
         "compliance": {
@@ -184,8 +184,8 @@
           "desc": "Đăng ký 30 giây, hỗ trợ đăng nhập nhanh bằng Google"
         },
         "s2": {
-          "title": "Cài đặt Plugin",
-          "desc": "Dán một lệnh vào Claude Code, tự động kết nối 200+ công cụ"
+          "title": "Kết nối SaleCraft",
+          "desc": "Dán một lệnh vào trợ lý AI, tự động kết nối 200+ công cụ"
         },
         "s3": {
           "title": "AI tạo tài sản",
@@ -239,8 +239,8 @@
       "subtitle": "Hoàn thành 4 bước này để mở khóa tất cả khả năng AI marketing"
     },
     "step1": {
-      "title": "Cài đặt Plugin SaleCraft",
-      "desc": "Thêm URL plugin này vào cài đặt MCP của nền tảng AI để sử dụng tất cả công cụ marketing.",
+      "title": "Kết nối SaleCraft với AI",
+      "desc": "Thêm vào cài đặt trợ lý AI để sử dụng tất cả công cụ marketing. Hỗ trợ ChatGPT, Claude, Gemini và nhiều nền tảng khác.",
       "command": "Tôi muốn dùng plugin này để được tư vấn cách tiếp thị sản phẩm",
       "copyBtn": "Sao chép lệnh",
       "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"
@@ -274,7 +274,7 @@
       "pending": "Tùy chọn"
     },
     "bottom": {
-      "note": "Sau khi thiết lập, quay lại Claude Code để bắt đầu dự án marketing đầu tiên",
+      "note": "Sau khi thiết lập, quay lại trợ lý AI để bắt đầu dự án marketing đầu tiên",
       "dashboard": "Đến Bảng điều khiển",
       "home": "Về trang chủ"
     }
