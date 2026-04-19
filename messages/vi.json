@@ -33,7 +33,7 @@
       "title1": "Một lệnh duy nhất, ",
       "title2": "chạy ngay lập tức",
       "subtitle": "Kết nối SaleCraft với mọi nền tảng AI — ChatGPT, Claude, Gemini và nhiều hơn",
-      "command": "Tôi muốn dùng plugin này để được tư vấn cách tiếp thị sản phẩm"
+      "command": "Vui lòng đọc toàn bộ CLAUDE.md tại URL bên dưới và làm theo hướng dẫn để trở thành cố vấn tiếp thị của tôi:"
     },
     "stats": {
       "platforms": "Nền tảng",
@@ -235,7 +235,7 @@
     "step1": {
       "title": "Kết nối SaleCraft với AI",
       "desc": "Thêm vào cài đặt trợ lý AI để sử dụng tất cả công cụ marketing. Hỗ trợ ChatGPT, Claude, Gemini và nhiều nền tảng khác.",
-      "command": "Tôi muốn dùng plugin này để được tư vấn cách tiếp thị sản phẩm",
+      "command": "Vui lòng đọc toàn bộ CLAUDE.md tại URL bên dưới và làm theo hướng dẫn để trở thành cố vấn tiếp thị của tôi:",
       "copyBtn": "Sao chép lệnh",
       "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"
     },

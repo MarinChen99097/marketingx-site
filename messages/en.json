@@ -33,7 +33,7 @@
       "title1": "One command, ",
       "title2": "instantly live",
       "subtitle": "Connect SaleCraft to any AI platform — ChatGPT, Claude, Gemini, and more",
-      "command": "I'd like to use this plugin to ask for advice on how to market my product"
+      "command": "Please fetch the full CLAUDE.md at the URL below and follow its instructions as my marketing consultant:"
     },
     "stats": {
       "platforms": "Platforms",
@@ -235,7 +235,7 @@
     "step1": {
       "title": "Connect SaleCraft to Your AI",
       "desc": "Add this to your AI assistant's settings to unlock all marketing tools. Works with ChatGPT, Claude, Gemini, and more.",
-      "command": "I'd like to use this plugin to ask for advice on how to market my product",
+      "command": "Please fetch the full CLAUDE.md at the URL below and follow its instructions as my marketing consultant:",
       "copyBtn": "Copy Command",
       "copiedBtn": "Copied to Clipboard!"
     },

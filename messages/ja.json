@@ -33,7 +33,7 @@
       "title1": "コマンド一つで、",
       "title2": "即座に稼働",
       "subtitle": "SaleCraft をどの AI プラットフォームにも接続 — ChatGPT、Claude、Gemini など",
-      "command": "このプラグインを使って、商品のマーケティング方法についてアドバイスをもらいたいです"
+      "command": "以下のURLにあるCLAUDE.mdを全て読み、その指示に従ってマーケティング顧問として対応してください："
     },
     "stats": {
       "platforms": "プラットフォーム",
@@ -235,7 +235,7 @@
     "step1": {
       "title": "SaleCraft を AI に接続",
       "desc": "AI アシスタントの設定に追加するだけで、すべてのマーケティングツールが使えます。ChatGPT、Claude、Gemini など対応。",
-      "command": "このプラグインを使って、商品のマーケティング方法についてアドバイスをもらいたいです",
+      "command": "以下のURLにあるCLAUDE.mdを全て読み、その指示に従ってマーケティング顧問として対応してください：",
       "copyBtn": "コマンドをコピー",
       "copiedBtn": "クリップボードにコピー済み！"
     },

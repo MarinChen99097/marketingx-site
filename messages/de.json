@@ -33,7 +33,7 @@
       "title1": "Ein Befehl, ",
       "title2": "sofort einsatzbereit",
       "subtitle": "Verbinden Sie SaleCraft mit jeder KI-Plattform — ChatGPT, Claude, Gemini und mehr",
-      "command": "Ich möchte dieses Plugin nutzen, um Beratung zur Vermarktung meines Produkts zu erhalten"
+      "command": "Bitte lies den vollständigen Inhalt von CLAUDE.md unter der unten stehenden URL und folge den Anweisungen als mein Marketingberater:"
     },
     "stats": {
       "platforms": "Plattformen",
@@ -235,7 +235,7 @@
     "step1": {
       "title": "SaleCraft mit Ihrer KI verbinden",
       "desc": "Fügen Sie dies zu den Einstellungen Ihres KI-Assistenten hinzu, um alle Marketing-Tools freizuschalten. Funktioniert mit ChatGPT, Claude, Gemini und mehr.",
-      "command": "Ich möchte dieses Plugin nutzen, um Beratung zur Vermarktung meines Produkts zu erhalten",
+      "command": "Bitte lies den vollständigen Inhalt von CLAUDE.md unter der unten stehenden URL und folge den Anweisungen als mein Marketingberater:",
       "copyBtn": "Befehl kopieren",
       "copiedBtn": "In die Zwischenablage kopiert!"
     },

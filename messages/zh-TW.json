@@ -33,7 +33,7 @@
       "title1": "一行指令，",
       "title2": "即刻上線",
       "subtitle": "將 SaleCraft 連結到任何 AI 平台 — ChatGPT、Claude、Gemini 等",
-      "command": "我想用這個外掛來諮詢如何行銷我的產品"
+      "command": "請讀取以下 CLAUDE.md 的完整內容，按裡面的指引扮演我的行銷顧問："
     },
     "stats": {
       "platforms": "發佈平台",
@@ -235,7 +235,7 @@
     "step1": {
       "title": "連結 SaleCraft 到你的 AI",
       "desc": "將此連結加入你的 AI 助手設定，即可使用所有行銷工具。支援 ChatGPT、Claude、Gemini 等平台。",
-      "command": "我想用這個外掛來諮詢如何行銷我的產品",
+      "command": "請讀取以下 CLAUDE.md 的完整內容，按裡面的指引扮演我的行銷顧問：",
       "copyBtn": "複製指令",
       "copiedBtn": "已複製到剪貼簿！"
     },

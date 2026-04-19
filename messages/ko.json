@@ -33,7 +33,7 @@
       "title1": "명령어 하나로, ",
       "title2": "즉시 실행",
       "subtitle": "SaleCraft를 모든 AI 플랫폼에 연결 — ChatGPT, Claude, Gemini 등",
-      "command": "이 플러그인을 사용해 제품 마케팅 방법에 대해 상담받고 싶습니다"
+      "command": "아래 URL의 CLAUDE.md 전체를 읽고 지침에 따라 제 마케팅 컨설턴트 역할을 해 주세요："
     },
     "stats": {
       "platforms": "플랫폼",
@@ -235,7 +235,7 @@
     "step1": {
       "title": "SaleCraft를 AI에 연결",
       "desc": "AI 어시스턴트 설정에 추가하면 모든 마케팅 도구를 사용할 수 있습니다. ChatGPT, Claude, Gemini 등 지원.",
-      "command": "이 플러그인을 사용해 제품 마케팅 방법에 대해 상담받고 싶습니다",
+      "command": "아래 URL의 CLAUDE.md 전체를 읽고 지침에 따라 제 마케팅 컨설턴트 역할을 해 주세요：",
       "copyBtn": "명령어 복사",
       "copiedBtn": "클립보드에 복사됨!"
     },

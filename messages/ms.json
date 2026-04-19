@@ -33,7 +33,7 @@
       "title1": "Satu arahan, ",
       "title2": "terus aktif",
       "subtitle": "Sambungkan SaleCraft ke mana-mana platform AI — ChatGPT, Claude, Gemini dan lain-lain",
-      "command": "Saya ingin menggunakan plugin ini untuk mendapatkan nasihat tentang cara memasarkan produk saya"
+      "command": "Sila baca keseluruhan kandungan CLAUDE.md di URL di bawah dan ikut arahannya sebagai perunding pemasaran saya:"
     },
     "stats": {
       "platforms": "Platform",
@@ -235,7 +235,7 @@
     "step1": {
       "title": "Sambungkan SaleCraft ke AI Anda",
       "desc": "Tambah ini ke tetapan pembantu AI anda untuk membuka semua alat pemasaran. Berfungsi dengan ChatGPT, Claude, Gemini, dan lain-lain.",
-      "command": "Saya ingin menggunakan plugin ini untuk mendapatkan nasihat tentang cara memasarkan produk saya",
+      "command": "Sila baca keseluruhan kandungan CLAUDE.md di URL di bawah dan ikut arahannya sebagai perunding pemasaran saya:",
       "copyBtn": "Salin Arahan",
       "copiedBtn": "Disalin ke Papan Keratan!"
     },

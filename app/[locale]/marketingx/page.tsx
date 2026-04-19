@@ -284,7 +284,7 @@ export default function SaleCraftPage() {
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
   const ctaHref = `${LANDING_AI_URL}/${locale}/login?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
 
-  const PLUGIN_CMD = `${t("pluginInstall.command")}\nhttps://github.com/connactai/Salecraft-Plugin`;
+  const PLUGIN_CMD = `${t("pluginInstall.command")}\nhttps://raw.githubusercontent.com/connactai/Salecraft-Plugin/master/CLAUDE.md`;
 
   const handleCopy = async () => {
     try { await navigator.clipboard.writeText(PLUGIN_CMD); } catch {
@@ -423,7 +423,7 @@ export default function SaleCraftPage() {
                 <span className="text-white/80">{t("pluginInstall.command")}</span>
                 <br />
                 <span className="text-[hsl(16,70%,60%)]">&#10095;</span>{" "}
-                <span className="text-blue-400 break-all">https://github.com/connactai/Salecraft-Plugin</span>
+                <span className="text-blue-400 break-all">https://raw.githubusercontent.com/connactai/Salecraft-Plugin/master/CLAUDE.md</span>
               </div>
               {/* Copy button */}
               <button

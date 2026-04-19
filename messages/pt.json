@@ -33,7 +33,7 @@
       "title1": "Um comando, ",
       "title2": "instantaneamente online",
       "subtitle": "Conecte o SaleCraft a qualquer plataforma IA — ChatGPT, Claude, Gemini e mais",
-      "command": "Gostaria de usar este plugin para pedir conselhos sobre como comercializar meu produto"
+      "command": "Por favor, leia todo o conteúdo de CLAUDE.md na URL abaixo e siga as instruções como meu consultor de marketing:"
     },
     "stats": {
       "platforms": "Plataformas",
@@ -235,7 +235,7 @@
     "step1": {
       "title": "Conecte o SaleCraft ao seu AI",
       "desc": "Adicione isto às configurações do seu assistente IA para acessar todas as ferramentas de marketing. Funciona com ChatGPT, Claude, Gemini e mais.",
-      "command": "Gostaria de usar este plugin para pedir conselhos sobre como comercializar meu produto",
+      "command": "Por favor, leia todo o conteúdo de CLAUDE.md na URL abaixo e siga as instruções como meu consultor de marketing:",
       "copyBtn": "Copiar comando",
       "copiedBtn": "Copiado para a área de transferência!"
     },
