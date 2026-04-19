@@ -212,9 +212,9 @@ export default function SaleCraftPage() {
 
   const STATS = [
     { value: 30, suffix: " min", label: t("stats.speed"), icon: Zap },
-    { value: 6, suffix: "", label: t("stats.platforms"), icon: Globe },
+    { value: 15, suffix: "+", label: t("stats.platforms"), icon: Globe },
     { value: 8, suffix: "", label: t("stats.industries"), icon: Building2 },
-    { value: 10, suffix: "+", label: t("stats.skills"), icon: Star },
+    { value: 26, suffix: "", label: t("stats.skills"), icon: Star },
   ];
 
   const HERO_FEATURES = [
