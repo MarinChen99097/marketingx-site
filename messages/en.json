@@ -295,7 +295,8 @@
     "status": {
       "ready": "To Do",
       "connected": "Done",
-      "pending": "Optional"
+      "pending": "Optional",
+      "switchAccount": "Switch account"
     },
     "bottom": {
       "note": "After setup, return to your AI assistant to start your first marketing project",

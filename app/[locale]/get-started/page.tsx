@@ -380,7 +380,9 @@ export default function GetStartedPage() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("refresh_token");
-    router.push(`/${locale}/marketingx`);
+    // Redirect to login page (unified auth) for account switching
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
+    window.location.href = `https://salecraft.ai/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
   };
 
   if (loading) {
@@ -414,9 +416,11 @@ export default function GetStartedPage() {
           <Button
             variant="ghost" size="sm"
             onClick={handleLogout}
-            className="text-white/40 hover:text-white hover:bg-white/[0.06] h-9 w-9 p-0 rounded-lg"
+            className="text-white/40 hover:text-white hover:bg-white/[0.06] h-auto px-2.5 py-1.5 rounded-lg text-xs gap-1.5"
+            title={t("status.switchAccount")}
           >
-            <LogOut className="w-4 h-4" />
+            <LogOut className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">{t("status.switchAccount")}</span>
           </Button>
         </div>
       </nav>

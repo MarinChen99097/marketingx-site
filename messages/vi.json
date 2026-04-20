@@ -295,7 +295,8 @@
     "status": {
       "ready": "Cần làm",
       "connected": "Hoàn thành",
-      "pending": "Tùy chọn"
+      "pending": "Tùy chọn",
+      "switchAccount": "Chuyển tài khoản"
     },
     "bottom": {
       "note": "Sau khi thiết lập, quay lại trợ lý AI để bắt đầu dự án marketing đầu tiên",

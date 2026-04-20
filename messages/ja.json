@@ -295,7 +295,8 @@
     "status": {
       "ready": "未完了",
       "connected": "完了",
-      "pending": "任意"
+      "pending": "任意",
+      "switchAccount": "アカウント切替"
     },
     "bottom": {
       "note": "セットアップ完了後、AI アシスタントに戻って最初のマーケティングプロジェクトを始めましょう",

@@ -295,7 +295,8 @@
     "status": {
       "ready": "Belum Selesai",
       "connected": "Selesai",
-      "pending": "Pilihan"
+      "pending": "Pilihan",
+      "switchAccount": "Tukar akaun"
     },
     "bottom": {
       "note": "Selepas persediaan selesai, kembali ke pembantu AI anda untuk memulakan projek pemasaran pertama anda",

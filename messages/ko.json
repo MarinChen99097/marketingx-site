@@ -295,7 +295,8 @@
     "status": {
       "ready": "할 일",
       "connected": "완료",
-      "pending": "선택사항"
+      "pending": "선택사항",
+      "switchAccount": "계정 전환"
     },
     "bottom": {
       "note": "설정 완료 후, AI 어시스턴트로 돌아가 첫 번째 마케팅 프로젝트를 시작하세요",

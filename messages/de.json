@@ -295,7 +295,8 @@
     "status": {
       "ready": "Ausstehend",
       "connected": "Erledigt",
-      "pending": "Optional"
+      "pending": "Optional",
+      "switchAccount": "Konto wechseln"
     },
     "bottom": {
       "note": "Nach der Einrichtung kehren Sie zu Ihrem KI-Assistenten zurück, um Ihr erstes Marketingprojekt zu starten",

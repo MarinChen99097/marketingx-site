@@ -295,7 +295,8 @@
     "status": {
       "ready": "待完成",
       "connected": "已完成",
-      "pending": "选填"
+      "pending": "选填",
+      "switchAccount": "切换账号"
     },
     "bottom": {
       "note": "设置完成后，回到你的 AI 助手开始你的第一个营销项目",

@@ -295,7 +295,8 @@
     "status": {
       "ready": "Pendiente",
       "connected": "Hecho",
-      "pending": "Opcional"
+      "pending": "Opcional",
+      "switchAccount": "Cambiar cuenta"
     },
     "bottom": {
       "note": "Después de la configuración, vuelve a tu asistente IA para iniciar tu primer proyecto de marketing",
