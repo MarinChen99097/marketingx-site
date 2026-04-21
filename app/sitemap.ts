@@ -13,10 +13,11 @@ type RouteConfig = {
     changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
 }
 
+// /marketingx is intentionally omitted — it is a legacy route that now
+// 301-redirects to /{locale}. Only canonical public URLs belong in the sitemap.
 const ROUTES: readonly RouteConfig[] = [
     { path: '', priority: 1.0, changeFrequency: 'weekly' },
     { path: '/get-started', priority: 0.9, changeFrequency: 'monthly' },
-    { path: '/marketingx', priority: 0.8, changeFrequency: 'monthly' },
 ]
 
 function languagesFor(path: string): Record<string, string> {

@@ -398,7 +398,7 @@ export default function GetStartedPage() {
 
       {/* ════════════ NAVBAR ════════════ */}
       <nav className="px-5 sm:px-8 py-4 flex justify-between items-center border-b border-white/[0.06] sticky top-0 z-50 bg-[#09090b]/80 backdrop-blur-xl">
-        <Link href={`/${locale}/marketingx`} className="flex items-center gap-2.5">
+        <Link href={`/${locale}`} className="flex items-center gap-2.5">
           <div className="w-9 h-9 bg-gradient-to-br from-[hsl(16,70%,56%)] to-[hsl(16,80%,45%)] rounded-lg flex items-center justify-center shadow-lg shadow-[hsl(16,70%,56%)]/20">
             <LandingAILogo size={18} className="text-white" />
           </div>
