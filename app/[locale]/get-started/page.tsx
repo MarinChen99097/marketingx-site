@@ -373,8 +373,12 @@ export default function GetStartedPage() {
         cancel_url: `${window.location.origin}/${locale}/get-started`,
       });
       if (res.data?.checkout_url) { window.location.href = res.data.checkout_url; return; }
-    } catch (err) { console.error("[GetStarted] Stripe error:", err); }
-    window.location.href = `https://salecraft.ai/${locale}/account/billing`;
+      // API succeeded without a checkout URL → unexpected response shape
+      alert(locale === "en" ? "Unable to start checkout — please try again." : "無法啟動付款流程，請稍後再試。");
+    } catch (err) {
+      console.error("[GetStarted] Stripe error:", err);
+      alert(locale === "en" ? "Stripe top-up is unavailable right now. Please try again later." : "Stripe 儲值暫時無法使用，請稍後再試。");
+    }
   };
 
   const handleLogout = () => {
