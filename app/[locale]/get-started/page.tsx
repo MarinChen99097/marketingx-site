@@ -250,12 +250,12 @@ export default function GetStartedPage() {
       window.history.replaceState(null, "", `/${locale}/get-started`);
     }
 
-    // ── 4. No token → redirect to login (login page has a link to register) ──
+    // ── 4. No token → redirect to Landing AI login (salecraft.ai has no /login route) ──
     const token = localStorage.getItem("token");
     if (!token) {
       // Force the custom domain — window.location.origin could be the Cloud Run URL.
       const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
-      window.location.href = `https://salecraft.ai/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
+      window.location.href = `https://landingai.info/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
       return;
     }
     setIsLoggedIn(true);
@@ -380,9 +380,9 @@ export default function GetStartedPage() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("refresh_token");
-    // Redirect to login page (unified auth) for account switching
+    // Redirect to Landing AI unified auth for account switching (salecraft.ai has no /login route)
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
-    window.location.href = `https://salecraft.ai/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
+    window.location.href = `https://landingai.info/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
   };
 
   if (loading) {
