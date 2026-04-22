@@ -91,6 +91,21 @@
     line-height: 1.65;
     letter-spacing: -0.011em;
   }
+
+  /* ─────────────────────────────────────────────────────────────
+   * CJK-safe line breaking.
+   * Prevents single characters (e.g. 「擅」「長」) from being
+   * stranded on a line by themselves. Applies broadly so
+   * Chinese / Japanese / Korean / Thai text never breaks mid-phrase.
+   * `word-break: keep-all` keeps CJK phrases together — breaking only
+   * at half-width spaces / punctuation. `overflow-wrap: break-word`
+   * lets very long unbreakable tokens (URLs) still wrap instead of
+   * overflowing the container.
+   * ───────────────────────────────────────────────────────────── */
+  h1, h2, h3, h4, h5, h6, p, span, div, button, a {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
 }
 
 @layer utilities {

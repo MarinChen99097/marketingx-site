@@ -389,11 +389,13 @@ export default function SaleCraftPage() {
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           className="relative z-10 text-center px-4 max-w-5xl"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1.05]">
-            <span className="text-white">{t("hero.title1")}</span>
-            <span className="bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("hero.title2")}</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1.05] [word-break:keep-all] [overflow-wrap:break-word]">
+            <span className="inline-block text-white">{t("hero.title1")}</span>
+            <span className="inline-block bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("hero.title2")}</span>
             <br className="hidden sm:block" />
-            <Typewriter words={TYPEWRITER_WORDS} className="bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent" />
+            <span className="inline-block">
+              <Typewriter words={TYPEWRITER_WORDS} className="bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent" />
+            </span>
           </h1>
         </motion.div>
 
