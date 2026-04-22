@@ -67,6 +67,42 @@
         "desc": "$1 USD = 30 Punkte, kein monatliches Abo. Landing Pages ~75-250 Punkte, Reels ~50-150 Punkte, Social-Media-Beiträge 5-10 Punkte."
       }
     },
+    "successStories": {
+      "badge": "Echte Ergebnisse",
+      "sectionTitle1": "Marken, die mit ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "Vom Erstgründer bis zum etablierten Einzelhändler — das hat sich geändert, nachdem sie ihr Marketing der KI überlassen haben.",
+      "ctaHint": "Ihre Story könnte die nächste sein.",
+      "cases": {
+        "skincare": {
+          "industry": "Hautpflege / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "Bio-Hautpflegemarke gestartet — ganz ohne Marketingteam.",
+          "quote": "Früher habe ich 3 Wochen für jede Produktseite gebraucht. SaleCraft hat es in 30 Minuten erledigt — und die Texte waren besser als meine.",
+          "author": "Gründerin, Taiwan",
+          "metricLabel": "mehr Conversions",
+          "secondary": "Launch-Zeit: 3 Wochen → 30 Minuten"
+        },
+        "restaurant": {
+          "industry": "Gastronomie / Kette",
+          "brand": "Mochi House",
+          "tagline": "12-Filialen-Dessertkette mit monatlich wechselnden Saisonmenüs.",
+          "quote": "Früher zog sich die Produktion von Promo-Material für jede Filiale ewig hin. Jetzt generiert ein Prompt alles — konsistent über alle 12 Standorte.",
+          "author": "Marketingleitung",
+          "metricLabel": "vom Briefing bis live",
+          "secondary": "Markenkonsistenz: 100 % über alle Filialen"
+        },
+        "ecommerce": {
+          "industry": "E-Commerce",
+          "brand": "Pocket Gear",
+          "tagline": "Outdoor-Ausrüstungshändler, der auf Shopee und Instagram skaliert.",
+          "quote": "Wir haben unsere Agentur ersetzt. Die KI liefert Landing Pages, Reels und Anzeigen schneller als das ganze Team zusammen — zum Bruchteil der Kosten.",
+          "author": "Mitgründer",
+          "metricLabel": "Marketingkosten reduziert",
+          "secondary": "Output-Volumen: 10× pro Monat"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "Setzen Sie Ihre ",
       "sectionTitle2": "Marketingkraft",

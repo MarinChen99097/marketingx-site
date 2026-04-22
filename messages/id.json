@@ -67,6 +67,42 @@
         "desc": "$1 USD = 30 poin, tanpa langganan bulanan. Landing Page ~75-250 poin, Reels ~50-150 poin, postingan sosial 5-10 poin."
       }
     },
+    "successStories": {
+      "badge": "Hasil Nyata",
+      "sectionTitle1": "Brand yang berkembang bersama ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "Dari founder pemula hingga pengecer mapan — inilah yang berubah setelah mereka membiarkan AI menjalankan pemasaran mereka.",
+      "ctaHint": "Cerita Anda bisa jadi yang berikutnya.",
+      "cases": {
+        "skincare": {
+          "industry": "Skincare / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "Brand skincare organik yang diluncurkan tanpa tim pemasaran.",
+          "quote": "Dulu saya butuh 3 minggu untuk mendesain setiap halaman produk. SaleCraft menyelesaikannya dalam 30 menit — dan copy-nya lebih baik daripada buatan saya.",
+          "author": "Founder, Taiwan",
+          "metricLabel": "lebih banyak konversi",
+          "secondary": "Waktu peluncuran: 3 minggu → 30 menit"
+        },
+        "restaurant": {
+          "industry": "Makanan & Minuman / Jaringan",
+          "brand": "Mochi House",
+          "tagline": "Jaringan dessert 12 toko yang meluncurkan menu musiman setiap bulan.",
+          "quote": "Dulu produksi materi promo tiap lokasi molor terus. Sekarang satu prompt menghasilkan semuanya, konsisten di semua 12 toko.",
+          "author": "Marketing Lead",
+          "metricLabel": "dari brief hingga tayang",
+          "secondary": "Konsistensi brand: 100% di semua toko"
+        },
+        "ecommerce": {
+          "industry": "E-Commerce",
+          "brand": "Pocket Gear",
+          "tagline": "Penjual perlengkapan outdoor yang berkembang di Shopee dan Instagram.",
+          "quote": "Kami mengganti agensi dengan AI. AI mengirim landing page, Reels, dan iklan lebih cepat dari seluruh tim digabung — dengan biaya yang jauh lebih murah.",
+          "author": "Co-founder",
+          "metricLabel": "biaya pemasaran terpangkas",
+          "secondary": "Volume output: 10× per bulan"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "Terapkan kekuatan ",
       "sectionTitle2": "pemasaran Anda",

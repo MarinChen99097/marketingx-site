@@ -67,6 +67,42 @@
         "desc": "1 $ USD = 30 pts, sans abonnement mensuel. Pages d'atterrissage ~75-250 pts, Reels ~50-150 pts, publications sociales 5-10 pts."
       }
     },
+    "successStories": {
+      "badge": "Résultats réels",
+      "sectionTitle1": "Des marques qui ont grandi avec ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "Des fondateurs débutants aux détaillants établis — voici ce qui a changé quand ils ont confié leur marketing à l'IA.",
+      "ctaHint": "Votre histoire pourrait être la prochaine.",
+      "cases": {
+        "skincare": {
+          "industry": "Soins de la peau / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "Marque de cosmétiques bio lancée sans équipe marketing.",
+          "quote": "Je passais 3 semaines à concevoir chaque page produit. SaleCraft l'a fait en 30 minutes — et les textes étaient meilleurs que les miens.",
+          "author": "Fondatrice, Taïwan",
+          "metricLabel": "de conversions en plus",
+          "secondary": "Temps de lancement : 3 semaines → 30 minutes"
+        },
+        "restaurant": {
+          "industry": "Restauration / Chaîne",
+          "brand": "Mochi House",
+          "tagline": "Chaîne de 12 boutiques de desserts lançant des menus saisonniers chaque mois.",
+          "quote": "Auparavant, la production des supports promo pour chaque boutique prenait une éternité. Maintenant, un seul prompt génère tout, avec une cohérence parfaite sur les 12 points de vente.",
+          "author": "Responsable Marketing",
+          "metricLabel": "du brief à la publication",
+          "secondary": "Cohérence de marque : 100 % dans toutes les boutiques"
+        },
+        "ecommerce": {
+          "industry": "E-commerce",
+          "brand": "Pocket Gear",
+          "tagline": "Vendeur d'équipement outdoor en expansion sur Shopee et Instagram.",
+          "quote": "Nous avons remplacé notre agence. L'IA livre des pages d'atterrissage, Reels et publicités plus vite que toute l'équipe réunie — pour une fraction du coût.",
+          "author": "Co-fondateur",
+          "metricLabel": "coûts marketing réduits",
+          "secondary": "Volume produit : 10× par mois"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "Déployez votre ",
       "sectionTitle2": "puissance marketing",

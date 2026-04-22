@@ -67,6 +67,42 @@
         "desc": "$1 USD = 30 điểm, không phí hàng tháng. Trang đích khoảng 75-250 điểm, Reels khoảng 50-150 điểm, bài MXH 5-10 điểm."
       }
     },
+    "successStories": {
+      "badge": "Kết quả thực tế",
+      "sectionTitle1": "Các thương hiệu phát triển cùng ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "Từ những nhà sáng lập lần đầu đến các nhà bán lẻ lâu năm — đây là những gì đã thay đổi sau khi họ để AI điều hành marketing.",
+      "ctaHint": "Câu chuyện tiếp theo có thể là của bạn.",
+      "cases": {
+        "skincare": {
+          "industry": "Chăm sóc da / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "Thương hiệu chăm sóc da hữu cơ ra mắt mà không cần đội marketing.",
+          "quote": "Trước đây tôi mất 3 tuần để thiết kế mỗi trang sản phẩm. SaleCraft làm xong trong 30 phút — và copy còn tốt hơn của tôi.",
+          "author": "Nhà sáng lập, Đài Loan",
+          "metricLabel": "tăng tỷ lệ chuyển đổi",
+          "secondary": "Thời gian ra mắt: 3 tuần → 30 phút"
+        },
+        "restaurant": {
+          "industry": "F&B / Chuỗi",
+          "brand": "Mochi House",
+          "tagline": "Chuỗi bánh ngọt 12 cửa hàng ra mắt thực đơn theo mùa hàng tháng.",
+          "quote": "Trước đây chúng tôi mất nhiều thời gian sản xuất tài liệu khuyến mãi cho từng cửa hàng. Giờ chỉ một prompt là tạo ra tất cả, nhất quán trên toàn 12 cửa hàng.",
+          "author": "Trưởng phòng Marketing",
+          "metricLabel": "từ brief đến lên sóng",
+          "secondary": "Nhất quán thương hiệu: 100% trên toàn cửa hàng"
+        },
+        "ecommerce": {
+          "industry": "Thương mại điện tử",
+          "brand": "Pocket Gear",
+          "tagline": "Thương hiệu đồ dã ngoại mở rộng trên Shopee và Instagram.",
+          "quote": "Chúng tôi thay agency bằng AI. AI xuất trang đích, Reels và quảng cáo nhanh hơn cả đội ngũ gộp lại — với chi phí chỉ là một phần nhỏ.",
+          "author": "Đồng sáng lập",
+          "metricLabel": "giảm chi phí marketing",
+          "secondary": "Sản lượng: 10× mỗi tháng"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "Triển khai ",
       "sectionTitle2": "sức mạnh marketing",

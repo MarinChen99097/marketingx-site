@@ -67,6 +67,42 @@
         "desc": "$1 美元 = 30 點，無月費訂閱。Landing Page 約 75-250 點、Reels 約 50-150 點、社群貼文 5-10 點。"
       }
     },
+    "successStories": {
+      "badge": "真實成果",
+      "sectionTitle1": "與 ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "從首次創業的新手到經營多年的零售商——當他們把行銷交給 AI 後，發生了這些改變。",
+      "ctaHint": "下一個故事可能就是你。",
+      "cases": {
+        "skincare": {
+          "industry": "保養品 / DTC 品牌",
+          "brand": "Rose Essence Co.",
+          "tagline": "沒有行銷團隊，依然成功推出的有機保養品牌。",
+          "quote": "我以前設計一個產品頁要花 3 週。SaleCraft 只花 30 分鐘——而且文案比我自己寫的還好。",
+          "author": "創辦人,台灣",
+          "metricLabel": "轉換率提升",
+          "secondary": "上線時間:3 週 → 30 分鐘"
+        },
+        "restaurant": {
+          "industry": "餐飲 / 連鎖品牌",
+          "brand": "Mochi House",
+          "tagline": "每月推出季節性菜單的 12 家連鎖甜點店。",
+          "quote": "我們以前每間店的宣傳素材都要拖很久。現在一個 prompt 就能生出全部,12 家店風格完全一致。",
+          "author": "行銷主管",
+          "metricLabel": "從 brief 到上線",
+          "secondary": "品牌一致性:全門市 100%"
+        },
+        "ecommerce": {
+          "industry": "電商",
+          "brand": "Pocket Gear",
+          "tagline": "在 Shopee 與 Instagram 擴張的戶外用品品牌。",
+          "quote": "我們把代理商換成 AI。Landing Page、Reels、廣告的產出速度比整個團隊加起來還快——成本只是零頭。",
+          "author": "共同創辦人",
+          "metricLabel": "行銷成本下降",
+          "secondary": "產出量:每月 10 倍"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "在任何產業",
       "sectionTitle2": "部署你的行銷",

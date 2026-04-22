@@ -67,6 +67,42 @@
         "desc": "$1 USD = 30 pts, no monthly subscription. Landing Pages ~75-250 pts, Reels ~50-150 pts, social posts 5-10 pts."
       }
     },
+    "successStories": {
+      "badge": "Real Results",
+      "sectionTitle1": "Brands that grew with ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "From first-time founders to established retailers — here's what changed after they let AI run their marketing.",
+      "ctaHint": "Your story could be next.",
+      "cases": {
+        "skincare": {
+          "industry": "Skincare / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "Organic skincare launched with zero marketing team.",
+          "quote": "I used to spend 3 weeks designing each product page. SaleCraft did it in 30 minutes — and the copy was better than mine.",
+          "author": "Founder, Taiwan",
+          "metricLabel": "more conversions",
+          "secondary": "Launch time: 3 weeks → 30 minutes"
+        },
+        "restaurant": {
+          "industry": "F&B / Chain",
+          "brand": "Mochi House",
+          "tagline": "12-store dessert chain rolling out seasonal menus monthly.",
+          "quote": "We used to drag production on promo materials for every location. Now one prompt generates everything, consistent across all 12 stores.",
+          "author": "Marketing Lead",
+          "metricLabel": "from brief to live",
+          "secondary": "Brand consistency: 100% across stores"
+        },
+        "ecommerce": {
+          "industry": "E-Commerce",
+          "brand": "Pocket Gear",
+          "tagline": "Outdoor gear seller scaling on Shopee and Instagram.",
+          "quote": "We replaced our agency. The AI ships landing pages, Reels, and ads faster than the whole team combined — at a fraction of the cost.",
+          "author": "Co-founder",
+          "metricLabel": "marketing cost cut",
+          "secondary": "Output volume: 10× per month"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "Deploy your ",
       "sectionTitle2": "marketing power",

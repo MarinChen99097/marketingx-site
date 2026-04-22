@@ -67,6 +67,42 @@
         "desc": "$1 USD = 30 mata, tanpa langganan bulanan. Landing Page ~75-250 mata, Reels ~50-150 mata, siaran sosial 5-10 mata."
       }
     },
+    "successStories": {
+      "badge": "Hasil Sebenar",
+      "sectionTitle1": "Jenama yang berkembang bersama ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "Daripada pengasas kali pertama kepada peruncit mapan — inilah yang berubah selepas mereka membiarkan AI menjalankan pemasaran mereka.",
+      "ctaHint": "Kisah anda mungkin yang seterusnya.",
+      "cases": {
+        "skincare": {
+          "industry": "Penjagaan Kulit / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "Jenama penjagaan kulit organik dilancarkan tanpa pasukan pemasaran.",
+          "quote": "Dahulu saya ambil masa 3 minggu untuk mereka bentuk setiap halaman produk. SaleCraft menyiapkannya dalam 30 minit — dan kopi iklan lebih baik daripada tulisan saya sendiri.",
+          "author": "Pengasas, Taiwan",
+          "metricLabel": "penukaran lebih tinggi",
+          "secondary": "Masa pelancaran: 3 minggu → 30 minit"
+        },
+        "restaurant": {
+          "industry": "Makanan & Minuman / Rangkaian",
+          "brand": "Mochi House",
+          "tagline": "Rangkaian pencuci mulut 12 kedai melancarkan menu bermusim setiap bulan.",
+          "quote": "Dahulu pengeluaran bahan promosi untuk setiap cawangan terlalu lama. Kini satu prompt menghasilkan semuanya, konsisten di semua 12 kedai.",
+          "author": "Ketua Pemasaran",
+          "metricLabel": "dari brief ke siaran",
+          "secondary": "Konsistensi jenama: 100% di semua kedai"
+        },
+        "ecommerce": {
+          "industry": "E-Dagang",
+          "brand": "Pocket Gear",
+          "tagline": "Penjual peralatan luar yang berkembang di Shopee dan Instagram.",
+          "quote": "Kami gantikan agensi kami. AI menghasilkan landing page, Reels dan iklan lebih pantas daripada seluruh pasukan digabungkan — dengan kos yang jauh lebih rendah.",
+          "author": "Pengasas Bersama",
+          "metricLabel": "kos pemasaran dipotong",
+          "secondary": "Jumlah output: 10× sebulan"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "Kerahkan kuasa ",
       "sectionTitle2": "pemasaran anda",

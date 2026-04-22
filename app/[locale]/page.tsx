@@ -263,6 +263,42 @@ export default function SaleCraftPage() {
     t("features.ai.pipelineSteps.goLive"),
   ];
 
+  const SUCCESS_STORIES = [
+    {
+      icon: Heart,
+      industry: t("successStories.cases.skincare.industry"),
+      brand: t("successStories.cases.skincare.brand"),
+      tagline: t("successStories.cases.skincare.tagline"),
+      quote: t("successStories.cases.skincare.quote"),
+      author: t("successStories.cases.skincare.author"),
+      metric: "3.2×",
+      metricLabel: t("successStories.cases.skincare.metricLabel"),
+      secondaryMetric: t("successStories.cases.skincare.secondary"),
+    },
+    {
+      icon: Utensils,
+      industry: t("successStories.cases.restaurant.industry"),
+      brand: t("successStories.cases.restaurant.brand"),
+      tagline: t("successStories.cases.restaurant.tagline"),
+      quote: t("successStories.cases.restaurant.quote"),
+      author: t("successStories.cases.restaurant.author"),
+      metric: "72h",
+      metricLabel: t("successStories.cases.restaurant.metricLabel"),
+      secondaryMetric: t("successStories.cases.restaurant.secondary"),
+    },
+    {
+      icon: ShoppingCart,
+      industry: t("successStories.cases.ecommerce.industry"),
+      brand: t("successStories.cases.ecommerce.brand"),
+      tagline: t("successStories.cases.ecommerce.tagline"),
+      quote: t("successStories.cases.ecommerce.quote"),
+      author: t("successStories.cases.ecommerce.author"),
+      metric: "−70%",
+      metricLabel: t("successStories.cases.ecommerce.metricLabel"),
+      secondaryMetric: t("successStories.cases.ecommerce.secondary"),
+    },
+  ];
+
   const [copied, setCopied] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -459,83 +495,96 @@ export default function SaleCraftPage() {
         </div>
       </section>
 
-      {/* ════════════ AI FACTORY (Hero Feature) ════════════ */}
-      <section id="features" className="py-20 md:py-28 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
-          <GlowCard delay={0.15}>
-            <div className="p-8 sm:p-10 md:p-14 lg:p-16 space-y-6 md:space-y-8">
-              {/* Icon + Title */}
-              <div className="space-y-4">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[hsl(16,70%,56%)]/10 flex items-center justify-center">
-                  <Factory className="w-7 h-7 md:w-8 md:h-8 text-[hsl(16,70%,56%)]" />
-                </div>
-                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-                  {t("features.factory.title")}
-                </h3>
-              </div>
-
-              {/* Description — larger, better line breaks */}
-              <p className="text-white/50 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl">
-                {t("features.factory.desc")}
-              </p>
-
-              {/* Interactive 3D Pipeline */}
-              <div className="pt-8 md:pt-12">
-                <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 md:gap-5">
-                  {PIPELINE_STEPS.map((step, j) => {
-                    const isLast = j === PIPELINE_STEPS.length - 1;
-                    const icons = ["🔍", "🎯", "📐", "🏭", "✅", "🚀"];
-                    return (
-                      <motion.div
-                        key={j}
-                        initial={{ opacity: 0, y: 30, rotateY: -20 }}
-                        whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.15 + j * 0.1, type: "spring", stiffness: 100 }}
-                        whileHover={{ scale: 1.08, rotateY: 10, rotateX: -5, z: 30 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="cursor-pointer group"
-                        style={{ perspective: "600px" }}
-                      >
-                        <div
-                          className={`relative rounded-2xl p-4 md:p-5 text-center transition-all duration-300 ${isLast
-                            ? "bg-gradient-to-br from-[hsl(16,70%,56%)]/20 to-[hsl(16,70%,40%)]/10 border border-[hsl(16,70%,56%)]/30 shadow-lg shadow-[hsl(16,70%,56%)]/10 group-hover:shadow-[hsl(16,70%,56%)]/30"
-                            : "bg-white/[0.03] border border-white/[0.06] group-hover:border-white/15 group-hover:bg-white/[0.06]"
-                          }`}
-                          style={{ transformStyle: "preserve-3d" }}
-                        >
-                          {/* Floating icon */}
-                          <motion.div
-                            className="text-2xl md:text-3xl mb-2"
-                            animate={{ y: [0, -4, 0] }}
-                            transition={{ duration: 2 + j * 0.3, repeat: Infinity, ease: "easeInOut" }}
-                          >
-                            {icons[j]}
-                          </motion.div>
-                          {/* Step number */}
-                          <div className="text-[10px] text-white/25 font-mono mb-1">0{j + 1}</div>
-                          {/* Label */}
-                          <div className={`text-xs sm:text-sm font-bold ${isLast ? "text-[hsl(16,70%,56%)]" : "text-white/70 group-hover:text-white"}`}>
-                            {step}
-                          </div>
-                          {/* Glow on hover */}
-                          <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ${isLast ? "bg-[hsl(16,70%,56%)]/5" : "bg-white/[0.02]"}`} />
-                        </div>
-                        {/* Connector */}
-                        {j < PIPELINE_STEPS.length - 1 && j !== 2 && (
-                          <div className="hidden sm:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                            <motion.div animate={{ x: [0, 3, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-                              <ArrowRight className="w-3.5 h-3.5 text-[hsl(16,70%,56%)]/30" />
-                            </motion.div>
-                          </div>
-                        )}
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
+      {/* ════════════ SUCCESS STORIES ════════════ */}
+      <section id="features" className="py-20 md:py-28 px-4 sm:px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[hsl(16,70%,56%)]/[0.02] to-transparent" />
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[hsl(16,70%,56%)]/20 bg-[hsl(16,70%,56%)]/5 text-xs font-medium text-[hsl(16,70%,60%)] mb-4">
+              <Star className="w-3 h-3" />
+              {t("successStories.badge")}
             </div>
-          </GlowCard>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+              {t("successStories.sectionTitle1")}
+              <span className="bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">
+                {t("successStories.sectionTitle2")}
+              </span>
+            </h2>
+            <p className="text-white/40 text-base md:text-lg max-w-2xl mx-auto">
+              {t("successStories.sectionSubtitle")}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {SUCCESS_STORIES.map((story, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-sm p-6 md:p-8 hover:border-[hsl(16,70%,56%)]/30 hover:from-white/[0.06] transition-all duration-500"
+              >
+                {/* Industry badge + Icon */}
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-[hsl(16,70%,56%)]/10 flex items-center justify-center group-hover:bg-[hsl(16,70%,56%)]/20 transition-colors">
+                    <story.icon className="w-6 h-6 text-[hsl(16,70%,56%)]" />
+                  </div>
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-white/30">
+                    {story.industry}
+                  </span>
+                </div>
+
+                {/* Brand name + tagline */}
+                <div className="space-y-2 mb-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-white">{story.brand}</h3>
+                  <p className="text-sm text-white/50 leading-relaxed">{story.tagline}</p>
+                </div>
+
+                {/* The story quote */}
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.04] mb-6">
+                  <p className="text-sm text-white/60 leading-relaxed italic">
+                    &ldquo;{story.quote}&rdquo;
+                  </p>
+                  <p className="text-xs text-white/30 mt-2">— {story.author}</p>
+                </div>
+
+                {/* Big result metric */}
+                <div className="space-y-3">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">
+                      {story.metric}
+                    </span>
+                    <span className="text-sm text-white/50">{story.metricLabel}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-white/40">
+                    <TrendingUp className="w-3.5 h-3.5 text-green-400/60" />
+                    <span>{story.secondaryMetric}</span>
+                  </div>
+                </div>
+
+                {/* Hover glow */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[hsl(16,70%,56%)]/0 to-[hsl(35,90%,55%)]/0 group-hover:from-[hsl(16,70%,56%)]/5 group-hover:to-[hsl(35,90%,55%)]/3 transition-all duration-500 pointer-events-none" />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center mt-12"
+          >
+            <p className="text-sm text-white/40">{t("successStories.ctaHint")}</p>
+          </motion.div>
         </div>
       </section>
 

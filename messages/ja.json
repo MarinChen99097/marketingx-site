@@ -67,6 +67,42 @@
         "desc": "$1 USD = 30ポイント、月額サブスクリプション不要。ランディングページ約75-250ポイント、リール約50-150ポイント、ソーシャル投稿5-10ポイント。"
       }
     },
+    "successStories": {
+      "badge": "実際の成果",
+      "sectionTitle1": "共に成長したブランド ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "初めて起業する方から老舗の小売業者まで——AI にマーケティングを任せた結果、何が変わったのか。",
+      "ctaHint": "次のストーリーはあなたかもしれません。",
+      "cases": {
+        "skincare": {
+          "industry": "スキンケア / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "マーケティングチームゼロで立ち上げたオーガニックスキンケア。",
+          "quote": "以前は各商品ページのデザインに 3 週間かけていました。SaleCraft は 30 分で完成——しかもコピーは自分が書いたものより優れていました。",
+          "author": "創業者、台湾",
+          "metricLabel": "コンバージョン向上",
+          "secondary": "ローンチ時間:3 週間 → 30 分"
+        },
+        "restaurant": {
+          "industry": "飲食 / チェーン",
+          "brand": "Mochi House",
+          "tagline": "毎月シーズンメニューを展開する 12 店舗のデザートチェーン。",
+          "quote": "以前は各店舗のプロモ素材の制作に時間がかかっていました。今は 1 つのプロンプトで全店舗分を一貫して生成できます。",
+          "author": "マーケティング責任者",
+          "metricLabel": "ブリーフから公開まで",
+          "secondary": "ブランド統一性:全店舗 100%"
+        },
+        "ecommerce": {
+          "industry": "EC",
+          "brand": "Pocket Gear",
+          "tagline": "Shopee と Instagram で拡大するアウトドア用品販売。",
+          "quote": "代理店を AI に置き換えました。ランディングページ、リール、広告をチーム全員より速く、しかもコストはわずかで仕上げます。",
+          "author": "共同創業者",
+          "metricLabel": "マーケティングコスト削減",
+          "secondary": "月間制作量:10 倍"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "あらゆる業界で ",
       "sectionTitle2": "マーケティングパワーを",

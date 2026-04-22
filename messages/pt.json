@@ -67,6 +67,42 @@
         "desc": "$1 USD = 30 pts, sem assinatura mensal. Páginas de destino ~75-250 pts, Reels ~50-150 pts, publicações sociais 5-10 pts."
       }
     },
+    "successStories": {
+      "badge": "Resultados Reais",
+      "sectionTitle1": "Marcas que cresceram com ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "De fundadores iniciantes a varejistas consolidados — veja o que mudou quando deixaram a IA cuidar do marketing.",
+      "ctaHint": "Sua história pode ser a próxima.",
+      "cases": {
+        "skincare": {
+          "industry": "Skincare / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "Skincare orgânico lançado sem equipe de marketing.",
+          "quote": "Eu levava 3 semanas para criar cada página de produto. O SaleCraft fez em 30 minutos — e o texto ficou melhor que o meu.",
+          "author": "Fundadora, Taiwan",
+          "metricLabel": "mais conversões",
+          "secondary": "Tempo de lançamento: 3 semanas → 30 minutos"
+        },
+        "restaurant": {
+          "industry": "F&B / Rede",
+          "brand": "Mochi House",
+          "tagline": "Rede de sobremesas com 12 lojas lançando menus sazonais mensalmente.",
+          "quote": "Antes, a produção de materiais promocionais para cada loja se arrastava. Agora, um único prompt gera tudo, com consistência nas 12 lojas.",
+          "author": "Líder de Marketing",
+          "metricLabel": "do briefing ao ar",
+          "secondary": "Consistência de marca: 100% em todas as lojas"
+        },
+        "ecommerce": {
+          "industry": "E-Commerce",
+          "brand": "Pocket Gear",
+          "tagline": "Vendedor de equipamentos outdoor escalando na Shopee e no Instagram.",
+          "quote": "Substituímos nossa agência. A IA entrega páginas de destino, Reels e anúncios mais rápido que o time inteiro junto — a uma fração do custo.",
+          "author": "Cofundador",
+          "metricLabel": "redução no custo de marketing",
+          "secondary": "Volume de produção: 10× por mês"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "Implante seu ",
       "sectionTitle2": "poder de marketing",

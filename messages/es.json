@@ -67,6 +67,42 @@
         "desc": "$1 USD = 30 pts, sin suscripción mensual. Páginas de destino ~75-250 pts, Reels ~50-150 pts, publicaciones sociales 5-10 pts."
       }
     },
+    "successStories": {
+      "badge": "Resultados reales",
+      "sectionTitle1": "Marcas que crecieron con ",
+      "sectionTitle2": "SaleCraft",
+      "sectionSubtitle": "Desde fundadores primerizos hasta comercios consolidados — esto es lo que cambió cuando dejaron que la IA llevara su marketing.",
+      "ctaHint": "Tu historia podría ser la próxima.",
+      "cases": {
+        "skincare": {
+          "industry": "Cuidado de la piel / DTC",
+          "brand": "Rose Essence Co.",
+          "tagline": "Cosmética orgánica lanzada sin equipo de marketing.",
+          "quote": "Antes tardaba 3 semanas en diseñar cada página de producto. SaleCraft lo hizo en 30 minutos — y el copy era mejor que el mío.",
+          "author": "Fundadora, Taiwán",
+          "metricLabel": "más conversiones",
+          "secondary": "Tiempo de lanzamiento: 3 semanas → 30 minutos"
+        },
+        "restaurant": {
+          "industry": "Restauración / Cadena",
+          "brand": "Mochi House",
+          "tagline": "Cadena de postres de 12 locales lanzando menús de temporada cada mes.",
+          "quote": "Antes la producción de material promocional para cada local se eternizaba. Ahora un solo prompt genera todo, coherente en las 12 tiendas.",
+          "author": "Responsable de Marketing",
+          "metricLabel": "de brief a publicación",
+          "secondary": "Coherencia de marca: 100% en todas las tiendas"
+        },
+        "ecommerce": {
+          "industry": "E-commerce",
+          "brand": "Pocket Gear",
+          "tagline": "Vendedor de equipo outdoor escalando en Shopee e Instagram.",
+          "quote": "Reemplazamos a nuestra agencia. La IA produce páginas de destino, Reels y anuncios más rápido que todo el equipo junto — a una fracción del coste.",
+          "author": "Cofundador",
+          "metricLabel": "recorte en costes de marketing",
+          "secondary": "Volumen de output: 10× al mes"
+        }
+      }
+    },
     "industries": {
       "sectionTitle1": "Despliega tu ",
       "sectionTitle2": "poder de marketing",
