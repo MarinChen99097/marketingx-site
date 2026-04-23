@@ -2,11 +2,11 @@ import axios, { AxiosError, AxiosInstance } from 'axios';
 
 const MARKETING_BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'https://marketing-backend-v2-876464738390.asia-east1.run.app';
 const ZEREO_BACKEND_URL = process.env.NEXT_PUBLIC_ZEREO_URL || 'https://zereo-backend-876464738390.asia-east1.run.app';
-const LANDING_AI_URL = 'https://landingai.info';
-
-// salecraft.ai has no /login route — auth lives on landingai.info. On 401 we
-// drop the stale token and bounce the user to Landing AI's unified auth with
-// returnUrl pointing back here (canonical domain, never a Cloud Run URL).
+// salecraft.ai now owns its own /login route (Google-only with explicit ToS
+// consent). On 401 we clear the stale token and bounce to the local login —
+// we MUST NOT cross-domain to landingai.info anymore, or the user lands in
+// the wrong brand. Same-origin redirect keeps the whole auth surface inside
+// salecraft.ai.
 function redirectToSSOLogin() {
   if (typeof window === 'undefined') return;
   if ((window as unknown as { __401_redirecting?: boolean }).__401_redirecting) return;
@@ -15,11 +15,12 @@ function redirectToSSOLogin() {
   localStorage.removeItem('token');
   localStorage.removeItem('refresh_token');
 
+  // Don't loop if we are already on the login page.
+  if (window.location.pathname.match(/\/(login|recover)(\/|$)/)) return;
+
   const locale = window.location.pathname.split('/')[1] || 'en';
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://salecraft.ai';
   const returnPath = `${window.location.pathname}${window.location.search}`;
-  const returnUrl = `${siteUrl}${returnPath}`;
-  window.location.href = `${LANDING_AI_URL}/${locale}/login?returnUrl=${encodeURIComponent(returnUrl)}`;
+  window.location.href = `/${locale}/login?returnUrl=${encodeURIComponent(returnPath)}`;
 }
 
 function createClient(baseURL: string): AxiosInstance {
