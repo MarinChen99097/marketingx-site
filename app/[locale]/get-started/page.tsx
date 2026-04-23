@@ -171,7 +171,11 @@ export default function GetStartedPage() {
   };
 
   const LANDING_AI_URL = "https://salecraft.ai";
-  const PLUGIN_CMD = `${t("step1.command")}\nhttps://raw.githubusercontent.com/connactai/Salecraft-Plugin/master/CLAUDE.md`;
+  // Pin to the latest Salecraft-Plugin commit SHA (injected at build time) so
+  // Claude's web_fetch cache can't serve stale CLAUDE.md. Fail-soft to 'master'.
+  const PLUGIN_SHA = process.env.NEXT_PUBLIC_PLUGIN_SHA || "master";
+  const PLUGIN_URL = `https://raw.githubusercontent.com/connactai/Salecraft-Plugin/${PLUGIN_SHA}/CLAUDE.md`;
+  const PLUGIN_CMD = `${t("step1.command")}\n${PLUGIN_URL}`;
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -517,7 +521,7 @@ export default function GetStartedPage() {
               </div>
               <div className="font-mono text-xs sm:text-sm leading-relaxed text-white/80 whitespace-pre-wrap break-all">
                 <span className="text-[hsl(16,70%,60%)]">&#10095;</span> {t("step1.command")}{"\n"}
-                <span className="text-blue-400 break-all">https://raw.githubusercontent.com/connactai/Salecraft-Plugin/master/CLAUDE.md</span>
+                <span className="text-blue-400 break-all">{PLUGIN_URL}</span>
               </div>
             </div>
             <Button

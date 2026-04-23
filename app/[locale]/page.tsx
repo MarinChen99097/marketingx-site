@@ -320,7 +320,11 @@ export default function SaleCraftPage() {
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
   const ctaHref = `${LANDING_AI_URL}/${locale}/login?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
 
-  const PLUGIN_CMD = `${t("pluginInstall.command")}\nhttps://raw.githubusercontent.com/connactai/Salecraft-Plugin/master/CLAUDE.md`;
+  // Pin to the latest Salecraft-Plugin commit SHA (injected at build time) so
+  // Claude's web_fetch cache can't serve stale CLAUDE.md. Fail-soft to 'master'.
+  const PLUGIN_SHA = process.env.NEXT_PUBLIC_PLUGIN_SHA || "master";
+  const PLUGIN_URL = `https://raw.githubusercontent.com/connactai/Salecraft-Plugin/${PLUGIN_SHA}/CLAUDE.md`;
+  const PLUGIN_CMD = `${t("pluginInstall.command")}\n${PLUGIN_URL}`;
 
   const handleCopy = async () => {
     try { await navigator.clipboard.writeText(PLUGIN_CMD); } catch {
@@ -461,7 +465,7 @@ export default function SaleCraftPage() {
                 <span className="text-white/80">{t("pluginInstall.command")}</span>
                 <br />
                 <span className="text-[hsl(16,70%,60%)]">&#10095;</span>{" "}
-                <span className="text-blue-400 break-all">https://raw.githubusercontent.com/connactai/Salecraft-Plugin/master/CLAUDE.md</span>
+                <span className="text-blue-400 break-all">{PLUGIN_URL}</span>
               </div>
               {/* Copy button */}
               <button

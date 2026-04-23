@@ -1,18 +1,34 @@
 steps:
-  - name: 'gcr.io/cloud-builders/docker'
+  # Fetch latest Salecraft-Plugin commit SHA so the install URL points to an
+  # immutable commit instead of 'master' (cache-busting for AI web_fetch tools).
+  # Fail-soft: if GitHub is unreachable, the build continues with 'master'.
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'fetch-plugin-sha'
+    entrypoint: 'bash'
     args:
-      - 'build'
-      - '--build-arg'
-      - 'NEXT_PUBLIC_API_URL=https://marketing-backend-v2-876464738390.asia-east1.run.app'
-      - '--build-arg'
-      - 'NEXT_PUBLIC_ZEREO_URL=https://zereo-backend-876464738390.asia-east1.run.app'
-      - '--build-arg'
-      - 'NEXT_PUBLIC_SITE_URL=https://salecraft.ai'
-      - '-t'
-      - 'asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:$COMMIT_SHA'
-      - '-t'
-      - 'asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:latest'
-      - '.'
+      - '-c'
+      - |
+        SHA=$$(curl -s "https://api.github.com/repos/connactai/Salecraft-Plugin/commits/master" | grep -m1 '"sha"' | cut -d'"' -f4)
+        if [ -z "$$SHA" ]; then
+          echo "Failed to fetch plugin SHA, falling back to 'master'"
+          SHA="master"
+        fi
+        echo "Plugin SHA: $$SHA"
+        echo "$$SHA" > /workspace/plugin_sha.txt
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        PLUGIN_SHA=$$(cat /workspace/plugin_sha.txt)
+        docker build \
+          --build-arg NEXT_PUBLIC_API_URL=https://marketing-backend-v2-876464738390.asia-east1.run.app \
+          --build-arg NEXT_PUBLIC_ZEREO_URL=https://zereo-backend-876464738390.asia-east1.run.app \
+          --build-arg NEXT_PUBLIC_SITE_URL=https://salecraft.ai \
+          --build-arg NEXT_PUBLIC_PLUGIN_SHA=$$PLUGIN_SHA \
+          -t asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:$COMMIT_SHA \
+          -t asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:latest \
+          .
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
