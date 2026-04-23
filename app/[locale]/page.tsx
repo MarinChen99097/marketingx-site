@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, Sparkles, Zap, BarChart3,
@@ -263,41 +264,22 @@ export default function SaleCraftPage() {
     t("features.ai.pipelineSteps.goLive"),
   ];
 
-  const SUCCESS_STORIES = [
-    {
-      icon: Heart,
-      industry: t("successStories.cases.skincare.industry"),
-      brand: t("successStories.cases.skincare.brand"),
-      tagline: t("successStories.cases.skincare.tagline"),
-      quote: t("successStories.cases.skincare.quote"),
-      author: t("successStories.cases.skincare.author"),
-      metric: "3.2×",
-      metricLabel: t("successStories.cases.skincare.metricLabel"),
-      secondaryMetric: t("successStories.cases.skincare.secondary"),
-    },
-    {
-      icon: Utensils,
-      industry: t("successStories.cases.restaurant.industry"),
-      brand: t("successStories.cases.restaurant.brand"),
-      tagline: t("successStories.cases.restaurant.tagline"),
-      quote: t("successStories.cases.restaurant.quote"),
-      author: t("successStories.cases.restaurant.author"),
-      metric: "72h",
-      metricLabel: t("successStories.cases.restaurant.metricLabel"),
-      secondaryMetric: t("successStories.cases.restaurant.secondary"),
-    },
-    {
-      icon: ShoppingCart,
-      industry: t("successStories.cases.ecommerce.industry"),
-      brand: t("successStories.cases.ecommerce.brand"),
-      tagline: t("successStories.cases.ecommerce.tagline"),
-      quote: t("successStories.cases.ecommerce.quote"),
-      author: t("successStories.cases.ecommerce.author"),
-      metric: "−70%",
-      metricLabel: t("successStories.cases.ecommerce.metricLabel"),
-      secondaryMetric: t("successStories.cases.ecommerce.secondary"),
-    },
-  ];
+  const MINGJIAN_STORY = {
+    image: "/demos/demo-mingjian.webp",
+    imageAlt: "MingJian Biotech Landing Page Preview",
+    industry: t("successStories.cases.mingjian.industry"),
+    brand: t("successStories.cases.mingjian.brand"),
+    tagline: t("successStories.cases.mingjian.tagline"),
+    quote: t("successStories.cases.mingjian.quote"),
+    author: t("successStories.cases.mingjian.author"),
+    role: t("successStories.cases.mingjian.role"),
+    metrics: [
+      { value: "20,000+", label: t("successStories.cases.mingjian.metricUnits") },
+      { value: "30", label: t("successStories.cases.mingjian.metricDays") },
+      { value: "1", label: t("successStories.cases.mingjian.metricPages") },
+    ],
+    highlight: t("successStories.cases.mingjian.highlight"),
+  };
 
   const [copied, setCopied] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -310,15 +292,10 @@ export default function SaleCraftPage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // MUST stay https://landingai.info — this is the host of the Landing AI auth
-  // service that issues the JWT. salecraft.ai has no /login route; pointing
-  // this at the same origin sends users to a 404-styled fallback.
-  const LANDING_AI_URL = "https://landingai.info";
-  // Force the canonical custom domain for returnUrl. Using window.location.origin here would
-  // leak the Cloud Run URL (marketingx-site-*.run.app) when users land on it directly (old
-  // email links, shares, OAuth callbacks), locking them out of salecraft.ai after login.
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
-  const ctaHref = `${LANDING_AI_URL}/${locale}/login?returnUrl=${encodeURIComponent(`${SITE_URL}/${locale}/get-started`)}`;
+  // Auth now lives inside salecraft.ai (/auth, Google OAuth only). Backend still
+  // hits marketing-backend-v2/auth/google so the User table remains shared with
+  // Landing AI — we just swapped the *auth surface* onto our own domain.
+  const ctaHref = `/${locale}/auth?returnUrl=${encodeURIComponent(`/${locale}/get-started`)}`;
 
   // Pin to the latest Salecraft-Plugin commit SHA (injected at build time) so
   // Claude's web_fetch cache can't serve stale CLAUDE.md. Fail-soft to 'master'.
@@ -354,11 +331,11 @@ export default function SaleCraftPage() {
         </div>
 
         <div className="flex gap-3 items-center">
-          <a href={ctaHref} target="_blank" rel="noopener noreferrer">
+          <Link href={ctaHref}>
             <Button size="sm" className="bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-lg h-9 px-5 text-sm shadow-lg shadow-[hsl(16,70%,56%)]/25">
               {t("nav.getStarted")}
             </Button>
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -393,11 +370,20 @@ export default function SaleCraftPage() {
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           className="relative z-10 text-center px-4 max-w-5xl"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1.05] [word-break:keep-all] [overflow-wrap:break-word]">
-            <span className="inline-block text-white">{t("hero.title1")}</span>
-            <span className="inline-block bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("hero.title2")}</span>
+          {/*
+           * CJK line-break safety: word-break:keep-all + whitespace-nowrap on each
+           * phrase-span prevents "顧問，擅" / "長" splits. We deliberately DO NOT use
+           * overflow-wrap:break-word — it forces mid-character breaks when the word
+           * is too wide, negating keep-all's CJK protection.
+           * JSX {" "} between spans supplies the word separator for latin scripts
+           * (English/French/German/etc.) without bloating CJK output.
+           */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1.05] [word-break:keep-all] [text-wrap:balance]">
+            <span className="inline-block whitespace-nowrap text-white">{t("hero.title1")}</span>
+            {" "}
+            <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("hero.title2")}</span>
             <br className="hidden sm:block" />
-            <span className="inline-block">
+            <span className="inline-block whitespace-nowrap">
               <Typewriter words={TYPEWRITER_WORDS} className="bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent" />
             </span>
           </h1>
@@ -437,8 +423,10 @@ export default function SaleCraftPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-3">
-              {t("pluginInstall.title1")}<span className="bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("pluginInstall.title2")}</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-3 [word-break:keep-all] [text-wrap:balance]">
+              <span className="inline-block whitespace-nowrap">{t("pluginInstall.title1")}</span>
+              {" "}
+              <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("pluginInstall.title2")}</span>
             </h2>
             <p className="text-white/50 text-sm md:text-base">{t("pluginInstall.subtitle")}</p>
           </motion.div>
@@ -501,7 +489,7 @@ export default function SaleCraftPage() {
         </div>
       </section>
 
-      {/* ════════════ SUCCESS STORIES ════════════ */}
+      {/* ════════════ SUCCESS STORY — MingJian Biotech (Real Customer) ════════════ */}
       <section id="features" className="py-20 md:py-28 px-4 sm:px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[hsl(16,70%,56%)]/[0.02] to-transparent" />
         <div className="max-w-6xl mx-auto relative z-10">
@@ -514,11 +502,11 @@ export default function SaleCraftPage() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[hsl(16,70%,56%)]/20 bg-[hsl(16,70%,56%)]/5 text-xs font-medium text-[hsl(16,70%,60%)] mb-4">
               <Star className="w-3 h-3" />
-              {t("successStories.badge")}
+              <span className="whitespace-nowrap">{t("successStories.badge")}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-              {t("successStories.sectionTitle1")}
-              <span className="bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 [word-break:keep-all]">
+              <span className="inline-block whitespace-nowrap">{t("successStories.sectionTitle1")}</span>
+              <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">
                 {t("successStories.sectionTitle2")}
               </span>
             </h2>
@@ -527,67 +515,107 @@ export default function SaleCraftPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {SUCCESS_STORIES.map((story, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-sm p-6 md:p-8 hover:border-[hsl(16,70%,56%)]/30 hover:from-white/[0.06] transition-all duration-500"
-              >
-                {/* Industry badge + Icon */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-[hsl(16,70%,56%)]/10 flex items-center justify-center group-hover:bg-[hsl(16,70%,56%)]/20 transition-colors">
-                    <story.icon className="w-6 h-6 text-[hsl(16,70%,56%)]" />
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7 }}
+            className="relative rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-sm p-6 md:p-10 lg:p-14 overflow-hidden"
+          >
+            {/* Ambient orange glow */}
+            <div className="pointer-events-none absolute -top-20 -left-20 w-[400px] h-[400px] bg-[hsl(16,70%,56%)]/10 rounded-full blur-[120px]" />
+            <div className="pointer-events-none absolute -bottom-20 -right-20 w-[400px] h-[400px] bg-[hsl(35,90%,55%)]/8 rounded-full blur-[120px]" />
+
+            <div className="relative grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 lg:gap-14 items-center">
+              {/* ── LEFT: Phone mockup with real LP screenshot ── */}
+              <div className="relative mx-auto lg:mx-0 w-[220px] sm:w-[260px] md:w-[280px] shrink-0">
+                {/* Phone frame */}
+                <div className="relative rounded-[2.5rem] bg-[#1a1a1c] p-2 shadow-2xl shadow-black/50 ring-1 ring-white/10">
+                  <div
+                    className="relative rounded-[2rem] overflow-hidden bg-black"
+                    style={{ aspectRatio: "9 / 19.5" }}
+                  >
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a1c] rounded-b-2xl z-10" />
+                    {/* LP screenshot — tall, scrolled preview. Below-the-fold,
+                        so no `priority` (would contend with hero LCP). */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      <Image
+                        src={MINGJIAN_STORY.image}
+                        alt={MINGJIAN_STORY.imageAlt}
+                        width={280}
+                        height={1600}
+                        className="w-full h-auto"
+                        sizes="(max-width: 768px) 260px, 280px"
+                      />
+                    </div>
                   </div>
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-white/30">
-                    {story.industry}
-                  </span>
                 </div>
+                {/* Success badge */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg whitespace-nowrap"
+                >
+                  <Check className="w-3.5 h-3.5" />
+                  <span>{MINGJIAN_STORY.highlight}</span>
+                </motion.div>
+              </div>
 
-                {/* Brand name + tagline */}
-                <div className="space-y-2 mb-6">
-                  <h3 className="text-xl md:text-2xl font-bold text-white">{story.brand}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{story.tagline}</p>
-                </div>
-
-                {/* The story quote */}
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.04] mb-6">
-                  <p className="text-sm text-white/60 leading-relaxed italic">
-                    &ldquo;{story.quote}&rdquo;
-                  </p>
-                  <p className="text-xs text-white/30 mt-2">— {story.author}</p>
-                </div>
-
-                {/* Big result metric */}
+              {/* ── RIGHT: Story content ── */}
+              <div className="space-y-7 text-center lg:text-left">
+                {/* Industry + Brand */}
                 <div className="space-y-3">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">
-                      {story.metric}
-                    </span>
-                    <span className="text-sm text-white/50">{story.metricLabel}</span>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[hsl(16,70%,56%)]/10 border border-[hsl(16,70%,56%)]/20 text-[11px] font-mono uppercase tracking-wider text-[hsl(16,70%,60%)]">
+                    <Utensils className="w-3 h-3" />
+                    {MINGJIAN_STORY.industry}
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-white/40">
-                    <TrendingUp className="w-3.5 h-3.5 text-green-400/60" />
-                    <span>{story.secondaryMetric}</span>
-                  </div>
+                  <h3 className="text-2xl md:text-3xl font-black text-white [word-break:keep-all]">
+                    {MINGJIAN_STORY.brand}
+                  </h3>
+                  <p className="text-sm md:text-base text-white/50 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    {MINGJIAN_STORY.tagline}
+                  </p>
                 </div>
 
-                {/* Hover glow */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[hsl(16,70%,56%)]/0 to-[hsl(35,90%,55%)]/0 group-hover:from-[hsl(16,70%,56%)]/5 group-hover:to-[hsl(35,90%,55%)]/3 transition-all duration-500 pointer-events-none" />
-              </motion.div>
-            ))}
-          </div>
+                {/* Quote */}
+                <blockquote className="relative p-5 md:p-6 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                  <div className="absolute top-3 left-4 text-4xl text-[hsl(16,70%,56%)]/30 font-serif leading-none">&ldquo;</div>
+                  <p className="text-sm md:text-base text-white/70 leading-relaxed italic pl-6">
+                    {MINGJIAN_STORY.quote}
+                  </p>
+                  <footer className="pl-6 mt-3 text-xs text-white/40">
+                    — <span className="text-white/60 font-medium">{MINGJIAN_STORY.author}</span>
+                    <span className="text-white/30">,{MINGJIAN_STORY.role}</span>
+                  </footer>
+                </blockquote>
 
-          {/* CTA */}
+                {/* Metrics row */}
+                <div className="grid grid-cols-3 gap-3 md:gap-6 pt-2">
+                  {MINGJIAN_STORY.metrics.map((m, i) => (
+                    <div key={i} className="text-center lg:text-left">
+                      <div className="text-2xl md:text-3xl lg:text-4xl font-black bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent tracking-tight">
+                        {m.value}
+                      </div>
+                      <div className="text-[11px] md:text-xs text-white/40 mt-1 leading-tight">
+                        {m.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CTA hint */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center mt-12"
+            className="text-center mt-10"
           >
             <p className="text-sm text-white/40">{t("successStories.ctaHint")}</p>
           </motion.div>
@@ -605,8 +633,17 @@ export default function SaleCraftPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-              {t("industries.sectionTitle1")}<span className="bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("industries.sectionTitle2")}</span>{t("industries.sectionTitle3")}
+            {/*
+             * 3-split title: translators control spacing inside the string
+             * itself (latin locales use a leading space on sectionTitle3 like
+             * " in any industry", CJK uses no spacing). We keep the DOM simple
+             * and trust the i18n strings. Font size is moderate so CJK breaks
+             * at punctuation (rare) are acceptable.
+             */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 [word-break:keep-all] [text-wrap:balance]">
+              {t("industries.sectionTitle1")}
+              <span className="bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("industries.sectionTitle2")}</span>
+              {t("industries.sectionTitle3")}
             </h2>
             <p className="text-white/40 text-base md:text-lg max-w-xl mx-auto">
               {t("industries.sectionSubtitle")}
@@ -631,9 +668,10 @@ export default function SaleCraftPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-              {t("capabilities.sectionTitle1")}<br className="sm:hidden" />
-              <span className="bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("capabilities.sectionTitle2")}</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 [word-break:keep-all] [text-wrap:balance]">
+              <span className="inline-block whitespace-nowrap">{t("capabilities.sectionTitle1")}</span>
+              {" "}
+              <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[hsl(16,70%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">{t("capabilities.sectionTitle2")}</span>
             </h2>
           </motion.div>
 
@@ -706,9 +744,10 @@ export default function SaleCraftPage() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center relative z-10 space-y-8"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight">
-            {t("finalCta.title1")}<br />
-            <span className="bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight [word-break:keep-all] [text-wrap:balance]">
+            <span className="inline-block whitespace-nowrap">{t("finalCta.title1")}</span>
+            <br />
+            <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[hsl(16,70%,60%)] via-[hsl(25,80%,60%)] to-[hsl(35,90%,55%)] bg-clip-text text-transparent">
               {t("finalCta.title2")}
             </span>
           </h2>

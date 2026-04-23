@@ -12,8 +12,8 @@
     "badge": "ผู้ช่วยการตลาด AI — ใช้ได้กับทุกแพลตฟอร์ม AI",
     "badgeNew": "ใหม่",
     "hero": {
-      "title1": "ที่ปรึกษาการตลาด AI ",
-      "title2": "ของคุณ สำหรับ ",
+      "title1": "ที่ปรึกษาการตลาด AI",
+      "title2": "ของคุณ สำหรับ",
       "subtitle": "ปรึกษาฟรีก่อน เข้าใจสินค้า วินิจฉัยการตลาด วางแผนกลยุทธ์ — พร้อมแล้ว AI ลงมือทำ",
       "ctaPrimary": "เริ่มต้นฟรี",
       "ctaPrimaryLoggedIn": "ไปที่คอนโซล",
@@ -30,7 +30,7 @@
       "research": "วิจัยตลาด"
     },
     "pluginInstall": {
-      "title1": "คำสั่งเดียว ",
+      "title1": "คำสั่งเดียว",
       "title2": "ใช้งานได้ทันที",
       "subtitle": "เชื่อมต่อ SaleCraft กับแพลตฟอร์ม AI ใดก็ได้ — ChatGPT, Claude, Gemini และอื่นๆ",
       "command": "โปรดอ่านเนื้อหา CLAUDE.md ทั้งหมดจาก URL ด้านล่าง และทำตามคำแนะนำเพื่อรับบทเป็นที่ปรึกษาการตลาดของฉัน:"
@@ -68,43 +68,28 @@
       }
     },
     "successStories": {
-      "badge": "ผลลัพธ์จริง",
-      "sectionTitle1": "แบรนด์ที่เติบโตไปกับ ",
-      "sectionTitle2": "SaleCraft",
-      "sectionSubtitle": "ตั้งแต่ผู้ก่อตั้งหน้าใหม่ไปจนถึงผู้ค้าปลีกที่มีชื่อเสียง — นี่คือสิ่งที่เปลี่ยนไปหลังจากให้ AI ดูแลการตลาดของพวกเขา",
-      "ctaHint": "เรื่องราวต่อไปอาจเป็นคุณ",
+      "badge": "ผลลัพธ์ลูกค้าจริง",
+      "sectionTitle1": "แลนดิ้งเพจที่ขายได้",
+      "sectionTitle2": "20,000+ หน่วย",
+      "sectionSubtitle": "MingJian Biotech สร้างแลนดิ้งเพจหนึ่งหน้าด้วย SaleCraft และขายไก่หยองได้มากกว่า 20,000 กระปุกในเดือนเดียว — ไม่ใช่แนวคิด แต่เกิดขึ้นจริง",
+      "ctaHint": "เรื่องราวของคุณอาจเป็นเรื่องถัดไป",
       "cases": {
-        "skincare": {
-          "industry": "สกินแคร์ / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "แบรนด์สกินแคร์ออร์แกนิกที่เปิดตัวโดยไม่มีทีมการตลาดเลย",
-          "quote": "แต่ก่อนใช้เวลา 3 สัปดาห์ในการออกแบบหน้าสินค้าแต่ละหน้า SaleCraft ทำเสร็จใน 30 นาที — และก๊อปปี้ดีกว่าที่ฉันเขียนเองอีก",
-          "author": "ผู้ก่อตั้ง, ไต้หวัน",
-          "metricLabel": "คอนเวอร์ชั่นเพิ่มขึ้น",
-          "secondary": "เวลาเปิดตัว: 3 สัปดาห์ → 30 นาที"
-        },
-        "restaurant": {
-          "industry": "อาหาร&เครื่องดื่ม / เครือ",
-          "brand": "Mochi House",
-          "tagline": "เครือร้านขนมหวาน 12 สาขาที่ออกเมนูตามฤดูกาลทุกเดือน",
-          "quote": "แต่ก่อนต้องรอสื่อโปรโมทของแต่ละสาขานานมาก ตอนนี้แค่ prompt เดียวสร้างทุกอย่างได้ สอดคล้องกันทั้ง 12 สาขา",
-          "author": "หัวหน้าการตลาด",
-          "metricLabel": "จากบรีฟถึงออกอากาศ",
-          "secondary": "ความสอดคล้องแบรนด์: 100% ทุกสาขา"
-        },
-        "ecommerce": {
-          "industry": "อีคอมเมิร์ซ",
-          "brand": "Pocket Gear",
-          "tagline": "ผู้ขายอุปกรณ์กลางแจ้งที่กำลังขยายใน Shopee และ Instagram",
-          "quote": "เราเปลี่ยนเอเจนซี่เป็น AI AI ส่งแลนดิ้งเพจ, Reels และโฆษณาได้เร็วกว่าทีมทั้งหมดรวมกัน — ในต้นทุนเพียงเศษเสี้ยว",
-          "author": "ผู้ร่วมก่อตั้ง",
-          "metricLabel": "ต้นทุนการตลาดลดลง",
-          "secondary": "ผลผลิต: 10 เท่าต่อเดือน"
+        "mingjian": {
+          "industry": "อาหารและไบโอเทค",
+          "brand": "MingJian Biotech",
+          "tagline": "แบรนด์ไก่หยองไต้หวัน ไม่มีทีมการตลาด ไม่มีเอเจนซี — มีเพียงแลนดิ้งเพจเดียวที่พาพวกเขาจากศูนย์สู่ 20,000+ กระปุก",
+          "quote": "เราสร้างหน้าขายไก่หยองด้วย SaleCraft และขายได้มากกว่า 20,000 กระปุกในเดือนแรก ROI น่าทึ่งมาก — คืนทุนภายในไม่กี่ชั่วโมง",
+          "author": "คุณ Lin",
+          "role": "CEO, MingJian Biotech",
+          "metricUnits": "กระปุกที่ขาย",
+          "metricDays": "วันในการบรรลุ",
+          "metricPages": "แลนดิ้งเพจ",
+          "highlight": "20,000+ กระปุกในหนึ่งเดือน"
         }
       }
     },
     "industries": {
-      "sectionTitle1": "ปรับใช้ ",
+      "sectionTitle1": "ปรับใช้",
       "sectionTitle2": "พลังการตลาด",
       "sectionTitle3": "ของคุณในทุกอุตสาหกรรม",
       "sectionSubtitle": "8 อุตสาหกรรม, 40+ สถานการณ์ที่พิสูจน์แล้ว, ทุกจุดเจ็บปวดมีทางออก",
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "ประสบการณ์การตลาดระดับพรีเมียม ",
+      "sectionTitle1": "ประสบการณ์การตลาดระดับพรีเมียม",
       "sectionTitle2": "พร้อมใช้งานทันที",
       "items": {
         "pipeline": {
@@ -339,5 +324,30 @@
       "dashboard": "ไปที่แดชบอร์ด",
       "home": "กลับหน้าหลัก"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }

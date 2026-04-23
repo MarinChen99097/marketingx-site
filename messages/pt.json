@@ -12,8 +12,8 @@
     "badge": "Assistente de Marketing IA — Funciona com qualquer IA",
     "badgeNew": "NOVO",
     "hero": {
-      "title1": "Seu Consultor de ",
-      "title2": "Marketing IA para ",
+      "title1": "Seu Consultor de",
+      "title2": "Marketing IA para",
       "subtitle": "Consultoria gratuita primeiro. Entender seu produto, diagnosticar gaps de marketing, planejar — depois a IA executa quando você estiver pronto.",
       "ctaPrimary": "Comece grátis",
       "ctaPrimaryLoggedIn": "Ir para o Console",
@@ -30,7 +30,7 @@
       "research": "Pesquisa de Mercado"
     },
     "pluginInstall": {
-      "title1": "Um comando, ",
+      "title1": "Um comando,",
       "title2": "instantaneamente online",
       "subtitle": "Conecte o SaleCraft a qualquer plataforma IA — ChatGPT, Claude, Gemini e mais",
       "command": "Por favor, leia todo o conteúdo de CLAUDE.md na URL abaixo e siga as instruções como meu consultor de marketing:"
@@ -68,38 +68,23 @@
       }
     },
     "successStories": {
-      "badge": "Resultados Reais",
-      "sectionTitle1": "Marcas que cresceram com ",
-      "sectionTitle2": "SaleCraft",
-      "sectionSubtitle": "De fundadores iniciantes a varejistas consolidados — veja o que mudou quando deixaram a IA cuidar do marketing.",
+      "badge": "Resultados Reais de Clientes",
+      "sectionTitle1": "A Landing Page que vendeu",
+      "sectionTitle2": "mais de 20,000 unidades",
+      "sectionSubtitle": "A MingJian Biotech criou uma Landing Page com o SaleCraft e vendeu mais de 20.000 potes de frango desfiado em um único mês — não é um conceito, aconteceu de verdade.",
       "ctaHint": "Sua história pode ser a próxima.",
       "cases": {
-        "skincare": {
-          "industry": "Skincare / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "Skincare orgânico lançado sem equipe de marketing.",
-          "quote": "Eu levava 3 semanas para criar cada página de produto. O SaleCraft fez em 30 minutos — e o texto ficou melhor que o meu.",
-          "author": "Fundadora, Taiwan",
-          "metricLabel": "mais conversões",
-          "secondary": "Tempo de lançamento: 3 semanas → 30 minutos"
-        },
-        "restaurant": {
-          "industry": "F&B / Rede",
-          "brand": "Mochi House",
-          "tagline": "Rede de sobremesas com 12 lojas lançando menus sazonais mensalmente.",
-          "quote": "Antes, a produção de materiais promocionais para cada loja se arrastava. Agora, um único prompt gera tudo, com consistência nas 12 lojas.",
-          "author": "Líder de Marketing",
-          "metricLabel": "do briefing ao ar",
-          "secondary": "Consistência de marca: 100% em todas as lojas"
-        },
-        "ecommerce": {
-          "industry": "E-Commerce",
-          "brand": "Pocket Gear",
-          "tagline": "Vendedor de equipamentos outdoor escalando na Shopee e no Instagram.",
-          "quote": "Substituímos nossa agência. A IA entrega páginas de destino, Reels e anúncios mais rápido que o time inteiro junto — a uma fração do custo.",
-          "author": "Cofundador",
-          "metricLabel": "redução no custo de marketing",
-          "secondary": "Volume de produção: 10× por mês"
+        "mingjian": {
+          "industry": "Alimentos e Biotecnologia",
+          "brand": "MingJian Biotech",
+          "tagline": "Uma marca taiwanesa de frango desfiado. Sem equipe de marketing, sem agência — apenas uma Landing Page que os levou de zero a mais de 20.000 potes.",
+          "quote": "Criamos nossa página de vendas de frango desfiado com o SaleCraft e vendemos mais de 20.000 potes no primeiro mês. O ROI foi impressionante — recuperamos em horas.",
+          "author": "Sr. Lin",
+          "role": "CEO, MingJian Biotech",
+          "metricUnits": "potes vendidos",
+          "metricDays": "dias para atingir",
+          "metricPages": "Landing Page",
+          "highlight": "20.000+ potes em um mês"
         }
       }
     },
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "Experiência de marketing premium, ",
+      "sectionTitle1": "Experiência de marketing premium,",
       "sectionTitle2": "pronta para uso",
       "items": {
         "pipeline": {
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "Pague pelo que ",
+      "title1": "Pague pelo que",
       "title2": "você usa",
       "subtitle": "Sem mensalidades, sem custos ocultos. Recarregue quando precisar, pague pelo que usar.",
       "badge": "Pague conforme o uso",
@@ -339,5 +324,30 @@
       "dashboard": "Ir para o Painel",
       "home": "Voltar ao Início"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }

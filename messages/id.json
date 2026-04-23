@@ -12,8 +12,8 @@
     "badge": "Asisten Pemasaran AI — Bekerja dengan Semua AI",
     "badgeNew": "BARU",
     "hero": {
-      "title1": "Konsultan Pemasaran ",
-      "title2": "AI Anda untuk ",
+      "title1": "Konsultan Pemasaran",
+      "title2": "AI Anda untuk",
       "subtitle": "Konsultasi gratis dulu. Pahami produk Anda, diagnosis celah pemasaran, rencanakan strategi — lalu AI eksekusi saat Anda siap.",
       "ctaPrimary": "Mulai Gratis",
       "ctaPrimaryLoggedIn": "Ke Konsol",
@@ -30,7 +30,7 @@
       "research": "Riset Pasar"
     },
     "pluginInstall": {
-      "title1": "Satu perintah, ",
+      "title1": "Satu perintah,",
       "title2": "langsung aktif",
       "subtitle": "Hubungkan SaleCraft ke platform AI manapun — ChatGPT, Claude, Gemini dan lainnya",
       "command": "Silakan baca seluruh konten CLAUDE.md di URL di bawah dan ikuti petunjuknya sebagai konsultan pemasaran saya:"
@@ -68,38 +68,23 @@
       }
     },
     "successStories": {
-      "badge": "Hasil Nyata",
-      "sectionTitle1": "Brand yang berkembang bersama ",
-      "sectionTitle2": "SaleCraft",
-      "sectionSubtitle": "Dari founder pemula hingga pengecer mapan — inilah yang berubah setelah mereka membiarkan AI menjalankan pemasaran mereka.",
-      "ctaHint": "Cerita Anda bisa jadi yang berikutnya.",
+      "badge": "Hasil Pelanggan Nyata",
+      "sectionTitle1": "Landing Page yang menjual",
+      "sectionTitle2": "20.000+ unit",
+      "sectionSubtitle": "MingJian Biotech membuat satu Landing Page dengan SaleCraft dan menjual lebih dari 20.000 toples abon ayam dalam satu bulan — bukan konsep, ini benar-benar terjadi.",
+      "ctaHint": "Cerita Anda bisa jadi berikutnya.",
       "cases": {
-        "skincare": {
-          "industry": "Skincare / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "Brand skincare organik yang diluncurkan tanpa tim pemasaran.",
-          "quote": "Dulu saya butuh 3 minggu untuk mendesain setiap halaman produk. SaleCraft menyelesaikannya dalam 30 menit — dan copy-nya lebih baik daripada buatan saya.",
-          "author": "Founder, Taiwan",
-          "metricLabel": "lebih banyak konversi",
-          "secondary": "Waktu peluncuran: 3 minggu → 30 menit"
-        },
-        "restaurant": {
-          "industry": "Makanan & Minuman / Jaringan",
-          "brand": "Mochi House",
-          "tagline": "Jaringan dessert 12 toko yang meluncurkan menu musiman setiap bulan.",
-          "quote": "Dulu produksi materi promo tiap lokasi molor terus. Sekarang satu prompt menghasilkan semuanya, konsisten di semua 12 toko.",
-          "author": "Marketing Lead",
-          "metricLabel": "dari brief hingga tayang",
-          "secondary": "Konsistensi brand: 100% di semua toko"
-        },
-        "ecommerce": {
-          "industry": "E-Commerce",
-          "brand": "Pocket Gear",
-          "tagline": "Penjual perlengkapan outdoor yang berkembang di Shopee dan Instagram.",
-          "quote": "Kami mengganti agensi dengan AI. AI mengirim landing page, Reels, dan iklan lebih cepat dari seluruh tim digabung — dengan biaya yang jauh lebih murah.",
-          "author": "Co-founder",
-          "metricLabel": "biaya pemasaran terpangkas",
-          "secondary": "Volume output: 10× per bulan"
+        "mingjian": {
+          "industry": "Pangan & Bioteknologi",
+          "brand": "MingJian Biotech",
+          "tagline": "Merek abon ayam asal Taiwan. Tanpa tim marketing, tanpa agensi — hanya satu Landing Page yang membawa mereka dari nol ke 20.000+ toples.",
+          "quote": "Kami membangun halaman penjualan abon ayam dengan SaleCraft dan menjual lebih dari 20.000 toples di bulan pertama. ROI-nya luar biasa — balik modal dalam hitungan jam.",
+          "author": "Mr. Lin",
+          "role": "CEO, MingJian Biotech",
+          "metricUnits": "toples terjual",
+          "metricDays": "hari untuk mencapai",
+          "metricPages": "Landing Page",
+          "highlight": "20.000+ toples dalam sebulan"
         }
       }
     },
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "Pengalaman pemasaran premium, ",
+      "sectionTitle1": "Pengalaman pemasaran premium,",
       "sectionTitle2": "siap pakai langsung",
       "items": {
         "pipeline": {
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "Bayar sesuai ",
+      "title1": "Bayar sesuai",
       "title2": "pemakaian",
       "subtitle": "Tanpa biaya bulanan, tanpa biaya tersembunyi. Isi ulang sesuai kebutuhan, bayar sesuai pemakaian.",
       "badge": "Bayar-sesuai-pakai",
@@ -339,5 +324,30 @@
       "dashboard": "Ke Dashboard",
       "home": "Kembali ke Beranda"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }

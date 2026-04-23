@@ -12,8 +12,8 @@
     "badge": "Trợ lý Marketing AI — Hoạt động trên mọi nền tảng AI",
     "badgeNew": "MỚI",
     "hero": {
-      "title1": "Tư vấn Marketing AI ",
-      "title2": "cho ",
+      "title1": "Tư vấn Marketing AI",
+      "title2": "cho",
       "subtitle": "Tư vấn miễn phí trước. Hiểu sản phẩm, chẩn đoán marketing, lập chiến lược — sẵn sàng thì AI thực hiện.",
       "ctaPrimary": "Bắt đầu miễn phí",
       "ctaPrimaryLoggedIn": "Đến Bảng điều khiển",
@@ -30,7 +30,7 @@
       "research": "Nghiên cứu thị trường"
     },
     "pluginInstall": {
-      "title1": "Một lệnh duy nhất, ",
+      "title1": "Một lệnh duy nhất,",
       "title2": "chạy ngay lập tức",
       "subtitle": "Kết nối SaleCraft với mọi nền tảng AI — ChatGPT, Claude, Gemini và nhiều hơn",
       "command": "Vui lòng đọc toàn bộ CLAUDE.md tại URL bên dưới và làm theo hướng dẫn để trở thành cố vấn tiếp thị của tôi:"
@@ -68,38 +68,23 @@
       }
     },
     "successStories": {
-      "badge": "Kết quả thực tế",
-      "sectionTitle1": "Các thương hiệu phát triển cùng ",
-      "sectionTitle2": "SaleCraft",
-      "sectionSubtitle": "Từ những nhà sáng lập lần đầu đến các nhà bán lẻ lâu năm — đây là những gì đã thay đổi sau khi họ để AI điều hành marketing.",
-      "ctaHint": "Câu chuyện tiếp theo có thể là của bạn.",
+      "badge": "Kết Quả Khách Hàng Thực Tế",
+      "sectionTitle1": "Landing Page bán được",
+      "sectionTitle2": "hơn 20,000 đơn vị",
+      "sectionSubtitle": "MingJian Biotech xây dựng một Landing Page với SaleCraft và bán hơn 20.000 lọ ruốc gà trong một tháng — không phải khái niệm, đây là điều thực sự đã xảy ra.",
+      "ctaHint": "Câu chuyện của bạn có thể là tiếp theo.",
       "cases": {
-        "skincare": {
-          "industry": "Chăm sóc da / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "Thương hiệu chăm sóc da hữu cơ ra mắt mà không cần đội marketing.",
-          "quote": "Trước đây tôi mất 3 tuần để thiết kế mỗi trang sản phẩm. SaleCraft làm xong trong 30 phút — và copy còn tốt hơn của tôi.",
-          "author": "Nhà sáng lập, Đài Loan",
-          "metricLabel": "tăng tỷ lệ chuyển đổi",
-          "secondary": "Thời gian ra mắt: 3 tuần → 30 phút"
-        },
-        "restaurant": {
-          "industry": "F&B / Chuỗi",
-          "brand": "Mochi House",
-          "tagline": "Chuỗi bánh ngọt 12 cửa hàng ra mắt thực đơn theo mùa hàng tháng.",
-          "quote": "Trước đây chúng tôi mất nhiều thời gian sản xuất tài liệu khuyến mãi cho từng cửa hàng. Giờ chỉ một prompt là tạo ra tất cả, nhất quán trên toàn 12 cửa hàng.",
-          "author": "Trưởng phòng Marketing",
-          "metricLabel": "từ brief đến lên sóng",
-          "secondary": "Nhất quán thương hiệu: 100% trên toàn cửa hàng"
-        },
-        "ecommerce": {
-          "industry": "Thương mại điện tử",
-          "brand": "Pocket Gear",
-          "tagline": "Thương hiệu đồ dã ngoại mở rộng trên Shopee và Instagram.",
-          "quote": "Chúng tôi thay agency bằng AI. AI xuất trang đích, Reels và quảng cáo nhanh hơn cả đội ngũ gộp lại — với chi phí chỉ là một phần nhỏ.",
-          "author": "Đồng sáng lập",
-          "metricLabel": "giảm chi phí marketing",
-          "secondary": "Sản lượng: 10× mỗi tháng"
+        "mingjian": {
+          "industry": "Thực phẩm & Công nghệ sinh học",
+          "brand": "MingJian Biotech",
+          "tagline": "Thương hiệu ruốc gà Đài Loan. Không đội marketing, không agency — chỉ một Landing Page đưa họ từ 0 đến hơn 20.000 lọ.",
+          "quote": "Chúng tôi xây dựng trang bán hàng ruốc gà với SaleCraft và bán hơn 20.000 lọ trong tháng đầu tiên. ROI thật ấn tượng — hoàn vốn trong vài giờ.",
+          "author": "Ông Lin",
+          "role": "CEO, MingJian Biotech",
+          "metricUnits": "lọ bán ra",
+          "metricDays": "ngày đạt được",
+          "metricPages": "Landing Page",
+          "highlight": "20.000+ lọ trong một tháng"
         }
       }
     },
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "Trải nghiệm marketing cao cấp, ",
+      "sectionTitle1": "Trải nghiệm marketing cao cấp,",
       "sectionTitle2": "sẵn sàng sử dụng ngay",
       "items": {
         "pipeline": {
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "Trả cho những gì ",
+      "title1": "Trả cho những gì",
       "title2": "bạn sử dụng",
       "subtitle": "Không phí hàng tháng, không chi phí ẩn. Nạp khi cần, trả cho những gì bạn dùng.",
       "badge": "Trả theo lượng dùng",
@@ -339,5 +324,30 @@
       "dashboard": "Đến Bảng điều khiển",
       "home": "Về trang chủ"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }

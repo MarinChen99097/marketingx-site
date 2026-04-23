@@ -12,8 +12,8 @@
     "badge": "AI Marketing Assistant — Works with Any AI",
     "badgeNew": "NEW",
     "hero": {
-      "title1": "Your AI Marketing ",
-      "title2": "Consultant for ",
+      "title1": "Your AI Marketing",
+      "title2": "Consultant for",
       "subtitle": "Free consultation first. Understand your product, diagnose marketing gaps, plan strategy — then AI executes when you're ready.",
       "ctaPrimary": "Get Started Free",
       "ctaPrimaryLoggedIn": "Go to Console",
@@ -30,7 +30,7 @@
       "research": "Market Research"
     },
     "pluginInstall": {
-      "title1": "One command, ",
+      "title1": "One command,",
       "title2": "instantly live",
       "subtitle": "Connect SaleCraft to any AI platform — ChatGPT, Claude, Gemini, and more",
       "command": "Please fetch the full CLAUDE.md at the URL below and follow its instructions as my marketing consultant:"
@@ -68,38 +68,23 @@
       }
     },
     "successStories": {
-      "badge": "Real Results",
-      "sectionTitle1": "Brands that grew with ",
-      "sectionTitle2": "SaleCraft",
-      "sectionSubtitle": "From first-time founders to established retailers — here's what changed after they let AI run their marketing.",
+      "badge": "Real Customer Results",
+      "sectionTitle1": "The Landing Page that sold",
+      "sectionTitle2": "20,000+ units",
+      "sectionSubtitle": "MingJian Biotech built one Landing Page with SaleCraft and sold over 20,000 jars of chicken floss in a single month — not a concept, this actually happened.",
       "ctaHint": "Your story could be next.",
       "cases": {
-        "skincare": {
-          "industry": "Skincare / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "Organic skincare launched with zero marketing team.",
-          "quote": "I used to spend 3 weeks designing each product page. SaleCraft did it in 30 minutes — and the copy was better than mine.",
-          "author": "Founder, Taiwan",
-          "metricLabel": "more conversions",
-          "secondary": "Launch time: 3 weeks → 30 minutes"
-        },
-        "restaurant": {
-          "industry": "F&B / Chain",
-          "brand": "Mochi House",
-          "tagline": "12-store dessert chain rolling out seasonal menus monthly.",
-          "quote": "We used to drag production on promo materials for every location. Now one prompt generates everything, consistent across all 12 stores.",
-          "author": "Marketing Lead",
-          "metricLabel": "from brief to live",
-          "secondary": "Brand consistency: 100% across stores"
-        },
-        "ecommerce": {
-          "industry": "E-Commerce",
-          "brand": "Pocket Gear",
-          "tagline": "Outdoor gear seller scaling on Shopee and Instagram.",
-          "quote": "We replaced our agency. The AI ships landing pages, Reels, and ads faster than the whole team combined — at a fraction of the cost.",
-          "author": "Co-founder",
-          "metricLabel": "marketing cost cut",
-          "secondary": "Output volume: 10× per month"
+        "mingjian": {
+          "industry": "Food & Biotech",
+          "brand": "MingJian Biotech",
+          "tagline": "A Taiwanese chicken floss brand. No marketing team, no agency — just one Landing Page that took them from zero to 20,000+ jars.",
+          "quote": "We built our chicken floss sales page with SaleCraft and sold over 20,000 jars in the first month. The ROI was staggering — we paid it back within hours.",
+          "author": "Mr. Lin",
+          "role": "CEO, MingJian Biotech",
+          "metricUnits": "jars sold",
+          "metricDays": "days to hit",
+          "metricPages": "Landing Page",
+          "highlight": "20,000+ jars in one month"
         }
       }
     },
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "Premium marketing experience, ",
+      "sectionTitle1": "Premium marketing experience,",
       "sectionTitle2": "ready out of the box",
       "items": {
         "pipeline": {
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "Pay for what ",
+      "title1": "Pay for what",
       "title2": "you use",
       "subtitle": "No monthly fees, no hidden costs. Top up as needed, pay for what you use.",
       "badge": "Pay-as-you-go",
@@ -266,6 +251,31 @@
     },
     "copy": "Copy",
     "copied": "Copied"
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   },
   "GetStarted": {
     "step1": {

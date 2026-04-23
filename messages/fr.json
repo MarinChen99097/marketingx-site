@@ -12,8 +12,8 @@
     "badge": "Assistant Marketing IA — Compatible avec tous les AI",
     "badgeNew": "NOUVEAU",
     "hero": {
-      "title1": "Votre Consultant ",
-      "title2": "Marketing IA pour ",
+      "title1": "Votre Consultant",
+      "title2": "Marketing IA pour",
       "subtitle": "Consultation gratuite d'abord. Comprendre votre produit, diagnostiquer les lacunes marketing, planifier — puis l'IA exécute quand vous êtes prêt.",
       "ctaPrimary": "Commencer gratuitement",
       "ctaPrimaryLoggedIn": "Aller à la console",
@@ -30,7 +30,7 @@
       "research": "Étude de marché"
     },
     "pluginInstall": {
-      "title1": "Une commande, ",
+      "title1": "Une commande,",
       "title2": "instantanément en ligne",
       "subtitle": "Connectez SaleCraft à n'importe quelle plateforme IA — ChatGPT, Claude, Gemini et plus",
       "command": "Veuillez lire l'intégralité du CLAUDE.md à l'URL ci-dessous et suivre ses instructions en tant que mon consultant marketing :"
@@ -68,38 +68,23 @@
       }
     },
     "successStories": {
-      "badge": "Résultats réels",
-      "sectionTitle1": "Des marques qui ont grandi avec ",
-      "sectionTitle2": "SaleCraft",
-      "sectionSubtitle": "Des fondateurs débutants aux détaillants établis — voici ce qui a changé quand ils ont confié leur marketing à l'IA.",
+      "badge": "Résultats Clients Réels",
+      "sectionTitle1": "La Landing Page qui a vendu",
+      "sectionTitle2": "20 000+ unités",
+      "sectionSubtitle": "MingJian Biotech a créé une Landing Page avec SaleCraft et a vendu plus de 20 000 pots de floss de poulet en un seul mois — ce n'est pas un concept, c'est réellement arrivé.",
       "ctaHint": "Votre histoire pourrait être la prochaine.",
       "cases": {
-        "skincare": {
-          "industry": "Soins de la peau / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "Marque de cosmétiques bio lancée sans équipe marketing.",
-          "quote": "Je passais 3 semaines à concevoir chaque page produit. SaleCraft l'a fait en 30 minutes — et les textes étaient meilleurs que les miens.",
-          "author": "Fondatrice, Taïwan",
-          "metricLabel": "de conversions en plus",
-          "secondary": "Temps de lancement : 3 semaines → 30 minutes"
-        },
-        "restaurant": {
-          "industry": "Restauration / Chaîne",
-          "brand": "Mochi House",
-          "tagline": "Chaîne de 12 boutiques de desserts lançant des menus saisonniers chaque mois.",
-          "quote": "Auparavant, la production des supports promo pour chaque boutique prenait une éternité. Maintenant, un seul prompt génère tout, avec une cohérence parfaite sur les 12 points de vente.",
-          "author": "Responsable Marketing",
-          "metricLabel": "du brief à la publication",
-          "secondary": "Cohérence de marque : 100 % dans toutes les boutiques"
-        },
-        "ecommerce": {
-          "industry": "E-commerce",
-          "brand": "Pocket Gear",
-          "tagline": "Vendeur d'équipement outdoor en expansion sur Shopee et Instagram.",
-          "quote": "Nous avons remplacé notre agence. L'IA livre des pages d'atterrissage, Reels et publicités plus vite que toute l'équipe réunie — pour une fraction du coût.",
-          "author": "Co-fondateur",
-          "metricLabel": "coûts marketing réduits",
-          "secondary": "Volume produit : 10× par mois"
+        "mingjian": {
+          "industry": "Alimentation & Biotech",
+          "brand": "MingJian Biotech",
+          "tagline": "Une marque taïwanaise de floss de poulet. Pas d'équipe marketing, pas d'agence — juste une Landing Page qui les a menés de zéro à plus de 20 000 pots.",
+          "quote": "Nous avons construit notre page de vente de floss de poulet avec SaleCraft et vendu plus de 20 000 pots le premier mois. Le ROI était stupéfiant — rentabilisé en quelques heures.",
+          "author": "M. Lin",
+          "role": "PDG, MingJian Biotech",
+          "metricUnits": "pots vendus",
+          "metricDays": "jours atteints",
+          "metricPages": "Landing Page",
+          "highlight": "20 000+ pots en un mois"
         }
       }
     },
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "Expérience marketing premium, ",
+      "sectionTitle1": "Expérience marketing premium,",
       "sectionTitle2": "prête à l'emploi",
       "items": {
         "pipeline": {
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "Payez pour ce que ",
+      "title1": "Payez pour ce que",
       "title2": "vous utilisez",
       "subtitle": "Pas de frais mensuels, pas de coûts cachés. Rechargez selon vos besoins, payez ce que vous utilisez.",
       "badge": "Paiement à l'utilisation",
@@ -339,5 +324,30 @@
       "dashboard": "Aller au tableau de bord",
       "home": "Retour à l'accueil"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }

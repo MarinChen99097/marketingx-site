@@ -2,25 +2,31 @@ import axios, { AxiosError, AxiosInstance } from 'axios';
 
 const MARKETING_BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'https://marketing-backend-v2-876464738390.asia-east1.run.app';
 const ZEREO_BACKEND_URL = process.env.NEXT_PUBLIC_ZEREO_URL || 'https://zereo-backend-876464738390.asia-east1.run.app';
-// salecraft.ai now owns its own /login route (Google-only with explicit ToS
-// consent). On 401 we clear the stale token and bounce to the local login —
-// we MUST NOT cross-domain to landingai.info anymore, or the user lands in
-// the wrong brand. Same-origin redirect keeps the whole auth surface inside
-// salecraft.ai.
-function redirectToSSOLogin() {
-  if (typeof window === 'undefined') return;
-  if ((window as unknown as { __401_redirecting?: boolean }).__401_redirecting) return;
-  (window as unknown as { __401_redirecting?: boolean }).__401_redirecting = true;
 
+// Module-scoped flag to suppress concurrent 401 redirects. Deliberately NOT set
+// when we skip redirect (e.g. already on /auth) so the next page's interceptor
+// can still fire after a successful sign-in. Resets on full page navigation.
+let isRedirectingToAuth = false;
+
+// salecraft.ai owns its own auth surface — 401 bounces users to /{locale}/auth
+// with a returnUrl, and the sign-in flow lives on-site (no landingai.info hop).
+function redirectToLocalAuth() {
+  if (typeof window === 'undefined') return;
+  if (isRedirectingToAuth) return;
+
+  // Stale tokens are always worth clearing — a 401 means the token is dead.
   localStorage.removeItem('token');
   localStorage.removeItem('refresh_token');
 
-  // Don't loop if we are already on the login page.
-  if (window.location.pathname.match(/\/(login|recover)(\/|$)/)) return;
+  const pathSegments = window.location.pathname.split('/');
+  const locale = pathSegments[1] || 'en';
 
-  const locale = window.location.pathname.split('/')[1] || 'en';
+  // Already on /auth → skip redirect to avoid a loop. Don't set the flag.
+  if (pathSegments[2] === 'auth') return;
+
+  isRedirectingToAuth = true;
   const returnPath = `${window.location.pathname}${window.location.search}`;
-  window.location.href = `/${locale}/login?returnUrl=${encodeURIComponent(returnPath)}`;
+  window.location.href = `/${locale}/auth?returnUrl=${encodeURIComponent(returnPath)}`;
 }
 
 function createClient(baseURL: string): AxiosInstance {
@@ -60,7 +66,7 @@ function createClient(baseURL: string): AxiosInstance {
         }
       }
 
-      redirectToSSOLogin();
+      redirectToLocalAuth();
       return Promise.reject(error);
     }
   );

@@ -12,8 +12,8 @@
     "badge": "AI マーケティングアシスタント — すべての AI に対応",
     "badgeNew": "NEW",
     "hero": {
-      "title1": "あなたのAIマーケティング ",
-      "title2": "コンサルタント ",
+      "title1": "あなたのAIマーケティング",
+      "title2": "コンサルタント",
       "subtitle": "まず無料相談。製品を理解し、マーケティングの課題を診断し、戦略を立案 — 準備ができたらAIが実行します。",
       "ctaPrimary": "無料で始める",
       "ctaPrimaryLoggedIn": "コンソールへ",
@@ -68,43 +68,28 @@
       }
     },
     "successStories": {
-      "badge": "実際の成果",
-      "sectionTitle1": "",
-      "sectionTitle2": "SaleCraftと共に成長したブランド",
-      "sectionSubtitle": "初めて起業する方から老舗の小売業者まで——AI にマーケティングを任せた結果、何が変わったのか。",
-      "ctaHint": "次のストーリーはあなたかもしれません。",
+      "badge": "実際のお客様の成果",
+      "sectionTitle1": "20,000個以上を売った",
+      "sectionTitle2": "ランディングページ",
+      "sectionSubtitle": "MingJian Biotech は SaleCraft で1枚のランディングページを作成し、1か月で鶏肉そぼろを 20,000 瓶以上販売しました — これは概念ではなく、実際に起きたことです。",
+      "ctaHint": "次はあなたの物語かもしれません。",
       "cases": {
-        "skincare": {
-          "industry": "スキンケア / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "マーケティングチームゼロで立ち上げたオーガニックスキンケア。",
-          "quote": "以前は各商品ページのデザインに 3 週間かけていました。SaleCraft は 30 分で完成——しかもコピーは自分が書いたものより優れていました。",
-          "author": "創業者、台湾",
-          "metricLabel": "コンバージョン向上",
-          "secondary": "ローンチ時間:3 週間 → 30 分"
-        },
-        "restaurant": {
-          "industry": "飲食 / チェーン",
-          "brand": "Mochi House",
-          "tagline": "毎月シーズンメニューを展開する 12 店舗のデザートチェーン。",
-          "quote": "以前は各店舗のプロモ素材の制作に時間がかかっていました。今は 1 つのプロンプトで全店舗分を一貫して生成できます。",
-          "author": "マーケティング責任者",
-          "metricLabel": "ブリーフから公開まで",
-          "secondary": "ブランド統一性:全店舗 100%"
-        },
-        "ecommerce": {
-          "industry": "EC",
-          "brand": "Pocket Gear",
-          "tagline": "Shopee と Instagram で拡大するアウトドア用品販売。",
-          "quote": "代理店を AI に置き換えました。ランディングページ、リール、広告をチーム全員より速く、しかもコストはわずかで仕上げます。",
-          "author": "共同創業者",
-          "metricLabel": "マーケティングコスト削減",
-          "secondary": "月間制作量:10 倍"
+        "mingjian": {
+          "industry": "食品・バイオテック",
+          "brand": "MingJian Biotech",
+          "tagline": "台湾発の鶏肉そぼろブランド。マーケティングチームなし、代理店なし — ただ1枚のランディングページで、ゼロから 20,000 瓶以上へ。",
+          "quote": "SaleCraft で鶏肉そぼろの販売ページを作って、初月に 20,000 瓶以上売れました。ROI は驚異的で、数時間で元が取れました。",
+          "author": "Lin さん",
+          "role": "MingJian Biotech CEO",
+          "metricUnits": "瓶販売",
+          "metricDays": "日で達成",
+          "metricPages": "ランディングページ",
+          "highlight": "1か月で 20,000 瓶以上"
         }
       }
     },
     "industries": {
-      "sectionTitle1": "あらゆる業界で ",
+      "sectionTitle1": "あらゆる業界で",
       "sectionTitle2": "マーケティングパワーを",
       "sectionTitle3": "デプロイ",
       "sectionSubtitle": "8業界、40+実証済みシナリオ、すべての課題にソリューション",
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "使った分だけ ",
+      "title1": "使った分だけ",
       "title2": "お支払い",
       "subtitle": "月額料金なし、隠れたコストなし。必要な時にチャージして、使った分だけお支払い。",
       "badge": "従量課金",
@@ -339,5 +324,30 @@
       "dashboard": "ダッシュボードへ",
       "home": "ホームに戻る"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }

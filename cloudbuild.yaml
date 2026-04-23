@@ -26,7 +26,7 @@ steps:
           --build-arg NEXT_PUBLIC_ZEREO_URL=https://zereo-backend-876464738390.asia-east1.run.app \
           --build-arg NEXT_PUBLIC_SITE_URL=https://salecraft.ai \
           --build-arg NEXT_PUBLIC_PLUGIN_SHA=$$PLUGIN_SHA \
-          --build-arg NEXT_PUBLIC_GOOGLE_CLIENT_ID=876464738390-56s31i7511f05qnb052dqcfvqhkoeb79.apps.googleusercontent.com \
+          --build-arg NEXT_PUBLIC_GOOGLE_CLIENT_ID=${_GOOGLE_CLIENT_ID} \
           -t asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:$COMMIT_SHA \
           -t asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:latest \
           .
@@ -64,5 +64,10 @@ steps:
 images:
   - 'asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:$COMMIT_SHA'
   - 'asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:latest'
+# Substitutions must be supplied via the Cloud Build trigger UI
+# (NEVER hardcode secrets — see /CLAUDE.md:憑證與密鑰安全規範).
+substitutions:
+  _GOOGLE_CLIENT_ID: ''
 options:
   logging: CLOUD_LOGGING_ONLY
+  substitution_option: ALLOW_LOOSE

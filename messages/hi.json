@@ -12,8 +12,8 @@
     "badge": "AI मार्केटिंग असिस्टेंट — किसी भी AI के साथ काम करता है",
     "badgeNew": "नया",
     "hero": {
-      "title1": "आपका AI मार्केटिंग ",
-      "title2": "सलाहकार, विशेषज्ञता ",
+      "title1": "आपका AI मार्केटिंग",
+      "title2": "सलाहकार, विशेषज्ञता",
       "subtitle": "पहले मुफ्त परामर्श लें। अपने उत्पाद को समझें, मार्केटिंग कमियों का पता लगाएं, रणनीति बनाएं — फिर जब आप तैयार हों, AI काम करे।",
       "ctaPrimary": "मुफ्त शुरू करें",
       "ctaPrimaryLoggedIn": "कंसोल पर जाएं",
@@ -30,7 +30,7 @@
       "research": "बाजार अनुसंधान"
     },
     "pluginInstall": {
-      "title1": "एक कमांड, ",
+      "title1": "एक कमांड,",
       "title2": "तुरंत लाइव",
       "subtitle": "SaleCraft को किसी भी AI प्लेटफ़ॉर्म से जोड़ें — ChatGPT, Claude, Gemini और अन्य",
       "command": "कृपया नीचे दिए गए URL पर CLAUDE.md की पूरी सामग्री पढ़ें और मेरे मार्केटिंग सलाहकार के रूप में उसके निर्देशों का पालन करें:"
@@ -68,38 +68,23 @@
       }
     },
     "successStories": {
-      "badge": "असली नतीजे",
-      "sectionTitle1": "इनके साथ बढ़े ब्रांड ",
-      "sectionTitle2": "SaleCraft",
-      "sectionSubtitle": "पहली बार उद्यम शुरू करने वालों से लेकर स्थापित रिटेलर्स तक — देखिए क्या बदला जब उन्होंने अपनी मार्केटिंग AI को सौंप दी।",
-      "ctaHint": "अगली कहानी आपकी हो सकती है।",
+      "badge": "वास्तविक ग्राहक परिणाम",
+      "sectionTitle1": "लैंडिंग पेज जिसने",
+      "sectionTitle2": "20,000+ यूनिट बेचे",
+      "sectionSubtitle": "MingJian Biotech ने SaleCraft के साथ एक लैंडिंग पेज बनाया और एक ही महीने में 20,000 से अधिक चिकन फ्लॉस जार बेचे — यह कोई अवधारणा नहीं है, यह वास्तव में हुआ।",
+      "ctaHint": "आपकी कहानी अगली हो सकती है।",
       "cases": {
-        "skincare": {
-          "industry": "स्किनकेयर / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "बिना किसी मार्केटिंग टीम के लॉन्च किया गया ऑर्गैनिक स्किनकेयर ब्रांड।",
-          "quote": "पहले मुझे हर प्रोडक्ट पेज डिज़ाइन करने में 3 हफ्ते लगते थे। SaleCraft ने इसे 30 मिनट में कर दिया — और कॉपी मेरी लिखी से बेहतर थी।",
-          "author": "संस्थापक, ताइवान",
-          "metricLabel": "अधिक कन्वर्ज़न",
-          "secondary": "लॉन्च समय: 3 हफ्ते → 30 मिनट"
-        },
-        "restaurant": {
-          "industry": "F&B / चेन",
-          "brand": "Mochi House",
-          "tagline": "हर महीने सीज़नल मेनू लाने वाली 12-स्टोर डेज़र्ट चेन।",
-          "quote": "पहले हर लोकेशन के लिए प्रोमो मटीरियल की प्रोडक्शन में बहुत समय लगता था। अब एक ही prompt सब कुछ बना देता है, सभी 12 स्टोर पर एक जैसा।",
-          "author": "मार्केटिंग लीड",
-          "metricLabel": "ब्रीफ से लाइव तक",
-          "secondary": "ब्रांड एकरूपता: सभी स्टोर पर 100%"
-        },
-        "ecommerce": {
-          "industry": "ई-कॉमर्स",
-          "brand": "Pocket Gear",
-          "tagline": "Shopee और Instagram पर बढ़ता आउटडोर गियर विक्रेता।",
-          "quote": "हमने अपनी एजेंसी की जगह AI को रख दिया। AI लैंडिंग पेज, रील्स और ऐड्स पूरी टीम से भी तेज़ बनाता है — वो भी बहुत कम लागत में।",
-          "author": "सह-संस्थापक",
-          "metricLabel": "मार्केटिंग लागत में कटौती",
-          "secondary": "आउटपुट वॉल्यूम: प्रति माह 10×"
+        "mingjian": {
+          "industry": "खाद्य और बायोटेक",
+          "brand": "MingJian Biotech",
+          "tagline": "एक ताइवानी चिकन फ्लॉस ब्रांड। कोई मार्केटिंग टीम नहीं, कोई एजेंसी नहीं — बस एक लैंडिंग पेज जिसने उन्हें शून्य से 20,000+ जार तक पहुंचाया।",
+          "quote": "हमने SaleCraft के साथ अपना चिकन फ्लॉस सेल्स पेज बनाया और पहले महीने में 20,000 से अधिक जार बेचे। ROI चौंकाने वाला था — घंटों में भुगतान हो गया।",
+          "author": "श्री लिन",
+          "role": "सीईओ, MingJian Biotech",
+          "metricUnits": "बेचे गए जार",
+          "metricDays": "दिनों में पूरा",
+          "metricPages": "लैंडिंग पेज",
+          "highlight": "एक महीने में 20,000+ जार"
         }
       }
     },
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "प्रीमियम मार्केटिंग अनुभव, ",
+      "sectionTitle1": "प्रीमियम मार्केटिंग अनुभव,",
       "sectionTitle2": "तुरंत उपयोग के लिए तैयार",
       "items": {
         "pipeline": {
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "जितना उपयोग करें ",
+      "title1": "जितना उपयोग करें",
       "title2": "उतना भुगतान करें",
       "subtitle": "कोई मासिक शुल्क नहीं, कोई छिपी लागत नहीं। जरूरत पड़ने पर रिचार्ज करें, जितना उपयोग करें उतना भुगतान करें।",
       "badge": "उपयोग-आधारित भुगतान",
@@ -339,5 +324,30 @@
       "dashboard": "डैशबोर्ड पर जाएं",
       "home": "होम पर वापस जाएं"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }

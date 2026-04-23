@@ -254,12 +254,13 @@ export default function GetStartedPage() {
       window.history.replaceState(null, "", `/${locale}/get-started`);
     }
 
-    // ── 4. No token → redirect to Landing AI login (salecraft.ai has no /login route) ──
+    // ── 4. No token → redirect to salecraft.ai's own /auth page ──
+    // Auth surface now lives on-site (Google OAuth only). Landing AI remains
+    // the identity provider underneath — we just own the login UI now.
     const token = localStorage.getItem("token");
     if (!token) {
-      // Force the custom domain — window.location.origin could be the Cloud Run URL.
-      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
-      window.location.href = `https://landingai.info/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
+      const returnPath = `/${locale}/get-started`;
+      window.location.href = `/${locale}/auth?returnUrl=${encodeURIComponent(returnPath)}`;
       return;
     }
     setIsLoggedIn(true);
@@ -388,9 +389,11 @@ export default function GetStartedPage() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("refresh_token");
-    // Redirect to Landing AI unified auth for account switching (salecraft.ai has no /login route)
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salecraft.ai";
-    window.location.href = `https://landingai.info/${locale}/login?returnUrl=${encodeURIComponent(`${siteUrl}/${locale}/get-started`)}`;
+    localStorage.removeItem("user");
+    // Redirect to salecraft.ai's own /auth page (Google OAuth only). The
+    // backend /auth/google endpoint handles both "first login" and "switch
+    // account" paths — no need to bounce through landingai.info anymore.
+    window.location.href = `/${locale}/auth?returnUrl=${encodeURIComponent(`/${locale}/get-started`)}`;
   };
 
   if (loading) {

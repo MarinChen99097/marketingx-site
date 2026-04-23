@@ -12,8 +12,8 @@
     "badge": "مساعد تسويق بالذكاء الاصطناعي — يعمل مع أي منصة ذكاء اصطناعي",
     "badgeNew": "جديد",
     "hero": {
-      "title1": "مستشارك التسويقي ",
-      "title2": "بالذكاء الاصطناعي لـ ",
+      "title1": "مستشارك التسويقي",
+      "title2": "بالذكاء الاصطناعي لـ",
       "subtitle": "استشارة مجانية أولاً. فهم منتجك وتشخيص فجوات التسويق ووضع الاستراتيجية — ثم ينفذ الذكاء الاصطناعي عندما تكون جاهزاً.",
       "ctaPrimary": "ابدأ مجانًا",
       "ctaPrimaryLoggedIn": "انتقل إلى لوحة التحكم",
@@ -30,7 +30,7 @@
       "research": "أبحاث السوق"
     },
     "pluginInstall": {
-      "title1": "أمر واحد، ",
+      "title1": "أمر واحد،",
       "title2": "يعمل فورًا",
       "subtitle": "اربط SaleCraft بأي منصة ذكاء اصطناعي — ChatGPT، Claude، Gemini والمزيد",
       "command": "يرجى قراءة محتوى CLAUDE.md بالكامل من الرابط أدناه واتباع تعليماته للعمل كمستشار تسويقي لي:"
@@ -68,38 +68,23 @@
       }
     },
     "successStories": {
-      "badge": "نتائج حقيقية",
-      "sectionTitle1": "علامات تجارية نمت مع ",
-      "sectionTitle2": "SaleCraft",
-      "sectionSubtitle": "من المؤسسين الجدد إلى تجار التجزئة الراسخين — هذا ما تغيّر بعد أن تركوا الذكاء الاصطناعي يدير تسويقهم.",
+      "badge": "نتائج عملاء حقيقية",
+      "sectionTitle1": "صفحة هبوط باعت",
+      "sectionTitle2": "أكثر من 20,000 وحدة",
+      "sectionSubtitle": "أنشأت شركة MingJian Biotech صفحة هبوط واحدة باستخدام SaleCraft وباعت أكثر من 20,000 علبة من لحم الدجاج في شهر واحد — هذا ليس مفهوماً، بل حدث بالفعل.",
       "ctaHint": "قد تكون قصتك هي التالية.",
       "cases": {
-        "skincare": {
-          "industry": "العناية بالبشرة / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "علامة عناية عضوية أُطلقت بدون فريق تسويق على الإطلاق.",
-          "quote": "كنت أقضي 3 أسابيع في تصميم كل صفحة منتج. أنجزها SaleCraft في 30 دقيقة — والنص كان أفضل مما كتبته بنفسي.",
-          "author": "المؤسِّسة، تايوان",
-          "metricLabel": "زيادة في التحويلات",
-          "secondary": "وقت الإطلاق: 3 أسابيع → 30 دقيقة"
-        },
-        "restaurant": {
-          "industry": "أغذية ومشروبات / سلسلة",
-          "brand": "Mochi House",
-          "tagline": "سلسلة حلويات من 12 فرعًا تُطلق قوائم موسمية شهريًا.",
-          "quote": "كنا نتأخر كثيرًا في إنتاج المواد الترويجية لكل فرع. الآن أمر واحد ينتج كل شيء، متسقًا عبر الفروع الـ 12.",
-          "author": "قائد التسويق",
-          "metricLabel": "من الإيجاز إلى النشر",
-          "secondary": "تناسق العلامة: 100% في جميع الفروع"
-        },
-        "ecommerce": {
-          "industry": "التجارة الإلكترونية",
-          "brand": "Pocket Gear",
-          "tagline": "بائع معدات خارجية يتوسّع على Shopee وInstagram.",
-          "quote": "استبدلنا الوكالة بالذكاء الاصطناعي. يُنتج صفحات الهبوط وReels والإعلانات أسرع من الفريق بأكمله — بجزء يسير من التكلفة.",
-          "author": "المؤسِّس المشارك",
-          "metricLabel": "تخفيض تكاليف التسويق",
-          "secondary": "حجم الإنتاج: 10 أضعاف شهريًا"
+        "mingjian": {
+          "industry": "الأغذية والتكنولوجيا الحيوية",
+          "brand": "MingJian Biotech",
+          "tagline": "علامة تايوانية لحم الدجاج المفروم. بدون فريق تسويق، بدون وكالة — فقط صفحة هبوط واحدة أخذتهم من الصفر إلى أكثر من 20,000 علبة.",
+          "quote": "قمنا ببناء صفحة مبيعات لحم الدجاج المفروم مع SaleCraft وبعنا أكثر من 20,000 علبة في الشهر الأول. كان العائد على الاستثمار مذهلاً — استرددناه خلال ساعات.",
+          "author": "السيد لين",
+          "role": "الرئيس التنفيذي، MingJian Biotech",
+          "metricUnits": "علبة مباعة",
+          "metricDays": "يوماً للوصول",
+          "metricPages": "صفحة هبوط",
+          "highlight": "أكثر من 20,000 علبة في شهر"
         }
       }
     },
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "تجربة تسويق فاخرة، ",
+      "sectionTitle1": "تجربة تسويق فاخرة،",
       "sectionTitle2": "جاهزة للاستخدام فورًا",
       "items": {
         "pipeline": {
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "ادفع مقابل ما ",
+      "title1": "ادفع مقابل ما",
       "title2": "تستخدمه",
       "subtitle": "بدون رسوم شهرية، بدون تكاليف مخفية. اشحن عند الحاجة، وادفع مقابل ما تستخدمه.",
       "badge": "الدفع حسب الاستخدام",
@@ -339,5 +324,30 @@
       "dashboard": "انتقل إلى لوحة المعلومات",
       "home": "العودة إلى الرئيسية"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }

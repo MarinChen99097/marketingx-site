@@ -12,8 +12,8 @@
     "badge": "AI 营销助手 — 支持所有 AI 平台",
     "badgeNew": "全新",
     "hero": {
-      "title1": "你的 AI 营销 ",
-      "title2": "顾问，擅长 ",
+      "title1": "你的 AI 营销",
+      "title2": "顾问，擅长",
       "subtitle": "先免费咨询。了解你的产品、诊断营销缺口、规划策略 — 准备好了，AI 帮你执行。",
       "ctaPrimary": "免费开始使用",
       "ctaPrimaryLoggedIn": "前往控制台",
@@ -68,38 +68,23 @@
       }
     },
     "successStories": {
-      "badge": "真实成果",
-      "sectionTitle1": "和 ",
-      "sectionTitle2": "SaleCraft 一起成长的品牌",
-      "sectionSubtitle": "从初次创业的新手到经营多年的零售商——当他们把营销交给 AI 后,发生了这些改变。",
+      "badge": "真实客户成果",
+      "sectionTitle1": "卖出 20,000 罐的",
+      "sectionTitle2": "Landing Page",
+      "sectionSubtitle": "明健生技用 SaleCraft 做了一页 Landing Page，单月卖出超过 20,000 罐鸡肉松——不是概念，是真的发生过的事。",
       "ctaHint": "下一个故事可能就是你。",
       "cases": {
-        "skincare": {
-          "industry": "护肤 / DTC 品牌",
-          "brand": "Rose Essence Co.",
-          "tagline": "没有营销团队,依然成功推出的有机护肤品牌。",
-          "quote": "我以前设计一个产品页要花 3 周。SaleCraft 只花 30 分钟——而且文案比我自己写的还好。",
-          "author": "创始人,台湾",
-          "metricLabel": "转化率提升",
-          "secondary": "上线时间:3 周 → 30 分钟"
-        },
-        "restaurant": {
-          "industry": "餐饮 / 连锁品牌",
-          "brand": "Mochi House",
-          "tagline": "每月推出季节性菜单的 12 家连锁甜品店。",
-          "quote": "我们以前每家店的宣传素材都要拖很久。现在一个 prompt 就能生出全部,12 家店风格完全一致。",
-          "author": "营销主管",
-          "metricLabel": "从 brief 到上线",
-          "secondary": "品牌一致性:全门店 100%"
-        },
-        "ecommerce": {
-          "industry": "电商",
-          "brand": "Pocket Gear",
-          "tagline": "在 Shopee 与 Instagram 扩张的户外用品品牌。",
-          "quote": "我们把代理商换成 AI。Landing Page、Reels、广告的产出速度比整个团队加起来还快——成本只是零头。",
-          "author": "联合创始人",
-          "metricLabel": "营销成本下降",
-          "secondary": "产出量:每月 10 倍"
+        "mingjian": {
+          "industry": "食品生技",
+          "brand": "明健生技",
+          "tagline": "台湾在地鸡肉松品牌。没有营销团队、没有代理商，只用一页 Landing Page 完成从 0 到 20,000 罐的突破。",
+          "quote": "我们用 SaleCraft 做了鸡肉松的销售页面，第一个月就卖出超过 20,000 罐。投资报酬率超惊人——几小时内就回本了。",
+          "author": "林先生",
+          "role": "明健生技 执行长",
+          "metricUnits": "罐售出",
+          "metricDays": "天达成",
+          "metricPages": "页 Landing Page",
+          "highlight": "单月卖出 20,000+ 罐"
         }
       }
     },
@@ -339,5 +324,30 @@
       "dashboard": "前往仪表盘",
       "home": "回首页"
     }
+  },
+  "Auth": {
+    "title": "开始你的 AI 营销之旅",
+    "subtitle": "30 秒内登录，用 Google 帐号即可开始使用",
+    "back": "返回首页",
+    "agree": "我已阅读并同意",
+    "terms": "服务条款",
+    "and": "和",
+    "privacy": "隐私政策",
+    "agreeHint": "勾选后才能使用 Google 登录",
+    "continueWithGoogle": "继续以 Google 登录",
+    "loadingAuth": "验证中，请稍候…",
+    "errorGeneric": "登录失败，请重试。",
+    "errorNoCredential": "未收到 Google 凭证，请重试。",
+    "errorBackend": "验证服务器暂时无法响应，请稍后再试。",
+    "errorTermsRequired": "请先勾选同意服务条款与隐私政策。",
+    "firstTimeHint": "首次登录将自动创建你的 SaleCraft 帐号",
+    "existingHint": "第二次以后，这就是你的登录入口",
+    "alreadySignedIn": "检测到你已登录，准备前往下一步…",
+    "contactSupport": "遇到问题？请联络",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "返回首页",
+    "failedToLoad": "法律条款加载失败，请稍后重试或联络 zereo@connact.ai。"
   }
 }

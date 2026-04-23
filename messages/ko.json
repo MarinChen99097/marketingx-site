@@ -12,8 +12,8 @@
     "badge": "AI 마케팅 어시스턴트 — 모든 AI 플랫폼 지원",
     "badgeNew": "NEW",
     "hero": {
-      "title1": "당신의 AI 마케팅 ",
-      "title2": "컨설턴트 ",
+      "title1": "당신의 AI 마케팅",
+      "title2": "컨설턴트",
       "subtitle": "먼저 무료 상담. 제품 이해, 마케팅 진단, 전략 수립 — 준비되면 AI가 실행합니다.",
       "ctaPrimary": "무료로 시작하기",
       "ctaPrimaryLoggedIn": "콘솔로 이동",
@@ -30,7 +30,7 @@
       "research": "시장 조사"
     },
     "pluginInstall": {
-      "title1": "명령어 하나로, ",
+      "title1": "명령어 하나로,",
       "title2": "즉시 실행",
       "subtitle": "SaleCraft를 모든 AI 플랫폼에 연결 — ChatGPT, Claude, Gemini 등",
       "command": "아래 URL의 CLAUDE.md 전체를 읽고 지침에 따라 제 마케팅 컨설턴트 역할을 해 주세요："
@@ -68,43 +68,28 @@
       }
     },
     "successStories": {
-      "badge": "실제 성과",
-      "sectionTitle1": "",
-      "sectionTitle2": "SaleCraft와 함께 성장한 브랜드",
-      "sectionSubtitle": "처음 창업하는 분부터 기존 소매업체까지——AI에게 마케팅을 맡긴 후 무엇이 달라졌는지 확인해 보세요.",
-      "ctaHint": "다음 스토리의 주인공은 당신일 수 있습니다.",
+      "badge": "실제 고객 성과",
+      "sectionTitle1": "20,000개 이상 팔린",
+      "sectionTitle2": "랜딩 페이지",
+      "sectionSubtitle": "MingJian Biotech는 SaleCraft로 랜딩 페이지 하나를 만들어 한 달 만에 닭고기 볶음 플로스 20,000병 이상을 판매했습니다 — 개념이 아닌 실제로 일어난 일입니다.",
+      "ctaHint": "다음 이야기는 당신일 수 있습니다.",
       "cases": {
-        "skincare": {
-          "industry": "스킨케어 / DTC",
-          "brand": "Rose Essence Co.",
-          "tagline": "마케팅 팀 없이 출시한 유기농 스킨케어 브랜드.",
-          "quote": "예전에는 상품 페이지 하나 디자인하는 데 3주가 걸렸어요. SaleCraft는 30분 만에 완성했고—카피도 제가 쓴 것보다 좋았습니다.",
-          "author": "창업자, 대만",
-          "metricLabel": "전환율 상승",
-          "secondary": "출시 시간: 3주 → 30분"
-        },
-        "restaurant": {
-          "industry": "F&B / 체인",
-          "brand": "Mochi House",
-          "tagline": "매월 시즌 메뉴를 출시하는 12개 매장 디저트 체인.",
-          "quote": "이전에는 매장별 프로모션 자료 제작이 오래 걸렸어요. 이제 프롬프트 하나로 12개 매장 전체가 일관되게 생성됩니다.",
-          "author": "마케팅 리드",
-          "metricLabel": "브리프에서 라이브까지",
-          "secondary": "브랜드 일관성: 전 매장 100%"
-        },
-        "ecommerce": {
-          "industry": "이커머스",
-          "brand": "Pocket Gear",
-          "tagline": "Shopee와 Instagram에서 확장 중인 아웃도어 용품 판매.",
-          "quote": "대행사를 AI로 교체했어요. 랜딩 페이지, 릴스, 광고를 팀 전체보다 빠르게—그리고 훨씬 저렴하게 제작합니다.",
-          "author": "공동 창업자",
-          "metricLabel": "마케팅 비용 절감",
-          "secondary": "월간 제작량: 10배"
+        "mingjian": {
+          "industry": "식품·바이오텍",
+          "brand": "MingJian Biotech",
+          "tagline": "대만 닭고기 플로스 브랜드. 마케팅 팀도, 에이전시도 없이 — 단 하나의 랜딩 페이지로 0에서 20,000병 이상을 달성했습니다.",
+          "quote": "SaleCraft로 닭고기 플로스 판매 페이지를 만들었고 첫 달에 20,000병 이상 판매했습니다. ROI가 놀라웠어요 — 몇 시간 만에 본전을 뽑았습니다.",
+          "author": "Lin 씨",
+          "role": "MingJian Biotech CEO",
+          "metricUnits": "병 판매",
+          "metricDays": "일 만에 달성",
+          "metricPages": "랜딩 페이지",
+          "highlight": "한 달에 20,000병 이상"
         }
       }
     },
     "industries": {
-      "sectionTitle1": "어떤 산업에서든 ",
+      "sectionTitle1": "어떤 산업에서든",
       "sectionTitle2": "마케팅 파워를",
       "sectionTitle3": " 배포하세요",
       "sectionSubtitle": "8개 산업, 40+ 검증된 시나리오, 모든 페인포인트에 솔루션",
@@ -158,7 +143,7 @@
       }
     },
     "capabilities": {
-      "sectionTitle1": "프리미엄 마케팅 경험, ",
+      "sectionTitle1": "프리미엄 마케팅 경험,",
       "sectionTitle2": "바로 사용 가능",
       "items": {
         "pipeline": {
@@ -234,7 +219,7 @@
       }
     },
     "pricing": {
-      "title1": "사용한 만큼만 ",
+      "title1": "사용한 만큼만",
       "title2": "결제하세요",
       "subtitle": "월 요금 없음, 숨겨진 비용 없음. 필요할 때 충전하고, 사용한 만큼만 결제하세요.",
       "badge": "종량제",
@@ -339,5 +324,30 @@
       "dashboard": "대시보드로 이동",
       "home": "홈으로 돌아가기"
     }
+  },
+  "Auth": {
+    "title": "Start your AI marketing journey",
+    "subtitle": "Sign in with Google in 30 seconds",
+    "back": "Back to home",
+    "agree": "I have read and agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "agreeHint": "Check the box to enable Google sign-in",
+    "continueWithGoogle": "Continue with Google",
+    "loadingAuth": "Verifying your account…",
+    "errorGeneric": "Sign-in failed. Please try again.",
+    "errorNoCredential": "Google did not return a credential. Please try again.",
+    "errorBackend": "Authentication server is temporarily unavailable. Please try again later.",
+    "errorTermsRequired": "Please agree to the Terms of Service and Privacy Policy first.",
+    "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
+    "existingHint": "Already have an account? Same button — it just signs you in",
+    "alreadySignedIn": "You're already signed in, redirecting…",
+    "contactSupport": "Need help? Contact",
+    "supportEmail": "zereo@connact.ai"
+  },
+  "Legal": {
+    "backToHome": "Back to home",
+    "failedToLoad": "Failed to load the document. Please try again later or contact zereo@connact.ai."
   }
 }
