@@ -537,9 +537,15 @@ export default function SaleCraftPage() {
                   >
                     {/* Notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a1c] rounded-b-2xl z-10" />
-                    {/* LP screenshot — tall, scrolled preview. Below-the-fold,
-                        so no `priority` (would contend with hero LCP). */}
-                    <div className="absolute inset-0 overflow-hidden">
+                    {/* LP screenshot — scrollable so visitors can preview the
+                        full 1600px tall Landing Page inside the phone frame.
+                        WebkitOverflowScrolling:touch enables momentum-scroll
+                        on iOS; overscroll-contain stops scroll chaining to the
+                        page when the user hits the bottom. */}
+                    <div
+                      className="absolute inset-0 overflow-y-auto overscroll-contain"
+                      style={{ WebkitOverflowScrolling: "touch" }}
+                    >
                       <Image
                         src={MINGJIAN_STORY.image}
                         alt={MINGJIAN_STORY.imageAlt}
