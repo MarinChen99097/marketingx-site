@@ -32,12 +32,34 @@ export const metadata: Metadata = {
     title: "SaleCraft — AI Marketing Consultant",
     description:
       "Free AI marketing consultant for product sellers. Brand analysis, strategy planning, landing pages, reels, and social posts — all in 30 minutes.",
+    // Must be declared explicitly: the `app/opengraph-image.tsx` convention
+    // lives under the root segment while this metadata sits in `[locale]/`,
+    // and Next.js shallow-merges the child's openGraph over the parent — so
+    // the auto-injected og:image from the convention was being dropped.
+    // Without og:image, scrapers (LINE, FB, ...) fell back to any large
+    // page image and started picking the MingJian demo .webp.
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "SaleCraft — AI Marketing Consultant",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "SaleCraft — AI Marketing Consultant",
     description:
       "Free AI marketing consultant for product sellers. Brand analysis, strategy planning, landing pages, reels, and social posts.",
+    images: [
+      {
+        url: "/twitter-image",
+        width: 1200,
+        height: 630,
+        alt: "SaleCraft — AI Marketing Consultant",
+      },
+    ],
   },
   icons: {
     icon: [
