@@ -13,6 +13,7 @@ import {
 import { LandingAILogo } from "@/components/LandingAILogo";
 import { Button } from "@/components/ui/button";
 import api, { zereoApi } from "@/lib/api";
+import { detectCountry, isTaiwan } from "@/lib/geo";
 
 // lucide-react has no TikTok icon — inline an ElementType-compatible SVG
 // so it can be passed as `icon={TikTokIcon}` to ActionCard.
@@ -84,6 +85,9 @@ export default function GetStartedPage() {
   const [copied, setCopied] = useState(false);
   const [topupAmount, setTopupAmount] = useState(20);
   const [customAmount, setCustomAmount] = useState(false);
+  // Detected visitor country (ISO 3166-1 alpha-2). Null until geo lookup finishes
+  // or if all providers fail. TW → PayUni, everything else → Stripe.
+  const [country, setCountry] = useState<string | null>(null);
   const [metaConnected, setMetaConnected] = useState(false);
   const [tiktokConnected, setTiktokConnected] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
@@ -368,17 +372,75 @@ export default function GetStartedPage() {
     alert("Google 連結暫時無法使用，請稍後再試");
   };
 
-  const handleStripeTopup = async () => {
+  // Fire-and-forget country detection on mount — result is cached in
+  // sessionStorage by detectCountry(), so subsequent calls are free.
+  useEffect(() => {
+    let cancelled = false;
+    detectCountry().then((cc) => { if (!cancelled) setCountry(cc); });
+    return () => { cancelled = true; };
+  }, []);
+
+  /**
+   * PayUni uses a POST auto-submit form (not a URL redirect). Build a hidden
+   * form with the server-returned action_url + encrypted form_data, append it
+   * to <body>, then submit() — this triggers a full-page POST to PayUni's
+   * hosted payment page.
+   */
+  const submitPayUniForm = (actionUrl: string, formData: Record<string, string>) => {
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = actionUrl;
+    form.style.display = "none";
+    for (const [name, value] of Object.entries(formData)) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = name;
+      input.value = String(value);
+      form.appendChild(input);
+    }
+    document.body.appendChild(form);
+    form.submit();
+  };
+
+  const handleTopup = async () => {
     // Save current credits before redirect so we can show diff on return
     localStorage.setItem("mx_prev_credits", String(userCredits));
+
+    // Geo hadn't resolved yet? Wait briefly so TW users don't get sent to Stripe.
+    let cc = country;
+    if (!cc) cc = await detectCountry();
+
+    const successUrl = `${window.location.origin}/${locale}/get-started?topup=success`;
+    const cancelUrl = `${window.location.origin}/${locale}/get-started`;
+
+    if (isTaiwan(cc)) {
+      try {
+        const res = await api.post("/pricing/payuni/checkout", {
+          amount_usd: topupAmount,
+          success_url: successUrl,
+          cancel_url: cancelUrl,
+        });
+        const { action_url, form_data } = res.data || {};
+        if (action_url && form_data) {
+          submitPayUniForm(action_url, form_data);
+          return;
+        }
+        alert(locale === "en" ? "Unable to start checkout — please try again." : "無法啟動付款流程，請稍後再試。");
+      } catch (err) {
+        console.error("[GetStarted] PayUni error:", err);
+        alert(locale === "en" ? "PayUni top-up is unavailable right now. Please try again later." : "PayUni 儲值暫時無法使用，請稍後再試。");
+      }
+      return;
+    }
+
+    // Default: Stripe (non-TW or geo-detection failed)
     try {
       const res = await api.post("/pricing/checkout", {
         amount_usd: topupAmount,
-        success_url: `${window.location.origin}/${locale}/get-started?topup=success`,
-        cancel_url: `${window.location.origin}/${locale}/get-started`,
+        success_url: successUrl,
+        cancel_url: cancelUrl,
       });
       if (res.data?.checkout_url) { window.location.href = res.data.checkout_url; return; }
-      // API succeeded without a checkout URL → unexpected response shape
       alert(locale === "en" ? "Unable to start checkout — please try again." : "無法啟動付款流程，請稍後再試。");
     } catch (err) {
       console.error("[GetStarted] Stripe error:", err);
@@ -810,11 +872,14 @@ export default function GetStartedPage() {
             </div>
 
             <Button
-              onClick={handleStripeTopup}
+              onClick={handleTopup}
               className="w-full h-11 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20"
             >
               <CreditCard className="mr-2 w-4 h-4" />
               {t("step5.btn")}
+              {isTaiwan(country) && (
+                <span className="ml-2 text-[10px] uppercase tracking-wider opacity-80">PayUni</span>
+              )}
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
