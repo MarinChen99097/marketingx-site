@@ -257,14 +257,41 @@
       "title": "SaleCraft를 AI에 연결",
       "desc": "AI 어시스턴트 설정에 추가하면 모든 마케팅 도구를 사용할 수 있습니다. ChatGPT, Claude, Gemini 등 지원.",
       "command": "아래 URL의 CLAUDE.md 전체를 읽고 지침에 따라 제 마케팅 컨설턴트 역할을 해 주세요：",
-      "copyBtn": "명령어 복사",
-      "copiedBtn": "클립보드에 복사됨!"
+      "copyBtn": "복사",
+      "copiedBtn": "복사됨",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "기타 AI"
+      },
+      "claudeWeb": {
+        "s1": "Claude.ai 왼쪽 하단 [+] → Connectors → Manage connectors → \"+ Add custom connector\" 클릭",
+        "s2": "아래 MCP URL을 붙여넣고 Add로 연결 완료:",
+        "s3": "새 대화에서 아래 프롬프트를 붙여넣으면 Claude가 SaleCraft로 작동합니다:",
+        "requirePro": "Claude Pro / Max / Team / Enterprise 플랜이 필요합니다"
+      },
+      "claudeCode": {
+        "s1": "터미널에서 아래 명령으로 SaleCraft MCP server 설치:",
+        "s2": "Claude Code를 실행하고 새 대화에서 아래 프롬프트를 붙여넣으세요:"
+      },
+      "openClaw": {
+        "s1": "터미널에서 아래 명령으로 SaleCraft MCP server 설치:",
+        "s2": "OpenClaw를 시작하고 채팅 채널에서 아래 프롬프트를 붙여넣으세요:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi 등의 AI는 아래 프롬프트를 붙여넣어 상담 모드를 시작하세요 (채팅만, MCP 도구 호출 불가):",
+        "chatgptHint": "💡 ChatGPT Plus 이상 사용자는 설정 → Apps & Connectors → Developer Mode에서 custom MCP를 추가할 수 있습니다. URL은 Claude.ai와 동일:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "AI 로그인 토큰 복사",
       "desc": "생성 후 이 토큰을 AI 어시스턴트(ChatGPT, Claude, Gemini 등)에 붙여넣으면 이메일과 비밀번호 없이 SaleCraft에 로그인할 수 있습니다. 토큰은 12시간 후 자동으로 만료됩니다.",
-      "generatePrompt": "버튼을 눌러 전용 AI 토큰을 생성하세요.",
-      "generateBtn": "AI 토큰 생성",
+      "generatePrompt": "버튼을 눌러 전용 로그인 토큰을 생성하세요.",
+      "generateBtn": "로그인 토큰 생성",
       "loading": "토큰 생성 중...",
       "notReady": "(아직 생성되지 않음)",
       "copyBtn": "토큰 복사",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "포인트",
       "costRef": "랜딩 페이지 ≈ 75–250 포인트 · 릴스 ≈ 50–150 포인트 · 소셜 ≈ 5–10 포인트",
-      "btn": "충전하러 가기"
+      "btn": "충전하러 가기",
+      "autoTopup": {
+        "toggleLabel": "자동 충전",
+        "toggleSubtext": "잔액 < {threshold} pts일 때 ${amount} 자동 결제",
+        "tooltip": "잔액이 임계값 아래로 떨어지면 저장된 카드로 자동 결제됩니다. 마지막으로 충전한 카드가 자동 충전 카드가 됩니다.",
+        "payuniDisabled": "PayUni 자동 충전은 곧 지원됩니다. 현재는 Stripe(국제 카드)를 사용해 주세요.",
+        "pendingActivation": "자동 충전 활성화 중… (Stripe webhook 대기 중)",
+        "modalTitle": "자동 충전 비활성화",
+        "modalDescription": "실수로 비활성화하지 않도록 아래에 DELETE를 입력해 확인하세요.",
+        "confirmInputPlaceholder": "DELETE 입력",
+        "confirmButton": "비활성화 확인",
+        "cancelButton": "취소",
+        "requireFirstTopupTitle": "첫 충전이 필요합니다",
+        "requireFirstTopupDesc": "자동 충전을 활성화하려면 먼저 수동으로 한 번 충전해 주세요. 카드는 향후 자동 결제를 위해 저장됩니다.",
+        "requireFirstTopupCTA": "충전 후 활성화",
+        "failureNotice": "이전 시도 실패: {reason}",
+        "failureDisabledNotice": "연속 실패로 인해 자동 충전이 비활성화되었습니다 (마지막 오류: {reason}). 결제 수단을 업데이트하고 다시 활성화하세요.",
+        "scaDisabledNotice": "3-D Secure 인증이 반복적으로 요구되었으나 완료되지 않아 자동 충전이 비활성화되었습니다. 인증을 완료한 후 수동으로 다시 활성화하세요.",
+        "scaPending": "이번 결제에는 3-D Secure 인증이 필요합니다. 방금 발송된 이메일에서 인증을 완료해 주세요. 시스템이 자동으로 재시도합니다.",
+        "updateCardLink": "카드 업데이트",
+        "pendingActivationRetry": "Stripe가 아직 웹훅을 처리 중입니다. 잠시만 기다려 주세요.",
+        "pendingActivationRetryButton": "다시 확인"
+      }
     },
     "welcome": {
       "badge": "계정 생성 완료",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Google 계정 전환",
+    "switchSubtitle": "사용하실 Google 계정으로 다시 로그인하세요.",
+    "useDifferentAccount": "다른 Google 계정 사용 →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

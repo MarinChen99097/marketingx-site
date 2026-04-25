@@ -257,14 +257,41 @@
       "title": "SaleCraft mit Ihrer KI verbinden",
       "desc": "Fügen Sie dies zu den Einstellungen Ihres KI-Assistenten hinzu, um alle Marketing-Tools freizuschalten. Funktioniert mit ChatGPT, Claude, Gemini und mehr.",
       "command": "Bitte lies den vollständigen Inhalt von CLAUDE.md unter der unten stehenden URL und folge den Anweisungen als mein Marketingberater:",
-      "copyBtn": "Befehl kopieren",
-      "copiedBtn": "In die Zwischenablage kopiert!"
+      "copyBtn": "Kopieren",
+      "copiedBtn": "Kopiert",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "Other AI"
+      },
+      "claudeWeb": {
+        "s1": "In Claude.ai, click the [+] in the bottom-left → Connectors → Manage connectors → \"+ Add custom connector\".",
+        "s2": "Paste this MCP URL and hit Add to finish the connection:",
+        "s3": "Then start a new chat and paste this prompt to activate SaleCraft:",
+        "requirePro": "Requires Claude Pro / Max / Team / Enterprise to add custom connectors."
+      },
+      "claudeCode": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Open Claude Code and paste this prompt in a new chat to activate SaleCraft:"
+      },
+      "openClaw": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Start OpenClaw and paste this prompt in any chat channel:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi and other AIs can paste the prompt below to enter consultation mode (chat-only, no MCP tool calls):",
+        "chatgptHint": "💡 ChatGPT Plus users: add a custom MCP under Settings → Apps & Connectors → Developer Mode, using the same URL as Claude.ai:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "KI-Anmelde-Token kopieren",
       "desc": "Nach der Erstellung fügen Sie diesen Token in Ihren KI-Assistenten (ChatGPT, Claude, Gemini usw.) ein, um sich bei SaleCraft ohne E-Mail oder Passwort anzumelden. Der Token läuft in 12 Stunden ab.",
-      "generatePrompt": "Drücken Sie die Schaltfläche, um einen persönlichen KI-Token zu generieren.",
-      "generateBtn": "KI-Token generieren",
+      "generatePrompt": "Drücken Sie die Schaltfläche, um Ihren persönlichen Anmelde-Token zu generieren.",
+      "generateBtn": "Anmelde-Token generieren",
       "loading": "Token wird generiert...",
       "notReady": "(noch nicht generiert)",
       "copyBtn": "Token kopieren",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "Punkte",
       "costRef": "Landing Page ≈ 75–250 Punkte · Reels ≈ 50–150 Punkte · Social ≈ 5–10 Punkte",
-      "btn": "Zum Aufladen"
+      "btn": "Zum Aufladen",
+      "autoTopup": {
+        "toggleLabel": "Automatisches Aufladen",
+        "toggleSubtext": "Automatisch ${amount} berechnen, wenn Guthaben < {threshold} pts",
+        "tooltip": "Wenn Ihr Guthaben unter den Schwellenwert fällt, belasten wir Ihre gespeicherte Karte automatisch. Die Karte, die Sie für Ihre letzte Aufladung verwendet haben, wird zur automatischen Aufladekarte.",
+        "payuniDisabled": "Automatisches Aufladen über PayUni kommt bald. Bitte verwenden Sie Stripe (internationale Karte) vorerst.",
+        "pendingActivation": "Automatisches Aufladen wird aktiviert… (warten auf Stripe-Webhook)",
+        "modalTitle": "Automatisches Aufladen deaktivieren",
+        "modalDescription": "Um versehentliches Deaktivieren zu vermeiden, geben Sie unten DELETE ein, um zu bestätigen.",
+        "confirmInputPlaceholder": "DELETE eingeben",
+        "confirmButton": "Deaktivierung bestätigen",
+        "cancelButton": "Abbrechen",
+        "requireFirstTopupTitle": "Erste Aufladung erforderlich",
+        "requireFirstTopupDesc": "Um automatisches Aufladen zu aktivieren, schließen Sie zuerst eine manuelle Aufladung ab. Ihre Karte wird für zukünftige automatische Belastungen gespeichert.",
+        "requireFirstTopupCTA": "Aufladen & Aktivieren",
+        "failureNotice": "Letzter Versuch fehlgeschlagen: {reason}",
+        "failureDisabledNotice": "Automatisches Aufladen nach aufeinanderfolgenden Fehlschlägen deaktiviert (letzter Fehler: {reason}). Bitte aktualisieren Sie Ihre Zahlungsmethode und reaktivieren Sie.",
+        "scaDisabledNotice": "Automatisches Aufladen deaktiviert, weil 3-D Secure wiederholt erforderlich, aber nicht abgeschlossen war. Schließen Sie die Verifizierung ab und reaktivieren Sie manuell.",
+        "scaPending": "Diese Belastung erfordert eine 3-D Secure-Verifizierung. Bitte schließen Sie sie über die soeben gesendete E-Mail ab; das System wird automatisch erneut versuchen.",
+        "updateCardLink": "Karte aktualisieren",
+        "pendingActivationRetry": "Stripe verarbeitet den Webhook noch. Bitte warten Sie einen Moment.",
+        "pendingActivationRetryButton": "Erneut prüfen"
+      }
     },
     "welcome": {
       "badge": "Konto erstellt",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "useDifferentAccount": "Use a different Google account →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

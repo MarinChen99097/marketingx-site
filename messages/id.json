@@ -257,14 +257,41 @@
       "title": "Hubungkan SaleCraft ke AI Anda",
       "desc": "Tambahkan ini ke pengaturan asisten AI Anda untuk membuka semua alat pemasaran. Bekerja dengan ChatGPT, Claude, Gemini, dan lainnya.",
       "command": "Silakan baca seluruh konten CLAUDE.md di URL di bawah dan ikuti petunjuknya sebagai konsultan pemasaran saya:",
-      "copyBtn": "Salin Perintah",
-      "copiedBtn": "Tersalin ke Clipboard!"
+      "copyBtn": "Salin",
+      "copiedBtn": "Tersalin",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "Other AI"
+      },
+      "claudeWeb": {
+        "s1": "In Claude.ai, click the [+] in the bottom-left → Connectors → Manage connectors → \"+ Add custom connector\".",
+        "s2": "Paste this MCP URL and hit Add to finish the connection:",
+        "s3": "Then start a new chat and paste this prompt to activate SaleCraft:",
+        "requirePro": "Requires Claude Pro / Max / Team / Enterprise to add custom connectors."
+      },
+      "claudeCode": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Open Claude Code and paste this prompt in a new chat to activate SaleCraft:"
+      },
+      "openClaw": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Start OpenClaw and paste this prompt in any chat channel:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi and other AIs can paste the prompt below to enter consultation mode (chat-only, no MCP tool calls):",
+        "chatgptHint": "💡 ChatGPT Plus users: add a custom MCP under Settings → Apps & Connectors → Developer Mode, using the same URL as Claude.ai:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "Salin Token Login AI Anda",
       "desc": "Setelah dibuat, tempel token ini ke asisten AI Anda (ChatGPT, Claude, Gemini, dll) untuk login ke SaleCraft tanpa email atau kata sandi. Token kedaluwarsa dalam 12 jam.",
-      "generatePrompt": "Tekan tombol untuk membuat AI Token pribadi Anda.",
-      "generateBtn": "Buat AI Token",
+      "generatePrompt": "Tekan tombol untuk membuat Token Login pribadi Anda.",
+      "generateBtn": "Buat Token Login",
       "loading": "Membuat token...",
       "notReady": "(belum dibuat)",
       "copyBtn": "Salin Token",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "poin",
       "costRef": "Landing Page ≈ 75–250 poin · Reels ≈ 50–150 poin · Sosial ≈ 5–10 poin",
-      "btn": "Ke Halaman Isi Ulang"
+      "btn": "Ke Halaman Isi Ulang",
+      "autoTopup": {
+        "toggleLabel": "Isi ulang otomatis",
+        "toggleSubtext": "Tagih ${amount} otomatis saat saldo < {threshold} pts",
+        "tooltip": "Saat saldo Anda turun di bawah ambang batas, kami akan menagih kartu tersimpan Anda secara otomatis. Kartu yang Anda gunakan untuk isi ulang terakhir menjadi kartu isi ulang otomatis.",
+        "payuniDisabled": "Isi ulang otomatis via PayUni segera hadir. Silakan gunakan Stripe (kartu internasional) untuk saat ini.",
+        "pendingActivation": "Mengaktifkan isi ulang otomatis… (menunggu webhook Stripe)",
+        "modalTitle": "Nonaktifkan isi ulang otomatis",
+        "modalDescription": "Untuk mencegah penonaktifan tidak sengaja, ketik DELETE di bawah untuk mengonfirmasi.",
+        "confirmInputPlaceholder": "Ketik DELETE",
+        "confirmButton": "Konfirmasi nonaktifkan",
+        "cancelButton": "Batal",
+        "requireFirstTopupTitle": "Isi ulang pertama diperlukan",
+        "requireFirstTopupDesc": "Untuk mengaktifkan isi ulang otomatis, selesaikan satu kali isi ulang manual terlebih dahulu. Kartu Anda akan disimpan untuk penagihan otomatis di masa depan.",
+        "requireFirstTopupCTA": "Isi ulang & aktifkan",
+        "failureNotice": "Percobaan terakhir gagal: {reason}",
+        "failureDisabledNotice": "Isi ulang otomatis dinonaktifkan setelah kegagalan berturut-turut (kesalahan terakhir: {reason}). Perbarui metode pembayaran dan aktifkan kembali.",
+        "scaDisabledNotice": "Isi ulang otomatis dinonaktifkan karena 3-D Secure berulang kali diperlukan tetapi tidak selesai. Selesaikan verifikasi dan aktifkan kembali secara manual.",
+        "scaPending": "Tagihan ini memerlukan verifikasi 3-D Secure. Selesaikan dari email yang baru saja kami kirim; sistem akan mencoba lagi secara otomatis.",
+        "updateCardLink": "Perbarui kartu",
+        "pendingActivationRetry": "Stripe masih memproses webhook. Mohon tunggu sebentar.",
+        "pendingActivationRetryButton": "Periksa lagi"
+      }
     },
     "welcome": {
       "badge": "Akun Dibuat",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "useDifferentAccount": "Use a different Google account →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

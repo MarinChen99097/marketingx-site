@@ -257,14 +257,41 @@
       "title": "SaleCraft को अपने AI से जोड़ें",
       "desc": "सभी मार्केटिंग टूल्स अनलॉक करने के लिए इसे अपने AI असिस्टेंट की सेटिंग्स में जोड़ें। ChatGPT, Claude, Gemini और अन्य के साथ काम करता है।",
       "command": "कृपया नीचे दिए गए URL पर CLAUDE.md की पूरी सामग्री पढ़ें और मेरे मार्केटिंग सलाहकार के रूप में उसके निर्देशों का पालन करें:",
-      "copyBtn": "कमांड कॉपी करें",
-      "copiedBtn": "क्लिपबोर्ड पर कॉपी हो गया!"
+      "copyBtn": "कॉपी",
+      "copiedBtn": "कॉपी हो गया",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "Other AI"
+      },
+      "claudeWeb": {
+        "s1": "In Claude.ai, click the [+] in the bottom-left → Connectors → Manage connectors → \"+ Add custom connector\".",
+        "s2": "Paste this MCP URL and hit Add to finish the connection:",
+        "s3": "Then start a new chat and paste this prompt to activate SaleCraft:",
+        "requirePro": "Requires Claude Pro / Max / Team / Enterprise to add custom connectors."
+      },
+      "claudeCode": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Open Claude Code and paste this prompt in a new chat to activate SaleCraft:"
+      },
+      "openClaw": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Start OpenClaw and paste this prompt in any chat channel:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi and other AIs can paste the prompt below to enter consultation mode (chat-only, no MCP tool calls):",
+        "chatgptHint": "💡 ChatGPT Plus users: add a custom MCP under Settings → Apps & Connectors → Developer Mode, using the same URL as Claude.ai:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "अपना AI लॉगिन टोकन कॉपी करें",
       "desc": "जनरेट करने के बाद, इस टोकन को अपने AI असिस्टेंट (ChatGPT, Claude, Gemini आदि) में पेस्ट करें और बिना ईमेल या पासवर्ड के SaleCraft में लॉगिन करें। टोकन 12 घंटे में समाप्त हो जाता है।",
-      "generatePrompt": "अपना व्यक्तिगत AI टोकन जनरेट करने के लिए बटन दबाएं।",
-      "generateBtn": "AI टोकन जनरेट करें",
+      "generatePrompt": "अपना व्यक्तिगत लॉगिन टोकन जनरेट करने के लिए बटन दबाएं।",
+      "generateBtn": "लॉगिन टोकन जनरेट करें",
       "loading": "टोकन जनरेट हो रहा है...",
       "notReady": "(अभी जनरेट नहीं हुआ)",
       "copyBtn": "टोकन कॉपी करें",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "अंक",
       "costRef": "लैंडिंग पेज ≈ 75–250 अंक · रील्स ≈ 50–150 अंक · सोशल ≈ 5–10 अंक",
-      "btn": "रिचार्ज पर जाएं"
+      "btn": "रिचार्ज पर जाएं",
+      "autoTopup": {
+        "toggleLabel": "स्वचालित रिचार्ज",
+        "toggleSubtext": "जब बैलेंस < {threshold} pts हो तो ${amount} स्वचालित रूप से चार्ज करें",
+        "tooltip": "जब आपका बैलेंस सीमा से कम हो जाता है, तो हम आपके सहेजे गए कार्ड से स्वचालित रूप से शुल्क लेंगे। आपके अंतिम रिचार्ज के लिए उपयोग किया गया कार्ड स्वचालित रिचार्ज कार्ड बन जाता है।",
+        "payuniDisabled": "PayUni के माध्यम से स्वचालित रिचार्ज जल्द आ रहा है। कृपया अभी Stripe (अंतरराष्ट्रीय कार्ड) का उपयोग करें।",
+        "pendingActivation": "स्वचालित रिचार्ज सक्रिय किया जा रहा है… (Stripe webhook का इंतज़ार)",
+        "modalTitle": "स्वचालित रिचार्ज अक्षम करें",
+        "modalDescription": "अनजाने में अक्षम होने से बचने के लिए, कृपया पुष्टि करने के लिए नीचे DELETE टाइप करें।",
+        "confirmInputPlaceholder": "DELETE टाइप करें",
+        "confirmButton": "अक्षम करने की पुष्टि करें",
+        "cancelButton": "रद्द करें",
+        "requireFirstTopupTitle": "पहला रिचार्ज आवश्यक",
+        "requireFirstTopupDesc": "स्वचालित रिचार्ज सक्षम करने के लिए, पहले एक मैनुअल रिचार्ज पूरा करें। आपका कार्ड भविष्य के स्वचालित शुल्क के लिए सहेजा जाएगा।",
+        "requireFirstTopupCTA": "रिचार्ज करें और सक्षम करें",
+        "failureNotice": "अंतिम प्रयास विफल: {reason}",
+        "failureDisabledNotice": "लगातार विफलताओं के बाद स्वचालित रिचार्ज अक्षम (अंतिम त्रुटि: {reason})। कृपया अपनी भुगतान विधि अपडेट करें और पुनः सक्षम करें।",
+        "scaDisabledNotice": "स्वचालित रिचार्ज अक्षम क्योंकि 3-D Secure बार-बार आवश्यक था लेकिन पूरा नहीं हुआ। सत्यापन पूरा करें और मैन्युअल रूप से पुनः सक्षम करें।",
+        "scaPending": "इस शुल्क के लिए 3-D Secure सत्यापन आवश्यक है। कृपया हमारे द्वारा अभी-अभी भेजे गए ईमेल से इसे पूरा करें; सिस्टम स्वचालित रूप से पुनः प्रयास करेगा।",
+        "updateCardLink": "कार्ड अपडेट करें",
+        "pendingActivationRetry": "Stripe अभी भी webhook प्रोसेस कर रहा है। कृपया एक क्षण प्रतीक्षा करें।",
+        "pendingActivationRetryButton": "फिर जाँचें"
+      }
     },
     "welcome": {
       "badge": "अकाउंट बन गया",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "useDifferentAccount": "Use a different Google account →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

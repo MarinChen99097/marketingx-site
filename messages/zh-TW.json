@@ -270,6 +270,9 @@
     "firstTimeHint": "首次登入將自動建立你的 SaleCraft 帳號",
     "existingHint": "第二次以後，這就是你的登入入口",
     "alreadySignedIn": "偵測到你已登入，準備前往下一步…",
+    "switchTitle": "切換 Google 帳號",
+    "switchSubtitle": "請選擇你想要使用的 Google 帳號重新登入。",
+    "useDifferentAccount": "使用其他 Google 帳號 →",
     "contactSupport": "遇到問題？請聯絡",
     "supportEmail": "zereo@connact.ai"
   },
@@ -282,14 +285,41 @@
       "title": "連結 SaleCraft 到你的 AI",
       "desc": "將此連結加入你的 AI 助手設定，即可使用所有行銷工具。支援 ChatGPT、Claude、Gemini 等平台。",
       "command": "請讀取以下 CLAUDE.md 的完整內容，按裡面的指引扮演我的行銷顧問：",
-      "copyBtn": "複製指令",
-      "copiedBtn": "已複製到剪貼簿！"
+      "copyBtn": "複製",
+      "copiedBtn": "已複製",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "其他 AI"
+      },
+      "claudeWeb": {
+        "s1": "在 Claude.ai 點左下角 [+] → Connectors → Manage connectors → 「+ Add custom connector」",
+        "s2": "貼上以下 MCP URL，按 Add 完成連結：",
+        "s3": "完成後在新對話貼以下指令，Claude 就會扮演 SaleCraft：",
+        "requirePro": "需要 Claude Pro / Max / Team / Enterprise 方案才能加入 custom connector"
+      },
+      "claudeCode": {
+        "s1": "在 terminal 執行以下指令安裝 SaleCraft MCP server：",
+        "s2": "進入 Claude Code 後，在新對話貼以下指令啟動 SaleCraft："
+      },
+      "openClaw": {
+        "s1": "在 terminal 執行以下指令安裝 SaleCraft MCP server：",
+        "s2": "啟動 OpenClaw 後，在對話中貼以下指令："
+      },
+      "other": {
+        "intro": "ChatGPT、Gemini、Kimi 等 AI 可直接貼下方指令進入對話模式（純諮詢、無法呼叫 MCP 工具）：",
+        "chatgptHint": "💡 ChatGPT Plus 用戶可在 設定 → Apps & Connectors → Developer Mode 加入 custom MCP，URL 同 Claude.ai："
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "複製 AI 登入 Token",
       "desc": "生成後把下面這串 token 貼給你的 AI 助手（ChatGPT、Claude、Gemini 等），它就能幫你登入 SaleCraft，不需要給密碼。Token 12 小時後自動過期。",
-      "generatePrompt": "按下按鈕生成一組專屬於你的 AI Token。",
-      "generateBtn": "生成 AI Token",
+      "generatePrompt": "按下按鈕生成一組專屬於你的登入 Token。",
+      "generateBtn": "生成登入 Token",
       "loading": "正在生成你的 Token...",
       "notReady": "（尚未生成）",
       "copyBtn": "複製 Token",
@@ -330,7 +360,29 @@
       "usd": "美元",
       "pts": "點",
       "costRef": "Landing Page ≈ 75–250 點 · Reels ≈ 50–150 點 · 社群 ≈ 5–10 點",
-      "btn": "前往儲值"
+      "btn": "前往儲值",
+      "autoTopup": {
+        "toggleLabel": "自動儲值",
+        "toggleSubtext": "餘額 < {threshold} pts 時自動補 ${amount}",
+        "tooltip": "餘額低於閾值時系統會自動扣款補點。下次儲值的卡片會被設為自動儲值卡。",
+        "payuniDisabled": "PayUni 自動儲值即將支援，目前請使用 Stripe 國際信用卡。",
+        "pendingActivation": "啟用自動儲值中…（等候 Stripe webhook）",
+        "modalTitle": "關閉自動儲值",
+        "modalDescription": "為避免誤關閉，請在下方輸入 DELETE 以確認。",
+        "confirmInputPlaceholder": "輸入 DELETE",
+        "confirmButton": "確認關閉",
+        "cancelButton": "取消",
+        "requireFirstTopupTitle": "需先完成一次儲值",
+        "requireFirstTopupDesc": "啟用自動儲值前，請先完成一次手動儲值。系統會儲存此卡片以供未來自動扣款使用。",
+        "requireFirstTopupCTA": "立即儲值並啟用",
+        "failureNotice": "上次扣款失敗：{reason}",
+        "failureDisabledNotice": "自動儲值因連續失敗已暫時關閉（最後錯誤：{reason}）。請更新付款方式後重新啟用。",
+        "scaDisabledNotice": "因連續多次需 3DS 驗證但未完成，自動儲值已暫時關閉。完成驗證後請手動重新啟用。",
+        "scaPending": "本次扣款需要 3DS 驗證，請從剛才寄出的 email 完成驗證，系統會自動重試。",
+        "updateCardLink": "更新卡片",
+        "pendingActivationRetry": "Stripe webhook 仍在處理中，請稍候片刻。",
+        "pendingActivationRetryButton": "再次檢查"
+      }
     },
     "welcome": {
       "badge": "帳號已建立",

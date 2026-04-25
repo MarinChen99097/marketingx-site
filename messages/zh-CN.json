@@ -257,14 +257,41 @@
       "title": "连接 SaleCraft 到你的 AI",
       "desc": "将此连接加入你的 AI 助手设置，即可使用所有营销工具。支持 ChatGPT、Claude、Gemini 等平台。",
       "command": "请读取以下 CLAUDE.md 的完整内容，按里面的指引扮演我的营销顾问：",
-      "copyBtn": "复制指令",
-      "copiedBtn": "已复制到剪贴板！"
+      "copyBtn": "复制",
+      "copiedBtn": "已复制",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "其他 AI"
+      },
+      "claudeWeb": {
+        "s1": "在 Claude.ai 点左下角 [+] → Connectors → Manage connectors → 「+ Add custom connector」",
+        "s2": "粘贴以下 MCP URL，按 Add 完成连接：",
+        "s3": "完成后在新对话粘贴以下指令，Claude 就会扮演 SaleCraft：",
+        "requirePro": "需要 Claude Pro / Max / Team / Enterprise 方案才能加入 custom connector"
+      },
+      "claudeCode": {
+        "s1": "在 terminal 执行以下指令安装 SaleCraft MCP server：",
+        "s2": "进入 Claude Code 后，在新对话粘贴以下指令启动 SaleCraft："
+      },
+      "openClaw": {
+        "s1": "在 terminal 执行以下指令安装 SaleCraft MCP server：",
+        "s2": "启动 OpenClaw 后，在对话中粘贴以下指令："
+      },
+      "other": {
+        "intro": "ChatGPT、Gemini、Kimi 等 AI 可直接粘贴下方指令进入对话模式（纯咨询、无法调用 MCP 工具）：",
+        "chatgptHint": "💡 ChatGPT Plus 用户可在 设置 → Apps & Connectors → Developer Mode 加入 custom MCP，URL 同 Claude.ai："
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "复制 AI 登录 Token",
       "desc": "生成后把下面这串 token 贴给你的 AI 助手（ChatGPT、Claude、Gemini 等），它就能帮你登录 SaleCraft，不需要给密码。Token 12 小时后自动过期。",
-      "generatePrompt": "按下按钮生成一组专属于你的 AI Token。",
-      "generateBtn": "生成 AI Token",
+      "generatePrompt": "按下按钮生成一组专属于你的登录 Token。",
+      "generateBtn": "生成登录 Token",
       "loading": "正在生成你的 Token...",
       "notReady": "（尚未生成）",
       "copyBtn": "复制 Token",
@@ -305,7 +332,29 @@
       "usd": "美元",
       "pts": "点",
       "costRef": "Landing Page ≈ 75–250 点 · Reels ≈ 50–150 点 · 社交 ≈ 5–10 点",
-      "btn": "前往充值"
+      "btn": "前往充值",
+      "autoTopup": {
+        "toggleLabel": "自动储值",
+        "toggleSubtext": "余额 < {threshold} pts 时自动补 ${amount}",
+        "tooltip": "余额低于阈值时系统会自动扣款补点。下次储值的卡片会被设为自动储值卡。",
+        "payuniDisabled": "PayUni 自动储值即将支持，目前请使用 Stripe 国际信用卡。",
+        "pendingActivation": "启用自动储值中…（等候 Stripe webhook）",
+        "modalTitle": "关闭自动储值",
+        "modalDescription": "为避免误关闭，请在下方输入 DELETE 以确认。",
+        "confirmInputPlaceholder": "输入 DELETE",
+        "confirmButton": "确认关闭",
+        "cancelButton": "取消",
+        "requireFirstTopupTitle": "需先完成一次储值",
+        "requireFirstTopupDesc": "启用自动储值前，请先完成一次手动储值。系统会保存此卡片以供未来自动扣款使用。",
+        "requireFirstTopupCTA": "立即储值并启用",
+        "failureNotice": "上次扣款失败：{reason}",
+        "failureDisabledNotice": "自动储值因连续失败已暂时关闭（最后错误：{reason}）。请更新付款方式后重新启用。",
+        "scaDisabledNotice": "因连续多次需 3DS 验证但未完成，自动储值已暂时关闭。完成验证后请手动重新启用。",
+        "scaPending": "本次扣款需要 3DS 验证，请从刚才寄出的 email 完成验证，系统会自动重试。",
+        "updateCardLink": "更新卡片",
+        "pendingActivationRetry": "Stripe webhook 仍在处理中，请稍候片刻。",
+        "pendingActivationRetryButton": "再次检查"
+      }
     },
     "welcome": {
       "badge": "账号已创建",
@@ -343,6 +392,9 @@
     "firstTimeHint": "首次登录将自动创建你的 SaleCraft 帐号",
     "existingHint": "第二次以后，这就是你的登录入口",
     "alreadySignedIn": "检测到你已登录，准备前往下一步…",
+    "switchTitle": "切换 Google 帐号",
+    "switchSubtitle": "请选择你想要使用的 Google 帐号重新登录。",
+    "useDifferentAccount": "使用其他 Google 帐号 →",
     "contactSupport": "遇到问题？请联络",
     "supportEmail": "zereo@connact.ai"
   },

@@ -257,14 +257,41 @@
       "title": "Kết nối SaleCraft với AI",
       "desc": "Thêm vào cài đặt trợ lý AI để sử dụng tất cả công cụ marketing. Hỗ trợ ChatGPT, Claude, Gemini và nhiều nền tảng khác.",
       "command": "Vui lòng đọc toàn bộ CLAUDE.md tại URL bên dưới và làm theo hướng dẫn để trở thành cố vấn tiếp thị của tôi:",
-      "copyBtn": "Sao chép lệnh",
-      "copiedBtn": "Đã sao chép vào bộ nhớ tạm!"
+      "copyBtn": "Sao chép",
+      "copiedBtn": "Đã sao chép",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "Other AI"
+      },
+      "claudeWeb": {
+        "s1": "In Claude.ai, click the [+] in the bottom-left → Connectors → Manage connectors → \"+ Add custom connector\".",
+        "s2": "Paste this MCP URL and hit Add to finish the connection:",
+        "s3": "Then start a new chat and paste this prompt to activate SaleCraft:",
+        "requirePro": "Requires Claude Pro / Max / Team / Enterprise to add custom connectors."
+      },
+      "claudeCode": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Open Claude Code and paste this prompt in a new chat to activate SaleCraft:"
+      },
+      "openClaw": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Start OpenClaw and paste this prompt in any chat channel:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi and other AIs can paste the prompt below to enter consultation mode (chat-only, no MCP tool calls):",
+        "chatgptHint": "💡 ChatGPT Plus users: add a custom MCP under Settings → Apps & Connectors → Developer Mode, using the same URL as Claude.ai:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "Sao chép AI Login Token",
       "desc": "Sau khi tạo, dán token này cho AI (ChatGPT, Claude, Gemini, v.v.) để đăng nhập SaleCraft mà không cần email/mật khẩu. Token tự hết hạn sau 12 giờ.",
-      "generatePrompt": "Nhấn nút để tạo một AI Token riêng của bạn.",
-      "generateBtn": "Tạo AI Token",
+      "generatePrompt": "Nhấn nút để tạo một Login Token riêng của bạn.",
+      "generateBtn": "Tạo Login Token",
       "loading": "Đang tạo token...",
       "notReady": "(chưa tạo)",
       "copyBtn": "Sao chép Token",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "điểm",
       "costRef": "Trang đích ≈ 75–250 điểm · Reels ≈ 50–150 điểm · MXH ≈ 5–10 điểm",
-      "btn": "Đến trang nạp điểm"
+      "btn": "Đến trang nạp điểm",
+      "autoTopup": {
+        "toggleLabel": "Tự động nạp",
+        "toggleSubtext": "Tự động nạp ${amount} khi số dư < {threshold} pts",
+        "tooltip": "Khi số dư của bạn giảm xuống dưới ngưỡng, chúng tôi sẽ tự động tính phí thẻ đã lưu. Thẻ bạn dùng cho lần nạp gần nhất sẽ trở thành thẻ tự động nạp.",
+        "payuniDisabled": "Tự động nạp qua PayUni sắp ra mắt. Vui lòng sử dụng Stripe (thẻ quốc tế) bây giờ.",
+        "pendingActivation": "Đang kích hoạt tự động nạp… (đang chờ Stripe webhook)",
+        "modalTitle": "Tắt tự động nạp",
+        "modalDescription": "Để tránh tắt nhầm, vui lòng nhập DELETE bên dưới để xác nhận.",
+        "confirmInputPlaceholder": "Nhập DELETE",
+        "confirmButton": "Xác nhận tắt",
+        "cancelButton": "Hủy",
+        "requireFirstTopupTitle": "Cần nạp lần đầu",
+        "requireFirstTopupDesc": "Để bật tự động nạp, vui lòng hoàn thành một lần nạp thủ công trước. Thẻ của bạn sẽ được lưu cho các lần tính phí tự động trong tương lai.",
+        "requireFirstTopupCTA": "Nạp & Kích hoạt",
+        "failureNotice": "Lần thử trước thất bại: {reason}",
+        "failureDisabledNotice": "Tự động nạp đã tắt sau các lần thất bại liên tiếp (lỗi cuối: {reason}). Vui lòng cập nhật phương thức thanh toán và bật lại.",
+        "scaDisabledNotice": "Tự động nạp đã tắt vì 3-D Secure được yêu cầu nhiều lần nhưng không hoàn thành. Hoàn thành xác minh và bật lại thủ công.",
+        "scaPending": "Lần thanh toán này yêu cầu xác minh 3-D Secure. Vui lòng hoàn thành từ email vừa gửi; hệ thống sẽ tự động thử lại.",
+        "updateCardLink": "Cập nhật thẻ",
+        "pendingActivationRetry": "Stripe vẫn đang xử lý webhook. Vui lòng đợi một chút.",
+        "pendingActivationRetryButton": "Kiểm tra lại"
+      }
     },
     "welcome": {
       "badge": "Tài khoản đã tạo",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "useDifferentAccount": "Use a different Google account →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

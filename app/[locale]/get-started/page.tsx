@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 import {
   Bot, Facebook, HardDrive, CreditCard,
   ArrowRight, CheckCircle, ExternalLink,
-  Copy, Check, Sparkles, LogOut, Loader2, KeyRound
+  Copy, Check, Sparkles, LogOut, Loader2, KeyRound,
+  Globe, Terminal, Code2
 } from "lucide-react";
 import { LandingAILogo } from "@/components/LandingAILogo";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,46 @@ function TikTokIcon({ className = "" }: { className?: string }) {
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
     </svg>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+ * COMMAND SNIPPET — terminal-styled box with built-in copy button.
+ * Used by STEP 1's per-platform install instructions, where each platform
+ * needs 1–2 separately-copyable code blocks (MCP URL, install command,
+ * activation prompt). Tracking which snippet was just copied lives in the
+ * parent so cross-snippet "Copied!" feedback stays single-shot.
+ * ═══════════════════════════════════════════════════════════════════ */
+function CommandSnippet({ label, text, snippetKey, copiedKey, onCopy }: {
+  label: string; text: string; snippetKey: string;
+  copiedKey: string | null; onCopy: (text: string, key: string) => void;
+}) {
+  const t = useTranslations("GetStarted");
+  const isCopied = copiedKey === snippetKey;
+  return (
+    <div className="rounded-xl border border-white/[0.08] bg-[#111113] p-4 relative overflow-hidden">
+      <div className="flex items-center justify-between gap-2 mb-2">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="w-2 h-2 rounded-full bg-[#ff5f57] shrink-0" />
+          <div className="w-2 h-2 rounded-full bg-[#febc2e] shrink-0" />
+          <div className="w-2 h-2 rounded-full bg-[#28c840] shrink-0" />
+          <span className="text-[10px] text-white/30 font-mono truncate">{label}</span>
+        </div>
+        <button
+          onClick={() => onCopy(text, snippetKey)}
+          className="flex items-center gap-1 px-2 py-1 rounded text-[11px] text-white/50 hover:text-white border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-all shrink-0"
+        >
+          {isCopied ? (
+            <><Check className="w-3 h-3 text-green-400" /> {t("step1.copiedBtn")}</>
+          ) : (
+            <><Copy className="w-3 h-3" /> {t("step1.copyBtn")}</>
+          )}
+        </button>
+      </div>
+      <div className="font-mono text-xs sm:text-sm leading-relaxed text-white/80 whitespace-pre-wrap break-all">
+        {text}
+      </div>
+    </div>
   );
 }
 
@@ -82,7 +123,6 @@ export default function GetStartedPage() {
   const [userCredits, setUserCredits] = useState(0);
   const [prevCredits, setPrevCredits] = useState<number | null>(null);
   const [topupSuccess, setTopupSuccess] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [topupAmount, setTopupAmount] = useState(20);
   const [customAmount, setCustomAmount] = useState(false);
   // Detected visitor country (ISO 3166-1 alpha-2). Null until geo lookup finishes
@@ -100,6 +140,44 @@ export default function GetStartedPage() {
   const [aiTokenLoading, setAiTokenLoading] = useState(false);
   const [aiTokenError, setAiTokenError] = useState<string | null>(null);
   const [showFallbackInput, setShowFallbackInput] = useState(false);
+
+  // ── Auto Top-up state (STEP 6 toggle) ──
+  // Mirrors the backend `GET /pricing/auto-topup` response. `null` means we
+  // haven't loaded status yet; we render the toggle as disabled until it arrives.
+  type AutoTopupStatus = {
+    enabled: boolean;
+    has_payment_method: boolean;
+    gateway: string | null;
+    threshold_pts: number;
+    topup_amount_usd: number;
+    consecutive_failures: number;
+    sca_attempts: number;
+    last_attempted_at: string | null;
+    next_attempt_after: string | null;
+    last_failure_reason: string | null;
+    payuni_card_memo_enabled: boolean;
+  };
+  const [autoTopupStatus, setAutoTopupStatus] = useState<AutoTopupStatus | null>(null);
+  // Single state machine: 'idle' (default) | 'busy' (in-flight enable/disable API)
+  // | 'polling' (Checkout return waiting for webhook) | 'polling-timeout' (gave up).
+  // Encodes 4 valid states instead of 3 booleans encoding 8 (only 4 of which were valid).
+  type AutoTopupUiState = "idle" | "busy" | "polling" | "polling-timeout";
+  const [autoTopupUi, setAutoTopupUi] = useState<AutoTopupUiState>("idle");
+
+  const [autoTopupDisableModalOpen, setAutoTopupDisableModalOpen] = useState(false);
+  const [autoTopupConfirmInput, setAutoTopupConfirmInput] = useState("");
+  const [autoTopupFirstTopupModalOpen, setAutoTopupFirstTopupModalOpen] = useState(false);
+
+  // Mirror the backend's normalization exactly: NFKC (so fullwidth ＤＥＬＥＴＥ
+  // from CJK IMEs is accepted), then strip whitespace, then uppercase. Without
+  // NFKC the client would reject inputs the backend would accept — UX bug.
+  const isDeleteConfirmed =
+    autoTopupConfirmInput.normalize("NFKC").replace(/\s+/g, "").toUpperCase() === "DELETE";
+
+  const autoTopupToggleDisabled =
+    autoTopupStatus === null ||
+    autoTopupUi !== "idle" ||
+    (autoTopupStatus.gateway === "payuni" && !autoTopupStatus.payuni_card_memo_enabled);
 
   // Drive expirySoon with a single setTimeout scheduled to fire at the
   // "entering last 30 min" boundary — not a minute-ticking setInterval.
@@ -180,6 +258,40 @@ export default function GetStartedPage() {
   const PLUGIN_SHA = process.env.NEXT_PUBLIC_PLUGIN_SHA || "master";
   const PLUGIN_URL = `https://raw.githubusercontent.com/connactai/Salecraft-Plugin/${PLUGIN_SHA}/CLAUDE.md`;
   const PLUGIN_CMD = `${t("step1.command")}\n${PLUGIN_URL}`;
+
+  // ── STEP 1: MCP install endpoints ──
+  // Service_system exposes a remote MCP SSE endpoint with 437+ tools (LP gen,
+  // social publish, deep research). Connector itself is unauthenticated; tool
+  // calls require the AI Login Token from STEP 2 (passed as `user_token`).
+  // Override via NEXT_PUBLIC_MCP_SSE_URL once we map a friendly domain
+  // (e.g. mcp.salecraft.ai).
+  const MCP_SSE_URL =
+    process.env.NEXT_PUBLIC_MCP_SSE_URL ||
+    "https://service-system-s6ykq3ylca-de.a.run.app/mcp/sse";
+  const CLAUDE_CODE_INSTALL_CMD = `claude mcp add --transport sse salecraft ${MCP_SSE_URL}`;
+  const OPENCLAW_INSTALL_CMD = `openclaw mcp add salecraft --url ${MCP_SSE_URL}`;
+
+  // ── STEP 1: Platform tab + per-snippet copy state ──
+  type PlatformKey = "claudeWeb" | "claudeCode" | "openClaw" | "other";
+  const [activePlatform, setActivePlatform] = useState<PlatformKey>("claudeWeb");
+  // Single string identifies which copy button was just clicked, so we can show
+  // a per-button "Copied!" feedback without lifting copied-flag state per snippet.
+  const [copiedSnippet, setCopiedSnippet] = useState<string | null>(null);
+  const handleCopySnippet = async (text: string, key: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      // iOS Safari / private mode fallback — same pattern as handleCopy below.
+      const el = document.createElement("textarea");
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+    }
+    setCopiedSnippet(key);
+    setTimeout(() => setCopiedSnippet(null), 2500);
+  };
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -315,15 +427,6 @@ export default function GetStartedPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale, router]);
 
-  const handleCopy = async () => {
-    try { await navigator.clipboard.writeText(PLUGIN_CMD); } catch {
-      const el = document.createElement("textarea"); el.value = PLUGIN_CMD;
-      document.body.appendChild(el); el.select(); document.execCommand("copy"); document.body.removeChild(el);
-    }
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
   const handleMetaConnect = async () => {
     try {
       const redirectUri = `${window.location.origin}/${locale}/get-started`;
@@ -380,6 +483,106 @@ export default function GetStartedPage() {
     return () => { cancelled = true; };
   }, []);
 
+  // ── Auto Top-up: fetch status on mount (only when logged in) ──
+  const fetchAutoTopupStatus = async (): Promise<AutoTopupStatus | null> => {
+    try {
+      const res = await api.get("/pricing/auto-topup");
+      const data = res.data as AutoTopupStatus;
+      setAutoTopupStatus(data);
+      return data;
+    } catch (err) {
+      // 401 in particular: token not loaded yet OR endpoint not deployed; silent.
+      console.warn("[GetStarted] auto-topup status fetch failed:", err);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+    fetchAutoTopupStatus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoggedIn]);
+
+  // ── Auto Top-up: shared polling state ──
+  // The polling is driven from two places: the Checkout-return useEffect and
+  // the Retry button. Both share this token so a new poll cancels any prior
+  // one, and unmount cancels whatever is in-flight. Without this, double-clicks
+  // would leak setTimeout chains and race the autoTopupUi state writes.
+  const autoTopupPollTokenRef = useRef<{ cancelled: boolean } | null>(null);
+
+  const startAutoTopupPolling = () => {
+    // Cancel any prior poll. The previous loop will see `cancelled=true` on its
+    // next tick and exit before flipping state.
+    if (autoTopupPollTokenRef.current) {
+      autoTopupPollTokenRef.current.cancelled = true;
+    }
+    const token = { cancelled: false };
+    autoTopupPollTokenRef.current = token;
+
+    setAutoTopupUi("polling");
+
+    const delays = [1000, 2000, 4000, 8000, 8000]; // ≈ 23s total
+    (async () => {
+      for (const delay of delays) {
+        if (token.cancelled) return;
+        await new Promise((r) => setTimeout(r, delay));
+        if (token.cancelled) return;
+        const data = await fetchAutoTopupStatus();
+        if (token.cancelled) return;
+        if (data?.enabled) {
+          setAutoTopupUi("idle");
+          return;
+        }
+      }
+      if (token.cancelled) return;
+      setAutoTopupUi("polling-timeout");
+    })();
+  };
+
+  // ── Auto Top-up: Checkout return → exponential-backoff polling ──
+  // After a Stripe Checkout that opted into auto top-up, the FE returns with
+  // `?auto_topup=pending` and the webhook hasn't necessarily fired yet. Poll
+  // GET /pricing/auto-topup until enabled=true (or we give up around 23s).
+  useEffect(() => {
+    if (typeof window === "undefined" || !isLoggedIn) return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("auto_topup") !== "pending") return;
+
+    // Strip the query param so a refresh doesn't restart polling.
+    window.history.replaceState(null, "", `/${locale}/get-started`);
+    startAutoTopupPolling();
+    // Cleanup: on unmount or isLoggedIn flip, cancel the in-flight poll AND
+    // reset the UI state. Without the reset, the poll loop bails on
+    // `token.cancelled` without flipping state, leaving the toggle stuck on
+    // "polling" if the effect ever re-runs.
+    return () => {
+      if (autoTopupPollTokenRef.current) {
+        autoTopupPollTokenRef.current.cancelled = true;
+      }
+      setAutoTopupUi((prev) => (prev === "polling" ? "idle" : prev));
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoggedIn]);
+
+  // Belt-and-suspenders unmount cleanup. The `[isLoggedIn]` effect above only
+  // runs (and registers cleanup) when the URL has `?auto_topup=pending`. The
+  // Retry button can also start a poll outside of that effect, so we need a
+  // standalone unmount cleanup to catch that path.
+  useEffect(() => {
+    return () => {
+      if (autoTopupPollTokenRef.current) {
+        autoTopupPollTokenRef.current.cancelled = true;
+      }
+    };
+  }, []);
+
+  // User-triggered re-poll after polling timed out. Reuses startAutoTopupPolling
+  // which cancels any prior in-flight poll before starting a new one — so
+  // rapid double-clicks coalesce to a single live poll.
+  const handleAutoTopupRetryPolling = () => {
+    startAutoTopupPolling();
+  };
+
   /**
    * PayUni uses a POST auto-submit form (not a URL redirect). Build a hidden
    * form with the server-returned action_url + encrypted form_data, append it
@@ -402,15 +605,22 @@ export default function GetStartedPage() {
     form.submit();
   };
 
-  const handleTopup = async () => {
+  const handleTopup = async (opts?: { enableAutoTopup?: boolean }) => {
     // Save current credits before redirect so we can show diff on return
     localStorage.setItem("mx_prev_credits", String(userCredits));
+
+    const enableAutoTopup = !!opts?.enableAutoTopup;
 
     // Geo hadn't resolved yet? Wait briefly so TW users don't get sent to Stripe.
     let cc = country;
     if (!cc) cc = await detectCountry();
 
-    const successUrl = `${window.location.origin}/${locale}/get-started?topup=success`;
+    // Two distinct success URLs:
+    //   - Manual top-up:    ?topup=success   (existing diff-modal flow)
+    //   - Auto-topup enrol: ?auto_topup=pending (triggers polling effect above)
+    const successUrl = enableAutoTopup
+      ? `${window.location.origin}/${locale}/get-started?auto_topup=pending`
+      : `${window.location.origin}/${locale}/get-started?topup=success`;
     const cancelUrl = `${window.location.origin}/${locale}/get-started`;
 
     if (isTaiwan(cc)) {
@@ -419,6 +629,10 @@ export default function GetStartedPage() {
           amount_usd: topupAmount,
           success_url: successUrl,
           cancel_url: cancelUrl,
+          // PayUni auto-topup not yet supported (feature-flag locked backend-side).
+          // Frontend still passes the flag for forward-compatibility, but backend
+          // ignores it until payuni_card_memo_enabled flips on.
+          enable_auto_topup: enableAutoTopup,
         });
         const { action_url, form_data } = res.data || {};
         if (action_url && form_data) {
@@ -439,6 +653,7 @@ export default function GetStartedPage() {
         amount_usd: topupAmount,
         success_url: successUrl,
         cancel_url: cancelUrl,
+        enable_auto_topup: enableAutoTopup,
       });
       if (res.data?.checkout_url) { window.location.href = res.data.checkout_url; return; }
       alert(locale === "en" ? "Unable to start checkout — please try again." : "無法啟動付款流程，請稍後再試。");
@@ -448,14 +663,71 @@ export default function GetStartedPage() {
     }
   };
 
+  // ── Auto Top-up handlers ──
+  // Toggle click router. ON → open DELETE-confirm modal. OFF + has PM → enable
+  // via API. OFF + no PM → first-topup modal.
+  const handleAutoTopupToggleClick = async () => {
+    if (!autoTopupStatus || autoTopupUi !== "idle") return;
+    if (autoTopupStatus.enabled) {
+      setAutoTopupConfirmInput("");
+      setAutoTopupDisableModalOpen(true);
+      return;
+    }
+    if (!autoTopupStatus.has_payment_method) {
+      setAutoTopupFirstTopupModalOpen(true);
+      return;
+    }
+    setAutoTopupUi("busy");
+    try {
+      await api.post("/pricing/auto-topup/enable");
+      await fetchAutoTopupStatus();
+    } catch (err: unknown) {
+      console.error("[GetStarted] auto-topup enable failed:", err);
+      const detail = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail;
+      if (detail === "no_payment_method") {
+        setAutoTopupFirstTopupModalOpen(true);
+      } else {
+        alert(locale === "en" ? "Failed to enable auto top-up." : "啟用自動儲值失敗，請稍後再試。");
+      }
+    } finally {
+      setAutoTopupUi("idle");
+    }
+  };
+
+  const handleAutoTopupConfirmDisable = async () => {
+    if (!isDeleteConfirmed || autoTopupUi === "busy") return;
+    setAutoTopupUi("busy");
+    try {
+      // Send what the user ACTUALLY typed — backend re-normalizes (NFKC + whitespace
+      // strip + uppercase). Hard-coding "DELETE" here would defeat that check.
+      await api.post("/pricing/auto-topup/disable", { confirmation: autoTopupConfirmInput });
+      setAutoTopupDisableModalOpen(false);
+      setAutoTopupConfirmInput("");
+      await fetchAutoTopupStatus();
+    } catch (err) {
+      console.error("[GetStarted] auto-topup disable failed:", err);
+      alert(locale === "en" ? "Failed to disable auto top-up." : "關閉自動儲值失敗，請稍後再試。");
+    } finally {
+      setAutoTopupUi("idle");
+    }
+  };
+
+  const handleAutoTopupEnrolViaCheckout = () => {
+    setAutoTopupFirstTopupModalOpen(false);
+    handleTopup({ enableAutoTopup: true });
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("refresh_token");
     localStorage.removeItem("user");
-    // Redirect to salecraft.ai's own /auth page (Google OAuth only). The
-    // backend /auth/google endpoint handles both "first login" and "switch
-    // account" paths — no need to bounce through landingai.info anymore.
-    window.location.href = `/${locale}/auth?returnUrl=${encodeURIComponent(`/${locale}/get-started`)}`;
+    // `switch=1` flags this as an explicit account swap. /auth uses it to
+    // (a) skip the "already logged in → redirect" short-circuit if a stale
+    // token comes back, (b) call GIS disableAutoSelect() so the GIS button
+    // doesn't silently re-sign-in with the same account, (c) surface a
+    // "Use a different Google account" escape hatch.
+    const returnUrl = encodeURIComponent(`/${locale}/get-started`);
+    window.location.href = `/${locale}/auth?returnUrl=${returnUrl}&switch=1`;
   };
 
   if (loading) {
@@ -566,35 +838,217 @@ export default function GetStartedPage() {
         </div>
       )}
 
+      {/* ════════════ AUTO TOP-UP DISABLE MODAL ════════════ */}
+      {/* Triggered ON → OFF. User must type DELETE to confirm. */}
+      {autoTopupDisableModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
+            className="w-full max-w-sm rounded-2xl border border-red-500/20 bg-[#111113] p-6 space-y-5 shadow-2xl"
+          >
+            <div className="space-y-2">
+              <h3 className="text-lg font-bold text-white">{t("step5.autoTopup.modalTitle")}</h3>
+              <p className="text-sm text-white/60 leading-relaxed">
+                {t("step5.autoTopup.modalDescription")}
+              </p>
+            </div>
+            <input
+              type="text"
+              autoFocus
+              value={autoTopupConfirmInput}
+              onChange={(e) => setAutoTopupConfirmInput(e.target.value)}
+              placeholder={t("step5.autoTopup.confirmInputPlaceholder")}
+              className="w-full h-11 rounded-xl border border-white/10 bg-white/[0.04] text-white text-center font-mono px-4 outline-none focus:border-red-500/50 transition-colors"
+              spellCheck={false}
+              autoComplete="off"
+            />
+            <div className="flex gap-2">
+              <Button
+                onClick={() => {
+                  setAutoTopupDisableModalOpen(false);
+                  setAutoTopupConfirmInput("");
+                }}
+                disabled={autoTopupUi === "busy"}
+                className="flex-1 h-10 border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/70 rounded-xl text-sm"
+              >
+                {t("step5.autoTopup.cancelButton")}
+              </Button>
+              <Button
+                onClick={handleAutoTopupConfirmDisable}
+                disabled={!isDeleteConfirmed || autoTopupUi === "busy"}
+                className="flex-1 h-10 bg-red-500 hover:bg-red-600 disabled:bg-red-500/30 disabled:text-white/40 text-white font-semibold rounded-xl text-sm"
+              >
+                {autoTopupUi === "busy" ? <Loader2 className="w-4 h-4 animate-spin mx-auto" /> : t("step5.autoTopup.confirmButton")}
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* ════════════ AUTO TOP-UP REQUIRE-FIRST-TOPUP MODAL ════════════ */}
+      {/* Triggered OFF → ON when user has no saved PaymentMethod. */}
+      {autoTopupFirstTopupModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
+            className="w-full max-w-sm rounded-2xl border border-[hsl(16,70%,56%)]/30 bg-[#111113] p-6 space-y-5 shadow-2xl"
+          >
+            <div className="space-y-2">
+              <h3 className="text-lg font-bold text-white">{t("step5.autoTopup.requireFirstTopupTitle")}</h3>
+              <p className="text-sm text-white/60 leading-relaxed">
+                {t("step5.autoTopup.requireFirstTopupDesc")}
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Button
+                onClick={() => setAutoTopupFirstTopupModalOpen(false)}
+                className="flex-1 h-10 border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white/70 rounded-xl text-sm"
+              >
+                {t("step5.autoTopup.cancelButton")}
+              </Button>
+              <Button
+                onClick={handleAutoTopupEnrolViaCheckout}
+                className="flex-1 h-10 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold rounded-xl text-sm"
+              >
+                {t("step5.autoTopup.requireFirstTopupCTA")}
+                <ArrowRight className="ml-1.5 w-3.5 h-3.5" />
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
       {/* ════════════ 4 ACTION CARDS ════════════ */}
       <div className="max-w-2xl mx-auto px-4 sm:px-6 pb-16 md:pb-24 space-y-4">
 
-        {/* 1. Claude Plugin */}
+        {/* 1. MCP install — platform-tabbed (Claude.ai / Claude Code / OpenClaw / Other) */}
         <ActionCard
           step={1} icon={Bot}
           title={t("step1.title")}
           description={t("step1.desc")}
-          status={copied ? "connected" : "ready"} delay={0.1}
+          status={copiedSnippet ? "connected" : "ready"} delay={0.1}
         >
-          <div className="space-y-3">
-            <div className="rounded-xl border border-white/[0.08] bg-[#111113] p-4 overflow-hidden">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-                <span className="text-[10px] text-white/20 ml-2 font-mono">MCP Plugin</span>
-              </div>
-              <div className="font-mono text-xs sm:text-sm leading-relaxed text-white/80 whitespace-pre-wrap break-all">
-                <span className="text-[hsl(16,70%,60%)]">&#10095;</span> {t("step1.command")}{"\n"}
-                <span className="text-blue-400 break-all">{PLUGIN_URL}</span>
-              </div>
+          <div className="space-y-4">
+            {/* Platform pill selector. Sales users likely on Claude.ai web; devs on
+                Claude Code/OpenClaw — default to claudeWeb to optimize for the larger
+                audience. Tabs are stateful (no deep links) since this is one card. */}
+            <div className="flex flex-wrap gap-2">
+              {([
+                { key: "claudeWeb",  icon: Globe,    label: t("step1.platforms.claudeWeb") },
+                { key: "claudeCode", icon: Terminal, label: t("step1.platforms.claudeCode") },
+                { key: "openClaw",   icon: Code2,    label: t("step1.platforms.openClaw") },
+                { key: "other",      icon: Sparkles, label: t("step1.platforms.other") },
+              ] as { key: PlatformKey; icon: React.ElementType; label: string }[]).map((p) => (
+                <button
+                  key={p.key}
+                  onClick={() => setActivePlatform(p.key)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                    activePlatform === p.key
+                      ? "bg-[hsl(16,70%,56%)] text-white shadow-lg shadow-[hsl(16,70%,56%)]/20"
+                      : "border border-white/10 bg-white/[0.03] text-white/60 hover:bg-white/[0.06] hover:text-white"
+                  }`}
+                >
+                  <p.icon className="w-3.5 h-3.5" />
+                  {p.label}
+                </button>
+              ))}
             </div>
-            <Button
-              onClick={handleCopy}
-              className="w-full sm:w-auto h-10 px-6 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-medium rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20"
-            >
-              {copied ? <><Check className="mr-2 w-4 h-4" /> {t("step1.copiedBtn")}</> : <><Copy className="mr-2 w-4 h-4" /> {t("step1.copyBtn")}</>}
-            </Button>
+
+            {/* CLAUDE.AI WEB — Custom Connector flow.
+                Step 3 (paste prompt) is the same across all platforms; the per-platform
+                difference is the install step before it. */}
+            {activePlatform === "claudeWeb" && (
+              <div className="space-y-3">
+                <p className="text-sm text-white/70 leading-relaxed">
+                  <span className="font-semibold text-white">①</span> {t("step1.claudeWeb.s1")}
+                </p>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  <span className="font-semibold text-white">②</span> {t("step1.claudeWeb.s2")}
+                </p>
+                <CommandSnippet
+                  label={t("step1.labelMcpUrl")} text={MCP_SSE_URL}
+                  snippetKey="claudeWeb_url" copiedKey={copiedSnippet} onCopy={handleCopySnippet}
+                />
+                <p className="text-sm text-white/70 leading-relaxed">
+                  <span className="font-semibold text-white">③</span> {t("step1.claudeWeb.s3")}
+                </p>
+                <CommandSnippet
+                  label={t("step1.labelPrompt")} text={PLUGIN_CMD}
+                  snippetKey="claudeWeb_prompt" copiedKey={copiedSnippet} onCopy={handleCopySnippet}
+                />
+                <p className="text-[11px] text-yellow-400/70 leading-relaxed">
+                  ⚠️ {t("step1.claudeWeb.requirePro")}
+                </p>
+              </div>
+            )}
+
+            {/* CLAUDE CODE — single CLI command + activation prompt */}
+            {activePlatform === "claudeCode" && (
+              <div className="space-y-3">
+                <p className="text-sm text-white/70 leading-relaxed">
+                  <span className="font-semibold text-white">①</span> {t("step1.claudeCode.s1")}
+                </p>
+                <CommandSnippet
+                  label={t("step1.labelInstallCmd")} text={CLAUDE_CODE_INSTALL_CMD}
+                  snippetKey="claudeCode_install" copiedKey={copiedSnippet} onCopy={handleCopySnippet}
+                />
+                <p className="text-sm text-white/70 leading-relaxed">
+                  <span className="font-semibold text-white">②</span> {t("step1.claudeCode.s2")}
+                </p>
+                <CommandSnippet
+                  label={t("step1.labelPrompt")} text={PLUGIN_CMD}
+                  snippetKey="claudeCode_prompt" copiedKey={copiedSnippet} onCopy={handleCopySnippet}
+                />
+              </div>
+            )}
+
+            {/* OPENCLAW — local daemon + chat channels (WhatsApp/Telegram/etc) */}
+            {activePlatform === "openClaw" && (
+              <div className="space-y-3">
+                <p className="text-sm text-white/70 leading-relaxed">
+                  <span className="font-semibold text-white">①</span> {t("step1.openClaw.s1")}
+                </p>
+                <CommandSnippet
+                  label={t("step1.labelInstallCmd")} text={OPENCLAW_INSTALL_CMD}
+                  snippetKey="openClaw_install" copiedKey={copiedSnippet} onCopy={handleCopySnippet}
+                />
+                <p className="text-sm text-white/70 leading-relaxed">
+                  <span className="font-semibold text-white">②</span> {t("step1.openClaw.s2")}
+                </p>
+                <CommandSnippet
+                  label={t("step1.labelPrompt")} text={PLUGIN_CMD}
+                  snippetKey="openClaw_prompt" copiedKey={copiedSnippet} onCopy={handleCopySnippet}
+                />
+              </div>
+            )}
+
+            {/* OTHER — universal fallback. Pure prompt mode (no MCP tools). The
+                ChatGPT hint upgrades Plus+ users to the Apps & Connectors flow with
+                the same MCP URL — same tools, same auth, just a different UI. */}
+            {activePlatform === "other" && (
+              <div className="space-y-3">
+                <p className="text-sm text-white/70 leading-relaxed">
+                  {t("step1.other.intro")}
+                </p>
+                <CommandSnippet
+                  label={t("step1.labelPrompt")} text={PLUGIN_CMD}
+                  snippetKey="other_prompt" copiedKey={copiedSnippet} onCopy={handleCopySnippet}
+                />
+                <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3 space-y-2">
+                  <p className="text-[12px] text-blue-300 leading-relaxed">
+                    {t("step1.other.chatgptHint")}
+                  </p>
+                  <CommandSnippet
+                    label={t("step1.labelMcpUrl")} text={MCP_SSE_URL}
+                    snippetKey="other_chatgptUrl" copiedKey={copiedSnippet} onCopy={handleCopySnippet}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </ActionCard>
 
@@ -871,8 +1325,111 @@ export default function GetStartedPage() {
               )}
             </div>
 
+            {/* Auto Top-up toggle row — sits next to the recharge button per spec. */}
+            <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02]">
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-white/80">{t("step5.autoTopup.toggleLabel")}</div>
+                <div className="text-[11px] text-white/40 mt-0.5">
+                  {autoTopupStatus
+                    ? t("step5.autoTopup.toggleSubtext", {
+                        threshold: autoTopupStatus.threshold_pts,
+                        amount: autoTopupStatus.topup_amount_usd,
+                      })
+                    : t("step5.autoTopup.toggleSubtext", { threshold: 450, amount: 20 })}
+                </div>
+              </div>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={!!autoTopupStatus?.enabled}
+                disabled={autoTopupToggleDisabled}
+                onClick={handleAutoTopupToggleClick}
+                title={
+                  autoTopupStatus?.gateway === "payuni" && !autoTopupStatus?.payuni_card_memo_enabled
+                    ? t("step5.autoTopup.payuniDisabled")
+                    : t("step5.autoTopup.tooltip")
+                }
+                className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${
+                  autoTopupStatus?.enabled ? "bg-[hsl(16,70%,56%)]" : "bg-white/15"
+                }`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    autoTopupStatus?.enabled ? "translate-x-6" : "translate-x-1"
+                  }`}
+                />
+              </button>
+            </div>
+
+            {/* Auto Top-up status hints — ordered: in-flight polling → polling
+                timed out → disabled-by-SCA → disabled-by-failures → enabled-with-SCA-pending →
+                enabled-with-recent-failure. */}
+            {autoTopupStatus && autoTopupUi === "polling" && (
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-[12px] text-white/60">
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                <span>{t("step5.autoTopup.pendingActivation")}</span>
+              </div>
+            )}
+            {autoTopupStatus && autoTopupUi === "polling-timeout" && !autoTopupStatus.enabled && (
+              <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-[12px] text-white/60">
+                <span>{t("step5.autoTopup.pendingActivationRetry")}</span>
+                <button
+                  type="button"
+                  onClick={handleAutoTopupRetryPolling}
+                  className="shrink-0 px-2 py-1 rounded-md border border-white/10 hover:bg-white/[0.06] text-[11px] text-white/80"
+                >
+                  {t("step5.autoTopup.pendingActivationRetryButton")}
+                </button>
+              </div>
+            )}
+            {autoTopupStatus &&
+              !autoTopupStatus.enabled &&
+              autoTopupStatus.last_failure_reason === "authentication_required" && (
+                <div className="px-3 py-2 rounded-lg bg-yellow-500/5 border border-yellow-500/20 text-[12px] text-yellow-300">
+                  {t("step5.autoTopup.scaDisabledNotice")}
+                </div>
+              )}
+            {autoTopupStatus &&
+              !autoTopupStatus.enabled &&
+              autoTopupStatus.last_failure_reason &&
+              autoTopupStatus.last_failure_reason !== "authentication_required" &&
+              autoTopupStatus.consecutive_failures >= 3 && (
+                <div className="px-3 py-2 rounded-lg bg-red-500/5 border border-red-500/20 text-[12px] text-red-300">
+                  {t("step5.autoTopup.failureDisabledNotice", {
+                    reason: autoTopupStatus.last_failure_reason,
+                  })}
+                </div>
+              )}
+            {autoTopupStatus &&
+              autoTopupStatus.enabled &&
+              autoTopupStatus.last_failure_reason === "authentication_required" && (
+                <div className="px-3 py-2 rounded-lg bg-yellow-500/5 border border-yellow-500/20 text-[12px] text-yellow-300">
+                  {t("step5.autoTopup.scaPending")}
+                </div>
+              )}
+            {autoTopupStatus &&
+              autoTopupStatus.enabled &&
+              autoTopupStatus.consecutive_failures > 0 &&
+              autoTopupStatus.last_failure_reason &&
+              autoTopupStatus.last_failure_reason !== "authentication_required" && (
+                <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-orange-500/5 border border-orange-500/20 text-[12px] text-orange-300">
+                  <span className="min-w-0 truncate">
+                    {t("step5.autoTopup.failureNotice", {
+                      reason: autoTopupStatus.last_failure_reason,
+                    })}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handleTopup({ enableAutoTopup: true })}
+                    className="shrink-0 underline underline-offset-2 hover:text-orange-200"
+                  >
+                    {t("step5.autoTopup.updateCardLink")}
+                  </button>
+                </div>
+              )}
+
             <Button
-              onClick={handleTopup}
+              onClick={() => handleTopup()}
               className="w-full h-11 bg-[hsl(16,70%,56%)] hover:bg-[hsl(16,70%,50%)] text-white font-semibold rounded-xl text-sm shadow-lg shadow-[hsl(16,70%,56%)]/20"
             >
               <CreditCard className="mr-2 w-4 h-4" />

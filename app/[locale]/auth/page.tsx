@@ -5,10 +5,10 @@ import Link from "next/link";
 import Script from "next/script";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { Loader2, ShieldCheck, Sparkles, ArrowLeft } from "lucide-react";
+import { Loader2, ShieldCheck, Sparkles, ArrowLeft, UserCog } from "lucide-react";
 import { LandingAILogo } from "@/components/LandingAILogo";
 import { GoogleSignInButton } from "@/components/GoogleSignInButton";
-import { getStoredToken, persistSession, signInWithGoogleCredential, validateToken } from "@/lib/auth";
+import { clearSession, getStoredToken, persistSession, signInWithGoogleCredential, validateToken } from "@/lib/auth";
 
 const CLIENT_ID_MISSING = !process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 
@@ -52,10 +52,23 @@ function AuthInner() {
     const [probing, setProbing] = useState(true);
 
     const returnPath = safeReturnUrl(searchParams.get("returnUrl"), locale);
+    // Switch-account mode: get-started's logout redirects here with ?switch=1.
+    // We must NOT auto-redirect even if a stale token survives, and the GIS
+    // button must offer a real escape from the previously-signed-in account.
+    const switchMode = searchParams.get("switch") === "1";
 
     // Already signed in → skip the UI and redirect. Short-circuit when no
     // token is stored so first-time visitors don't pay a network round-trip.
     useEffect(() => {
+        // Switch mode: nuke any leftover session and stay on the form so the
+        // user can pick a different Google account. Without this, a stale
+        // token (e.g. from a parallel tab that re-issued one) would silently
+        // bounce them back to the same account they're trying to leave.
+        if (switchMode) {
+            clearSession();
+            setProbing(false);
+            return;
+        }
         if (!getStoredToken()) {
             setProbing(false);
             return;
@@ -73,7 +86,18 @@ function AuthInner() {
         return () => {
             cancelled = true;
         };
-    }, [router, returnPath]);
+    }, [router, returnPath, switchMode]);
+
+    // Secondary "Use a different Google account" affordance for switch mode.
+    // GIS's renderButton click ALMOST always shows Google's account chooser,
+    // but on browsers with exactly one signed-in Google account it shortcuts
+    // straight back to that same account — exactly the trap the user is
+    // trying to escape. Routing through Google's AccountChooser URL forces
+    // them to pick (or sign in to a new one) before continuing back here.
+    const handleUseDifferentAccount = () => {
+        const continueUrl = encodeURIComponent(window.location.href);
+        window.location.href = `https://accounts.google.com/AccountChooser?continue=${continueUrl}`;
+    };
 
     const handleGoogleCredential = async (credential: string) => {
         if (loading) return;
@@ -141,13 +165,17 @@ function AuthInner() {
                         {/* Header */}
                         <div className="text-center mb-8">
                             <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[hsl(16,70%,56%)]/10 border border-[hsl(16,70%,56%)]/20 mb-5">
-                                <Sparkles className="w-6 h-6 text-[hsl(16,70%,60%)]" />
+                                {switchMode ? (
+                                    <UserCog className="w-6 h-6 text-[hsl(16,70%,60%)]" />
+                                ) : (
+                                    <Sparkles className="w-6 h-6 text-[hsl(16,70%,60%)]" />
+                                )}
                             </div>
                             <h1 className="text-2xl md:text-3xl font-black tracking-tight mb-2 [word-break:keep-all]">
-                                {t("title")}
+                                {switchMode ? t("switchTitle") : t("title")}
                             </h1>
                             <p className="text-sm text-white/50 leading-relaxed">
-                                {t("subtitle")}
+                                {switchMode ? t("switchSubtitle") : t("subtitle")}
                             </p>
                         </div>
 
@@ -203,7 +231,21 @@ function AuthInner() {
                                     locale={locale}
                                     theme="filled_black"
                                     text="continue_with"
+                                    forceAccountChooser={switchMode}
                                 />
+                            )}
+
+                            {/* Switch-mode escape hatch — only renders when GIS
+                                button might silently auto-pick the same Google
+                                account (browsers with one signed-in account). */}
+                            {switchMode && !CLIENT_ID_MISSING && (
+                                <button
+                                    type="button"
+                                    onClick={handleUseDifferentAccount}
+                                    className="text-xs text-white/50 hover:text-white underline underline-offset-4 transition-colors"
+                                >
+                                    {t("useDifferentAccount")}
+                                </button>
                             )}
 
                             {loading && (

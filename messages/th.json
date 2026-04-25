@@ -257,14 +257,41 @@
       "title": "เชื่อมต่อ SaleCraft กับ AI ของคุณ",
       "desc": "เพิ่มลิงก์นี้ในการตั้งค่า AI ของคุณเพื่อใช้เครื่องมือการตลาดทั้งหมด รองรับ ChatGPT, Claude, Gemini และอื่นๆ",
       "command": "โปรดอ่านเนื้อหา CLAUDE.md ทั้งหมดจาก URL ด้านล่าง และทำตามคำแนะนำเพื่อรับบทเป็นที่ปรึกษาการตลาดของฉัน:",
-      "copyBtn": "คัดลอกคำสั่ง",
-      "copiedBtn": "คัดลอกไปยังคลิปบอร์ดแล้ว!"
+      "copyBtn": "คัดลอก",
+      "copiedBtn": "คัดลอกแล้ว",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "Other AI"
+      },
+      "claudeWeb": {
+        "s1": "In Claude.ai, click the [+] in the bottom-left → Connectors → Manage connectors → \"+ Add custom connector\".",
+        "s2": "Paste this MCP URL and hit Add to finish the connection:",
+        "s3": "Then start a new chat and paste this prompt to activate SaleCraft:",
+        "requirePro": "Requires Claude Pro / Max / Team / Enterprise to add custom connectors."
+      },
+      "claudeCode": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Open Claude Code and paste this prompt in a new chat to activate SaleCraft:"
+      },
+      "openClaw": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Start OpenClaw and paste this prompt in any chat channel:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi and other AIs can paste the prompt below to enter consultation mode (chat-only, no MCP tool calls):",
+        "chatgptHint": "💡 ChatGPT Plus users: add a custom MCP under Settings → Apps & Connectors → Developer Mode, using the same URL as Claude.ai:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "คัดลอก AI Login Token ของคุณ",
       "desc": "หลังจากสร้างแล้ว วางโทเค็นนี้ในผู้ช่วย AI (ChatGPT, Claude, Gemini ฯลฯ) เพื่อเข้าสู่ระบบ SaleCraft โดยไม่ต้องใช้อีเมลหรือรหัสผ่าน โทเค็นจะหมดอายุใน 12 ชั่วโมง",
-      "generatePrompt": "กดปุ่มเพื่อสร้าง AI Token ส่วนตัวของคุณ",
-      "generateBtn": "สร้าง AI Token",
+      "generatePrompt": "กดปุ่มเพื่อสร้าง Login Token ส่วนตัวของคุณ",
+      "generateBtn": "สร้าง Login Token",
       "loading": "กำลังสร้างโทเค็น...",
       "notReady": "(ยังไม่ได้สร้าง)",
       "copyBtn": "คัดลอกโทเค็น",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "คะแนน",
       "costRef": "แลนดิ้งเพจ ≈ 75–250 คะแนน · Reels ≈ 50–150 คะแนน · โซเชียล ≈ 5–10 คะแนน",
-      "btn": "ไปเติมเงิน"
+      "btn": "ไปเติมเงิน",
+      "autoTopup": {
+        "toggleLabel": "เติมเงินอัตโนมัติ",
+        "toggleSubtext": "เรียกเก็บ ${amount} อัตโนมัติเมื่อยอดคงเหลือ < {threshold} pts",
+        "tooltip": "เมื่อยอดคงเหลือของคุณลดลงต่ำกว่าเกณฑ์ เราจะเรียกเก็บบัตรที่บันทึกไว้โดยอัตโนมัติ บัตรที่คุณใช้สำหรับการเติมเงินครั้งล่าสุดจะกลายเป็นบัตรเติมเงินอัตโนมัติ",
+        "payuniDisabled": "การเติมเงินอัตโนมัติผ่าน PayUni เร็วๆ นี้ กรุณาใช้ Stripe (บัตรระหว่างประเทศ) ในขณะนี้",
+        "pendingActivation": "กำลังเปิดใช้งานการเติมเงินอัตโนมัติ… (รอ webhook ของ Stripe)",
+        "modalTitle": "ปิดการเติมเงินอัตโนมัติ",
+        "modalDescription": "เพื่อป้องกันการปิดโดยไม่ตั้งใจ กรุณาพิมพ์ DELETE ด้านล่างเพื่อยืนยัน",
+        "confirmInputPlaceholder": "พิมพ์ DELETE",
+        "confirmButton": "ยืนยันการปิด",
+        "cancelButton": "ยกเลิก",
+        "requireFirstTopupTitle": "ต้องเติมเงินครั้งแรก",
+        "requireFirstTopupDesc": "เพื่อเปิดใช้งานการเติมเงินอัตโนมัติ กรุณาเติมเงินด้วยตนเองหนึ่งครั้งก่อน บัตรของคุณจะถูกบันทึกไว้สำหรับการเรียกเก็บอัตโนมัติในอนาคต",
+        "requireFirstTopupCTA": "เติมเงินและเปิดใช้งาน",
+        "failureNotice": "ความพยายามครั้งล่าสุดล้มเหลว: {reason}",
+        "failureDisabledNotice": "การเติมเงินอัตโนมัติปิดใช้งานหลังจากล้มเหลวต่อเนื่อง (ข้อผิดพลาดล่าสุด: {reason}) กรุณาอัปเดตวิธีการชำระเงินและเปิดใช้งานใหม่",
+        "scaDisabledNotice": "การเติมเงินอัตโนมัติปิดใช้งานเพราะ 3-D Secure ถูกร้องขอซ้ำๆ แต่ไม่เสร็จสมบูรณ์ ให้ทำการยืนยันและเปิดใช้งานอีกครั้งด้วยตนเอง",
+        "scaPending": "การเรียกเก็บนี้ต้องการการยืนยัน 3-D Secure กรุณาทำให้เสร็จจากอีเมลที่เพิ่งส่ง ระบบจะลองอีกครั้งโดยอัตโนมัติ",
+        "updateCardLink": "อัปเดตบัตร",
+        "pendingActivationRetry": "Stripe ยังคงประมวลผล webhook อยู่ กรุณารอสักครู่",
+        "pendingActivationRetryButton": "ตรวจสอบอีกครั้ง"
+      }
     },
     "welcome": {
       "badge": "สร้างบัญชีแล้ว",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "useDifferentAccount": "Use a different Google account →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

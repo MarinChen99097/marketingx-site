@@ -257,14 +257,41 @@
       "title": "Conecte o SaleCraft ao seu AI",
       "desc": "Adicione isto às configurações do seu assistente IA para acessar todas as ferramentas de marketing. Funciona com ChatGPT, Claude, Gemini e mais.",
       "command": "Por favor, leia todo o conteúdo de CLAUDE.md na URL abaixo e siga as instruções como meu consultor de marketing:",
-      "copyBtn": "Copiar comando",
-      "copiedBtn": "Copiado para a área de transferência!"
+      "copyBtn": "Copiar",
+      "copiedBtn": "Copiado",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "Other AI"
+      },
+      "claudeWeb": {
+        "s1": "In Claude.ai, click the [+] in the bottom-left → Connectors → Manage connectors → \"+ Add custom connector\".",
+        "s2": "Paste this MCP URL and hit Add to finish the connection:",
+        "s3": "Then start a new chat and paste this prompt to activate SaleCraft:",
+        "requirePro": "Requires Claude Pro / Max / Team / Enterprise to add custom connectors."
+      },
+      "claudeCode": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Open Claude Code and paste this prompt in a new chat to activate SaleCraft:"
+      },
+      "openClaw": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Start OpenClaw and paste this prompt in any chat channel:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi and other AIs can paste the prompt below to enter consultation mode (chat-only, no MCP tool calls):",
+        "chatgptHint": "💡 ChatGPT Plus users: add a custom MCP under Settings → Apps & Connectors → Developer Mode, using the same URL as Claude.ai:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "Copie o seu Token de Login da IA",
       "desc": "Depois de gerado, cole este token no seu assistente de IA (ChatGPT, Claude, Gemini, etc.) para fazer login no SaleCraft sem email nem senha. O token expira em 12 horas.",
-      "generatePrompt": "Pressione o botão para gerar um AI Token pessoal.",
-      "generateBtn": "Gerar AI Token",
+      "generatePrompt": "Pressione o botão para gerar o seu Token de Login pessoal.",
+      "generateBtn": "Gerar Token de Login",
       "loading": "Gerando seu token...",
       "notReady": "(ainda não gerado)",
       "copyBtn": "Copiar Token",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "pts",
       "costRef": "Página de Destino ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",
-      "btn": "Ir para recarga"
+      "btn": "Ir para recarga",
+      "autoTopup": {
+        "toggleLabel": "Recarga automática",
+        "toggleSubtext": "Cobrança automática de ${amount} quando saldo < {threshold} pts",
+        "tooltip": "Quando seu saldo cair abaixo do limite, cobraremos automaticamente seu cartão salvo. O cartão usado na última recarga se torna o cartão de recarga automática.",
+        "payuniDisabled": "Recarga automática via PayUni em breve. Por favor, use o Stripe (cartão internacional) por enquanto.",
+        "pendingActivation": "Ativando recarga automática… (aguardando webhook do Stripe)",
+        "modalTitle": "Desativar recarga automática",
+        "modalDescription": "Para evitar desativações acidentais, digite DELETE abaixo para confirmar.",
+        "confirmInputPlaceholder": "Digite DELETE",
+        "confirmButton": "Confirmar desativação",
+        "cancelButton": "Cancelar",
+        "requireFirstTopupTitle": "Primeira recarga necessária",
+        "requireFirstTopupDesc": "Para ativar a recarga automática, conclua primeiro uma recarga manual. Seu cartão será salvo para cobranças automáticas futuras.",
+        "requireFirstTopupCTA": "Recarregar e ativar",
+        "failureNotice": "Última tentativa falhou: {reason}",
+        "failureDisabledNotice": "Recarga automática desativada após falhas consecutivas (último erro: {reason}). Atualize seu método de pagamento e reative.",
+        "scaDisabledNotice": "Recarga automática desativada porque 3-D Secure foi solicitado repetidamente mas não concluído. Complete a verificação e reative manualmente.",
+        "scaPending": "Esta cobrança requer verificação 3-D Secure. Conclua a partir do e-mail que acabamos de enviar; o sistema tentará novamente automaticamente.",
+        "updateCardLink": "Atualizar cartão",
+        "pendingActivationRetry": "O Stripe ainda está processando o webhook. Aguarde um momento.",
+        "pendingActivationRetryButton": "Verificar novamente"
+      }
     },
     "welcome": {
       "badge": "Conta Criada",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "useDifferentAccount": "Use a different Google account →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

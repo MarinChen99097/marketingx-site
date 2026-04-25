@@ -257,14 +257,41 @@
       "title": "Sambungkan SaleCraft ke AI Anda",
       "desc": "Tambah ini ke tetapan pembantu AI anda untuk membuka semua alat pemasaran. Berfungsi dengan ChatGPT, Claude, Gemini, dan lain-lain.",
       "command": "Sila baca keseluruhan kandungan CLAUDE.md di URL di bawah dan ikut arahannya sebagai perunding pemasaran saya:",
-      "copyBtn": "Salin Arahan",
-      "copiedBtn": "Disalin ke Papan Keratan!"
+      "copyBtn": "Salin",
+      "copiedBtn": "Disalin",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "Other AI"
+      },
+      "claudeWeb": {
+        "s1": "In Claude.ai, click the [+] in the bottom-left → Connectors → Manage connectors → \"+ Add custom connector\".",
+        "s2": "Paste this MCP URL and hit Add to finish the connection:",
+        "s3": "Then start a new chat and paste this prompt to activate SaleCraft:",
+        "requirePro": "Requires Claude Pro / Max / Team / Enterprise to add custom connectors."
+      },
+      "claudeCode": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Open Claude Code and paste this prompt in a new chat to activate SaleCraft:"
+      },
+      "openClaw": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Start OpenClaw and paste this prompt in any chat channel:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi and other AIs can paste the prompt below to enter consultation mode (chat-only, no MCP tool calls):",
+        "chatgptHint": "💡 ChatGPT Plus users: add a custom MCP under Settings → Apps & Connectors → Developer Mode, using the same URL as Claude.ai:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "Salin Token Log Masuk AI Anda",
       "desc": "Selepas dijana, tampal token ini ke pembantu AI anda (ChatGPT, Claude, Gemini, dll) untuk log masuk ke SaleCraft tanpa e-mel atau kata laluan. Token tamat tempoh dalam 12 jam.",
-      "generatePrompt": "Tekan butang untuk menjana Token AI peribadi anda.",
-      "generateBtn": "Jana Token AI",
+      "generatePrompt": "Tekan butang untuk menjana Token Log Masuk peribadi anda.",
+      "generateBtn": "Jana Token Log Masuk",
       "loading": "Menjana token...",
       "notReady": "(belum dijana)",
       "copyBtn": "Salin Token",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "mata",
       "costRef": "Landing Page ≈ 75–250 mata · Reels ≈ 50–150 mata · Sosial ≈ 5–10 mata",
-      "btn": "Ke Halaman Tambah Nilai"
+      "btn": "Ke Halaman Tambah Nilai",
+      "autoTopup": {
+        "toggleLabel": "Tambah nilai automatik",
+        "toggleSubtext": "Caj ${amount} automatik apabila baki < {threshold} pts",
+        "tooltip": "Apabila baki anda jatuh di bawah ambang, kami akan mengecaj kad tersimpan anda secara automatik. Kad yang anda gunakan untuk tambah nilai terakhir menjadi kad tambah nilai automatik.",
+        "payuniDisabled": "Tambah nilai automatik melalui PayUni akan datang. Sila gunakan Stripe (kad antarabangsa) buat masa ini.",
+        "pendingActivation": "Mengaktifkan tambah nilai automatik… (menunggu webhook Stripe)",
+        "modalTitle": "Nyahaktifkan tambah nilai automatik",
+        "modalDescription": "Untuk mengelakkan penyahaktifan tidak sengaja, sila taip DELETE di bawah untuk mengesahkan.",
+        "confirmInputPlaceholder": "Taip DELETE",
+        "confirmButton": "Sahkan nyahaktifkan",
+        "cancelButton": "Batal",
+        "requireFirstTopupTitle": "Tambah nilai pertama diperlukan",
+        "requireFirstTopupDesc": "Untuk mengaktifkan tambah nilai automatik, sila lengkapkan satu tambah nilai manual dahulu. Kad anda akan disimpan untuk caj automatik akan datang.",
+        "requireFirstTopupCTA": "Tambah nilai & aktifkan",
+        "failureNotice": "Percubaan terakhir gagal: {reason}",
+        "failureDisabledNotice": "Tambah nilai automatik dinyahaktifkan selepas kegagalan berturut-turut (ralat terakhir: {reason}). Kemas kini kaedah pembayaran anda dan aktifkan semula.",
+        "scaDisabledNotice": "Tambah nilai automatik dinyahaktifkan kerana 3-D Secure berulang kali diperlukan tetapi tidak selesai. Lengkapkan pengesahan dan aktifkan semula secara manual.",
+        "scaPending": "Caj ini memerlukan pengesahan 3-D Secure. Sila lengkapkan dari e-mel yang baru kami hantar; sistem akan cuba semula secara automatik.",
+        "updateCardLink": "Kemas kini kad",
+        "pendingActivationRetry": "Stripe masih memproses webhook. Sila tunggu sebentar.",
+        "pendingActivationRetryButton": "Semak semula"
+      }
     },
     "welcome": {
       "badge": "Akaun Dicipta",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "useDifferentAccount": "Use a different Google account →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

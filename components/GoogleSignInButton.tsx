@@ -12,6 +12,7 @@ declare global {
                     initialize: (config: GoogleIdConfig) => void;
                     renderButton: (element: HTMLElement, config: GoogleButtonConfig) => void;
                     prompt: () => void;
+                    disableAutoSelect: () => void;
                 };
             };
         };
@@ -47,6 +48,15 @@ interface GoogleSignInButtonProps {
     locale?: string;
     theme?: "outline" | "filled_blue" | "filled_black";
     text?: "signin_with" | "signup_with" | "continue_with" | "signin";
+    /**
+     * Switch-account mode. When true, calls `google.accounts.id.disableAutoSelect()`
+     * after init so GIS won't silently re-sign-in with the previously-used
+     * account on the next One Tap cycle. The /auth page additionally renders
+     * a "Use a different Google account" link as a hard escape hatch when
+     * this is true (GIS button click STILL shortcuts to the only signed-in
+     * browser account on some setups).
+     */
+    forceAccountChooser?: boolean;
 }
 
 export function GoogleSignInButton({
@@ -56,6 +66,7 @@ export function GoogleSignInButton({
     locale,
     theme = "filled_black",
     text = "continue_with",
+    forceAccountChooser = false,
 }: GoogleSignInButtonProps) {
     const buttonRef = useRef<HTMLDivElement>(null);
     const initializedRef = useRef(false);
@@ -103,6 +114,17 @@ export function GoogleSignInButton({
                     auto_select: false,
                     cancel_on_tap_outside: true,
                 });
+
+                // Switch-account: explicitly clear GIS's "remembered" auto-select
+                // state. Without this, even with auto_select:false, GIS may still
+                // bias the popup toward the last-used account on this origin.
+                if (forceAccountChooser) {
+                    try {
+                        window.google.accounts.id.disableAutoSelect();
+                    } catch (err) {
+                        console.warn("[GoogleSignIn] disableAutoSelect failed:", err);
+                    }
+                }
 
                 window.google.accounts.id.renderButton(buttonRef.current, {
                     theme,
@@ -156,7 +178,7 @@ export function GoogleSignInButton({
             if (checkInterval) clearInterval(checkInterval);
             if (giveUpTimeout) clearTimeout(giveUpTimeout);
         };
-    }, [handleCredentialResponse, locale, onError, theme, text]);
+    }, [handleCredentialResponse, locale, onError, theme, text, forceAccountChooser]);
 
     return (
         <div

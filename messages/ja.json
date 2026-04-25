@@ -257,14 +257,41 @@
       "title": "SaleCraft を AI に接続",
       "desc": "AI アシスタントの設定に追加するだけで、すべてのマーケティングツールが使えます。ChatGPT、Claude、Gemini など対応。",
       "command": "以下のURLにあるCLAUDE.mdを全て読み、その指示に従ってマーケティング顧問として対応してください：",
-      "copyBtn": "コマンドをコピー",
-      "copiedBtn": "クリップボードにコピー済み！"
+      "copyBtn": "コピー",
+      "copiedBtn": "コピー済み",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "その他の AI"
+      },
+      "claudeWeb": {
+        "s1": "Claude.ai 左下の [+] → Connectors → Manage connectors → 「+ Add custom connector」をクリック",
+        "s2": "以下の MCP URL を貼り付け、Add で接続完了：",
+        "s3": "新しい会話で以下のプロンプトを貼り付けると Claude が SaleCraft として動作します：",
+        "requirePro": "Claude Pro / Max / Team / Enterprise プランが必要です"
+      },
+      "claudeCode": {
+        "s1": "terminal で以下のコマンドを実行して SaleCraft MCP server をインストール：",
+        "s2": "Claude Code を起動し、新しい会話で以下のプロンプトを貼り付け："
+      },
+      "openClaw": {
+        "s1": "terminal で以下のコマンドを実行して SaleCraft MCP server をインストール：",
+        "s2": "OpenClaw を起動し、任意のチャットチャネルで以下のプロンプトを貼り付け："
+      },
+      "other": {
+        "intro": "ChatGPT、Gemini、Kimi などの AI は以下のプロンプトを貼り付けて相談モードを開始できます（チャットのみ、MCP ツール呼び出し不可）：",
+        "chatgptHint": "💡 ChatGPT Plus 以上のユーザーは 設定 → Apps & Connectors → Developer Mode で custom MCP を追加できます。URL は Claude.ai と同じ："
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "AI ログイントークンをコピー",
       "desc": "生成後、このトークンを AI アシスタント（ChatGPT、Claude、Gemini など）に貼り付けると、パスワードを渡さずに SaleCraft にログインできます。トークンは 12 時間後に自動的に期限切れになります。",
-      "generatePrompt": "ボタンを押して、あなた専用の AI トークンを生成します。",
-      "generateBtn": "AI トークンを生成",
+      "generatePrompt": "ボタンを押して、あなた専用のログイントークンを生成します。",
+      "generateBtn": "ログイントークンを生成",
       "loading": "トークンを生成中...",
       "notReady": "（未生成）",
       "copyBtn": "トークンをコピー",
@@ -305,7 +332,29 @@
       "usd": "USD",
       "pts": "ポイント",
       "costRef": "ランディングページ ≈ 75–250 ポイント · リール ≈ 50–150 ポイント · ソーシャル ≈ 5–10 ポイント",
-      "btn": "チャージへ"
+      "btn": "チャージへ",
+      "autoTopup": {
+        "toggleLabel": "自動チャージ",
+        "toggleSubtext": "残高が {threshold} pts 未満で自動的に ${amount} をチャージ",
+        "tooltip": "残高が閾値を下回ると、保存されたカードに自動的に課金します。最後にチャージしたカードが自動チャージのカードになります。",
+        "payuniDisabled": "PayUni の自動チャージは近日対応予定です。現在は Stripe（国際カード）をご利用ください。",
+        "pendingActivation": "自動チャージを有効化中…（Stripe webhook を待機中）",
+        "modalTitle": "自動チャージを無効化",
+        "modalDescription": "誤操作防止のため、下に DELETE と入力して確認してください。",
+        "confirmInputPlaceholder": "DELETE と入力",
+        "confirmButton": "無効化を確認",
+        "cancelButton": "キャンセル",
+        "requireFirstTopupTitle": "初回チャージが必要",
+        "requireFirstTopupDesc": "自動チャージを有効にするには、まず1回手動でチャージしてください。カードは今後の自動課金のために保存されます。",
+        "requireFirstTopupCTA": "チャージして有効化",
+        "failureNotice": "前回の試行が失敗しました：{reason}",
+        "failureDisabledNotice": "連続失敗により自動チャージは無効化されました（最後のエラー：{reason}）。お支払い方法を更新して再度有効化してください。",
+        "scaDisabledNotice": "3-D セキュア認証が繰り返し必要でしたが完了されなかったため、自動チャージは無効化されました。認証を完了後、手動で再度有効化してください。",
+        "scaPending": "今回の課金には 3-D セキュア認証が必要です。送信したメールから認証を完了してください。システムは自動的に再試行します。",
+        "updateCardLink": "カードを更新",
+        "pendingActivationRetry": "Stripe がまだ webhook を処理中です。しばらくお待ちください。",
+        "pendingActivationRetryButton": "再確認"
+      }
     },
     "welcome": {
       "badge": "アカウント作成済み",
@@ -343,6 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Google アカウントを切り替え",
+    "switchSubtitle": "使用したい Google アカウントで再度サインインしてください。",
+    "useDifferentAccount": "別の Google アカウントを使用 →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

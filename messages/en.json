@@ -270,6 +270,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "useDifferentAccount": "Use a different Google account →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },
@@ -282,14 +285,41 @@
       "title": "Connect SaleCraft to Your AI",
       "desc": "Add this to your AI assistant's settings to unlock all marketing tools. Works with ChatGPT, Claude, Gemini, and more.",
       "command": "Please fetch the full CLAUDE.md at the URL below and follow its instructions as my marketing consultant:",
-      "copyBtn": "Copy Command",
-      "copiedBtn": "Copied to Clipboard!"
+      "copyBtn": "Copy",
+      "copiedBtn": "Copied",
+      "platforms": {
+        "claudeWeb": "Claude.ai",
+        "claudeCode": "Claude Code",
+        "openClaw": "OpenClaw",
+        "other": "Other AI"
+      },
+      "claudeWeb": {
+        "s1": "In Claude.ai, click the [+] in the bottom-left → Connectors → Manage connectors → \"+ Add custom connector\".",
+        "s2": "Paste this MCP URL and hit Add to finish the connection:",
+        "s3": "Then start a new chat and paste this prompt to activate SaleCraft:",
+        "requirePro": "Requires Claude Pro / Max / Team / Enterprise to add custom connectors."
+      },
+      "claudeCode": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Open Claude Code and paste this prompt in a new chat to activate SaleCraft:"
+      },
+      "openClaw": {
+        "s1": "Run this command in your terminal to install the SaleCraft MCP server:",
+        "s2": "Start OpenClaw and paste this prompt in any chat channel:"
+      },
+      "other": {
+        "intro": "ChatGPT, Gemini, Kimi and other AIs can paste the prompt below to enter consultation mode (chat-only, no MCP tool calls):",
+        "chatgptHint": "💡 ChatGPT Plus users: add a custom MCP under Settings → Apps & Connectors → Developer Mode, using the same URL as Claude.ai:"
+      },
+      "labelMcpUrl": "MCP URL",
+      "labelInstallCmd": "Terminal",
+      "labelPrompt": "Prompt"
     },
     "step2": {
       "title": "Copy Your AI Login Token",
       "desc": "Paste this token to your AI assistant (ChatGPT, Claude, Gemini, etc.) and it can log you into SaleCraft without your email or password. The token expires in 12 hours.",
-      "generatePrompt": "Press the button to generate a personal AI Token.",
-      "generateBtn": "Generate AI Token",
+      "generatePrompt": "Press the button to generate your personal Login Token.",
+      "generateBtn": "Generate Login Token",
       "loading": "Generating your token...",
       "notReady": "(not generated yet)",
       "copyBtn": "Copy Token",
@@ -330,7 +360,29 @@
       "usd": "USD",
       "pts": "pts",
       "costRef": "Landing Page ≈ 75–250 pts · Reels ≈ 50–150 pts · Social ≈ 5–10 pts",
-      "btn": "Go to Top Up"
+      "btn": "Go to Top Up",
+      "autoTopup": {
+        "toggleLabel": "Auto Top-up",
+        "toggleSubtext": "Auto-charge ${amount} when balance < {threshold} pts",
+        "tooltip": "When your balance drops below the threshold, we'll automatically charge your saved card. The card you used for your last top-up becomes the auto-top-up card.",
+        "payuniDisabled": "Auto top-up via PayUni is coming soon. Please use Stripe (international card) for now.",
+        "pendingActivation": "Activating auto top-up… (waiting for Stripe webhook)",
+        "modalTitle": "Disable Auto Top-up",
+        "modalDescription": "To prevent accidental disabling, please type DELETE below to confirm.",
+        "confirmInputPlaceholder": "Type DELETE",
+        "confirmButton": "Confirm Disable",
+        "cancelButton": "Cancel",
+        "requireFirstTopupTitle": "First Top-up Required",
+        "requireFirstTopupDesc": "To enable auto top-up, please complete one manual top-up first. Your card will be saved for future automatic charges.",
+        "requireFirstTopupCTA": "Top Up & Enable",
+        "failureNotice": "Last attempt failed: {reason}",
+        "failureDisabledNotice": "Auto top-up disabled after consecutive failures (last error: {reason}). Please update your payment method and re-enable.",
+        "scaDisabledNotice": "Auto top-up disabled because 3-D Secure was repeatedly required but not completed. Complete verification and re-enable manually.",
+        "scaPending": "3-D Secure verification required. Please complete it from the email we just sent; we will retry automatically.",
+        "updateCardLink": "Update card",
+        "pendingActivationRetry": "Stripe is still processing the webhook. Please wait a moment.",
+        "pendingActivationRetryButton": "Check again"
+      }
     },
     "welcome": {
       "badge": "Account Created",
