@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "従量課金制",
-        "desc": "$1 USD = 30ポイント、月額サブスクリプション不要。ランディングページ約75-250ポイント、リール約50-150ポイント、ソーシャル投稿5-10ポイント。"
+        "desc": "$1 USD = 1ポイント、月額サブスクリプション不要。ランディングページ約75-250ポイント、リール約50-150ポイント、ソーシャル投稿5-10ポイント。"
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "ポイントをチャージ",
-      "desc": "$1 USD = 30ポイント。チャージ後、ランディングページ生成、リール、ソーシャル配信などすべての機能をご利用いただけます。",
+      "desc": "$1 USD = 1ポイント。チャージ後、ランディングページ生成、リール、ソーシャル配信などすべての機能をご利用いただけます。",
       "balance": "現在の残高",
       "amountLabel": "チャージ金額",
       "custom": "カスタム",
@@ -392,8 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
-    "switchTitle": "Google アカウントを切り替え",
-    "switchSubtitle": "使用したい Google アカウントで再度サインインしてください。",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

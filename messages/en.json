@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "Pay as you go",
-        "desc": "$1 USD = 30 pts, no monthly subscription. Landing Pages ~75-250 pts, Reels ~50-150 pts, social posts 5-10 pts."
+        "desc": "$1 USD = 1 pt, no monthly subscription. Landing Pages ~75-250 pts, Reels ~50-150 pts, social posts 5-10 pts."
       }
     },
     "successStories": {
@@ -272,6 +272,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },
@@ -352,7 +353,7 @@
     },
     "step5": {
       "title": "Top Up Points",
-      "desc": "$1 USD = 30 pts. After topping up, you can use Landing Page generation, Reels, social publishing, and all other features.",
+      "desc": "$1 USD = 1 pt. After topping up, you can use Landing Page generation, Reels, social publishing, and all other features.",
       "balance": "Current Balance",
       "amountLabel": "Top Up Amount",
       "custom": "Custom",

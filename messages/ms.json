@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "Bayar mengikut penggunaan",
-        "desc": "$1 USD = 30 mata, tanpa langganan bulanan. Landing Page ~75-250 mata, Reels ~50-150 mata, siaran sosial 5-10 mata."
+        "desc": "$1 USD = 1 mata, tanpa langganan bulanan. Landing Page ~75-250 mata, Reels ~50-150 mata, siaran sosial 5-10 mata."
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "Tambah Nilai Mata",
-      "desc": "$1 USD = 30 mata. Selepas tambah nilai, anda boleh menggunakan penjanaan Landing Page, Reels, penerbitan sosial, dan semua ciri lain.",
+      "desc": "$1 USD = 1 mata. Selepas tambah nilai, anda boleh menggunakan penjanaan Landing Page, Reels, penerbitan sosial, dan semua ciri lain.",
       "balance": "Baki Semasa",
       "amountLabel": "Jumlah Tambah Nilai",
       "custom": "Tersuai",
@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

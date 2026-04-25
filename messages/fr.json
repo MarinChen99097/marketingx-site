@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "Payez à l'utilisation",
-        "desc": "1 $ USD = 30 pts, sans abonnement mensuel. Pages d'atterrissage ~75-250 pts, Reels ~50-150 pts, publications sociales 5-10 pts."
+        "desc": "1 $ USD = 1 pt, sans abonnement mensuel. Pages d'atterrissage ~75-250 pts, Reels ~50-150 pts, publications sociales 5-10 pts."
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "Recharger des points",
-      "desc": "1 $ USD = 30 pts. Après la recharge, vous pouvez utiliser la génération de pages d'atterrissage, Reels, publication sociale et toutes les autres fonctionnalités.",
+      "desc": "1 $ USD = 1 pt. Après la recharge, vous pouvez utiliser la génération de pages d'atterrissage, Reels, publication sociale et toutes les autres fonctionnalités.",
       "balance": "Solde actuel",
       "amountLabel": "Montant à recharger",
       "custom": "Personnalisé",
@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

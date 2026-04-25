@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "사용한 만큼만 결제",
-        "desc": "$1 USD = 30 포인트, 월 구독료 없음. 랜딩 페이지 약 75-250 포인트, 릴스 약 50-150 포인트, 소셜 포스트 5-10 포인트."
+        "desc": "$1 USD = 1 포인트, 월 구독료 없음. 랜딩 페이지 약 75-250 포인트, 릴스 약 50-150 포인트, 소셜 포스트 5-10 포인트."
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "포인트 충전",
-      "desc": "$1 USD = 30 포인트. 충전 후 랜딩 페이지 생성, 릴스, 소셜 퍼블리싱 등 모든 기능을 사용할 수 있습니다.",
+      "desc": "$1 USD = 1 포인트. 충전 후 랜딩 페이지 생성, 릴스, 소셜 퍼블리싱 등 모든 기능을 사용할 수 있습니다.",
       "balance": "현재 잔액",
       "amountLabel": "충전 금액",
       "custom": "직접 입력",
@@ -392,8 +392,9 @@
     "firstTimeHint": "First time? Your SaleCraft account will be created automatically",
     "existingHint": "Already have an account? Same button — it just signs you in",
     "alreadySignedIn": "You're already signed in, redirecting…",
-    "switchTitle": "Google 계정 전환",
-    "switchSubtitle": "사용하실 Google 계정으로 다시 로그인하세요.",
+    "switchTitle": "Switch your Google account",
+    "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

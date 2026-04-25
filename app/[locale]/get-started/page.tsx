@@ -1306,7 +1306,7 @@ export default function GetStartedPage() {
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-white/50">{t("step5.amountLabel")}</span>
-                <span className="text-xs text-white/30">$1 USD = 30 pts</span>
+                <span className="text-xs text-white/30">$1 USD = 1 pt</span>
               </div>
               {/* 3 options: $20, $75, Custom */}
               <div className="grid grid-cols-3 gap-2">
@@ -1315,14 +1315,14 @@ export default function GetStartedPage() {
                   className={`py-3 rounded-xl text-center transition-all ${!customAmount && topupAmount === 20 ? "bg-[hsl(16,70%,56%)] text-white ring-2 ring-[hsl(16,70%,56%)]/30" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
                 >
                   <div className="text-lg font-bold">$20</div>
-                  <div className="text-[10px] opacity-60">600 pts</div>
+                  <div className="text-[10px] opacity-60">20 pts</div>
                 </button>
                 <button
                   onClick={() => { setTopupAmount(75); setCustomAmount(false); }}
                   className={`py-3 rounded-xl text-center transition-all ${!customAmount && topupAmount === 75 ? "bg-[hsl(16,70%,56%)] text-white ring-2 ring-[hsl(16,70%,56%)]/30" : "border border-white/10 bg-white/[0.03] text-white/50 hover:bg-white/[0.06]"}`}
                 >
                   <div className="text-lg font-bold">$75</div>
-                  <div className="text-[10px] opacity-60">2,250 pts</div>
+                  <div className="text-[10px] opacity-60">75 pts</div>
                 </button>
                 <button
                   onClick={() => setCustomAmount(true)}
@@ -1344,7 +1344,7 @@ export default function GetStartedPage() {
                     onChange={(e) => setTopupAmount(Math.max(20, parseInt(e.target.value) || 20))}
                     className="flex-1 h-11 rounded-xl border border-white/10 bg-white/[0.04] text-white text-center text-xl font-bold px-4 outline-none focus:border-[hsl(16,70%,56%)]/50 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
-                  <span className="text-white/40 text-sm">= {topupAmount * 30} pts</span>
+                  <span className="text-white/40 text-sm">= {topupAmount} pts</span>
                 </div>
               )}
             </div>

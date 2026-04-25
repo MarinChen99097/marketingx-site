@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "Trả theo lượng dùng",
-        "desc": "$1 USD = 30 điểm, không phí hàng tháng. Trang đích khoảng 75-250 điểm, Reels khoảng 50-150 điểm, bài MXH 5-10 điểm."
+        "desc": "$1 USD = 1 điểm, không phí hàng tháng. Trang đích khoảng 75-250 điểm, Reels khoảng 50-150 điểm, bài MXH 5-10 điểm."
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "Nạp điểm",
-      "desc": "$1 USD = 30 điểm. Sau khi nạp, bạn có thể sử dụng tạo trang đích, Reels, đăng bài MXH và tất cả tính năng khác.",
+      "desc": "$1 USD = 1 điểm. Sau khi nạp, bạn có thể sử dụng tạo trang đích, Reels, đăng bài MXH và tất cả tính năng khác.",
       "balance": "Số dư hiện tại",
       "amountLabel": "Số tiền nạp",
       "custom": "Tùy chỉnh",
@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

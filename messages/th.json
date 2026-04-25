@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "จ่ายตามการใช้งาน",
-        "desc": "$1 USD = 30 คะแนน ไม่มีค่าสมาชิกรายเดือน แลนดิ้งเพจ ~75-250 คะแนน, Reels ~50-150 คะแนน, โพสต์โซเชียล 5-10 คะแนน"
+        "desc": "$1 USD = 1 คะแนน ไม่มีค่าสมาชิกรายเดือน แลนดิ้งเพจ ~75-250 คะแนน, Reels ~50-150 คะแนน, โพสต์โซเชียล 5-10 คะแนน"
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "เติมคะแนน",
-      "desc": "$1 USD = 30 คะแนน หลังจากเติมเงินแล้ว คุณสามารถใช้การสร้างแลนดิ้งเพจ, Reels, เผยแพร่โซเชียล และฟีเจอร์อื่นๆ ทั้งหมด",
+      "desc": "$1 USD = 1 คะแนน หลังจากเติมเงินแล้ว คุณสามารถใช้การสร้างแลนดิ้งเพจ, Reels, เผยแพร่โซเชียล และฟีเจอร์อื่นๆ ทั้งหมด",
       "balance": "ยอดคงเหลือปัจจุบัน",
       "amountLabel": "จำนวนเงินเติม",
       "custom": "กำหนดเอง",
@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

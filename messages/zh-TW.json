@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "用多少付多少",
-        "desc": "$1 美元 = 30 點，無月費訂閱。Landing Page 約 75-250 點、Reels 約 50-150 點、社群貼文 5-10 點。"
+        "desc": "$1 美元 = 1 點，無月費訂閱。Landing Page 約 75-250 點、Reels 約 50-150 點、社群貼文 5-10 點。"
       }
     },
     "successStories": {
@@ -272,6 +272,7 @@
     "alreadySignedIn": "偵測到你已登入，準備前往下一步…",
     "switchTitle": "切換 Google 帳號",
     "switchSubtitle": "請選擇你想要使用的 Google 帳號重新登入。",
+    "switchToAnotherAccountLink": "改用其他登入方式",
     "contactSupport": "遇到問題？請聯絡",
     "supportEmail": "zereo@connact.ai"
   },
@@ -352,7 +353,7 @@
     },
     "step5": {
       "title": "儲值點數",
-      "desc": "$1 美元 = 30 點。儲值後即可使用 Landing Page 生成、Reels、社群發佈等所有功能。",
+      "desc": "$1 美元 = 1 點。儲值後即可使用 Landing Page 生成、Reels、社群發佈等所有功能。",
       "balance": "目前餘額",
       "amountLabel": "儲值金額",
       "custom": "自訂",

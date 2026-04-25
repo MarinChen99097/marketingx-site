@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "Paga por lo que uses",
-        "desc": "$1 USD = 30 pts, sin suscripción mensual. Páginas de destino ~75-250 pts, Reels ~50-150 pts, publicaciones sociales 5-10 pts."
+        "desc": "$1 USD = 1 pt, sin suscripción mensual. Páginas de destino ~75-250 pts, Reels ~50-150 pts, publicaciones sociales 5-10 pts."
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "Recargar puntos",
-      "desc": "$1 USD = 30 pts. Después de recargar, puedes usar generación de páginas de destino, Reels, publicación social y todas las demás funciones.",
+      "desc": "$1 USD = 1 pt. Después de recargar, puedes usar generación de páginas de destino, Reels, publicación social y todas las demás funciones.",
       "balance": "Saldo actual",
       "amountLabel": "Monto a recargar",
       "custom": "Personalizado",
@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "जितना उपयोग उतना भुगतान",
-        "desc": "$1 USD = 30 अंक, कोई मासिक सदस्यता नहीं। लैंडिंग पेज ~75-250 अंक, रील्स ~50-150 अंक, सोशल पोस्ट 5-10 अंक।"
+        "desc": "$1 USD = 1 अंक, कोई मासिक सदस्यता नहीं। लैंडिंग पेज ~75-250 अंक, रील्स ~50-150 अंक, सोशल पोस्ट 5-10 अंक।"
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "अंक रिचार्ज करें",
-      "desc": "$1 USD = 30 अंक। रिचार्ज के बाद, आप लैंडिंग पेज जनरेशन, रील्स, सोशल पब्लिशिंग और सभी अन्य सुविधाओं का उपयोग कर सकते हैं।",
+      "desc": "$1 USD = 1 अंक। रिचार्ज के बाद, आप लैंडिंग पेज जनरेशन, रील्स, सोशल पब्लिशिंग और सभी अन्य सुविधाओं का उपयोग कर सकते हैं।",
       "balance": "वर्तमान शेष",
       "amountLabel": "रिचार्ज राशि",
       "custom": "कस्टम",
@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

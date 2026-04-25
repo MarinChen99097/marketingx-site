@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "Bayar sesuai pemakaian",
-        "desc": "$1 USD = 30 poin, tanpa langganan bulanan. Landing Page ~75-250 poin, Reels ~50-150 poin, postingan sosial 5-10 poin."
+        "desc": "$1 USD = 1 poin, tanpa langganan bulanan. Landing Page ~75-250 poin, Reels ~50-150 poin, postingan sosial 5-10 poin."
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "Isi Ulang Poin",
-      "desc": "$1 USD = 30 poin. Setelah isi ulang, Anda dapat menggunakan pembuatan Landing Page, Reels, publikasi sosial, dan semua fitur lainnya.",
+      "desc": "$1 USD = 1 poin. Setelah isi ulang, Anda dapat menggunakan pembuatan Landing Page, Reels, publikasi sosial, dan semua fitur lainnya.",
       "balance": "Saldo Saat Ini",
       "amountLabel": "Jumlah Isi Ulang",
       "custom": "Kustom",
@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

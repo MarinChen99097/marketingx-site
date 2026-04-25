@@ -64,7 +64,7 @@
       },
       "payg": {
         "title": "Zahlen Sie nur, was Sie nutzen",
-        "desc": "$1 USD = 30 Punkte, kein monatliches Abo. Landing Pages ~75-250 Punkte, Reels ~50-150 Punkte, Social-Media-Beiträge 5-10 Punkte."
+        "desc": "$1 USD = 1 Punkt, kein monatliches Abo. Landing Pages ~75-250 Punkte, Reels ~50-150 Punkte, Social-Media-Beiträge 5-10 Punkte."
       }
     },
     "successStories": {
@@ -325,7 +325,7 @@
     },
     "step5": {
       "title": "Punkte aufladen",
-      "desc": "$1 USD = 30 Punkte. Nach dem Aufladen können Sie Landing Page-Generierung, Reels, Social-Media-Veröffentlichung und alle anderen Funktionen nutzen.",
+      "desc": "$1 USD = 1 Punkt. Nach dem Aufladen können Sie Landing Page-Generierung, Reels, Social-Media-Veröffentlichung und alle anderen Funktionen nutzen.",
       "balance": "Aktuelles Guthaben",
       "amountLabel": "Aufladebetrag",
       "custom": "Individuell",
@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },
