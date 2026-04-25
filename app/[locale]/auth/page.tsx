@@ -141,8 +141,16 @@ function AuthInner() {
     // redirect; Google bounces back to redirect_uri with #id_token=… on
     // success. We rely on Google's chooser UI for actual account picking,
     // which works regardless of how many accounts are signed into the browser.
+    //
+    // Gate on termsAccepted to mirror the GIS handler — a brand-new Google
+    // account picked here will be auto-registered by /auth/google, so we
+    // need explicit ToS consent before the redirect leaves the page.
     const triggerSwitchAccount = useCallback(() => {
         if (typeof window === "undefined") return;
+        if (!termsAccepted) {
+            setError(t("errorTermsRequired"));
+            return;
+        }
         const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
         if (!clientId) {
             setError(t("errorGeneric"));
@@ -162,11 +170,13 @@ function AuthInner() {
             response_type: "id_token",
             scope: "openid email profile",
             prompt: "select_account",
+            // Localize Google's chooser UI to match the page's locale.
+            hl: locale,
             nonce,
             state,
         });
         window.location.href = `${OIDC_AUTH_ENDPOINT}?${params.toString()}`;
-    }, [locale, returnPath, t]);
+    }, [locale, returnPath, t, termsAccepted]);
 
     // Already signed in → skip the UI and redirect. Short-circuit when no
     // token is stored so first-time visitors don't pay a network round-trip.
@@ -366,8 +376,8 @@ function AuthInner() {
                                 <button
                                     type="button"
                                     onClick={triggerSwitchAccount}
-                                    disabled={loading}
-                                    className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors disabled:opacity-40"
+                                    disabled={loading || !termsAccepted}
+                                    className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors disabled:opacity-40 disabled:no-underline disabled:cursor-not-allowed"
                                 >
                                     {t("switchToAnotherAccountLink")}
                                 </button>
