@@ -394,7 +394,6 @@
     "alreadySignedIn": "检测到你已登录，准备前往下一步…",
     "switchTitle": "切换 Google 帐号",
     "switchSubtitle": "请选择你想要使用的 Google 帐号重新登录。",
-    "useDifferentAccount": "使用其他 Google 帐号 →",
     "contactSupport": "遇到问题？请联络",
     "supportEmail": "zereo@connact.ai"
   },

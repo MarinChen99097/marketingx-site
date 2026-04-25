@@ -394,7 +394,6 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Google アカウントを切り替え",
     "switchSubtitle": "使用したい Google アカウントで再度サインインしてください。",
-    "useDifferentAccount": "別の Google アカウントを使用 →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

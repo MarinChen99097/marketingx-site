@@ -394,7 +394,6 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Google 계정 전환",
     "switchSubtitle": "사용하실 Google 계정으로 다시 로그인하세요.",
-    "useDifferentAccount": "다른 Google 계정 사용 →",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },
