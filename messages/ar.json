@@ -394,6 +394,7 @@
     "alreadySignedIn": "You're already signed in, redirecting…",
     "switchTitle": "Switch your Google account",
     "switchSubtitle": "Sign in again with the Google account you want to use.",
+    "switchToAnotherAccountLink": "Use another sign-in option",
     "contactSupport": "Need help? Contact",
     "supportEmail": "zereo@connact.ai"
   },

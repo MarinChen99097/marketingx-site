@@ -392,8 +392,9 @@
     "firstTimeHint": "首次登录将自动创建你的 SaleCraft 帐号",
     "existingHint": "第二次以后，这就是你的登录入口",
     "alreadySignedIn": "检测到你已登录，准备前往下一步…",
-    "switchTitle": "切换 Google 帐号",
-    "switchSubtitle": "请选择你想要使用的 Google 帐号重新登录。",
+    "switchTitle": "切換 Google 帳號",
+    "switchSubtitle": "請選擇你想要使用的 Google 帳號重新登入。",
+    "switchToAnotherAccountLink": "改用其他登录方式",
     "contactSupport": "遇到问题？请联络",
     "supportEmail": "zereo@connact.ai"
   },

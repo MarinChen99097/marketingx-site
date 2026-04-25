@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -40,6 +40,30 @@ function safeReturnUrl(raw: string | null, locale: string): string {
     }
 }
 
+// OIDC Implicit-flow constants for the "switch account" affordance. Using the
+// canonical Google OAuth 2.0 endpoint with prompt=select_account is the only
+// reliable way to force the account chooser when the browser has exactly one
+// signed-in Google account — GIS's renderButton short-circuits in that case
+// and the previously-tried AccountChooser/AddSession URLs are deprecated.
+//
+// REDIRECT URI: this URL must be registered in the OAuth client's
+// "Authorized redirect URIs" list (GCP Console → APIs & Services → Credentials).
+// We use the current locale's /auth path so the same component handles the
+// redirect-back leg by parsing window.location.hash for #id_token=…
+const OIDC_AUTH_ENDPOINT = "https://accounts.google.com/o/oauth2/v2/auth";
+const OIDC_RETURN_KEY = "salecraft.oidcReturnPath";
+const OIDC_STATE_KEY = "salecraft.oidcState";
+const OIDC_NONCE_KEY = "salecraft.oidcNonce";
+
+function randomToken(): string {
+    // crypto.randomUUID is available on every browser we ship to (last 4 yrs).
+    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+        return crypto.randomUUID();
+    }
+    // Fallback for ancient environments — still adequate as a CSRF token.
+    return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
 function AuthInner() {
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -57,24 +81,119 @@ function AuthInner() {
     // button must offer a real escape from the previously-signed-in account.
     const switchMode = searchParams.get("switch") === "1";
 
+    // Handle the OAuth Implicit redirect-back leg. Google appends
+    // #id_token=…&state=…&… to our redirect_uri after the user picks an
+    // account. We validate state/nonce against sessionStorage, then feed
+    // the ID token into the same /auth/google backend endpoint that GIS uses.
+    const handleOidcCallback = useCallback(async () => {
+        if (typeof window === "undefined") return false;
+        if (!window.location.hash || !window.location.hash.includes("id_token=")) {
+            return false;
+        }
+
+        const hashParams = new URLSearchParams(window.location.hash.slice(1));
+        const idToken = hashParams.get("id_token");
+        const returnedState = hashParams.get("state");
+        const oauthError = hashParams.get("error");
+
+        // Always strip the hash so a refresh doesn't re-trigger sign-in.
+        window.history.replaceState(
+            null,
+            "",
+            window.location.pathname + window.location.search
+        );
+
+        if (oauthError) {
+            setError(t("errorGeneric"));
+            return true;
+        }
+
+        const expectedState = sessionStorage.getItem(OIDC_STATE_KEY);
+        const storedReturn = sessionStorage.getItem(OIDC_RETURN_KEY);
+        sessionStorage.removeItem(OIDC_STATE_KEY);
+        sessionStorage.removeItem(OIDC_NONCE_KEY);
+        sessionStorage.removeItem(OIDC_RETURN_KEY);
+
+        if (!idToken || !returnedState || returnedState !== expectedState) {
+            setError(t("errorGeneric"));
+            return true;
+        }
+
+        setLoading(true);
+        try {
+            const session = await signInWithGoogleCredential(idToken, {
+                sourceSite: "salecraft.ai",
+            });
+            persistSession(session);
+            const dest = storedReturn && storedReturn.startsWith("/") ? storedReturn : returnPath;
+            router.replace(dest);
+        } catch (e) {
+            const message = (e as { response?: { status?: number } })?.response?.status === 503
+                ? t("errorBackend")
+                : t("errorGeneric");
+            setError(message);
+            setLoading(false);
+        }
+        return true;
+    }, [router, returnPath, t]);
+
+    // Trigger OIDC Implicit flow with prompt=select_account. Same-window
+    // redirect; Google bounces back to redirect_uri with #id_token=… on
+    // success. We rely on Google's chooser UI for actual account picking,
+    // which works regardless of how many accounts are signed into the browser.
+    const triggerSwitchAccount = useCallback(() => {
+        if (typeof window === "undefined") return;
+        const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+        if (!clientId) {
+            setError(t("errorGeneric"));
+            return;
+        }
+        const state = randomToken();
+        const nonce = randomToken();
+        sessionStorage.setItem(OIDC_STATE_KEY, state);
+        sessionStorage.setItem(OIDC_NONCE_KEY, nonce);
+        sessionStorage.setItem(OIDC_RETURN_KEY, returnPath);
+
+        // redirect_uri must match a registered URI exactly (no query, no hash).
+        const redirectUri = `${window.location.origin}/${locale}/auth`;
+        const params = new URLSearchParams({
+            client_id: clientId,
+            redirect_uri: redirectUri,
+            response_type: "id_token",
+            scope: "openid email profile",
+            prompt: "select_account",
+            nonce,
+            state,
+        });
+        window.location.href = `${OIDC_AUTH_ENDPOINT}?${params.toString()}`;
+    }, [locale, returnPath, t]);
+
     // Already signed in → skip the UI and redirect. Short-circuit when no
     // token is stored so first-time visitors don't pay a network round-trip.
     useEffect(() => {
-        // Switch mode: nuke any leftover session and stay on the form so the
-        // user can pick a different Google account. Without this, a stale
-        // token (e.g. from a parallel tab that re-issued one) would silently
-        // bounce them back to the same account they're trying to leave.
-        if (switchMode) {
-            clearSession();
-            setProbing(false);
-            return;
-        }
-        if (!getStoredToken()) {
-            setProbing(false);
-            return;
-        }
         let cancelled = false;
         (async () => {
+            // OIDC redirect-back has top priority — handle the hash before any
+            // session/redirect logic so the new credential wins over any stale
+            // local token.
+            const handled = await handleOidcCallback();
+            if (cancelled || handled) {
+                if (handled) setProbing(false);
+                return;
+            }
+            // Switch mode: nuke any leftover session and stay on the form so the
+            // user can pick a different Google account. Without this, a stale
+            // token (e.g. from a parallel tab that re-issued one) would silently
+            // bounce them back to the same account they're trying to leave.
+            if (switchMode) {
+                clearSession();
+                setProbing(false);
+                return;
+            }
+            if (!getStoredToken()) {
+                setProbing(false);
+                return;
+            }
             const live = await validateToken();
             if (cancelled) return;
             if (live) {
@@ -86,7 +205,7 @@ function AuthInner() {
         return () => {
             cancelled = true;
         };
-    }, [router, returnPath, switchMode]);
+    }, [router, returnPath, switchMode, handleOidcCallback]);
 
     const handleGoogleCredential = async (credential: string) => {
         if (loading) return;
@@ -234,6 +353,24 @@ function AuthInner() {
                                 <div className="w-full p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-300 text-center">
                                     {error}
                                 </div>
+                            )}
+
+                            {/* Switch-mode escape hatch: forces Google's account
+                                chooser via the OIDC Implicit endpoint with
+                                prompt=select_account. This is the canonical
+                                spec-defined way to bypass GIS's "single signed-
+                                in account" short-circuit. The redirect_uri
+                                (`${origin}/${locale}/auth`) must be registered
+                                in the OAuth client's Authorized redirect URIs. */}
+                            {switchMode && !CLIENT_ID_MISSING && (
+                                <button
+                                    type="button"
+                                    onClick={triggerSwitchAccount}
+                                    disabled={loading}
+                                    className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors disabled:opacity-40"
+                                >
+                                    {t("switchToAnotherAccountLink")}
+                                </button>
                             )}
                         </div>
 
