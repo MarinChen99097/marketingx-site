@@ -335,7 +335,7 @@
       "btn": "Zum Aufladen",
       "autoTopup": {
         "toggleLabel": "Automatisches Aufladen",
-        "toggleSubtext": "Automatisch ${amount} berechnen, wenn Guthaben < {threshold} pts",
+        "toggleSubtext": "Automatisch ${amount} berechnen, wenn Guthaben < ${threshold}",
         "tooltip": "Wenn Ihr Guthaben unter den Schwellenwert fällt, belasten wir Ihre gespeicherte Karte automatisch. Die Karte, die Sie für Ihre letzte Aufladung verwendet haben, wird zur automatischen Aufladekarte.",
         "payuniDisabled": "Automatisches Aufladen über PayUni kommt bald. Bitte verwenden Sie Stripe (internationale Karte) vorerst.",
         "pendingActivation": "Automatisches Aufladen wird aktiviert… (warten auf Stripe-Webhook)",

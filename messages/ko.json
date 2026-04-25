@@ -335,7 +335,7 @@
       "btn": "충전하러 가기",
       "autoTopup": {
         "toggleLabel": "자동 충전",
-        "toggleSubtext": "잔액 < {threshold} pts일 때 ${amount} 자동 결제",
+        "toggleSubtext": "잔액 < ${threshold}일 때 ${amount} 자동 결제",
         "tooltip": "잔액이 임계값 아래로 떨어지면 저장된 카드로 자동 결제됩니다. 마지막으로 충전한 카드가 자동 충전 카드가 됩니다.",
         "payuniDisabled": "PayUni 자동 충전은 곧 지원됩니다. 현재는 Stripe(국제 카드)를 사용해 주세요.",
         "pendingActivation": "자동 충전 활성화 중… (Stripe webhook 대기 중)",

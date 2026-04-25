@@ -335,7 +335,7 @@
       "btn": "Aller à la recharge",
       "autoTopup": {
         "toggleLabel": "Recharge automatique",
-        "toggleSubtext": "Débit automatique de ${amount} lorsque le solde < {threshold} pts",
+        "toggleSubtext": "Débit automatique de ${amount} lorsque le solde < ${threshold}",
         "tooltip": "Lorsque votre solde tombe sous le seuil, nous débitons automatiquement votre carte enregistrée. La carte utilisée pour votre dernière recharge devient la carte de recharge automatique.",
         "payuniDisabled": "La recharge automatique via PayUni arrive bientôt. Veuillez utiliser Stripe (carte internationale) pour le moment.",
         "pendingActivation": "Activation de la recharge automatique… (en attente du webhook Stripe)",

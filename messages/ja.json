@@ -335,7 +335,7 @@
       "btn": "チャージへ",
       "autoTopup": {
         "toggleLabel": "自動チャージ",
-        "toggleSubtext": "残高が {threshold} pts 未満で自動的に ${amount} をチャージ",
+        "toggleSubtext": "残高が ${threshold} 未満で自動的に ${amount} をチャージ",
         "tooltip": "残高が閾値を下回ると、保存されたカードに自動的に課金します。最後にチャージしたカードが自動チャージのカードになります。",
         "payuniDisabled": "PayUni の自動チャージは近日対応予定です。現在は Stripe（国際カード）をご利用ください。",
         "pendingActivation": "自動チャージを有効化中…（Stripe webhook を待機中）",

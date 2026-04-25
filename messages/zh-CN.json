@@ -335,7 +335,7 @@
       "btn": "前往充值",
       "autoTopup": {
         "toggleLabel": "自动储值",
-        "toggleSubtext": "余额 < {threshold} pts 时自动补 ${amount}",
+        "toggleSubtext": "余额 < ${threshold} 时自动补 ${amount}",
         "tooltip": "余额低于阈值时系统会自动扣款补点。下次储值的卡片会被设为自动储值卡。",
         "payuniDisabled": "PayUni 自动储值即将支持，目前请使用 Stripe 国际信用卡。",
         "pendingActivation": "启用自动储值中…（等候 Stripe webhook）",

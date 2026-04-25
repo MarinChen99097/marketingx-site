@@ -363,7 +363,7 @@
       "btn": "Go to Top Up",
       "autoTopup": {
         "toggleLabel": "Auto Top-up",
-        "toggleSubtext": "Auto-charge ${amount} when balance < {threshold} pts",
+        "toggleSubtext": "Auto-charge ${amount} when balance < ${threshold}",
         "tooltip": "When your balance drops below the threshold, we'll automatically charge your saved card. The card you used for your last top-up becomes the auto-top-up card.",
         "payuniDisabled": "Auto top-up via PayUni is coming soon. Please use Stripe (international card) for now.",
         "pendingActivation": "Activating auto top-up… (waiting for Stripe webhook)",

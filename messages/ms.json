@@ -335,7 +335,7 @@
       "btn": "Ke Halaman Tambah Nilai",
       "autoTopup": {
         "toggleLabel": "Tambah nilai automatik",
-        "toggleSubtext": "Caj ${amount} automatik apabila baki < {threshold} pts",
+        "toggleSubtext": "Caj ${amount} automatik apabila baki < ${threshold}",
         "tooltip": "Apabila baki anda jatuh di bawah ambang, kami akan mengecaj kad tersimpan anda secara automatik. Kad yang anda gunakan untuk tambah nilai terakhir menjadi kad tambah nilai automatik.",
         "payuniDisabled": "Tambah nilai automatik melalui PayUni akan datang. Sila gunakan Stripe (kad antarabangsa) buat masa ini.",
         "pendingActivation": "Mengaktifkan tambah nilai automatik… (menunggu webhook Stripe)",

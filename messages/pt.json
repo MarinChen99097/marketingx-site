@@ -335,7 +335,7 @@
       "btn": "Ir para recarga",
       "autoTopup": {
         "toggleLabel": "Recarga automática",
-        "toggleSubtext": "Cobrança automática de ${amount} quando saldo < {threshold} pts",
+        "toggleSubtext": "Cobrança automática de ${amount} quando saldo < ${threshold}",
         "tooltip": "Quando seu saldo cair abaixo do limite, cobraremos automaticamente seu cartão salvo. O cartão usado na última recarga se torna o cartão de recarga automática.",
         "payuniDisabled": "Recarga automática via PayUni em breve. Por favor, use o Stripe (cartão internacional) por enquanto.",
         "pendingActivation": "Ativando recarga automática… (aguardando webhook do Stripe)",

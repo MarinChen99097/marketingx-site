@@ -335,7 +335,7 @@
       "btn": "Đến trang nạp điểm",
       "autoTopup": {
         "toggleLabel": "Tự động nạp",
-        "toggleSubtext": "Tự động nạp ${amount} khi số dư < {threshold} pts",
+        "toggleSubtext": "Tự động nạp ${amount} khi số dư < ${threshold}",
         "tooltip": "Khi số dư của bạn giảm xuống dưới ngưỡng, chúng tôi sẽ tự động tính phí thẻ đã lưu. Thẻ bạn dùng cho lần nạp gần nhất sẽ trở thành thẻ tự động nạp.",
         "payuniDisabled": "Tự động nạp qua PayUni sắp ra mắt. Vui lòng sử dụng Stripe (thẻ quốc tế) bây giờ.",
         "pendingActivation": "Đang kích hoạt tự động nạp… (đang chờ Stripe webhook)",
