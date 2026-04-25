@@ -126,8 +126,12 @@ export default function GetStartedPage() {
   const [topupAmount, setTopupAmount] = useState(20);
   const [customAmount, setCustomAmount] = useState(false);
   // Detected visitor country (ISO 3166-1 alpha-2). Null until geo lookup finishes
-  // or if all providers fail. TW → PayUni, everything else → Stripe.
+  // or if all providers fail. TW → twGateway choice; everything else → Stripe.
   const [country, setCountry] = useState<string | null>(null);
+  // Admin-configured Taiwan-IP gateway override. `null` = not yet fetched (treat
+  // as the historical default "payuni" until it loads). Read from
+  // /pricing/tw-gateway, written via the admin console.
+  const [twGateway, setTwGateway] = useState<"payuni" | "stripe" | null>(null);
   const [metaConnected, setMetaConnected] = useState(false);
   const [tiktokConnected, setTiktokConnected] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
@@ -483,6 +487,20 @@ export default function GetStartedPage() {
     return () => { cancelled = true; };
   }, []);
 
+  // Fetch admin-configured TW gateway override. Endpoint is public/no-auth.
+  // Failure leaves twGateway null → handleTopup falls back to "payuni" so the
+  // historical TW behaviour is preserved when the backend is unreachable.
+  useEffect(() => {
+    let cancelled = false;
+    api.get("/pricing/tw-gateway")
+      .then((res) => {
+        const v = res.data?.tw_default;
+        if (!cancelled && (v === "payuni" || v === "stripe")) setTwGateway(v);
+      })
+      .catch(() => { /* silent: keep null, handleTopup falls back */ });
+    return () => { cancelled = true; };
+  }, []);
+
   // ── Auto Top-up: fetch status on mount (only when logged in) ──
   const fetchAutoTopupStatus = async (): Promise<AutoTopupStatus | null> => {
     try {
@@ -623,7 +641,10 @@ export default function GetStartedPage() {
       : `${window.location.origin}/${locale}/get-started?topup=success`;
     const cancelUrl = `${window.location.origin}/${locale}/get-started`;
 
-    if (isTaiwan(cc)) {
+    // Route TW IPs by the admin-controlled toggle (default: payuni for
+    // historical parity if /tw-gateway isn't loaded yet). Non-TW always Stripe.
+    const useTwPayUni = isTaiwan(cc) && twGateway !== "stripe";
+    if (useTwPayUni) {
       try {
         const res = await api.post("/pricing/payuni/checkout", {
           amount_usd: topupAmount,
@@ -647,7 +668,7 @@ export default function GetStartedPage() {
       return;
     }
 
-    // Default: Stripe (non-TW or geo-detection failed)
+    // Stripe path: non-TW IP, or TW IP with admin toggle = stripe.
     try {
       const res = await api.post("/pricing/checkout", {
         amount_usd: topupAmount,
@@ -1329,14 +1350,16 @@ export default function GetStartedPage() {
             <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02]">
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-medium text-white/80">{t("step5.autoTopup.toggleLabel")}</div>
-                <div className="text-[11px] text-white/40 mt-0.5">
-                  {autoTopupStatus
-                    ? t("step5.autoTopup.toggleSubtext", {
-                        threshold: autoTopupStatus.threshold_pts,
-                        amount: autoTopupStatus.topup_amount_usd,
-                      })
-                    : t("step5.autoTopup.toggleSubtext", { threshold: 450, amount: 20 })}
-                </div>
+                {/* Subtext only after status loads — hardcoded fallback would lie
+                    if admin changed `threshold_pts` or `topup_amount_usd` in settings.json. */}
+                {autoTopupStatus && (
+                  <div className="text-[11px] text-white/40 mt-0.5">
+                    {t("step5.autoTopup.toggleSubtext", {
+                      threshold: autoTopupStatus.threshold_pts,
+                      amount: autoTopupStatus.topup_amount_usd,
+                    })}
+                  </div>
+                )}
               </div>
               <button
                 type="button"
@@ -1435,7 +1458,9 @@ export default function GetStartedPage() {
               <CreditCard className="mr-2 w-4 h-4" />
               {t("step5.btn")}
               {isTaiwan(country) && (
-                <span className="ml-2 text-[10px] uppercase tracking-wider opacity-80">PayUni</span>
+                <span className="ml-2 text-[10px] uppercase tracking-wider opacity-80">
+                  {twGateway === "stripe" ? "Stripe" : "PayUni"}
+                </span>
               )}
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
