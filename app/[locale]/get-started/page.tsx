@@ -502,14 +502,17 @@ export default function GetStartedPage() {
   }, []);
 
   // ── Auto Top-up: fetch status on mount (only when logged in) ──
+  // Polling fires this 5+ times during Checkout return; if the response is
+  // unchanged (typical until webhook commits), skip setState to avoid wasted re-renders.
   const fetchAutoTopupStatus = async (): Promise<AutoTopupStatus | null> => {
     try {
       const res = await api.get("/pricing/auto-topup");
       const data = res.data as AutoTopupStatus;
-      setAutoTopupStatus(data);
+      setAutoTopupStatus((prev) =>
+        prev && JSON.stringify(prev) === JSON.stringify(data) ? prev : data,
+      );
       return data;
     } catch (err) {
-      // 401 in particular: token not loaded yet OR endpoint not deployed; silent.
       console.warn("[GetStarted] auto-topup status fetch failed:", err);
       return null;
     }
