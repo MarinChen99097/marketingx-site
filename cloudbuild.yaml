@@ -1,6 +1,11 @@
 steps:
   # Fetch latest Salecraft-Plugin commit SHA so the install URL points to an
   # immutable commit instead of 'master' (cache-busting for AI web_fetch tools).
+  # Uses `git ls-remote` (git wire protocol) instead of GitHub REST API:
+  # - No rate limit (REST API is 60/hr per IP unauthenticated; Cloud Build
+  #   IPs are shared with neighbors, can hit ceiling on bursty pushes)
+  # - No auth needed for public repo
+  # - Returns canonical SHA in one round trip
   # Fail-soft: if GitHub is unreachable, the build continues with 'master'.
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'fetch-plugin-sha'
@@ -8,9 +13,9 @@ steps:
     args:
       - '-c'
       - |
-        SHA=$$(curl -s "https://api.github.com/repos/connactai/Salecraft-Plugin/commits/master" | grep -m1 '"sha"' | cut -d'"' -f4)
+        SHA=$$(git ls-remote https://github.com/connactai/Salecraft-Plugin.git refs/heads/master 2>/dev/null | awk '{print $$1}')
         if [ -z "$$SHA" ]; then
-          echo "Failed to fetch plugin SHA, falling back to 'master'"
+          echo "Failed to fetch plugin SHA via git ls-remote, falling back to 'master'"
           SHA="master"
         fi
         echo "Plugin SHA: $$SHA"
@@ -61,6 +66,23 @@ steps:
       - '0'
       - '--max-instances'
       - '3'
+  # Defense-in-depth: ensure traffic always points to the latest revision.
+  # `gcloud run services update` (used elsewhere for env-var/label changes)
+  # silently flips traffic from `latestRevision: true` to a fixed revision
+  # name, which would mean future deploys create new revisions but traffic
+  # never switches over — see /CLAUDE.md "Cloud Run Traffic Routing 安全規範".
+  # This step is idempotent: if traffic is already on latest, no-op.
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'enforce-latest-traffic'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'services'
+      - 'update-traffic'
+      - 'marketingx-site'
+      - '--to-latest'
+      - '--region'
+      - 'asia-east1'
 images:
   - 'asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:$COMMIT_SHA'
   - 'asia-east1-docker.pkg.dev/gen-lang-client-0747655769/cloud-run-source-deploy/marketingx-site:latest'
