@@ -64,14 +64,14 @@ Each individual or entity may maintain only one account unless expressly authori
 ## 5. Credits, Pricing, and Payment
 
 ### 5.1 Credit System
-- **1 credit = 1 NTD (New Taiwan Dollar).** Credits are the internal currency used within the Service to pay for content generation and other platform features.
+- **30 credits = 1 USD (United States Dollar).** Credits are the internal currency used within the Service to pay for content generation and other platform features.
 - Credits may be purchased through the platform via our authorized payment processor, Stripe.
 - **Credits are non-transferable** and may only be used within the account to which they are credited.
 - Credits do not expire, unless the account is terminated pursuant to these Terms.
 - Credits have no cash value and **are not redeemable for cash**, except as expressly required by applicable law.
 
 ### 5.2 Stripe (Section) Generation Pricing
-- Each stripe (section/block) of a landing page costs **200 credits (equivalent to NT$200)** to generate.
+- Each stripe (section/block) of a landing page costs **200 credits (equivalent to USD $6.67)** to generate.
 - Prior to generation, credits are **pre-deducted** from your account based on the expected number of stripes.
 - **If fewer stripes are generated than expected, the excess credits will be automatically refunded to your account.**
 - If more stripes are generated than expected, **no additional credits will be charged** beyond the pre-deducted amount.
@@ -83,7 +83,7 @@ Each individual or entity may maintain only one account unless expressly authori
 
 ### 5.4 Payment Processing
 - All payments are processed securely through Stripe, Inc. By making a purchase, you also agree to Stripe's terms of service and privacy policy.
-- All prices are denominated in New Taiwan Dollars (NTD) unless otherwise specified.
+- All prices are denominated in United States Dollars (USD) unless otherwise specified.
 - You are responsible for any applicable taxes, duties, or governmental levies associated with your purchase.
 
 ### 5.5 Refund Policy
@@ -223,7 +223,7 @@ The Company expressly disclaims all warranties, including but not limited to:
 
 1. **IN NO EVENT SHALL THE COMPANY, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, SUCCESSORS, OR ASSIGNS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES**, including but not limited to damages for loss of profits, revenue, business, goodwill, data, or other intangible losses, **REGARDLESS OF THE CAUSE OF ACTION OR THE THEORY OF LIABILITY** (whether in contract, tort, negligence, strict liability, or otherwise), and even if the Company has been advised of the possibility of such damages.
 
-2. **THE COMPANY'S TOTAL AGGREGATE LIABILITY** arising out of or in connection with these Terms or the use of the Service **SHALL NOT EXCEED THE GREATER OF: (a) THE TOTAL AMOUNT ACTUALLY PAID BY YOU TO THE COMPANY IN THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR (b) ONE THOUSAND NEW TAIWAN DOLLARS (NT$1,000).**
+2. **THE COMPANY'S TOTAL AGGREGATE LIABILITY** arising out of or in connection with these Terms or the use of the Service **SHALL NOT EXCEED THE GREATER OF: (a) THE TOTAL AMOUNT ACTUALLY PAID BY YOU TO THE COMPANY IN THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR (b) THIRTY-TWO UNITED STATES DOLLARS (USD $32).**
 
 3. The Company shall not be liable for any:
    - Regulatory fines, penalties, sanctions, or enforcement actions resulting from your use of Generated Content;
