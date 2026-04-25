@@ -88,17 +88,6 @@ function AuthInner() {
         };
     }, [router, returnPath, switchMode]);
 
-    // Secondary "Use a different Google account" affordance for switch mode.
-    // GIS's renderButton click ALMOST always shows Google's account chooser,
-    // but on browsers with exactly one signed-in Google account it shortcuts
-    // straight back to that same account — exactly the trap the user is
-    // trying to escape. Routing through Google's AccountChooser URL forces
-    // them to pick (or sign in to a new one) before continuing back here.
-    const handleUseDifferentAccount = () => {
-        const continueUrl = encodeURIComponent(window.location.href);
-        window.location.href = `https://accounts.google.com/AccountChooser?continue=${continueUrl}`;
-    };
-
     const handleGoogleCredential = async (credential: string) => {
         if (loading) return;
         if (!termsAccepted) {
@@ -233,19 +222,6 @@ function AuthInner() {
                                     text="continue_with"
                                     forceAccountChooser={switchMode}
                                 />
-                            )}
-
-                            {/* Switch-mode escape hatch — only renders when GIS
-                                button might silently auto-pick the same Google
-                                account (browsers with one signed-in account). */}
-                            {switchMode && !CLIENT_ID_MISSING && (
-                                <button
-                                    type="button"
-                                    onClick={handleUseDifferentAccount}
-                                    className="text-xs text-white/50 hover:text-white underline underline-offset-4 transition-colors"
-                                >
-                                    {t("useDifferentAccount")}
-                                </button>
                             )}
 
                             {loading && (
